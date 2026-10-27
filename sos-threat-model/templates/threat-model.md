@@ -2,7 +2,8 @@
 
 <!--
 The single-package deliverable. Fill every «placeholder»; delete what does not apply.
-Follow ../reference/writing.md. The standalone copy is built from this file by script
+Follow ../reference/writing.md. The standalone copy is built from this file by copying;
+only its introduction, Model in brief, Keys, integration surface and index are written new
 (see the "Standalone copy" note at the end).
 -->
 
@@ -48,7 +49,7 @@ and which were not.»
 
 ## Risks, stated first
 
-Ranked by «the rule». Availability is not ranked.
+Ranked by the rule stated in Impact across the deployment. Availability is not ranked.
 
 1. **«The risk in one sentence.»** «Two to five sentences with citations: the path, the
    precondition, what it reaches.» Ids: «rows, chains».
@@ -106,7 +107,10 @@ Structural facts every row rests on: «the facts many rows share, cited once».
 
 ### D, Denial of service
 
-Continue-on-fault paths the model scores. Availability claims go in their own section.
+File every row by its effect: a continue-on-fault path whose effect is accepting a forged
+identity goes under S, one that grants an unearned privilege under E. Under D go the
+continue-on-fault paths whose effect is service the model scores as lost or degraded.
+Availability claims go in their own section, unranked.
 
 ### E, Elevation of privilege
 

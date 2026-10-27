@@ -45,7 +45,7 @@ degrees of freedom (gaps, ambiguity, instability). The +1 uses that determinacy 
 The framework prefers deterministic, static, verifiable structure over process: hash
 verification over human approval, cryptographic proof over trust, machine override over
 committee decision. A process-oriented design carries more human gates and more
-coordination, and it does not satisfy the constraints; it is a workflow.
+coordination, and it fails the constraints as a workflow.
 
 Satisfying the constraints pushes a system onto structural checks rather than procedural
 ones. A structural check resolves in a step; a procedural one walks its inputs. Chained

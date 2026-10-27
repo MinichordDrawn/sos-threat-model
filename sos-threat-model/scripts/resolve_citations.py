@@ -10,17 +10,19 @@ a file extension:
     `./Makefile:9`              (an extensionless file needs a slash)
     `PFX: path/to/file.ext:12`  (a tree prefix declared with --tree PFX=DIR; a prefix is
                                  capital letters, digits and underscores, then ": ")
-    `:44`                       (continues the last path named in the same paragraph or
-                                 table row)
+    `:44`                       (continues the last path named in the same paragraph,
+                                 table row or list item)
 
 A span such as `localhost:8080`, `postgres:15` or `12:30` is not a citation and is left
 alone, because its left side has no slash and no file extension.
 
 A citation resolves when the file exists inside the named tree (or, without a prefix,
 inside any tree given; a bare file name or a path suffix matches a unique file) and every
-line or range satisfies 1 <= start <= end <= the file's line count. When a bare name
-matches several files, the directories given with --prefer (relative to the trees, in
-order) decide; a name still ambiguous after that does not resolve.
+line or range satisfies 1 <= start <= end <= the file's line count. A path with a `..`
+segment never resolves. When a bare name matches several files, the directories given with
+--prefer (relative to the trees, in order) decide; a name still ambiguous after that does
+not resolve. Files under .git, node_modules, target and vendor are not indexed by name, so
+they resolve only by their path from the tree root.
 
 Three kinds of failure are counted as bad:
 
@@ -30,16 +32,22 @@ Three kinds of failure are counted as bad:
                  in one span, trailing words, `file.go:L12`, no space after a prefix, or an
                  unfilled template placeholder in «guillemets»)
 
-A document with no citations at all is an error, not a pass. Counts are printed per tree.
+A document with no citations at all is an error, not a pass. Counts are printed per prefix,
+with every bare tree counted together under "(bare)".
 
     python resolve_citations.py DOCUMENT.md --tree DIR [--tree PFX=DIR ...]
-                                [--prefer SUBDIR ...] [--list-bad]
-                                [--rewrite PFX OUT.md]
+                                [--prefer SUBDIR ...] [--list-bad] [--list-files]
+                                [--rewrite PFX OUT.md [--rename OLD=NEW ...]]
+
+--list-files prints every file the document cites, by prefix, with its citation count;
+the currency check uses it to know which files to compare upstream.
 
 --rewrite writes OUT.md, a copy of the document in which every unprefixed citation that
 resolves is rewritten as `PFX: repo/relative/path:lines`, the path taken relative to the
-tree it resolved in; nothing else changes. It refuses to write while any citation is bad.
-Assembly uses it to carry a package's citations into an aggregate.
+tree it resolved in, and every citation under a prefix named in --rename OLD=NEW is
+rewritten under NEW; nothing else changes. It refuses to write while any citation is bad.
+Assembly uses it to carry a package's citations into an aggregate, and --rename to make a
+dependency prefix distinct across packages.
 
 Exit status 0 when every citation resolves, 1 when any is bad or none is found, 2 on a
 usage error.
@@ -74,12 +82,15 @@ def inside(path, root):
 
 def find(path, trees, names, prefer=()):
     """Return (realpath, tree root) or (None, None)."""
+    if ".." in re.split(r"[\\/]", path):
+        return None, None
+    path = re.sub(r"^(?:\./)+", "", path)
     for root in trees:
         p = os.path.join(root, path)
         if os.path.isfile(p) and inside(p, root):
             return os.path.realpath(p), root
     base = os.path.basename(path.replace("\\", "/"))
-    want = "/" + path.replace("\\", "/").lstrip("./").lstrip("/")
+    want = "/" + path.replace("\\", "/").lstrip("/")
     cands = {(os.path.realpath(c), root) for root in trees for c in names[root].get(base, [])
              if ("/" + c.replace(os.sep, "/")).endswith(want)}
     if len({c for c, _ in cands}) == 1:
@@ -112,8 +123,12 @@ def in_range(spec, n):
     return True
 
 
+ITEM = re.compile(r"^\s*(?:[-*+]|\d+\.)\s")
+
+
 def units(text):
-    """(start offset, text) for each paragraph, with each table row its own unit."""
+    """(start offset, text) for each paragraph, with each table row and each list item its
+    own unit, so a continuation stays within the unit that named its path."""
     pos = 0
     for para in re.split(r"(\n\s*\n)", text):
         if re.fullmatch(r"\n\s*\n", para or "\n\n"):
@@ -128,6 +143,9 @@ def units(text):
                     buf, buf_start = [], None
                 yield off, line
             else:
+                if ITEM.match(line) and buf:
+                    yield buf_start, "\n".join(buf)
+                    buf, buf_start = [], None
                 if buf_start is None:
                     buf_start = off
                 buf.append(line)
@@ -144,8 +162,8 @@ def main(argv):
         print(__doc__)
         return 2
     doc = argv[0]
-    trees, prefixed, prefer, rewrite = [], {}, [], None
-    list_bad = False
+    trees, prefixed, prefer, rewrite, rename = [], {}, [], None, {}
+    list_bad = list_files = False
     i = 1
     while i < len(argv):
         a = argv[i]
@@ -171,19 +189,32 @@ def main(argv):
                 return 2
             rewrite = (argv[i + 1], argv[i + 2])
             i += 3
+        elif a == "--rename":
+            if i + 1 >= len(argv) or not re.match(r"^[A-Z][A-Z0-9_]*=[A-Z][A-Z0-9_]*$", argv[i + 1]):
+                print("--rename needs OLD=NEW, both prefixes of capital letters, digits and underscores")
+                return 2
+            k, v = argv[i + 1].split("=", 1)
+            rename[k] = v
+            i += 2
         elif a == "--list-bad":
             list_bad = True
+            i += 1
+        elif a == "--list-files":
+            list_files = True
             i += 1
         else:
             print(f"unknown argument {a!r}")
             return 2
+    if rename and not rewrite:
+        print("--rename works only with --rewrite")
+        return 2
     for root in trees + list(prefixed.values()):
         if not os.path.isdir(root):
             print(f"tree not found: {root}")
             return 2
     names = {r: index(r) for r in trees + list(prefixed.values())}
     text = open(doc, encoding="utf-8").read()
-    counts, bad, repl = {}, [], []
+    counts, bad, repl, files = {}, [], [], {}
     for start, unit in units(text):
         last = None
         for m in SPAN.finditer(unit):
@@ -209,9 +240,15 @@ def main(argv):
             resolved, root, label = last
             if in_range(lines, length(resolved)):
                 counts[label] = counts.get(label, 0) + 1
+                rel = os.path.relpath(resolved, os.path.realpath(root)).replace(os.sep, "/")
+                files.setdefault(label, {}).setdefault(rel, 0)
+                files[label][rel] += 1
                 if rewrite and not pfx and path:
-                    rel = os.path.relpath(resolved, os.path.realpath(root)).replace(os.sep, "/")
                     repl.append((start + m.start(1), start + m.end(1), f"{rewrite[0]}: {rel}:{lines}"))
+                elif rewrite and pfx in rename:
+                    span_text = m.group(1)
+                    repl.append((start + m.start(1), start + m.end(1),
+                                 re.sub(r"^\s*" + pfx + r":", rename[pfx] + ":", span_text, count=1)))
             else:
                 bad.append(("unresolved", span))
     good = sum(counts.values())
@@ -221,6 +258,10 @@ def main(argv):
     if list_bad:
         for kind, span in bad:
             print(f"   {kind:<10} {span}")
+    if list_files:
+        for label in sorted(files):
+            for rel in sorted(files[label]):
+                print(f"   file {label} {rel} {files[label][rel]}")
     if good + len(bad) == 0:
         print("no citations found: every citation must be its own backticked span")
         return 1

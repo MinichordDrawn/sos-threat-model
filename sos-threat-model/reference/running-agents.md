@@ -10,10 +10,11 @@ point of the verification passes: a verifier that inherited the breadth pass's r
 would confirm it. Give every agent its inputs by path and its output by path.
 
 The orchestrator (the session running the process) launches every pass and does no pass
-itself. Run it where it can launch sub-agents: in some agent tools a sub-agent cannot
-launch its own, so an orchestrator started as a sub-agent would end up doing every pass in
-one context, and its verifiers would be checking their own work. Start the orchestrator
-from the top-level session. If it finds it cannot launch sub-agents, it stops and says so.
+itself. Run it wherever it can launch sub-agents: the top-level session, or a sub-agent
+when the tooling lets a sub-agent launch its own. In some agent tools a sub-agent cannot,
+so an orchestrator started as one would end up doing every pass in one context, and its
+verifiers would be checking their own work. An orchestrator that finds it cannot launch
+sub-agents stops and says so.
 
 ## Save every prompt before launching it
 
@@ -22,8 +23,9 @@ step without a number, such as `assembly-prompt.md` or `seam-hunt-<pair>-prompt.
 before launching the agent. A machine restart, a closed editor or an interrupted turn
 kills a running agent; with the prompt on disk, a pass can be relaunched verbatim, or
 resumed from its saved transcript where the tooling allows. Record the run's state (which
-passes are done, which output files exist, what runs next) somewhere outside the
-conversation as each pass finishes.
+passes are done, which output files exist, which models ran each pass, what runs next) in
+`scratch/run-state.md` as each pass finishes. It is the one file in `scratch/` the
+orchestrator edits by hand.
 
 ## Write output in sections
 
@@ -71,7 +73,8 @@ hand.
 
 `../scripts/resolve_citations.py` checks every backticked citation in a document against
 the trees at the audited commits, prints a count per prefix and lists the bad ones with
-`--list-bad`. Run it after every assembly and after the sweep; ship at zero bad.
+`--list-bad`. Run it at every gate; every document ships at zero bad, with any citation
+into a dependency that was never opened moved into the prose by name.
 
 ## Keep the target's tests away from real data
 

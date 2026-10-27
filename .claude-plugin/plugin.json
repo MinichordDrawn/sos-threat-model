@@ -1,0 +1,11 @@
+{
+  "name": "sos-threat-model",
+  "description": "SOS: Threat Modeling For Self-Observing Systems. Audits a system against the self-observing-systems model and produces a source-cited STRIDE threat model.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Alexandra Thaler"
+  },
+  "homepage": "https://github.com/MinichordDrawn/sos-threat-model",
+  "repository": "https://github.com/MinichordDrawn/sos-threat-model",
+  "skills": ["./sos-threat-model/"]
+}

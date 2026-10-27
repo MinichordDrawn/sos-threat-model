@@ -4,8 +4,9 @@
 """Apply an edit list to one or more documents, all or nothing.
 
 Two edit formats are accepted, in any mix. A CURRENT/REPLACEMENT block, as the reviews,
-the reconciliation, the fold and the register write them, with each label alone on its
-line and each text in a fence:
+the reconciliation, the fold, the register, the evidence collection and the final front
+write them, with each label alone on its line (optionally after an edit number such as
+"1.") and each text in a fence:
 
     CURRENT:
     ```
@@ -21,24 +22,31 @@ the opening one. A sweep line, as the final sweep writes them, one per line:
 
     12. Line 86. Old: `` exact phrase `` New: `` replacement ``
 
-with one space inside each pair of double backticks; `New: ```` deletes the phrase.
+with one space inside each pair of double backticks. To delete the phrase, write `New:`
+followed by four backticks and nothing else:
+
+    13. Line 90. Old: `` phrase to delete `` New: ````
 
 The script stops with nothing changed when any of these holds:
 
-  - a line in the edit list looks like an edit (a CURRENT, REPLACEMENT or Old: label, or a
-    numbered "Line N." entry) but does not parse in the forms above;
+  - a line in the edit list looks like an edit (a CURRENT or REPLACEMENT label, an Old:
+    label, any numbered "Line N." entry, or a fence line outside an edit) but does not
+    parse in the forms above;
   - an old text does not occur exactly once in a document at the moment it is applied,
     after the edits before it;
   - with several documents, an edit reaches only some of them, unless --partial is given.
+
+A deleted block takes the line break after it when the block starts at the beginning of a
+line; a deleted sweep phrase takes the space before it. A sweep phrase found on the line
+its entry names in none of the documents is applied where it is unique and reported as a
+warning.
 
 Usage:
 
     python apply_edits.py EDITS.md DOCUMENT.md [DOCUMENT2.md ...] [--partial] [--dry-run]
 
 It prints one line per edit naming the documents it changed. Exit status 0 when every
-edit applied or the list holds none, 1 when the script stopped, 2 on a usage error. A
-deletion also removes the line break after a deleted block, or the space before a deleted
-phrase.
+edit applied or the list holds none, 1 when the script stopped, 2 on a usage error.
 """
 import os
 import re
@@ -46,7 +54,7 @@ import sys
 
 LABEL = re.compile(
     r"^\W*(?:\d+\.\s*)?(?:CURRENT|REPLACEMENT|current text|new text|old text)\b"
-    r"|\bLines?\s+\d+\W*\s*Old\b|\bOld:\s*[`\"']",
+    r"|^\s*\d+\.\s*Lines?\s+\d+|\bOld:\s*[`\"']",
     re.I,
 )
 OPEN = re.compile(r"^\s*(?:\d+\.\s*)?CURRENT:\s*$")
@@ -55,6 +63,7 @@ SWEEP = re.compile(
     r"New:\s*(?:``\s(?P<new>.*?)\s``|````)\s*$"
 )
 FENCE = re.compile(r"^(`{3,})[^`]*$")
+STRAY_FENCE = re.compile(r"^\s*`{3,}")
 
 
 def read_fenced(lines, i):
@@ -74,6 +83,7 @@ def read_fenced(lines, i):
 
 
 def parse(text):
+    """Return (edits, problems); each edit is (name, kind, line, old, new)."""
     lines = text.replace("\r\n", "\n").split("\n")
     edits, problems, used = [], [], set()
     i = 0
@@ -94,7 +104,7 @@ def parse(text):
                     j += 1
                 new, k = read_fenced(lines, j) if j < len(lines) else (None, j)
                 if new is not None:
-                    edits.append((f"line {start}", old, new))
+                    edits.append((f"line {start}", "block", None, old, new))
                     used.update(range(i, k))
                     used.add(rl)
                     i = k
@@ -105,11 +115,14 @@ def parse(text):
             continue
         m = SWEEP.match(line)
         if m:
-            edits.append((f"item {m.group('num')} (line {i + 1})", m.group("old"), m.group("new") or ""))
+            edits.append((f"item {m.group('num')} (line {i + 1})", "sweep", int(m.group("line")),
+                          m.group("old"), m.group("new") or ""))
             used.add(i)
         i += 1
     for n, line in enumerate(lines):
-        if n not in used and LABEL.search(line):
+        if n in used:
+            continue
+        if LABEL.search(line) or STRAY_FENCE.match(line):
             problems.append(f"edit list line {n + 1}: looks like an edit but does not parse: {line.strip()[:90]!r}")
     return edits, problems
 
@@ -139,30 +152,34 @@ def main(argv):
     raw = {p: open(p, encoding="utf-8", newline="").read() for p in args[1:]}
     crlf = {p: 0 < s.count("\r\n") == s.count("\n") for p, s in raw.items()}
     docs = {p: s.replace("\r\n", "\n") for p, s in raw.items()}
-    errors, report = [], []
-    for name, old, new in edits:
+    doc_lines = {p: s.split("\n") for p, s in docs.items()}
+    errors, report, warnings = [], [], []
+    for name, kind, lineno, old, new in edits:
         if not old:
             errors.append(f"{name}: empty old text")
             continue
+        if kind == "sweep" and not any(1 <= lineno <= len(ls) and old in ls[lineno - 1]
+                                       for ls in doc_lines.values()):
+            warnings.append(f"{name}: old text is not on line {lineno} of any document; applied where it is unique")
         hit, miss = [], []
         for p in docs:
             n = docs[p].count(old)
             if n == 1:
                 target = old
                 if new == "":
-                    # a deleted block takes its line break with it; a deleted phrase, the
-                    # space before it
-                    for wider in (old + "\n", " " + old):
-                        if docs[p].count(wider) == 1:
-                            target = wider
-                            break
+                    if kind == "block":
+                        at = docs[p].index(old)
+                        if (at == 0 or docs[p][at - 1] == "\n") and docs[p].count(old + "\n") == 1:
+                            target = old + "\n"
+                    elif docs[p].count(" " + old) == 1:
+                        target = " " + old
                 docs[p] = docs[p].replace(target, new, 1)
                 hit.append(p)
             elif n > 1:
                 errors.append(f"{name}: old text occurs {n} times in {p}")
             else:
                 miss.append(p)
-        if not hit and not any(name in e for e in errors):
+        if not hit and not any(e.startswith(name + ":") for e in errors):
             errors.append(f"{name}: old text not found: {old[:80]!r}")
         elif miss and len(docs) > 1 and not partial:
             errors.append(f"{name}: not found in {', '.join(miss)} (use --partial to allow)")
@@ -173,6 +190,8 @@ def main(argv):
         print(f"{len(errors)} problems in {len(edits)} edits; nothing was changed")
         return 1
     print("\n".join(report))
+    for w in warnings:
+        print("warning:", w)
     if not dry:
         # every document goes to a temporary file first, then all move into place
         tmp = {}

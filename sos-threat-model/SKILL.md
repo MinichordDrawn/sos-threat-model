@@ -63,10 +63,10 @@ reads only the kit files, the earlier outputs its prompt names, and the source. 
 verification passes are worth running only because of that: a verifier that inherited the
 reasoning it checks will confirm it.
 
-Run the orchestrator in a session that can launch sub-agents, normally the top-level one.
-Some agent tools do not let a sub-agent launch further sub-agents. If this session cannot
-launch sub-agents, stop before the first pass and say so; do not run the passes in one
-context instead.
+Run the orchestrator in any session that can launch sub-agents: the top-level one, or a
+sub-agent where the tooling lets a sub-agent launch its own. Some agent tools do not. If
+this session cannot launch sub-agents, stop before the first pass and say so; do not run
+the passes in one context instead.
 
 ## Non-negotiables
 

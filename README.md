@@ -52,6 +52,7 @@ hold. This implementation was built for software.
 ## What is in it
 
 ```
+.claude-plugin/                  the plugin and marketplace manifests for Claude Code
 LICENSE                          CC BY 4.0 for the documents, MIT for the scripts
 images/                          the figure above
 sos-threat-model/                an agent skill (SKILL.md is the entry point)
@@ -81,26 +82,36 @@ sos-threat-model/                an agent skill (SKILL.md is the entry point)
 ## Using it with an agent
 
 The `sos-threat-model` folder is an Agent Skill: a folder with a `SKILL.md` whose front
-matter names and describes it. To install it for Claude Code, copy the folder into a
-project's `.claude/skills/` (or `~/.claude/skills/` for every project). Other agents that
-read skills load it the same way; any agent can also be pointed at `SKILL.md` directly and
-told to follow it.
+matter names and describes it. This repository is also a Claude Code plugin marketplace,
+so in Claude Code it installs with two commands:
+
+```
+/plugin marketplace add MinichordDrawn/sos-threat-model
+/plugin install sos-threat-model@sos
+```
+
+The skill is then `/sos-threat-model:sos-threat-model`. To install by hand instead, copy
+the `sos-threat-model/` folder itself (not its contents) into a project's
+`.claude/skills/`, or into `~/.claude/skills/` for every project; it is then
+`/sos-threat-model`. Use one install or the other, not both. Other agents that read skills
+load the folder the same way, and any agent can be pointed at `SKILL.md` directly and told
+to follow it.
 
 Then ask for an audit, for example: "Run the sos-threat-model single-package process on
 the repository at `./packages/<repo>`." The agent reads the reference files, surveys the
 tree, and launches every pass as a separate sub-agent, checking each one's counts before
 the next.
 
-Ask from the top-level session. Every pass must be its own sub-agent so the verifiers do
-not check their own reasoning, and some tools do not let a sub-agent launch sub-agents of
-its own. An orchestrator that cannot launch sub-agents stops rather than running the
-passes in one context.
+Ask from a session that can launch sub-agents. Every pass must be its own sub-agent so the
+verifiers do not check their own reasoning, and some tools do not let a sub-agent launch
+sub-agents of its own. An orchestrator that cannot launch sub-agents stops rather than
+running the passes in one context.
 
 ## Using it by hand
 
-Read `reference/model.md` and `reference/method.md`, then follow
-`reference/single-package.md`. Each pass's prompt in `templates/prompts/` works as a
-checklist for a human reviewer too.
+Read `sos-threat-model/reference/model.md` and `sos-threat-model/reference/method.md`,
+then follow `sos-threat-model/reference/single-package.md`. Each pass's prompt in
+`sos-threat-model/templates/prompts/` works as a checklist for a human reviewer too.
 
 ## What it will and will not do
 

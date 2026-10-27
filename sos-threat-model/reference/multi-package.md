@@ -54,8 +54,13 @@ a draft one; the final front is rewritten after the reviews, from what they vali
 only the sweep checks it after that. And the register and the evidence come before the
 reviews, so the reviews check them too.
 
-Aggregates fold the same way: two finished aggregates become one by the same sequence,
-with the seams between them as step 3.
+Aggregates fold the same way: two finished aggregates become one by the same sequence.
+The inputs are the two aggregate documents after their final sweeps; the units at step 3
+are the packages, one seam per pair of packages on opposite sides that hand each other
+something; the prefixes of both aggregates go into one `versions.md`, renamed where they
+collide; and ids already carrying a package prefix (`API-S1`) keep it, while each
+aggregate's crossing group keeps its letter with the aggregate's short name added
+(`J-X1` becomes `AB-J-X1`).
 
 ## 1. Clone at the versions that meet
 
@@ -64,6 +69,12 @@ clone the dependency at the version the consumer's lockfile or module file requi
 at its default branch, and record both tags and commits. A seam modeled across versions
 that never ship together describes no real system. Where several consumers pin different
 versions, pick one deployment and say which.
+
+Before the package surveys, the orchestrator also assigns every citation prefix, each
+package's own and every dependency's, unique across the aggregate (`STD_A:` and `STD_B:`
+for two standard libraries at different versions), and the package surveys use those
+prefixes. A package modeled earlier under other prefixes is carried with
+`resolve_citations.py --rewrite ... --rename OLD=NEW`.
 
 The orchestrator writes `scratch/versions.md`: every package with its tag, commit, date
 and citation prefix, which consumer pins which version, and the start time of the
@@ -140,12 +151,12 @@ does exactly that, and refuses to rewrite while any citation in the document is 
 each package deliverable must reach zero bad first: in the assembler's working copy, a
 citation into a pass file is replaced by the row id or source line it rests on, and a
 citation into a dependency that was never opened is moved into the prose with its name.
-Dependency prefixes are distinct across packages. The resolver prints its count per
-prefix; the aggregate's count for each prefix equals the package's count over the rows
-carried plus the citations in seam rows and hand-written parts, each listed. Never retype
-a carried citation by hand. When the body is large, assemble it by mechanical
-concatenation with a script and verify the counts afterwards (rows per package, chains per
-group).
+Dependency prefixes are distinct across packages, as step 1 assigns them. The resolver
+prints its count per prefix; the aggregate's count for each prefix equals the package's
+count over the rows carried plus the citations in seam rows and hand-written parts, each
+listed. Never retype a carried citation by hand. When the body is large, assemble it by
+mechanical concatenation with a script and verify the counts afterwards (rows per package,
+chains per group).
 
 **Keep each source's shape.** Where two sources built their tables on different column
 schemas, keep both schemas in two halves rather than reshaping one, so every carried row
@@ -194,8 +205,9 @@ the claim, its citations, the posture or configuration and its default, its stan
 on it. Each claim is re-verified at the line for the register.
 
 **Currency.** The orchestrator fetches each package's upstream head into a separate
-checkout and lists, in `scratch/currency.md`, the checkout's path and upstream commit for
-each package and every cited file that differs from the audited commit. The register agent
+checkout, lists the cited files with `resolve_citations.py --list-files`, and records in
+`scratch/currency.md` the checkout's path and upstream commit for each package and every
+cited file that differs from the audited commit. The register agent
 re-reads each changed file; a claim that no longer holds is corrected or marked as true at
 the audited commit only. The currency table lists each changed file with its lines added
 and removed, never a count of the document's citations into it: later steps change those

@@ -1,8 +1,8 @@
 # «Systems»: a self-observing-systems threat model of «n» packages
 
 <!--
-The aggregate document. Built by ../reference/multi-package.md. The body (Parts A to E)
-is assembled by script from the packages' deliverables and the verified seam files, each
+The aggregate document. Built by ../reference/multi-package.md. Parts B to E are
+carried by script from the packages' deliverables and the verified seam files, each
 carried citation rewritten once by `resolve_citations.py --rewrite` and nothing else in it
 changed. Assembly writes a draft front (the risks in impact order and the
 reading guide) for the reviews to anchor on; the register step adds Load-bearing claims;

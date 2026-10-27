@@ -33,6 +33,14 @@ The tier sets the bar the later steps score against. A bounded observer on a cro
 alarm meets its bar, and the absent ring there is not a gap. Record the tier and one line
 of justification per subsystem.
 
+A library is tiered and scored like any system, whether or not it runs a process of its
+own. Example programs and test helpers carry no customer data and sit at the Bounded tier.
+A subsystem that decides whether customer data or an identity is accepted sits at the
+customer-data floor, even when the data itself lives in the importing program, so the full
+stack is required of it; where the library has nowhere to host that stack, the property is
+a gap at that decision, not N/A. Score the importing program as the hub the structure
+would need, judged at the structure's own scale.
+
 ## Step 1. Map the rings, layer by layer
 
 Map every observer. A wide net catches them: health checks, gates, refusals, halts,

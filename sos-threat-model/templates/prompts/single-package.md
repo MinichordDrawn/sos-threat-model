@@ -8,9 +8,10 @@ careful model available.
 
 ## Pass 1. Ring map
 
-Additional reading: `«KIT»/reference/eight-properties.md`, `«KIT»/templates/findings.md`
-(Steps 0 to 1.5 for the shape of sections 2 to 7), and the survey
-`«WORK»/scratch/«T»-survey.md`.
+Additional reading: `«KIT»/reference/eight-properties.md` and `«KIT»/templates/findings.md`
+(Steps 0 to 1.5 for the shape of sections 2 to 7). The survey,
+`«WORK»/scratch/«T»-survey.md`, is the earlier file this pass builds on. Of the method,
+Steps 0 to 1.5 apply to this pass.
 
 Where the core is: «directories». Observers to find at minimum: «health checks, gates,
 refusals, halts, liveness loops, retries, verification of downloaded or received content,
@@ -47,9 +48,10 @@ Produce `«WORK»/scratch/«T»-eval.md` containing:
    remote client, a file author, a network position, a local user, another account, an
    in-process plugin, an operator, as the system has them). Every row cites
    `path:line`.
-3. The mechanisms to settle: every unconfirmed item from the ring map, pasted here
-   verbatim, plus «the refusals,
-   halts and verification points to settle». Each settled as confirmed, refuted or needs a
+3. The mechanisms to settle: every unconfirmed item from the ring map, which the
+   orchestrator lists here verbatim: «the ring map's numbered unconfirmed items». Also these
+   refusals, halts and verification points, which the orchestrator builds from the ring
+   map's halt paths and continue-on-fault paths: «each, with its id and line». Each settled as confirmed, refuted or needs a
    probe, with the exact precondition.
 4. Impact, ordered by the ranking rule in `«KIT»/reference/judging-rules.md`, stated once.
 5. Delegation boundaries: every component the system hands work to (libraries, services,
@@ -95,7 +97,8 @@ Additional reading: the chain shape in `«KIT»/templates/threat-model.md`, then
 
 Part A, chains. Walk the ring map's edges. For each observer, ask which other observers'
 checks its gap defeats, blinds or bypasses, and what the actor reaches by combining them.
-Test at least these candidates and add your own: «ten or more, built from verified rows».
+Test at least these candidates and add your own: «ten or more, which the orchestrator
+builds from the verified file's STRIDE rows and halt paths».
 Record each chain: name; entry points (required, optional, one branch, one cause, the
 reader); steps with evidence; the seam crossed; combined impact; composition line.
 Source-supported chains first, then chains conditional on a probe, then
@@ -103,7 +106,8 @@ deployment-assumption chains, each marked. Then a rejected list with source reas
 
 Part B, missed items: observers, edges and faults the earlier passes did not record. Look
 at least at: the request path's other checks; rotation and rollback; startup-only
-decisions; anything that gates before the core; «system-specific places». Each as a
+decisions; anything that gates before the core; «the system-specific places the
+orchestrator names from the survey and the ring map». Each as a
 STRIDE-shaped row (M1, M2 ...).
 
 Part C, contradictions of the verified file, with lines in both.
@@ -128,7 +132,8 @@ Output `«WORK»/scratch/«T»-chains-verified.md`: a verification log with coun
 verified chains (source-supported first, then conditional, then deployment assumptions);
 the verified rejected list; the missed items as rows ready to merge (ids kept, corrections
 marked); every correction that reaches back into the pass 3 file, with the verified file's
-line and the source line.
+line and the source line. End with: chains confirmed, corrected, dropped; rejected
+candidates confirmed; missed rows; reach-back corrections.
 
 ---
 
@@ -159,8 +164,9 @@ wording only (nothing else from it may appear in the output), then
 4. Check both files: no em dashes and no first person; no workspace paths or kit
    references in the standalone copy; rows per letter equal in both. Run
    `python «KIT»/scripts/resolve_citations.py FILE «trees» --list-bad` on each file, and
-   report its counts; a bad citation into a dependency that was never opened is listed by
-   name, every other bad citation is fixed.
+   report its counts. Move a citation into a dependency that was never opened into the
+   prose with the dependency's name, and fix every other bad citation, so both files
+   resolve at zero bad. Grep both files for « and »: zero hits.
 
 End with: rows by letter, chains, the reach-back corrections applied, and the resolver's
 counts for each file.
@@ -187,8 +193,12 @@ the kit's `apply_edits.py` parses:
     12. Line 86. Old: `` exact phrase `` New: `` replacement ``
 
 with one space inside each pair of double backticks, and each old phrase long enough to
-occur exactly once in the whole document, lengthened within its line. `New: ````
-deletes the phrase. A correction whose old text spans a hard-wrapped line goes instead as
+occur exactly once in the whole document, lengthened within its line. To delete a phrase,
+write `New:` followed by four backticks and nothing else:
+
+    13. Line 90. Old: `` phrase to delete `` New: ````
+
+ A correction whose old text spans a hard-wrapped line goes instead as
 a CURRENT/REPLACEMENT block in the form `«KIT»/scripts/apply_edits.py` documents, quoted
 verbatim with its line breaks. Then the counts per section and in total; then the claims
 that could not be checked because they rest on code not available.

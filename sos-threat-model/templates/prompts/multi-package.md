@@ -5,12 +5,14 @@ paragraph (the one naming the target, the clone and the commit) is replaced by t
 
 > You are the «step» step of a multi-package threat-model process using the
 > self-observing-systems model. Aggregate `«A»`, workspace `«AGG»`. Packages, each with
-> its clone, commit and citation prefix: «for every package: short name, clone path, tag
-> and commit, prefix». The versions are in `«AGG»/scratch/versions.md`. Static reading
-> only: do not build or run the targets or anything from their trees, and do not edit the
-> clones; the kit's scripts may be run where this prompt says so. Besides the kit and
-> `«AGG»`, read only the clones and package workspaces named here«, and the upstream
-> checkouts listed in `«AGG»/scratch/currency.md`».
+> its clone, commit, citation prefixes and deliverable: «for every package: short name,
+> clone path, tag and commit, its own prefix and its dependency prefixes, and its
+> deliverable `«WORK»/output/«T»-threat-model.md`». The versions are in
+> `«AGG»/scratch/versions.md`. Static reading only: do not build or run the targets or
+> anything from their trees, and do not edit the clones; the kit's scripts may be run where
+> this prompt says so. Besides the kit and `«AGG»`, read only the clones and package
+> workspaces named here«, the upstream checkouts listed in `«AGG»/scratch/currency.md`»«,
+> and `«AGG»/evidence-clones/`».
 
 And `«KIT»/reference/multi-package.md` is added to its reading list. Each package's input
 is its finished deliverable, `«WORK»/output/«T»-threat-model.md` in that package's own
@@ -48,7 +50,7 @@ Output `«AGG»/scratch/seam-hunt-«pair».md`. End with the counts per part.
 
 ## Seam verify
 
-Reading: both deliverables and `«AGG»/scratch/seam-hunt-«pair».md`. Reopen every citation
+Additional reading: both deliverables and `«AGG»/scratch/seam-hunt-«pair».md`. Reopen every citation
 in the tree that owns it and take no reading on trust. Give every crossing point, seam
 chain, rejection, new row, closure, reach-back and scope extension a verdict. Report zero
 surviving chains plainly if that is the result.
@@ -61,7 +63,7 @@ target package, the row id or statement it touches, and the exact wording to car
 
 ## Assembly
 
-Reading: every package's deliverable, every seam's verified file, and
+Additional reading: every package's deliverable, every seam's verified file, and
 `«KIT»/templates/aggregate.md` for the section order. **The template is for shape only:
 nothing from it, or from any document not listed here, may appear in the output.**
 
@@ -69,18 +71,20 @@ Write `«AGG»/output/«A»-threat-model.md`. First rewrite each package deliver
 citations into a copy with the resolver's rewrite mode, which turns every bare citation
 into `PFX: repo/relative/path:line` and changes nothing else:
 `python «KIT»/scripts/resolve_citations.py DELIVERABLE «that package's trees» --rewrite PFX COPY`.
-Every dependency prefix must be distinct across packages (two packages that both cite the
-standard library at different versions use two prefixes). Prefix every carried row and
+Every dependency prefix must be distinct across packages, as `versions.md` assigns them;
+where a package's deliverable used a different prefix, add `--rename OLD=NEW` to the same
+rewrite command. Prefix every carried row and
 chain id with its package's short name (`«P1»-S1`), keeping the rest of the id, so ids
-from different packages cannot collide. Assemble the body (Parts A to E) from the copies
-by script, keeping each source's row schema. Carry «every row | the crossing findings and
+from different packages cannot collide. Carry Parts B to E from the copies by script,
+keeping each source's row schema. Carry «every row | the crossing findings and
 the rows the chains use», and say which. Carry each seam's verified Part D: new rows into
 their package's tables under its next id, closures into the item they settle, reach-back
 corrections in place of the statement they correct, each marked and listed in the change
-log. Write by hand only what is new: the combined structure in Part A, the new chain group
-(stated as empty with the reason if no seam chain survived), the joins, and a draft front
-(the risks in the impact part's order with their ids, and the reading guide with the
-prefixes and the id scheme). Then run
+log. Write by hand only what is new: Part A (the combined structure and the ring test),
+the model in brief, the trees and how they join, the new chain group (stated as empty with
+the reason if no seam chain survived), the counts, and a draft front (the risks in the
+impact part's order with their ids, and the reading guide with the prefixes and the id
+scheme). Then grep the document for « and »: zero hits, no unfilled placeholder. Then run
 `python «KIT»/scripts/resolve_citations.py «AGG»/output/«A»-threat-model.md «trees» --list-bad`.
 
 End with: rows per package, chains per group, every Part D item carried or not carried
@@ -92,7 +96,7 @@ parts, each addition listed).
 
 ## Directional chain pass
 
-DIRECTION = «down | up». Reading: `«AGG»/output/«A»-threat-model.md`. Walk it «from every
+DIRECTION = «down | up». Additional reading: `«AGG»/output/«A»-threat-model.md`. Walk it «from every
 entry point toward impact | from every impact term toward every entry that can produce
 it», hunting chains that use gaps in three or more packages, or that join an existing
 crossing chain to a chain in another group (with two packages: chains of three or more
@@ -105,7 +109,7 @@ other direction runs independently; do not read its file.
 
 ## Chain fold
 
-Reading: the document and both `«AGG»/scratch/chainpass-*.md` files. Verify every new
+Additional reading: the document and both `«AGG»/scratch/chainpass-*.md` files. Verify every new
 chain and every correction at the line, in the tree that owns it. Where the two passes
 disagree, settle it at the line and record both readings and the winner. Write
 `«AGG»/scratch/fold.md`: the verification log; then one numbered edit list in the
@@ -116,7 +120,7 @@ and updates the counts. End with: new chains kept, rejected, corrections, edits.
 
 ## Load-bearing claims, currency and posture
 
-Reading: the document and `«AGG»/scratch/currency.md` (the cited files that changed
+Additional reading: the document and `«AGG»/scratch/currency.md` (the cited files that changed
 upstream since each audited commit, listed by the orchestrator with the upstream commit).
 
 1. The register: every fact the risks rest on, with an id `LB1`, `LB2` ..., the claim, its
@@ -139,14 +143,15 @@ corrected, changed files re-read.
 
 ## Evidence collection (optional)
 
-Reading: the risks in the document's draft front and the chains they name. Find public
+Additional reading: the risks in the document's draft front and the chains they name. Find public
 evidence that each risk reaches real deployments: products and repositories that ship the
 components in the configuration the risk needs, and issues that corroborate a mechanism.
 Accuracy over volume: cite a closed issue as closed, never use an issue about a different
 backend or version as evidence for this one, and check every seed before using it. This
 step may read public web sources; contact no one and open nothing that needs an
-account. A public repository may be cloned shallow into its own empty folder and read with
-search tools only; build and run nothing from it.
+account. A public repository may be cloned shallow into
+`«AGG»/evidence-clones/<name>/` and read with search tools only; build and run nothing from
+it.
 
 Write `«AGG»/scratch/evidence.md`: a short top list, a second tier and an unverified-leads
 list, each item with its public source and its state; the seed corrections; then a
@@ -157,7 +162,7 @@ supports.
 
 ## Validation review
 
-DIRECTION = «down | up». Reading: the whole document, «from the top, with the draft front
+DIRECTION = «down | up». Additional reading: the whole document, «from the top, with the draft front
 as the anchor | from the bottom, with the impacts and counts as the anchor», and
 `«AGG»/scratch/evidence.md`, if the evidence step ran, to check the Evidence lines
 against. Verify every
@@ -172,7 +177,7 @@ and its REPLACEMENT. The other direction runs independently; do not read its fil
 
 ## Reconciliation
 
-Reading: both review files and the document. Merge the two edit lists into one ordered,
+Additional reading: both review files and the document. Merge the two edit lists into one ordered,
 mechanically applicable set in the edit-list form. Record every disagreement in plain
 prose, never as CURRENT or REPLACEMENT blocks: both proposals described, the deciding line
 in the document or the source, and the winner with the reason. The only edit blocks in the
@@ -184,15 +189,17 @@ review, edits out, disagreements settled.
 
 ## Final front
 
-Reading: the document as the reviews left it, and `«AGG»/scratch/evidence.md` if it
+Additional reading: the document as the reviews left it, and `«AGG»/scratch/evidence.md` if it
 exists. Rewrite the front from the validated body, replacing the draft, in this order:
 
-1. Risks, stated first, ranked by severity times detection times exposure, where exposure
-   is the evidence of real deployments; each entry names its rows and chains and carries
-   its rank in the impact part beside it.
+1. Risks, stated first, ranked by severity times detection times exposure with the scales
+   in `«KIT»/reference/judging-rules.md`, taking exposure from `«AGG»/scratch/evidence.md`;
+   if that file does not exist, rank by severity times detection and say so. Each entry
+   names its rows and chains and carries its rank in the impact part beside it.
 2. What the evidence shows and does not.
-3. How fast, and by what process: the start time «start» and the finish time «finish», and
-   the step sequence. No per-package timeline.
+3. How fast, and by what process: the start time «start», the finish time, which this
+   step writes from the system clock at the moment it writes the front, and the step
+   sequence. No per-package timeline.
 4. The pattern behind the findings: the shape the gaps share, one paragraph per boundary.
 5. How to read this document: the order of the parts, the schemas, the citation prefixes,
    the posture rule, scope extensions, source-supported against inferred, deployment

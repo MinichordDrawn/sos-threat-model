@@ -86,9 +86,12 @@ components (a library, a service, the kernel, the operator) and leave it there.
 
 ## Ranking
 
-Rank risks by what a position gains times how many installations or users it reaches in
-one act, with nothing positioned to notice. On an aggregate, rank by severity times
-detection times exposure, each scored 1 to 4:
+**One package.** Rank risks by what a position gains times how many installations or users
+it reaches in one act, with nothing positioned to notice. The result is an order:
+place each risk against the others and break a tie by the position that needs no
+privileged act. The scales below are not used for one package.
+
+**An aggregate.** Rank by severity times detection times exposure, each scored 1 to 4:
 
 - **Severity.** 4: an external position (B3) reaches customer data or identities with no
   further condition, for every user in one act. 3: the same reach behind a privileged
@@ -101,11 +104,11 @@ detection times exposure, each scored 1 to 4:
   2: an unverified lead. 1: none found. When no evidence step ran, say so and rank by
   severity times detection alone.
 
-Ties go to the higher severity, then the lower impact rank, then the position that needs
-no privileged act. State the scales once, at the head of the risks. A finding that reaches
-customer data ranks above one that reaches only the system's own records; availability is
-not ranked. Give each ranked entry its row and chain ids. The deliverable states this rule
-once, as its ranking rule.
+Ties go to the higher severity, then the lower rank in the risk's own package's impact
+order, then the position that needs no privileged act. State the scales once, at the head
+of the risks. A finding that reaches customer data ranks above one that reaches only the
+system's own records; availability is not ranked. Give each ranked entry its row and chain
+ids. The deliverable states this rule once, as its ranking rule.
 
 ## Modeling only
 

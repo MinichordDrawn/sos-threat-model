@@ -1,0 +1,16 @@
+{
+  "name": "sos",
+  "owner": {
+    "name": "MinichordDrawn"
+  },
+  "metadata": {
+    "description": "SOS: Threat Modeling For Self-Observing Systems."
+  },
+  "plugins": [
+    {
+      "name": "sos-threat-model",
+      "source": "./",
+      "description": "SOS: Threat Modeling For Self-Observing Systems. Audits a system against the self-observing-systems model and produces a source-cited STRIDE threat model."
+    }
+  ]
+}

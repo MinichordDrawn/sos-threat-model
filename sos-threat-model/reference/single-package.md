@@ -7,12 +7,15 @@ themselves are in `../templates/prompts/`.
 
 ## Workspace
 
-One folder per target, three subfolders. The kit itself stays outside it, shared.
+One folder per target, four subfolders. The kit itself stays outside it, shared.
 
 ```
 <target>/
   packages/<repo>/   the clone, shallow, at a recorded commit
-  scratch/           one file per pass, never edited by hand
+  deps/<name>/       dependency sources not available locally, shallow clones at the
+                     pinned tags
+  scratch/           the survey, each prompt, each pass output (never edited by hand),
+                     and run-state.md (the run's state, kept by the orchestrator)
   output/            the deliverable and the standalone copy
 ```
 
@@ -30,8 +33,10 @@ Locate the dependency source the passes will need. Pass 1's unconfirmed items us
 on a dependency or the language's standard library ("rests on `crypto/rsa`"), and passes 2
 and 3 can only settle them with that source open. Find the standard library for the
 toolchain on hand and each direct dependency at the version the lockfile or module file
-pins (a local module cache, or a shallow clone at the tag), and from pass 2 on declare
-each as a scope extension with its own citation prefix and version. Where the project pins
+pins (a local module cache, or a shallow clone at the tag into `deps/`). Where the
+lockfile records a commit, confirm the clone's commit matches it. Give each one a citation
+prefix (`GO:`, `JOSE:`) and cite it with that prefix from the survey on, in every prompt's
+scope-extension line, so no pass ever cites a dependency path bare. Where the project pins
 only a minimum toolchain, say which version was opened.
 
 **Check before pass 1:** the commit and date recorded; the core named and every sibling
@@ -53,9 +58,9 @@ pass, launched by the orchestrating session. The orchestrator writes the survey,
 and saves each prompt, launches the pass, and checks its gate; it never performs a pass
 itself, and it never runs two passes in one agent. If the orchestrating session cannot
 launch sub-agents (some tools do not allow a sub-agent to launch its own), run the
-orchestrator from the top-level session instead. Each pass reads only the kit's reference
-files, the earlier pass outputs it is told to build on, and the source. Every prompt
-carries the same four rules:
+orchestrator from a session that can, normally the top-level one. Each pass reads only the
+kit's reference files, the earlier pass outputs it is told to build on, and the source.
+Every prompt carries the same four rules:
 
 - Work only from source you open. Every claim needs a file and line you looked at. Do not
   guess. If you cannot confirm something, say so.
@@ -65,11 +70,12 @@ carries the same four rules:
   conceded.
 - No first person. No em dashes. No design suggestions.
 
-Breadth passes (1, 2, 4) suit a fast, wide model. Verification passes (3, 5, 6) need the
-most careful model available, and they are the ones that matter: on every calibration run,
+Breadth passes (1, 2, 4) suit a fast, wide model: a mid-sized model is enough.
+Verification passes (3, 5, 6) need the most careful model available, the largest the
+tooling offers, and they are the ones that matter: on every calibration run,
 the corrections that changed a headline came from the verifiers and the sweep, never from
-a breadth pass. Assembly also runs on the careful model. Never skip a verification pass to
-save time.
+a breadth pass. Assembly also runs on the careful model. Record which model ran each pass
+in the run-state file. Never skip a verification pass to save time.
 
 | Pass | Kind | Builds on | Output |
 |---|---|---|---|
@@ -97,7 +103,12 @@ each halt propagates; execution-observation coupling; the verdict within the mod
 
 **Check before moving on:** the shape is named, the observers are counted, the halt paths
 and the continue-on-fault paths are listed separately, and the unconfirmed items are
-listed. The unconfirmed list goes into pass 2's prompt verbatim.
+listed. The orchestrator pastes the unconfirmed list into pass 2's prompt verbatim, and
+builds pass 2's list of refusals, halts and verification points to settle from the ring
+map's halt paths and continue-on-fault paths.
+
+At every gate from here on, the orchestrator also runs the citation resolver on the pass
+output; a bad citation into the tree sends the pass back to be fixed.
 
 ### Pass 2. Gap evaluation
 
@@ -186,8 +197,9 @@ Assembly is its own sub-agent, with the assembly prompt in
 so they land in the deliverable without anyone editing the pass files, and it builds the
 standalone copy. **Check:** rows per letter match the verified files plus the merged
 missed rows, every reach-back correction appears in the change note, and the citation
-resolver reports zero bad citations for in-tree paths (a citation into a dependency that
-was never opened is listed, not counted as resolved).
+resolver reports zero bad citations (a citation into a dependency that was never opened
+is moved into the prose with the dependency's name, so every document ships at zero bad),
+and a grep for « and » finds no unfilled placeholder.
 
 ## The standalone copy
 
@@ -219,13 +231,15 @@ together:
         <target>/output/<t>-threat-model.md <target>/output/<t>-threat-model-standalone.md --partial
 
 `--partial` lets a correction land in the standalone only, where the two documents differ
-(the Keys, Part E, Part F); the script prints which documents each edit reached. For each
-edit that missed the deliverable, the orchestrator confirms the text it corrects sits in a
-standalone-only section, or writes a one-edit list against the deliverable from the
-sweep's own wording and applies it the same way. Then append the sweep's numbered
-corrections, by script, to the deliverable's change note, and grep for the corrected
-strings to confirm none remain. A correction whose old phrase is not unique stops the
-script with nothing changed; lengthen the phrase from the line it names and rerun.
+(the self-contained introduction, the model in brief, the Keys, Part E and Part F); the
+script prints which documents each edit reached. For each edit that missed the
+deliverable, the orchestrator confirms the text it corrects sits in a standalone-only
+section, or writes the deliverable's version of it to `scratch/final-sweep-fixes.md`. A
+correction whose old phrase is not unique stops the script with nothing changed; the
+orchestrator writes the lengthened phrase to the same fixes file, never editing
+`final-sweep.md`. Apply the fixes file the same way, then add the sweep's numbered
+corrections to the deliverable's change note with one CURRENT/REPLACEMENT edit on the
+note's last line, and grep for the corrected strings to confirm none remain.
 **Check:** every correction applied or recorded as not applicable, then the citation
 resolver run again on both files, and the row counts still equal. Expect the sweep to
 change real content: on the calibration runs it corrected actor boundaries, a claimed "no

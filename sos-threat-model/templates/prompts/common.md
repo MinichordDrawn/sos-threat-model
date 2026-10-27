@@ -14,12 +14,13 @@ every «placeholder». The placeholders used across the prompts:
 - Multi-package only: `«AGG»` and `«A»`, the aggregate's workspace folder and short name;
   `«P1»`, `«P2»`, the packages' short names; `«P1PFX»`, `«P2PFX»`, their citation prefixes;
   `«pair»`, the two short names joined by a hyphen; `«step»`, the step's name;
-  `«direction»`, `down` or `up`; `«start»` and `«finish»`, the times from
-  `«AGG»/scratch/versions.md` and the moment the final front is written.
+  `«direction»`, `down` or `up`; `«start»`, the start time from
+  `«AGG»/scratch/versions.md`.
 
 When a step's own block starts with **Reading:** rather than **Additional reading:**, its
-list replaces the common block's four reference files; anything a multi-package prompt
-adds to every reading list still applies.
+list replaces the common block's four reference files. Only the final sweep does this, so
+that it reads the document as an outside reader would; every other step reads the four
+reference files first.
 
 Any step that writes an edit list includes the **edit-list form** section below in its
 prompt, and may run `python «KIT»/scripts/apply_edits.py EDITS DOCUMENT --dry-run` to
@@ -58,7 +59,7 @@ Four rules, binding:
 Write the output file in several writes: create it with the header and the first section,
 then append each further section. Use the file-writing tool for each section, not a shell
 heredoc. Keep every finding as a code path, its precondition and its file and line, with
-no exploitation steps. End the file with the counts the step's own block names.
+no exploitation steps. End the file with the closing items the step's own block names.
 
 ---
 
@@ -85,4 +86,5 @@ register, evidence collection, the reviews, the reconciliation, the final front,
 >
 > Everything else in the file stays in plain prose: never write CURRENT or REPLACEMENT
 > labels, `Old:` and `New:` labels, or fences for anything that is not an edit to apply,
-> and refer to an edit elsewhere in the file by its number only.
+> never start a prose line with "Current", "Replacement", "New text" or "Old text", and
+> refer to an edit elsewhere in the file by its number only.
