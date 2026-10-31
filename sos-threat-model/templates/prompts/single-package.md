@@ -21,17 +21,27 @@ the system runs an external program or opens a URL; name the ones the survey fou
 Produce `«WORK»/scratch/«T»-ring-map.md` with eight sections:
 1. System in brief: purpose, customers in two senses, its own goal in its own words.
 2. Step 0 tiers, with the customer-data floor first (what customer data exists and where).
-3. Observer inventory table: name, file:line, what it checks, where it reports, what it
-   does on fault.
+3. Observer inventory table: name, role (observer, observed component, B2 control or
+   signal-path device, as `«KIT»/reference/method.md` Step 1 defines them), file:line,
+   what it checks, where it reports, what it does on fault.
 4. The ring test and the resulting shape.
 5. Coordinators and super-rings: every candidate that can stop the system, tested against
    the four clauses, as a table.
 6. Missing components, descriptive only; where a halt path exists, how far it propagates.
+   Include the hazards table: for every observed component, its hazardous state in the
+   source's words and the observer that checks it, or none. Then the removal paths (RP)
+   and the prescribed responses (PR), each tested as `«KIT»/reference/method.md` Step 1
+   says, and any disagreement between sources (DG), with both lines.
 7. Execution-observation coupling.
 8. Verdict within the model.
 
-End with: the shape named; the observers counted; the halt paths and the continue-on-fault
-paths listed separately; every unconfirmed item, numbered.
+The survey's boundaries, ranges and counts are claims like any other: check each one this
+pass relies on at the lines, and where one is wrong, use the correct value and say so in
+section 1.
+
+End with: the shape named; the observers counted (observers only, then the other roles);
+the halt paths and the continue-on-fault paths listed separately; every unconfirmed item,
+numbered; any survey claim corrected.
 
 ---
 
@@ -41,13 +51,16 @@ Additional reading: `«KIT»/reference/eight-properties.md`, `«KIT»/templates/
 `«KIT»/templates/threat-model.md`, and `«WORK»/scratch/«T»-ring-map.md`.
 
 Produce `«WORK»/scratch/«T»-eval.md` containing:
-1. Scorecard: every property for every observer group, G, S or N/A, with no role
-   exemption; re-test every tier the map set and say whether each holds. Totals.
+1. Scorecard: every property for every observer group, G, S or N/A; only the tier exempts
+   a property, never what an observer is for. Only entries the ring map gives the role
+   observer are scored. Re-test every
+   tier the map set and say whether each holds. Totals.
 2. STRIDE tables with an Entry column. Build the entry vocabulary for this system from
    the ring map and the source: numbered positions, each saying who can reach what (a
    remote client, a file author, a network position, a local user, another account, an
    in-process plugin, an operator, as the system has them). Every row cites
-   `path:line`.
+   `path:line`. Every hazard the ring map records with no observer gets a row wherever a
+   position or a condition reaches it, filed by its effect.
 3. The mechanisms to settle: every unconfirmed item from the ring map, which the
    orchestrator lists here verbatim: «the ring map's numbered unconfirmed items». Also these
    refusals, halts and verification points, which the orchestrator builds from the ring
@@ -58,6 +71,9 @@ Produce `«WORK»/scratch/«T»-eval.md` containing:
    the platform, callbacks a caller supplies), built from the ring map and the source,
    listed and not followed.
 6. Availability claims, listed and left unevaluated.
+
+No chains. Before the closing items, add a section "Open questions for pass 4": each
+suspected chain in one line, with the ids it would join.
 
 End with: scorecard totals; settled items (confirmed, refuted, needs a probe); STRIDE row
 count.
@@ -75,14 +91,17 @@ a dependency, open the version the lockfile pins if it is available locally; if 
 which version was not opened.
 
 The claims that need the most care, strongest first: «numbered list from the evaluation's
-headline findings». Every open question and every needs-a-probe item from passes 1 and 2:
+headline findings and the ring map's verdict». Every open question and every needs-a-probe item from passes 1 and 2:
 settle it with the file open, or keep it as needs a probe with the exact precondition.
+Pass 2's open questions for pass 4 are not settled here: copy them unchanged into a last
+section of the same name.
 
 Produce `«WORK»/scratch/«T»-verified.md`: the verification log with counts (confirmed,
 corrected, dropped, new) first; then the verified content in deliverable order: system in
 brief with the tiers; architectural model with the coordinator test as a table; the
 structure against the model, property by property (the scorecard with the evidence for
-each verdict, re-verified); missing components; present halt paths with propagation;
+each verdict, re-verified); missing components, with the hazards table; present halt paths
+with propagation;
 STRIDE with verified rows only (ids kept, corrected rows marked); impact by one rule;
 delegation boundaries; availability claims; still unsettled questions, each with what
 would settle it. End with the list of every correction that changes a headline finding.
@@ -98,15 +117,18 @@ Additional reading: the chain shape in `«KIT»/templates/threat-model.md`, then
 Part A, chains. Walk the ring map's edges. For each observer, ask which other observers'
 checks its gap defeats, blinds or bypasses, and what the actor reaches by combining them.
 Test at least these candidates and add your own: «ten or more, which the orchestrator
-builds from the verified file's STRIDE rows and halt paths».
+builds from the verified file's STRIDE rows, its halt paths and its open questions for
+pass 4».
 Record each chain: name; entry points (required, optional, one branch, one cause, the
 reader); steps with evidence; the seam crossed; combined impact; composition line.
 Source-supported chains first, then chains conditional on a probe, then
 deployment-assumption chains, each marked. Then a rejected list with source reasons.
 
 Part B, missed items: observers, edges and faults the earlier passes did not record. Look
-at least at: the request path's other checks; rotation and rollback; startup-only
-decisions; anything that gates before the core; «the system-specific places the
+at least at: every observed component's hazardous states, against the ring map's hazards
+table (a hazard the table missed, or one with no row in the verified file); the request
+path's other checks; rotation and rollback; startup-only decisions; anything that gates
+before the core; «the system-specific places the
 orchestrator names from the survey and the ring map». Each as a
 STRIDE-shaped row (M1, M2 ...).
 
@@ -119,7 +141,9 @@ Output `«WORK»/scratch/«T»-chains.md`. End with: chains, rejected, missed, c
 ## Pass 5. Chain verify
 
 Additional reading: `«WORK»/scratch/«T»-verified.md` (settled; reopen only where the chain
-document claims a contradiction) and `«WORK»/scratch/«T»-chains.md`.
+document claims a contradiction), `«WORK»/scratch/«T»-ring-map.md` (for contradictions
+that concern the map and for the edges a chain walks) and `«WORK»/scratch/«T»-chains.md`.
+The chain hunt's most striking claim gets the same line-by-line test as every other claim.
 
 1. Open every chain step's evidence; confirm, correct or drop each step. A chain survives
    only if every remaining step holds and the combined impact exceeds any one gap alone.
@@ -131,9 +155,11 @@ document claims a contradiction) and `«WORK»/scratch/«T»-chains.md`.
 Output `«WORK»/scratch/«T»-chains-verified.md`: a verification log with counts; the
 verified chains (source-supported first, then conditional, then deployment assumptions);
 the verified rejected list; the missed items as rows ready to merge (ids kept, corrections
-marked); every correction that reaches back into the pass 3 file, with the verified file's
-line and the source line. End with: chains confirmed, corrected, dropped; rejected
-candidates confirmed; missed rows; reach-back corrections.
+marked); every confirmed addition to an existing row (a posture note, a precondition, a
+second citation), each with the row id and the text to add; every correction that reaches
+back into the pass 3 file, with the verified file's line and the source line. End with:
+chains confirmed, corrected, dropped; rejected candidates confirmed; missed rows; additions
+to existing rows; reach-back corrections.
 
 ---
 
@@ -144,21 +170,29 @@ wording only (nothing else from it may appear in the output), then
 `«WORK»/scratch/«T»-verified.md`, `«WORK»/scratch/«T»-chains-verified.md`, and
 `«WORK»/scratch/«T»-ring-map.md` for the observer inventory. Do not edit the scratch files.
 
-1. Apply every correction pass 5 lists as reaching back into the pass 3 file. Open the
-   source line each one names, carry the corrected wording into the output, and list each
-   applied correction in a short change note at the end of the deliverable.
+1. Apply every correction pass 5 lists as reaching back into the pass 3 file, and every
+   addition it confirms to an existing row. Open the source line each one names, carry the
+   corrected or added wording into the output, and list each one in a short change note
+   at the end of the deliverable.
 2. Assemble `«WORK»/output/«T»-threat-model.md` in the template's section order. Carry
-   content from the pass files by copying it (by script where the tooling allows), never
-   by retyping: every citation stays byte-identical, every id is kept, corrected rows stay
-   marked. A citation into a pass file is not evidence: replace it with the row id it
+   content from the pass files by script (a short script that copies line ranges and
+   makes exact replacements), never by retyping and never through the file-writing tool:
+   every citation stays byte-identical, every id is kept, corrected rows stay marked. Only
+   the hand-written parts go through the file-writing tool. A citation into a pass file is not evidence: replace it with the row id it
    names or the source line it rests on. Merge pass 5's verified
    missed rows into the STRIDE tables under "Found by the chain hunt, verified". Write by
    hand only the introduction, the risks stated first (ranked by the impact rule as pass 3
-   states it and pass 5 corrects it, each risk with its ids), the counts and the shape of
+   states it and pass 5 corrects it, in the shape the template's comment gives: a
+   preamble that states the rule and nothing else; each risk a heading sentence naming the
+   hazard its gaps leave unobserved (in the source's words, for a system evidenced by a
+   document), then two to five sentences,
+   then its ids on one closing line), the counts and the shape of
    it. Recompute every number in the counts from the assembled body.
 3. Build `«WORK»/output/«T»-threat-model-standalone.md` from the deliverable as the
    template's closing note describes: a self-contained introduction; the model in brief on
-   one page; the Keys section; every reference to the workspace, the kit and the pass files
+   one page; the Keys section, which says that the [corrected] mark covers the
+   verification passes and that the final sweep's corrections are applied in place
+   without a mark; every reference to the workspace, the kit and the pass files
    removed; Parts A to F, with the entry-point index mapping every row and chain to its
    entries.
 4. Check both files: no em dashes and no first person; no workspace paths or kit
@@ -182,7 +216,9 @@ Two questions only, of every row, chain step, rejected entry, impact entry, halt
 risk, the integration surface, the entry-point index and every count: do the cited lines
 say what the claim says, and can an actor at the named entry reach the code path as
 described, with the stated precondition. No opinions on intent or accepted risk. Do not
-edit the document.
+edit the document. A correction to a risk keeps the risk's shape: the heading sentence,
+two to five sentences, the ids on their closing line; a qualifier it restores goes after
+the clause it qualifies, never as a parenthesis in mid-sentence.
 
 Output `«WORK»/scratch/final-sweep.md`: a log per section, one line per item (id, verdict
 confirmed / narrowed / wrong / not checkable, and for a narrowing or a wrong item the

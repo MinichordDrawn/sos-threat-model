@@ -12,6 +12,11 @@ claim is a file and a line in it, judged within the self-observing-systems model
 was built or run unless stated; a claim that reading alone cannot settle is marked as
 needing a probe.
 
+<!-- For a system evidenced by a document: the source's title, publisher, date and
+address, the pdftotext version, the encoding and both checksums in place of the tree and
+commit, and "not settled by the document" in place of "needing a probe"
+(../reference/general-systems.md). -->
+
 **What the model asks.** It applies where four things hold: no central controller, a
 catastrophic cost to an undetected failure, an adversarial environment, and no external
 maintenance. It asks for eight properties: a heartbeat, substrate dependency, continuous
@@ -51,8 +56,20 @@ and which were not.»
 
 Ranked by the rule stated in Impact across the deployment. Availability is not ranked.
 
-1. **«The risk in one sentence.»** «Two to five sentences with citations: the path, the
-   precondition, what it reaches.» Ids: «rows, chains».
+<!-- The preamble states the rule once and nothing else; an argument about one risk's
+place goes in Impact. Each risk: a heading sentence that names the hazard its gaps leave
+unobserved, then two to five sentences with citations (count them), then the ids on one
+closing line. A marker for an unconfirmed item goes after the sentence it qualifies, never
+inside it. For a system evidenced by a document: the heading names the hazard in the
+source's words; where the source names a component's state as a main cause, the risk that
+carries it names that state in its heading, even when the component is observed rather
+than an observer; a heading says "no stated observer" only where no observer of that state
+appears anywhere in the source, and "no observer against its limit" where something
+measures the state but nothing acts at the limit. -->
+
+1. **«The risk in one sentence, naming the hazard left unobserved.»** «Two to five
+   sentences with citations: the path, the precondition, what it reaches.»
+   Ids: «rows, chains».
 
 ---
 
@@ -77,7 +94,8 @@ Ranked by the rule stated in Impact across the deployment. Availability is not r
 
 ## Missing structural components
 
-«Per subsystem, descriptive only.»
+«Per subsystem, descriptive only. Then the hazards table as pass 3 verified it: each
+observed component, its hazardous state and the observer that checks it, or none.»
 
 ---
 
@@ -141,7 +159,12 @@ Availability claims go in their own section, unranked.
 
 ### Conditional on a probe
 
+<!-- For a system evidenced by a document: "Conditional on an unconfirmed item". -->
+
 ### Deployment assumption
+
+<!-- For a system evidenced by a document: "Design assumption". -->
+
 
 ### Rejected
 
@@ -199,6 +222,11 @@ do.
 **The shape of it.** «One paragraph: the structure, and what sits at the top of the risk
 list.»
 
+<!-- For a system evidenced by a document, one more paragraph here: how the design,
+standards and approval process let the system exist, with lines; an observation, not a
+second audit (../reference/general-systems.md). -->
+
+
 ---
 
 ## Change note
@@ -212,7 +240,9 @@ Standalone copy, in this order: a self-contained introduction; "Model in brief" 
 model's constraints, properties, structure, tiers and boundaries in one page); the system
 in brief with tiers; risks stated first; the architectural model; the structure against
 the model; missing structural components; the present halt paths; "Keys" (actor key,
-numbered entry-point key, evidence path rules, halt-on-fault rule); Part A threats (the
+numbered entry-point key, evidence path rules, halt-on-fault rule, and what the
+[corrected] mark covers: the verification passes, while the sweep's corrections are
+applied in place without a mark); Part A threats (the
 STRIDE tables and the chain hunt's rows); Part B chains; Part C rejected chains; Part D
 impact; Part E seams not followed (the delegation boundaries, with the integration surface
 counted from the tree); Part F an

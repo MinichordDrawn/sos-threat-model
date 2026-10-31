@@ -21,6 +21,11 @@ One folder per target, four subfolders. The kit itself stays outside it, shared.
 
 ## Before the first pass: the survey
 
+For a system evidenced by a document rather than a source tree, read `general-systems.md`
+first: the workspace holds `sources/` instead of `packages/` and `deps/`, and the survey
+maps the document (its bodies and their line ranges, its chronologies and their clocks,
+the extraction's checksums) instead of a tree.
+
 Clone shallow and record the commit and its date. Size the tree by directory and find the
 core (the code that does the work) and every second crate, module or service the build
 pulls in; a missed sibling package is the most common survey error. Grep for the one or
@@ -60,7 +65,7 @@ itself, and it never runs two passes in one agent. If the orchestrating session 
 launch sub-agents (some tools do not allow a sub-agent to launch its own), run the
 orchestrator from a session that can, normally the top-level one. Each pass reads only the
 kit's reference files, the earlier pass outputs it is told to build on, and the source.
-Every prompt carries the same four rules:
+Every prompt carries the same four rules (the common block adds three more):
 
 - Work only from source you open. Every claim needs a file and line you looked at. Do not
   guess. If you cannot confirm something, say so.
@@ -70,9 +75,10 @@ Every prompt carries the same four rules:
   conceded.
 - No first person. No em dashes. No design suggestions.
 
-Breadth passes (1, 2, 4) suit a fast, wide model: a mid-sized model is enough.
-Verification passes (3, 5, 6) need the most careful model available, the largest the
-tooling offers, and they are the ones that matter: on every calibration run,
+Breadth passes (1, 2, 4) need a fast, wide model. Verification passes (3, 5, 6) need the
+most careful model available, the largest the tooling offers. The example in the kit's
+own `examples/` folder used Claude Fable for the breadth passes and Claude Opus
+for the rest. The verification passes are the ones that matter: on every calibration run,
 the corrections that changed a headline came from the verifiers and the sweep, never from
 a breadth pass. Assembly also runs on the careful model. Record which model ran each pass
 in the run-state file. Never skip a verification pass to save time.
@@ -96,14 +102,17 @@ observers, and lists the observers to find at minimum.
 
 Eight sections: the system in brief (purpose, customers in two senses, its own goal in its
 own words); Step 0 tiers with the customer-data floor first; the observer inventory table
-(name, file:line, what it checks, where it reports, what it does on fault); the ring test
+(name, role, file:line, what it checks, where it reports, what it does on fault); the ring test
 and the resulting shape; coordinators and super-rings, every candidate that can stop the
 system tested against the four clauses; missing components, descriptive only, with how far
 each halt propagates; execution-observation coupling; the verdict within the model.
 
-**Check before moving on:** the shape is named, the observers are counted, the halt paths
-and the continue-on-fault paths are listed separately, and the unconfirmed items are
-listed. The orchestrator pastes the unconfirmed list into pass 2's prompt verbatim, and
+The pass also checks the survey's boundaries and ranges at the lines: they are the
+orchestrator's claims, and on one calibration run they were slightly off.
+
+**Check before moving on:** the shape is named, the observers are counted, every
+inventory entry has a role, every observed component has a row in the hazards table, the halt paths and the continue-on-fault paths are listed
+separately, and the unconfirmed items are listed. The orchestrator pastes the unconfirmed list into pass 2's prompt verbatim, and
 builds pass 2's list of refusals, halts and verification points to settle from the ring
 map's halt paths and continue-on-fault paths.
 
@@ -114,13 +123,15 @@ output; a bad citation into the tree sends the pass back to be fixed.
 
 Reads the model, the eight properties, the method, the judging rules, both templates, the
 writing rules and the ring map. The prompt asks for: every property scored for every
-observer group (G, S or N/A, no role exemption); a re-test of every tier; STRIDE tables
+observer group (G, S or N/A, no exemption but the tier); a re-test of every tier; STRIDE tables
 with an Entry column and a numbered entry vocabulary built for this system (who can reach
 what: a server, a file author, a network position, a local user, another account, an
 in-process plugin, an operator); the mechanisms to settle (every unconfirmed item from the
 map, plus the refusals and halts the system has), each settled as confirmed, refuted or
 needs a probe with the exact precondition; impact ordered by one stated rule; delegation
-boundaries listed and not followed; availability claims listed and left unevaluated.
+boundaries listed and not followed; availability claims listed and left unevaluated. It
+scores observers only and records no chains: a suspected chain is an open question for
+pass 4.
 
 **Check:** the scorecard totals, the settled-item counts, the STRIDE row count.
 
@@ -137,7 +148,8 @@ paths, STRIDE with verified rows only, impact, boundaries, availability claims, 
 unsettled questions. It ends with the list of corrections that change a headline.
 
 The orchestrator writes the list of claims that need the most care from the evaluation's
-impact order. Put first any headline whose standing as a gap rests on a judging rule (an
+impact order and from the ring map's verdict, whose strongest claims (a count of paths
+found to be the fault, a shape stated as total) need the same test. Put first any headline whose standing as a gap rests on a judging rule (an
 actor the trust boundaries may not count, a refusal left to the caller, an obedience) and
 ask the verifier to test the rule, not only the line.
 
@@ -164,23 +176,28 @@ anything.
 ### Pass 5. Chain verify
 
 Reads the verified file (settled, not reopened unless the chain document claims a
-contradiction), the chain document and the judging rules. Verifies every chain step's
+contradiction), the ring map (a contradiction can concern it), the chain document and the
+judging rules. Verifies every chain step's
 evidence; that each chain's entry points match the verified preconditions; the strongest
 Part B claims (anything that says unreachable, no validation, fails open, executes or
 bypasses); every rejected candidate's reason. A chain survives only if every step holds
 and the combined impact exceeds any one gap alone. Output: a verification log with counts,
 the verified chains (source-supported first, conditional on a probe next, deployment
 assumptions after), the verified rejected list, the missed items as rows ready to merge,
-and every correction that reaches back into the pass 3 file with both line numbers.
+every confirmed addition to an existing row, and every correction that reaches back into
+the pass 3 file with both line numbers.
 
-**Check:** the counts, and whether any correction reaches back into pass 3. Assembly
-applies those; the pass files stay as written.
+**Check:** the counts, and whether any correction or addition reaches back into pass 3.
+Assembly applies those; the pass files stay as written. Until pass 5 has ruled, the
+orchestrator reports no chain hunt claim as a finding, the striking ones least of all: on
+one calibration run the chain hunt's headline was narrowed by its verifier.
 
 ## The deliverable
 
 Assembled from passes 3 and 5 into `output/<t>-threat-model.md`, in the shape of
 `../templates/threat-model.md`: an introduction stating the tree and commit; the system in
-brief with tiers; risks stated first; the architectural model with the coordinator test as
+brief with tiers; risks stated first (each naming the hazard its gaps leave unobserved,
+short enough to read, its ids on one closing line); the architectural model with the coordinator test as
 a table; the structure against the model, property by property; missing structural
 components; the present halt paths as their own section, each with how far it propagates;
 STRIDE tables with the chain hunt's rows merged and marked; chains, with
@@ -190,7 +207,7 @@ it; counts. Then the style grep and the row count.
 
 Assemble by script where the content already exists in the scratch files, so citations
 stay byte-identical; write by hand only the parts that are new (the risks, the shape of
-it).
+it), and only those go through the file-writing tool.
 
 Assembly is its own sub-agent, with the assembly prompt in
 `../templates/prompts/single-package.md`. It also applies pass 5's reach-back corrections,
@@ -210,7 +227,9 @@ closing note gives:
 - Replace the introduction with a self-contained one and add the model in brief.
 - Strip every reference to the workspace, the kit and other targets.
 - Insert a Keys section before the tables: the actor key, the numbered entry-point key,
-  the evidence path rules, the halt-on-fault rule.
+  the evidence path rules, the halt-on-fault rule, and what the [corrected] mark covers
+  (the verification passes; the final sweep's corrections are applied in place without a
+  mark, and the deliverable's change note lists them).
 - Relabel the sections as Parts A to F: threats, chains, rejected, impact, seams not
   followed (with the integration surface counted from the tree), and an entry-point index
   mapping every row and chain to its entries.
@@ -239,12 +258,24 @@ correction whose old phrase is not unique stops the script with nothing changed;
 orchestrator writes the lengthened phrase to the same fixes file, never editing
 `final-sweep.md`. Apply the fixes file the same way, then add the sweep's numbered
 corrections to the deliverable's change note with one CURRENT/REPLACEMENT edit on the
-note's last line, and grep for the corrected strings to confirm none remain.
+note's last line, and grep for the corrected strings to confirm none remain (a correction
+that only appends to its old phrase leaves that phrase in place, and is not a miss).
 **Check:** every correction applied or recorded as not applicable, then the citation
 resolver run again on both files, and the row counts still equal. Expect the sweep to
 change real content: on the calibration runs it corrected actor boundaries, a claimed "no
 record" that was in fact delivered, and line counts.
 
+
+## Changes after the sweep
+
+Any change made after the final sweep (a reader's review, a fix to the risk list) is made
+by script on both documents, from copies kept as they were, and recorded in the
+deliverable's change note under "Post-review changes". Then a separate verifier, on the
+most careful model, checks every changed passage at its lines against the copies kept,
+writes its corrections as an edit list, and the orchestrator applies them by script. On
+the calibration run where this was done, the verifier found three errors and four
+over-claims in eleven hand-edited lines: a hand edit is a breadth pass and gets a verifier
+like any other.
 
 ## Calibration
 

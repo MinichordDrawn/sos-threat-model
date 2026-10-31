@@ -27,7 +27,9 @@ Before scoring anything, give each observer subsystem a consequence tier.
 
 Check the customer-data floor first: if customer information or data flows through the
 observer or the thing it watches, the tier is Catastrophic and the ring is mandatory. Name
-what the customer data is and where it lives, with citations, before anything else.
+what the customer data is and where it lives, with citations, before anything else. Where
+the system's failure reaches the public's safety instead, the public-safety floor applies
+the same way.
 
 The tier sets the bar the later steps score against. A bounded observer on a cron and an
 alarm meets its bar, and the absent ring there is not a gap. Record the tier and one line
@@ -48,6 +50,19 @@ liveness loops, watchdogs, retries, supervisors, elections, revocation, validati
 boundary, anything periodic in the core, and every callback that reports a result. For
 each, record: the check it makes, the file and line, where it reports, and what it does
 on a fault.
+
+Give each entry a role before scoring anything: **observer** (it watches something and
+reports or acts on what it finds), **observed component** (the work, the data, a passive
+barrier that watches nothing), **B2 control** (a check a person performs, or a person's
+means to switch an observer off, whose path to that observer's absence is also listed as a
+removal path), or **signal-path device** (it only records or carries a
+signal). The scorecard takes observers only; the others are recorded where their roles
+put them: components in the missing components, B2 controls in the STRIDE rows and the
+removal paths, signal-path devices on the edges they carry.
+
+Treat each prescribed response (a runbook step, an operating procedure, a regulation's
+required action) as an actuator on the paths it touches, and test it like a halt path: can
+the prescribed response itself be the fault in the state where it is prescribed?
 
 Then record two edges per observer: which observer it checks, and which observer it
 reports to. Build the structure from the bottom up:
@@ -84,7 +99,9 @@ Where a ring is missing, name which structural components the model requires and
 are absent. Stay descriptive: report the missing structure, not a design. The system's
 architects know the architecture; the audit names the gap, not a build.
 
-For each missing ring, mark each component present or absent:
+For each missing ring, mark each component present or absent. The last one, an observer
+for each hazard, is recorded for every observed component whether or not a ring is
+missing:
 
 - **A mutual-observation cycle.** At least three observers that watch each other and close
   a loop. Absent when every edge runs one way: a chain, a star, a DAG.
@@ -96,6 +113,13 @@ For each missing ring, mark each component present or absent:
   others. Absent when a halt stays local. Record how far each existing halt propagates.
 - **An upward chain.** A coordinator that carries this ring's health into the ring above.
   Absent when the layer does not close or nothing reports upward.
+- **An observer for each hazard.** For each observed component, name the state of it that
+  reaches the floor, in the source's words (an operating state outside its analysed
+  envelope, a corrupted record, an unverified download), and the observer that checks that state against
+  known-good. A hazard with no observer is a missing observer. Record it here with its
+  lines; every later pass carries it, the evaluation as a row wherever a position reaches
+  it, the chain hunt as a candidate. Taking a component off the scorecard never takes its
+  hazard out of the audit.
 
 List the present halt paths and the continue-on-fault paths separately. Record the
 execution-observation coupling: does execution check a heartbeat and stop when it stops?

@@ -137,7 +137,8 @@ Required observer complexity scales with the cost of undetected failure.
 
 **Customer data sets the floor.** Any subsystem that carries customer information or data
 runs at the Catastrophic tier, whatever else is true of it, and requires the full stack.
-The public comes first.
+Where a system's failure reaches the public's safety rather than customer records, public
+safety sets the same floor. The public comes first.
 
 "Catastrophic" is relative to the observer. A small organization may judge silent
 compromise of its critical systems catastrophic to its operations, and the constraints

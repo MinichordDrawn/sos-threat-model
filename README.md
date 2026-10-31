@@ -47,7 +47,8 @@ The calibration runs behind it cover Go, Python, Rust and TypeScript projects, f
 single library to an aggregate of eleven infrastructure packages.
 
 The model itself is not specific to software: it applies wherever its four constraints
-hold. This implementation was built for software.
+hold. This implementation was built for software, and also works from any document that
+describes the system in scope.
 
 ## What is in it
 
@@ -55,6 +56,7 @@ hold. This implementation was built for software.
 .claude-plugin/                  the plugin and marketplace manifests for Claude Code
 LICENSE                          CC BY 4.0 for the documents, MIT for the scripts
 images/                          the figure above
+examples/chernobyl/              a finished run on a document: Chernobyl Unit 4 from INSAG-7
 sos-threat-model/                an agent skill (SKILL.md is the entry point)
   LICENSE                        a copy, so the licence travels with the skill
   SKILL.md                       what the skill does, what to read, the sequence
@@ -67,6 +69,7 @@ sos-threat-model/                an agent skill (SKILL.md is the entry point)
     multi-package.md             seams, aggregates, two-direction validation
     running-agents.md            operational lessons for running passes as agents
     writing.md                   the style every output follows
+    general-systems.md           changes when the evidence is a document
   templates/
     findings.md                  working template for passes 1 and 2
     threat-model.md              the single-package deliverable
@@ -77,6 +80,7 @@ sos-threat-model/                an agent skill (SKILL.md is the entry point)
   scripts/
     apply_edits.py               applies edit lists, asserting each target occurs once
     resolve_citations.py         checks every file:line citation against the source
+    page_text.py                 extracts a PDF to page-marked text for line citations
 ```
 
 ## Using it with an agent

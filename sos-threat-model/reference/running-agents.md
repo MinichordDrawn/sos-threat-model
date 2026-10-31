@@ -27,6 +27,10 @@ passes are done, which output files exist, which models ran each pass, what runs
 `scratch/run-state.md` as each pass finishes. It is the one file in `scratch/` the
 orchestrator edits by hand.
 
+Paste lists from one pass into the next prompt by script (cut the section between its
+headings), never by hand: on one calibration run a hand paste cut an unconfirmed item
+short, and the pass had to recover it from the earlier file.
+
 ## Write output in sections
 
 Ask every agent to write its output file in several writes (create the file with the
@@ -42,6 +46,10 @@ allows) rather than through a shell heredoc. Security prose is full of quotes, b
 and dollar signs, and on some shells the heredoc fails on quoting partway through a pass.
 Stage part files inside the workspace: a system temporary directory is not always visible
 to both the file tool and the shell.
+
+Content carried from one file into another (assembly, a fold) is copied by script, by line
+ranges and exact replacements, never through the file-writing tool, which retypes it.
+The file-writing tool is for the parts written new.
 
 If a verifier finishes its checks but cannot write its file, ask it to report its
 corrections in its final message, then assemble the file from the earlier pass and those
@@ -88,7 +96,16 @@ exactly what the run created and nothing else.
 Never launch the next pass until the previous one passes its gate check (the counts and
 lists named in the process). A pass that skipped its counts usually skipped work.
 
+Report a breadth pass's claims as candidates until their verifier has ruled. The most
+striking claim gets the same line-by-line test as any other, and is the one most likely to
+be narrowed.
+
 ## Testing the kit against known answers
+
+A well-known case is never blind: the passes already know the outcome, and no instruction
+stops that knowledge from steering where they look. Use a famous case to test that the
+method can represent a known failure, and an obscure, well-investigated one to test that
+it can find one.
 
 When a run doubles as a test (a past bug the passes should find on their own), the answer
 often lives in the tree: a changelog, a retraction note in a module file, a security

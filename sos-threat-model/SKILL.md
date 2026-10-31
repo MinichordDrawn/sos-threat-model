@@ -1,6 +1,6 @@
 ---
 name: sos-threat-model
-description: Audit a software system's self-observation structure and produce a source-cited STRIDE threat model, using the self-observing-systems model (a 3+1 ring of observers, eight observation properties, halt on fault). Use for a single repository (six passes) or for several packages joined at their seams (seam passes, an aggregate document, two-direction validation). Static source reading only; findings are code paths with file and line.
+description: Audit a software system's self-observation structure and produce a source-cited STRIDE threat model, using the self-observing-systems model (a 3+1 ring of observers, eight observation properties, halt on fault). Use for a single repository (six passes) or for several packages joined at their seams (seam passes, an aggregate document, two-direction validation). Static source reading only; findings are code paths with file and line. Also works from a document that describes the system (a design document, an investigation report), cited by line in the document.
 license: CC BY 4.0 for the documents, MIT for the scripts; credit Alexandra Thaler. See LICENSE.
 ---
 
@@ -31,6 +31,10 @@ Then, for the work in hand:
 - Running the passes as agents: `reference/running-agents.md`.
 - The attack each property closes, for the reader and for scoring:
   `reference/eight-properties.md`.
+- A system evidenced by a document rather than a source tree (a design or architecture
+  document, an investigation report; software, a plant, an institution or a historical
+  system): `reference/general-systems.md`, read before the survey and by every pass except
+  the final sweep.
 
 ## The sequence in brief
 
@@ -81,6 +85,10 @@ the passes in one context instead.
 - Never skip a verification pass. The verifiers and the sweep find the corrections that
   change headlines.
 - Never run two passes in one agent. Every pass is a new sub-agent.
+- Never read the kit's own `examples/` folder (beside `sos-threat-model/` in the kit's
+  repository) during a run, and never give it to a pass: a finished example steers what a
+  pass looks for and how it phrases it. An `examples/` folder inside an audited tree is
+  source like any other.
 
 ## Templates
 
@@ -100,3 +108,5 @@ the passes in one context instead.
   bad, prints a count per prefix, and lists the bad ones with `--list-bad`. Its
   `--rewrite PFX OUT` mode turns every bare citation into `PFX: repo/relative/path:line`,
   which assembly uses to carry a package into an aggregate.
+- `scripts/page_text.py`: extracts a PDF to text with a `=== PDF page N ===` line before
+  each page, for line citations into a document, and prints the checksums to record.

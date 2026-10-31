@@ -30,6 +30,23 @@ seam candidates, and that is it working.
 **Two gaps that add are not a chain.** A chain must reach more than its strongest gap
 reaches alone. Two independent effects of one fault are a parallel effect, not a chain.
 
+**Links made of people count.** The ring and the scorecard are machine-only, but where
+people perform observation (a reviewer who approves a change, a designer who signs
+off a design, a regulator who checks a document), gaps in their observation compose into chains
+like any other and are judged by the same combined-impact test. A chain is not moved to
+missing structure because its links are human.
+
+**Only observers are scored.** An observer watches something and reports or acts on what
+it finds. The work it watches, a passive barrier that watches nothing, a group of people,
+and a device that only records or carries a signal are not observers, and a scorecard row
+for one of them is a category error. People's checks are B2 controls; they discharge no
+property.
+
+**Information disclosure is information reaching a position that should not have it.**
+Information the system held but never delivered to the position that would act on it is
+not I: it is a missing component (no path carries it) or, where a record existed and
+compelled no action, a repudiation row.
+
 **Comments and log strings are claims, not behaviour.** Cite them as what the project
 says, never as what the code does.
 
@@ -42,6 +59,12 @@ component refuse. A refusal is the model being satisfied; ranking its cost argue
 halt on fault against a baseline nobody has modeled. What can be ranked is an
 inconsistency between components (one part binds a destination while another substitutes
 a different one), because that refuses work meant to succeed and is a defect.
+
+Availability claims include output, demand and schedule: a production target, a delivery
+date, a deadline. A party that sets the system's targets or schedule is not an attacker
+for setting them: the target is listed with the availability claims, not made an entry
+position. A party that reaches the system's inputs (a client that sends requests, an
+operator at a console) is still an entry position for what it can do there.
 
 ## Halt on fault is the control
 
@@ -65,6 +88,19 @@ off the check that would have caught it.
 unconfirmed. A claim that rests on code not available (a dependency, a runtime, a service)
 is marked as resting on it, and stays marked wherever it is used.
 
+**A claim carries its source's confidence, never more.** A quotation keeps every qualifier
+in the sentence it comes from ("probably", "it would appear", "may"), and a claim built on
+a hedged statement stays hedged. Say what kind of statement a citation is wherever it
+matters: what the code does, what a comment or document says it does, a source's own
+finding, its presumption, a quotation of another document inside it, or recorded data. A
+row that rests on a presumption or a quoted claim says so. On the calibration run against
+a published investigation, restoring dropped qualifiers was the final sweep's largest
+category of correction.
+
+**No counterfactuals.** What would have happened had a check fired, or what a party
+would have done had it known, is the source's claim or nobody's. State what the lines show
+and stop.
+
 **Source-supported against inferred.** A step that is a line in the audited tree is
 source-supported. A step that rests on a seam's behaviour (the kernel, a runtime, a
 library, a service, an operator's configuration) is inferred, with the seam named.
@@ -87,7 +123,10 @@ components (a library, a service, the kernel, the operator) and leave it there.
 ## Ranking
 
 **One package.** Rank risks by what a position gains times how many installations or users
-it reaches in one act, with nothing positioned to notice. The result is an order:
+it reaches in one act, with nothing positioned to notice. For a single system with one
+installation and no users in that sense (one plant, one institution), read the reach as how
+many units one act reaches, then how far toward the floor (part of the system, the whole
+system, the public). The result is an order:
 place each risk against the others and break a tie by the position that needs no
 privileged act. The scales below are not used for one package.
 

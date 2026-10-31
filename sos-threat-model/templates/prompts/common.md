@@ -22,6 +22,12 @@ list replaces the common block's four reference files. Only the final sweep does
 that it reads the document as an outside reader would; every other step reads the four
 reference files first.
 
+For a system evidenced by a document rather than a source tree, every step except the
+final sweep also reads `«KIT»/reference/general-systems.md` after the four reference
+files, and the orchestrator applies that file's prompt changes (its last section, which
+also says what the sweep's prompt carries instead) to the block below and to each pass's
+own block.
+
 Any step that writes an edit list includes the **edit-list form** section below in its
 prompt, and may run `python «KIT»/scripts/apply_edits.py EDITS DOCUMENT --dry-run` to
 confirm the list parses and every old text is unique (the dry run changes nothing), and
@@ -55,6 +61,18 @@ Four rules, binding:
 - Judge only within the model. Leave availability and performance claims unevaluated, not
   conceded.
 - No first person. No em dashes. No design suggestions.
+
+Three more, binding:
+- A claim carries its source's confidence, never more. A quotation keeps every qualifier in
+  the sentence it comes from, and each citation says what kind of statement it is where
+  that matters (what the code does, what a comment or document claims, a presumption, a
+  quotation of another document, recorded data).
+- Use the id prefixes in `«KIT»/templates/findings.md` and keep every id an earlier pass
+  gave (an aggregate adds the package prefix, as its prompt says).
+- Do only this step's work. Chains belong to the steps that hunt them (the chain hunt, a
+  seam hunt, a directional chain pass, the fold), verdicts on earlier claims to the steps
+  whose prompt asks for them; a step that notices something outside its lane lists it as
+  an open question for the step that owns it.
 
 Write the output file in several writes: create it with the header and the first section,
 then append each further section. Use the file-writing tool for each section, not a shell
