@@ -3,8 +3,9 @@ Copyright (c) 2026 Alexandra Thaler
 
 This kit is free to use, share and adapt, with credit. It is licensed in three parts.
 
-1. The documents (README.md, and every .md file under sos-threat-model/) are licensed
-   under the Creative Commons Attribution 4.0 International licence (CC BY 4.0):
+1. The documents (README.md, and every .md file under sos-threat-model/,
+   sos-rule-cases/ and examples/) are licensed under the Creative Commons Attribution
+   4.0 International licence (CC BY 4.0):
    https://creativecommons.org/licenses/by/4.0/
 
    You may copy, redistribute, adapt and build on them for any purpose, including
@@ -12,7 +13,12 @@ This kit is free to use, share and adapt, with credit. It is licensed in three p
    Self-Observing Systems, by Alexandra Thaler"), link to the licence, and indicate if
    changes were made.
 
-2. The scripts (sos-threat-model/scripts/*.py) are licensed under the MIT licence:
+   Quotations in the documents from other works are not covered by this licence: they
+   remain their owners', and each example's Copyright section names the works quoted
+   and their owners.
+
+2. The scripts (sos-threat-model/scripts/*.py and examples/*/rebuild-source.sh) are
+   licensed under the MIT licence:
 
    Permission is hereby granted, free of charge, to any person obtaining a copy of this
    software and associated documentation files (the "Software"), to deal in the Software

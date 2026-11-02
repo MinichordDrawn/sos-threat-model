@@ -41,8 +41,9 @@ Then, for the work in hand:
 **One package.** Survey the tree. Then six passes, each a separate agent: (1) ring map,
 (2) gap evaluation, (3) verification at the cited line, (4) chain hunt, (5) chain
 verification, then an assembly agent builds the deliverable and a standalone copy, then
-(6) a final sweep of the standalone copy, whose corrections the orchestrator applies by
-script. Gate each step on its counts before starting the next.
+(6) a final sweep of the standalone copy and the deliverable's introduction, whose
+corrections the orchestrator applies by script. Gate each step on its counts before
+starting the next.
 
 **Several packages.** Fix the versions that ship together, then a full single-package
 model of each. Then for every pair that hands the other something, a seam hunt and an
@@ -103,6 +104,9 @@ the passes in one context instead.
 - `scripts/apply_edits.py`: applies a CURRENT/REPLACEMENT edit list or a sweep's numbered
   `Line N. Old: ... New: ...` list to one or more documents, all or nothing; it stops on any
   entry it cannot parse and on any old text that does not occur exactly once.
+  `--skip-section HEADING` leaves the last section (a change note or change log) out of
+  every match, from its heading to the end, and `--anchor` stops any edit the first document
+  does not hold.
 - `scripts/resolve_citations.py`: checks every backticked citation in a document against
   one or more source trees, counts unresolved, undeclared-prefix and unparsed citations as
   bad, prints a count per prefix, and lists the bad ones with `--list-bad`. Its

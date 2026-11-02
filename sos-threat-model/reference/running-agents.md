@@ -58,9 +58,11 @@ corrections by script. Record that the file was assembled that way.
 ## Split a large sweep
 
 A sweep or review of a large document can split the reading across parallel helpers, one
-per section, each told to read only the document and the source trees, when the tooling
-lets a sub-agent launch its own. The agent that launched them judges every correction they
-return, checks a sample at the line, and writes the one output file.
+per section, each told to read only the documents its section is in (for a single-package
+sweep, the standalone copy, and the deliverable for its introduction) and the source
+trees, when the tooling lets a sub-agent launch its own. The agent that launched them
+judges every correction they return, checks a sample at the line, and writes the one
+output file.
 
 ## Expect early hand-backs
 
@@ -70,11 +72,17 @@ and ask for the rest; apply any partial edit list first.
 ## Apply edits by script
 
 Edit lists come in two forms: CURRENT and REPLACEMENT blocks (the reviews, the
-reconciliation, the fold, the register, the evidence and the front) and numbered sweep
-lines (pass 6). `../scripts/apply_edits.py` applies either, all or nothing: it stops with
-nothing changed on any entry it cannot parse and on any old text that does not occur
-exactly once. Pass 5's reach-back corrections are prose, carried by the assembly agent.
-Then grep for the old strings to confirm none remain. Never retype a carried section by
+reconciliation, the fold, the register, the evidence and the front) and numbered sweep lines
+(pass 6). `../scripts/apply_edits.py` applies either, all or nothing: it stops with nothing
+changed on any entry it cannot parse and on any old text that does not occur exactly once.
+`--skip-section HEADING` leaves a section, the change note or change log that quotes
+corrected text, out of every match, from its heading to the end of the document (it is the
+last section); `--anchor` makes the first document the one the list was written against, so
+an edit it does not hold stops the script. Apply a sweep list as `single-package.md` (Pass
+6) describes, or for an aggregate as `multi-package.md` §10 describes. Pass 5's reach-back
+corrections are prose, carried by the assembly agent. Then confirm no old text remains
+outside any change note that quotes it, unless its replacement keeps it: grep for a one-line
+old text, and search for a multi-line one as one string. Never retype a carried section by
 hand.
 
 ## Resolve citations by script

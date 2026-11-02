@@ -41,12 +41,28 @@ line; a deleted sweep phrase takes the space before it. A sweep phrase found on 
 its entry names in none of the documents is applied where it is unique and reported as a
 warning.
 
+Two options narrow where an edit may land:
+
+  - --skip-section HEADING leaves out of every match the section under a Markdown heading
+    whose text is exactly HEADING (any level), to the end of the document: the change note
+    or change log it is for is the last section, and a heading quoted inside it must not
+    end the skip early. Text there is neither counted nor changed, so a change note that
+    quotes corrected phrases does not make them occur twice; an edit meant for text after
+    it is not found and stops the script. Give it once per section; a document
+    without that heading is matched whole, a heading inside a fenced block does not count,
+    and a HEADING no document has is a usage error.
+  - --anchor makes the first document the one the edit list was written against: an edit
+    whose old text it does not hold stops the script.
+
 Usage:
 
     python apply_edits.py EDITS.md DOCUMENT.md [DOCUMENT2.md ...] [--partial] [--dry-run]
+        [--anchor] [--skip-section HEADING ...]
 
-It prints one line per edit naming the documents it changed. Exit status 0 when every
-edit applied or the list holds none, 1 when the script stopped, 2 on a usage error.
+It prints one line per parsed edit naming the documents it reached, also when it stops,
+then any problems (a list with an entry that does not parse prints only the problems).
+Exit status 0 when every edit applied or the list holds none, 1 when the script stopped,
+2 on a usage error.
 """
 import os
 import re
@@ -127,17 +143,70 @@ def parse(text):
     return edits, problems
 
 
+HEADING = re.compile(r"^ {0,3}(#{1,6})(?=[ \t]|$)(.*)$")
+
+
+def headings_of(doc):
+    """(offset, level, text) of every Markdown heading outside a fenced block."""
+    marks, fence, at = [], None, 0
+    for line in doc.split("\n"):
+        f = re.match(r"^ {0,3}(`{3,}(?=[^`]*$)|~{3,})", line)
+        if fence is None and f:
+            fence = f.group(1)
+        elif fence is not None:
+            c = re.match(r"^ {0,3}(`{3,}|~{3,})[ \t]*$", line)
+            if c and c.group(1)[0] == fence[0] and len(c.group(1)) >= len(fence):
+                fence = None
+        else:
+            m = HEADING.match(line)
+            if m:
+                text = re.sub(r"(?:^|[ \t])#+$", "", m.group(2).strip()).strip()
+                marks.append((at, len(m.group(1)), text))
+        at += len(line) + 1
+    return marks
+
+
+def skipped_spans(doc, headings):
+    """Return [start, end) spans from each heading whose text is in headings to the end."""
+    return [(start, len(doc)) for start, _, text in headings_of(doc) if text in headings]
+
+
+def find_outside(doc, old, spans):
+    """Start offsets of old in doc, overlapping ones included, none in a skipped span."""
+    found, at = [], doc.find(old)
+    while at != -1:
+        if not any(at < e and at + len(old) > s for s, e in spans):
+            found.append(at)
+        at = doc.find(old, at + 1)
+    return found
+
+
 def main(argv):
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    flags = {a for a in argv if a.startswith("--")}
-    unknown = flags - {"--dry-run", "--partial"}
+    skip, args, flags = set(), [], set()
+    i = 0
+    while i < len(argv):
+        a = argv[i]
+        if a == "--skip-section":
+            if i + 1 >= len(argv) or not argv[i + 1].strip():
+                print("--skip-section needs a heading")
+                return 2
+            skip.add(argv[i + 1].strip())
+            i += 2
+            continue
+        if a.startswith("--"):
+            flags.add(a)
+        else:
+            args.append(a)
+        i += 1
+    unknown = flags - {"--dry-run", "--partial", "--anchor"}
     if unknown:
         print("unknown option:", ", ".join(sorted(unknown)))
         return 2
     dry = "--dry-run" in flags
     partial = "--partial" in flags
-    args = [a for a in argv if not a.startswith("--")]
+    anchor = "--anchor" in flags
     if len(args) < 2:
         print(__doc__)
         return 2
@@ -153,39 +222,50 @@ def main(argv):
     crlf = {p: 0 < s.count("\r\n") == s.count("\n") for p, s in raw.items()}
     docs = {p: s.replace("\r\n", "\n") for p, s in raw.items()}
     doc_lines = {p: s.split("\n") for p, s in docs.items()}
+    first = args[1]
+    for h in sorted(skip):
+        if not any(text == h for d in docs.values() for _, _, text in headings_of(d)):
+            print(f"--skip-section {h!r}: no document has a heading with that text")
+            return 2
     errors, report, warnings = [], [], []
     for name, kind, lineno, old, new in edits:
         if not old:
             errors.append(f"{name}: empty old text")
+            report.append(f"{name}: not applied")
             continue
         if kind == "sweep" and not any(1 <= lineno <= len(ls) and old in ls[lineno - 1]
                                        for ls in doc_lines.values()):
             warnings.append(f"{name}: old text is not on line {lineno} of any document; applied where it is unique")
-        hit, miss = [], []
+        hit, miss, mine = [], [], []
         for p in docs:
-            n = docs[p].count(old)
-            if n == 1:
-                target = old
+            doc = docs[p]
+            found = find_outside(doc, old, skipped_spans(doc, skip))
+            if len(found) == 1:
+                start, end = found[0], found[0] + len(old)
                 if new == "":
                     if kind == "block":
-                        at = docs[p].index(old)
-                        if (at == 0 or docs[p][at - 1] == "\n") and docs[p].count(old + "\n") == 1:
-                            target = old + "\n"
-                    elif docs[p].count(" " + old) == 1:
-                        target = " " + old
-                docs[p] = docs[p].replace(target, new, 1)
+                        if (start == 0 or doc[start - 1] == "\n") and doc[end:end + 1] == "\n":
+                            end += 1
+                    elif start > 0 and doc[start - 1] == " ":
+                        start -= 1
+                docs[p] = doc[:start] + new + doc[end:]
                 hit.append(p)
-            elif n > 1:
-                errors.append(f"{name}: old text occurs {n} times in {p}")
+            elif len(found) > 1:
+                mine.append(f"old text occurs {len(found)} times in {p}")
             else:
                 miss.append(p)
-        if not hit and not any(e.startswith(name + ":") for e in errors):
-            errors.append(f"{name}: old text not found: {old[:80]!r}")
+        if anchor and first in miss:
+            mine.append(f"not found in {first}, the document the list was written against")
+        elif not hit and not mine:
+            mine.append(f"old text not found: {old[:80]!r}")
         elif miss and len(docs) > 1 and not partial:
-            errors.append(f"{name}: not found in {', '.join(miss)} (use --partial to allow)")
+            mine.append(f"not found in {', '.join(miss)} (use --partial to allow)")
+        if mine:
+            errors.append(f"{name}: " + "; ".join(mine))
         report.append(f"{name}: {'applied to ' + ', '.join(hit) if hit else 'not applied'}"
                       + (f"; not found in {', '.join(miss)}" if hit and miss else ""))
     if errors:
+        print("\n".join(report))
         print("\n".join(errors))
         print(f"{len(errors)} problems in {len(edits)} edits; nothing was changed")
         return 1

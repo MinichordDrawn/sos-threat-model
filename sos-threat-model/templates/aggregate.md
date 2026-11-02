@@ -84,7 +84,7 @@ floor, the trust boundaries. One page.»
 
 ### Group «X»: chains inside «package»
 
-## Part C2: Candidates tested and rejected at the seams
+## Part C2: Rejections and dropped chains of the run
 
 ## Part D: Impact across the stack
 

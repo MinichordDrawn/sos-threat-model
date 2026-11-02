@@ -57,6 +57,7 @@ describes the system in scope.
 LICENSE                          CC BY 4.0 for the documents, MIT for the scripts
 images/                          the figure above
 examples/chernobyl/              a finished run on a document: Chernobyl Unit 4 from INSAG-7
+sos-rule-cases/                  abstract cases and answer keys for checking rule changes
 sos-threat-model/                an agent skill (SKILL.md is the entry point)
   LICENSE                        a copy, so the licence travels with the skill
   SKILL.md                       what the skill does, what to read, the sequence
@@ -144,4 +145,5 @@ unchanged under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 Free to use, share and adapt, with credit: "SOS: Threat Modeling For Self-Observing
 Systems, by Alexandra Thaler". The documents are under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the scripts under the MIT
-licence; the figure keeps its own CC BY-SA 4.0 licence. See [LICENSE](LICENSE).
+licence; the figure keeps its own CC BY-SA 4.0 licence. Quotations from other works stay
+their owners'. See [LICENSE](LICENSE).

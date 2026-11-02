@@ -21,7 +21,7 @@ not settle is marked not settled by the document. The source and its extracted t
 not shipped with this document. The script `rebuild-source.sh`, published with it,
 downloads the PDF from the address above, checks its SHA-256, extracts the text with the
 same tool and options, and checks the text's SHA-256, so every citation can be checked
-against the same bytes.
+against the same bytes. Quotations from INSAG-7 are © IAEA 1992, cited for review.
 
 **The document's bodies.** INSAG-7 holds several bodies by different authors, and each
 citation is read as that kind of statement: the front matter and the Director General's

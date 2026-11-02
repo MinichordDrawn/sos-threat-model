@@ -1,4 +1,6 @@
 #!/bin/sh
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Alexandra Thaler. Part of SOS: Threat Modeling For Self-Observing Systems.
 # Rebuild the page-marked text every citation in chernobyl-threat-model.md and
 # chernobyl-threat-model-standalone.md is written against.
 #
