@@ -96,7 +96,7 @@ in the run-state file. Never skip a verification pass to save time.
 | 3 Verify | verifier | 1, 2 | `scratch/<t>-verified.md` |
 | 4 Chain hunt | breadth | 1, 2, 3 | `scratch/<t>-chains.md` |
 | 5 Chain verify | verifier | 3, 4 | `scratch/<t>-chains-verified.md` |
-| Assembly | verifier | 1, 3, 5 | `output/<t>-threat-model.md` and the standalone copy |
+| Assembly | verifier | 1, 3, 5, and 4 for wording only | `output/<t>-threat-model.md` and the standalone copy |
 | 6 Final sweep | verifier | the standalone copy, the deliverable's introduction and where the dry run sends it | `scratch/final-sweep.md`, `scratch/final-sweep-deliverable.md` |
 
 ### Pass 1. Ring map
@@ -352,11 +352,11 @@ together, the standalone copy first:
 
     python <kit>/scripts/apply_edits.py <target>/scratch/final-sweep.md <target>/output/<t>-threat-model-standalone.md <target>/output/<t>-threat-model.md --partial --anchor --skip-section "Change note"
 
-`--anchor` stops any correction the standalone copy does not hold; `--partial` lets one
-land in the standalone only, where the two documents differ (the self-contained
-introduction, the model in brief, the Keys, Part E and Part F); `--skip-section` keeps the
-deliverable's change note out of every match. `final-sweep.md` is never edited. In this
-order:
+`--anchor` stops any correction the standalone copy does not hold; `--partial` lets one land
+in the standalone only, where the two documents differ (the self-contained introduction, the
+model in brief, the Keys, Part E and Part F, and any shared passage the standalone build
+reworded); `--skip-section` keeps the deliverable's change note out of every match.
+`final-sweep.md` is never edited. In this order:
 
 1. **The list.** Keep a copy of both documents in `scratch/`, then a dry run, then the run
    that applies it, then a dry run of `scratch/final-sweep-deliverable.md`, where there is
@@ -364,12 +364,13 @@ order:
    documents from the copies kept and send the sweep both lists and the report; nothing
    goes further until both lists run clean in this order.
 2. **The deliverable alone.** For each correction the report shows reaching the standalone
-   only, the orchestrator confirms the old text itself (not the lines a block ran onto)
-   sits in a standalone-only section of the copy kept; where it does not, the
-   deliverable's version goes to `scratch/final-sweep-fixes.md` as a CURRENT/REPLACEMENT
-   block that occurs once in the deliverable outside its change note. That file, and the
-   sweep's `scratch/final-sweep-deliverable.md` where there is one, are each dry-run and
-   applied to the deliverable alone, with LIST the file's path:
+   only, the orchestrator confirms the old text itself (not the lines a block ran onto) sits
+   in a standalone-only section of the copy kept (a shared passage the standalone build
+   reworded is not one); where it does not, the deliverable's version goes to
+   `scratch/final-sweep-fixes.md` as a CURRENT/REPLACEMENT block that occurs once in the
+   deliverable outside its change note. That file, and the sweep's
+   `scratch/final-sweep-deliverable.md` where there is one, are each dry-run and applied to
+   the deliverable alone, with LIST the file's path:
 
        python <kit>/scripts/apply_edits.py LIST <target>/output/<t>-threat-model.md --skip-section "Change note"
 

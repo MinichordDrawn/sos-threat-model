@@ -51,7 +51,10 @@ web sources only where this prompt says so.
 
 Write every citation as its own backticked span, one file per span: `path/file.go:12`,
 `path/file.go:12-30`, or with a tree prefix `PFX: path/file.go:12`. A later `:40` continues
-the last path named in the same paragraph or table row.
+the last path named in the same paragraph or table row. Cite only the evidence that way:
+refer to an earlier pass file's rows by their ids and its sections by their headings, in
+prose, never as a backticked span, since a pass file is not evidence and the resolver counts
+such a citation as bad.
 
 Four rules, binding:
 - Work only from source you open. Every claim needs a file and line you looked at. Do not

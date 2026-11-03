@@ -27,9 +27,11 @@ passes are done, which output files exist, which models ran each pass, what runs
 `scratch/run-state.md` as each pass finishes. It is the one file in `scratch/` the
 orchestrator edits by hand.
 
-Paste lists from one pass into the next prompt by script (cut the section between its
-headings), never by hand: on one calibration run a hand paste cut an unconfirmed item
-short, and the pass had to recover it from the earlier file.
+A constraint the brief adds that the kit does not have (a rule against naming persons, say)
+goes into every step's prompt, the sweep's included. Paste lists from one pass into the next
+prompt by script (cut the section between its headings), never by hand: on one calibration
+run a hand paste cut an unconfirmed item short, and the pass had to recover it from the
+earlier file.
 
 ## Write output in sections
 
@@ -66,8 +68,10 @@ output file.
 
 ## Expect early hand-backs
 
-Long reviews and sweeps sometimes hand back before their own helpers finish. Resume them
-and ask for the rest; apply any partial edit list first.
+Long reviews and sweeps sometimes hand back before their own helpers finish. Resume them and
+ask for the rest; apply any partial edit list first. An orchestrator can hand back early
+too, at times saying it was told to stop where nothing told it to: resume it with the
+brief's finish condition.
 
 ## Apply edits by script
 

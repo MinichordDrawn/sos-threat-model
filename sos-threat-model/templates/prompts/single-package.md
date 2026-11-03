@@ -694,7 +694,10 @@ rows; additions to existing rows; reach-back corrections; open questions.
 Additional reading: `«KIT»/templates/threat-model.md` for the section order and fixed
 wording only (nothing else from it may appear in the output), then
 `«WORK»/scratch/«T»-verified.md`, `«WORK»/scratch/«T»-chains-verified.md`, and
-`«WORK»/scratch/«T»-ring-map.md` for the observer inventory. Do not edit the scratch files.
+`«WORK»/scratch/«T»-ring-map.md` for the observer inventory, and
+`«WORK»/scratch/«T»-chains.md` only to copy, by script, the wording of unconfirmed items it
+defines that the chain verification confirms by id, keeping every correction pass 5 makes to
+them. Do not edit the scratch files.
 
 1. Apply every correction pass 5 lists as reaching back into the pass 3 file, and every
    addition it confirms to an existing row. Open the source line each one names, carry the
