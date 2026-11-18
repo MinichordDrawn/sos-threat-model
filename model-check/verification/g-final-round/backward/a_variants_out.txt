@@ -1,0 +1,9 @@
+variant hide_already_bad=False                        cases: 101  changed: 0
+variant substrate_enable_not_hidden=True              cases: 101  changed: 0
+variant boundary_two_alive=True                       cases: 101  changed: 0
+variant out_excludes_off=True                         cases: 101  changed: 0
+variant out_excludes_off+responded_excludes_off       cases: 101  changed: 0
+variant responded_excludes_off=True                   cases: 101  changed: 0
+variant gate_silence_delayed=True                     cases: 101  changed: 0
+variant slow_from_post_detection=True                 cases: 101  changed: 1
+    reflex-relayed-slow/f1: literal (None, 1) -> variant (None, None)

@@ -1,0 +1,8 @@
+E1: 2500 systems (1..4 monitors, one shared boundary), failures 0
+    (monitors, f, G1) histogram: [((1, '2+', 1), 430), ((1, 1, 1), 200), ((2, '2+', 1), 394), ((2, 1, 1), 202), ((2, 1, 2), 17), ((3, '2+', 1), 412), ((3, 1, 1), 186), ((3, 1, 2), 22), ((4, '2+', 1), 437), ((4, 1, 1), 178), ((4, 1, 2), 22)]
+E2: 2500 systems (window 1, gate true, works non-empty), failures 0
+E3: 2500 systems (gate false, works non-empty), failures 0
+E5 as stated: 2500 systems, failures 0
+E5 (any gate/window/slow_reports, halt_inputs may be empty): 2500 systems, failures 0
+E1 other reading (no monitor has a boundary): 18 of 2500 systems have G1 > 2 or null
+E2 other reading (joiner is the only work process): 876 of 2500 systems have G2 != 1, all with f = 1

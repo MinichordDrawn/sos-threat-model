@@ -1,0 +1,687 @@
+[
+ {
+  "id": "mesh4-one-boundary/f1",
+  "system": {
+   "name": "mesh of 4, all in one boundary",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 0,
+    "M3": 0,
+    "M4": 0
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3-ring-boundaries/f1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, each base ring in one boundary",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": "A",
+    "A2": "A",
+    "A3": "A",
+    "KA": "A",
+    "B1": "B",
+    "B2": "B",
+    "B3": "B",
+    "KB": "B",
+    "U3": "U3"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-gate/f1",
+  "system": {
+   "name": "R without gate",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": false,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "reflex-direct-instant/f1",
+  "system": {
+   "name": "work halted by its own checker, reports arrive at once",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "reflex-direct-slow/f1",
+  "system": {
+   "name": "work halted by its own checker, reports take a round",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": true
+  }
+ },
+ {
+  "id": "reflex-relayed-instant/f1",
+  "system": {
+   "name": "work halted by other monitors only, reports arrive at once",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "reflex-relayed-slow/f1",
+  "system": {
+   "name": "work halted by other monitors only, reports take a round",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": true
+  }
+ }
+]

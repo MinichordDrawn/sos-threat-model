@@ -1,0 +1,205 @@
+============================== README.md 401
+--- em dash / en dash: 8
+      36: [--] |---|---|
+      36: [--] |---|---|
+      85: [--] |---|---|---|---|
+      85: [--] |---|---|---|---|
+      85: [--] |---|---|---|---|
+      85: [--] |---|---|---|---|
+     320: [--] |---|---|
+     320: [--] |---|---|
+--- in order to: 0
+--- starts This is / That is: 0
+--- filler: 0
+--- first person: 0
+--- qualifier: 2
+      15: [kind of] Under the four constraints, and against every kind of fault in the model, a system that has
+      17: [kind of] none of the eight can be removed. No kind of fault was found that the eight do not answer.
+--- history word: 1
+     221: [replaced] scripts and reports were replaced by paths relative to each file. The files that hold the
+--- ALL CAPS: 13
+     106: [TLC] model checker is a widely used tool for it, such as TLC for the TLA+ language.
+     106: [TLA] model checker is a widely used tool for it, such as TLC for the TLA+ language.
+     170: [TLA] two tiers. Nor did the TLA+ module or the comparison with the implementation. All of
+     207: [TODO] were applied. A fourth agent swept the corrected documents (TODO-SWEEP counts).
+     207: [SWEEP] were applied. A fourth agent swept the corrected documents (TODO-SWEEP counts).
+     312: [TLC] - **TLC.** The TLA+ module was traced by hand and against a copy in the checker. It has not
+     312: [TLA] - **TLC.** The TLA+ module was traced by hand and against a copy in the checker. It has not
+     313: [TLA] been run through a model checker for TLA+.
+     388: [SPEC] specification is `observers/SPEC.md`);
+     400: [TLA] code and the TLA+ module under the MIT licence. See [LICENSE](../LICENSE).
+     400: [MIT] code and the TLA+ module under the MIT licence. See [LICENSE](../LICENSE).
+     400: [LICENSE] code and the TLA+ module under the MIT licence. See [LICENSE](../LICENSE).
+     400: [LICENSE] code and the TLA+ module under the MIT licence. See [LICENSE](../LICENSE).
+--- mirror: not X ... It is: 0
+--- not X but Y / not only: 2
+     340: [not only] 1. **Share the whole dependency set, not only the compute.** Put the observer on
+     348: [not only] 3. **Check for the ability to remove an observer, not only for its removal.** Verifying
+--- exclamation / question: 0
+--- passive (candidates): 62
+--- non-ASCII: {}
+--- TODO-SWEEP lines: [207]
+============================== results.md 1505
+--- em dash / en dash: 93
+     122: [--] |---|---|
+     122: [--] |---|---|
+     152: [--] |---|---|---|
+     152: [--] |---|---|---|
+     152: [--] |---|---|---|
+     223: [--] |---|---|
+     223: [--] |---|---|
+     307: [--] |---|---|
+     307: [--] |---|---|
+     317: [--] |---|---|---|
+     317: [--] |---|---|---|
+     317: [--] |---|---|---|
+     337: [--] |---|---|---|
+     337: [--] |---|---|---|
+     337: [--] |---|---|---|
+     375: [--] |---|---|---|
+     375: [--] |---|---|---|
+     375: [--] |---|---|---|
+     425: [--] |---|---|---|
+     425: [--] |---|---|---|
+     425: [--] |---|---|---|
+     449: [--] |---|---|---|
+     449: [--] |---|---|---|
+     449: [--] |---|---|---|
+     497: [--] |---|---|---|
+     497: [--] |---|---|---|
+     497: [--] |---|---|---|
+     515: [--] |---|---|---|
+     515: [--] |---|---|---|
+     515: [--] |---|---|---|
+     546: [--] |---|---|---|
+     546: [--] |---|---|---|
+     546: [--] |---|---|---|
+     570: [--] |---|---|---|
+     570: [--] |---|---|---|
+     570: [--] |---|---|---|
+     586: [--] |---|---|---|
+     586: [--] |---|---|---|
+     586: [--] |---|---|---|
+     602: [--] |---|---|---|
+     602: [--] |---|---|---|
+     602: [--] |---|---|---|
+     620: [--] |---|---|---|
+     620: [--] |---|---|---|
+     620: [--] |---|---|---|
+     637: [--] |---|---|---|
+     637: [--] |---|---|---|
+     637: [--] |---|---|---|
+     668: [--] |---|---|---|---|---|
+     668: [--] |---|---|---|---|---|
+     668: [--] |---|---|---|---|---|
+     668: [--] |---|---|---|---|---|
+     668: [--] |---|---|---|---|---|
+     719: [--] |---|---|---|
+     719: [--] |---|---|---|
+     719: [--] |---|---|---|
+     750: [--] |---|---|---|
+     750: [--] |---|---|---|
+     750: [--] |---|---|---|
+     878: [--] |---|---|---|---|---|---|
+     878: [--] |---|---|---|---|---|---|
+     878: [--] |---|---|---|---|---|---|
+     878: [--] |---|---|---|---|---|---|
+     878: [--] |---|---|---|---|---|---|
+     878: [--] |---|---|---|---|---|---|
+     956: [--] |---|---|
+     956: [--] |---|---|
+     996: [--] |---|---|---|
+     996: [--] |---|---|---|
+     996: [--] |---|---|---|
+    1088: [--] |---|---|
+    1088: [--] |---|---|
+    1164: [--] |---|---|---|
+    1164: [--] |---|---|---|
+    1164: [--] |---|---|---|
+    1249: [--] |---|---|
+    1249: [--] |---|---|
+    1273: [--] |---|---|---|
+    1273: [--] |---|---|---|
+    1273: [--] |---|---|---|
+    1316: [--] |---|---|---|---|
+    1316: [--] |---|---|---|---|
+    1316: [--] |---|---|---|---|
+    1316: [--] |---|---|---|---|
+    1383: [--] |---|---|
+    1383: [--] |---|---|
+    1430: [--] |---|---|---|---|
+    1430: [--] |---|---|---|---|
+    1430: [--] |---|---|---|---|
+    1430: [--] |---|---|---|---|
+    1490: [--] |---|---|
+    1490: [--] |---|---|
+    1502: [--] gigabytes of memory at its peak). Add `--traces` to print the ten executions of section 6
+--- in order to: 0
+--- starts This is / That is: 0
+--- filler: 3
+     676: [very] | P8 Immediate response | G2 | checked; proved for every system with a window | definition | the window is the very step G2 forbids; see section 8 |
+    1376: [fundamentally] *An additional constraint that produces a fundamentally different fixed point.*
+    1451: [key] joiner, and a missing key. The verdict table carries B's label for each of the nine
+--- first person: 1
+    1501: [I] To rerun: `python -I check_model.py` (Python 3.9 or later; several minutes, and about two
+--- qualifier: 7
+      21: [kind of] **The result.** Under the four constraints, and against every kind of fault in the model,
+      23: [kind of] has no gap, and none of the eight can be removed. No kind of fault was found that the eight
+     661: [kind of] Each removal but the gate carries two labels. The first is the kind of evidence, in the
+    1252: [kind of] | No kind of fault is missing from the list | building real systems and trying to break them |
+    1257: [kind of] here asks for proof of a negative, such as that some kind of fault never occurs; the third
+    1300: [might] the work to read every monitor that might detect. At scale, reading every flag before each
+    1392: [kind of] never the kind of structure.
+--- history word: 0
+--- ALL CAPS: 40
+     798: [TLA] ## 9. P1 in TLA+
+     870: [TRUE] **With `HB = TRUE` and `Mon = {m1, m2}`** the invariant holds. To reach a bad state with no
+     875: [FALSE] **With `HB = FALSE`** the invariant fails. The shortest trace:
+     892: [TLC] The module has not been run through TLC. The trace was produced by hand and checked
+     894: [TRUE] states with `HB = TRUE`, all satisfying the invariant, and the seven-state trace above with
+     895: [FALSE] `HB = FALSE`.
+     957: [README] | Four monitors, all pairs watching, one work process reading all four. Both implementations build this ring: three members and a coordinator, every m
+     957: [SPEC] | Four monitors, all pairs watching, one work process reading all four. Both implementations build this ring: three members and a coordinator, every m
+     957: [README] | Four monitors, all pairs watching, one work process reading all four. Both implementations build this ring: three members and a coordinator, every m
+     969: [SPEC] as the coordinator's signal (`observers/SPEC.md:818-834`;
+    1115: [SPEC] reading every other member (`observers/SPEC.md:28`, `:544`), so the game's "stopped" is
+    1123: [SPEC] (`observers/SPEC.md:556`).
+    1159: [SPEC] specification, `observers/SPEC.md`. Citations in this note are to the ghostunnel
+    1165: [SPEC] | a round | one cycle; a change that lands after the first read of a path within a cycle is judged by the next cycle's first read, "a latency of at mo
+    1166: [SPEC] | signal read | `member-fresh`: a heartbeat must change within the staleness bound (`observers/SPEC.md:358`, `:375`) | all pairs (`:28`) |
+    1167: [SPEC] | state check | `copy-current` (`observers/SPEC.md:403`), `binary-expected` (`:713`) and others: current state against a reference | |
+    1168: [SPEC] | state check of a monitor by a monitor | `surface-disagree`: each member recomputes another's published result (`observers/SPEC.md:673`) | the check 
+    1169: [SPEC] | not modelled | history checks: hash chains and a trace that may only grow (I1, I3, I4, `observers/SPEC.md:451-462`; `trace-consistent`, `:674`) | th
+    1170: [SPEC] | reports | the finder writes its halt into every other member's store; the others relay next cycle (`observers/SPEC.md:531-548`) | direct to all thre
+    1171: [SPEC] | halt inputs | the gate reads every member's `halt`, `fault` and `halts/`, and the coordinator's heartbeat (`observers/SPEC.md:818-834`) | the reflex
+    1172: [SPEC] | the gate | "Permission requires both … read and found clean" (`observers/SPEC.md:899`); the proxy "starts, and refuses visibly" (`:872`) | stopped b
+    1173: [SPEC] | the response | refuses, and closes every connection in flight (`observers/SPEC.md:820`) | an action as well as a stop |
+    1174: [SPEC] | the model ends here | the clear protocol (`observers/SPEC.md:554-568`): "Detection is unilateral, recovery is agreed" (`:568`) | the coordinator cle
+    1175: [SPEC] | boundaries | five operating-system users, the proxy and each of the four members (`observers/SPEC.md:15`, `:890`); one store per member and one writ
+    1176: [SPEC] | shared substrate | the proxy and its observers run on the one host (`observers/SPEC.md:911`) | losing the host stops both, which is P2's second face
+    1177: [SPEC] | P7 | members are declared, not discovered; a declared member with no store halts the ring (`observers/SPEC.md:266`) | for monitors, absence is made 
+    1184: [SPEC] is gone (`observers/SPEC.md:554-558`). None of them clears while it is lost, because its
+    1187: [README] and it watches no work of its own (`observers/README.md:18`, `:22`).
+    1191: [SPEC] was put back afterwards (I1, `observers/SPEC.md:451-454`; `trace-consistent`, `:674`).
+    1199: [SPEC] cannot establish from inside (`observers/SPEC.md:911`).
+    1436: [README] | Final round, forwards | this note, the README and the folder | checked every claim against the folder, from the first section to the last, and ran t
+    1439: [README] | Final round, sweep | the corrected note and README, and the folder | TODO-SWEEP | TODO-SWEEP |
+    1439: [TODO] | Final round, sweep | the corrected note and README, and the folder | TODO-SWEEP | TODO-SWEEP |
+    1439: [SWEEP] | Final round, sweep | the corrected note and README, and the folder | TODO-SWEEP | TODO-SWEEP |
+    1439: [TODO] | Final round, sweep | the corrected note and README, and the folder | TODO-SWEEP | TODO-SWEEP |
+    1439: [SWEEP] | Final round, sweep | the corrected note and README, and the folder | TODO-SWEEP | TODO-SWEEP |
+    1479: [TLA] - The TLA+ module of section 9 has not been run through TLC.
+    1479: [TLC] - The TLA+ module of section 9 has not been run through TLC.
+    1491: [README] | `README.md` | what this folder is, the method, and what is and is not established |
+    1498: [TLA] | `Heartbeat.tla`, `Heartbeat.cfg` | the TLA+ module of section 9 |
+--- mirror: not X ... It is: 0
+--- not X but Y / not only: 1
+     737: [not only] fault record, not only a relayed one.
+--- exclamation / question: 4
+       4: [?] and removing any one opens a gap" be proved, and can the ring structure be derived from it?
+     902: [?] ### 10.1 Is the structure sufficient?
+     988: [?] ### 10.2 Are three monitors and a coordinator forced?
+    1132: [?] ### 10.4 Is the structure unique?
+--- passive (candidates): 229
+--- non-ASCII: {'U+220E ∎': [935, 1079], 'U+2026 …': [1172]}
+--- TODO-SWEEP lines: [1439]

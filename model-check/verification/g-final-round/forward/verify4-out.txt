@@ -1,0 +1,26 @@
+2 monitors: 1024 systems, 12 with no gap; fails {'Q1': 0, 'Q1f': 0, 'Q3': 0, 'Q4': 9, 'Q4r': 0, 'Q8': 0} stays {'Q1': 0, 'Q1f': 0, 'Q3': 0, 'Q4': 9, 'Q4r': 0, 'Q8': 0}
+3 monitors: 4890 systems, 1721 with no gap; fails {'Q1': 103, 'Q1f': 23, 'Q3': 0, 'Q4': 378, 'Q4r': 32, 'Q8': 0} stays {'Q1': 22, 'Q1f': 0, 'Q3': 0, 'Q4': 280, 'Q4r': 9, 'Q8': 0}
+totals: no gap 1733 fails {'Q1': 103, 'Q1f': 23, 'Q3': 0, 'Q4': 387, 'Q4r': 32, 'Q8': 0} stays {'Q1': 22, 'Q1f': 0, 'Q3': 0, 'Q4': 289, 'Q4r': 9, 'Q8': 0}
+systems where Q4 stays failed: 289
+  of which have no report edge at all: 3
+  of which have a gap once every report edge is removed (a flag does have to travel): 46
+   example: {'hb_readers': {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M2']}, 'checkers': {'M1': ['M2'], 'M2': ['M1'], 'M3': ['M1', 'M2'], 'W': ['M1', 'M2', 'M3']}, 'fwd': {'M1': ['M2', 'M3'], 'M2': ['M3'], 'M3': ['M2']}, 'halt_inputs': {'W': ['M2', 'M3']}}
+    without reports, shortest G1
+      round 1: env: mutate M2
+               bad: M2 | flagged: M1 | halted: - | worked: W   <-- breaks G2
+      round 2: env: mutate M1
+               bad: M1 M2 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    without reports, shortest G2
+      round 1: env: mutate M2
+               bad: M2 | flagged: M1 | halted: - | worked: W   <-- breaks G2
+   example: {'hb_readers': {'M1': ['M2'], 'M2': ['M3'], 'M3': ['M2']}, 'checkers': {'M1': ['M2', 'M3'], 'M2': ['M1'], 'M3': ['M1'], 'W': ['M2']}, 'fwd': {'M1': ['M2', 'M3'], 'M2': [], 'M3': ['M1', 'M2']}, 'halt_inputs': {'W': ['M2', 'M3']}}
+    without reports, shortest G1
+      round 1: env: mutate M2
+               bad: M2 | flagged: M1 | halted: - | worked: W   <-- breaks G2
+      round 2: env: stop M1
+               bad: M2 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    without reports, shortest G2
+      round 1: env: mutate M2
+               bad: M2 | flagged: M1 | halted: - | worked: W   <-- breaks G2
+systems where Q4r stays failed: 9
+seconds 13.3

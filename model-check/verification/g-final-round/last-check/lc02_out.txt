@@ -1,0 +1,42 @@
+== A. The table of four rings
+  ring of 3: script -> ['stop X1', 'release X1'] (5 states); own implementation: always restarts = False (5 states)
+  mesh of 3: script -> ['stop X1', 'release X1', 'stop X2', 'release X2'] (14 states); own implementation: always restarts = False (14 states)
+  3 + K, K can start first: script -> None (45 states); own implementation: always restarts = True (45 states)
+  3 + K, K cannot: script -> ['stop X1', 'release X1', 'stop K', 'release K'] (36 states); own implementation: always restarts = False (36 states)
+  ring of 3, states reached: [([], []), ([], ['X1']), ([], ['X2']), ([], ['X3']), (['X1', 'X2', 'X3'], [])]
+
+== B. Every graph of 3 and of 4 members, the member that can start first fixed
+  size 3, no self-observation: 64 graphs; statement holds on 64; exceptions 0; script and own implementation differ on 0
+  size 4, no self-observation: 4096 graphs; statement holds on 4096; exceptions 0; script and own implementation differ on 0
+
+== C. The same with every choice of the starting member, and with self-observation
+  size 3, self-observation excluded, 3 choice(s) of starter: 192 cases; statement holds on 192; script and own implementation differ on 0
+  size 3, self-observation allowed, 3 choice(s) of starter: 1536 cases; statement holds on 1536; script and own implementation differ on 0
+  size 4, self-observation excluded, 4 choice(s) of starter: 16384 cases; statement holds on 16384; script and own implementation differ on 0
+  size 4, self-observation allowed, 1 choice(s) of starter: 65536 cases; statement holds on 65536; script and own implementation differ on 0
+
+== D. Random graphs of 5 and 6 members
+  size 5: 4000 random graphs; statement holds and implementations agree on 4000
+  size 6: 1500 random graphs; statement holds and implementations agree on 1500
+
+== E. The proof, step by step, on every graph of 3 and 4 members
+  size 3: first half applies to 32 graphs, fails on 0 states; second half applies to 32 graphs, fails on 0; 'every observer of a member of U is in U' fails on 0
+           graphs where no chain leads from K back to K: 32; graphs where some other member has no observer: 28
+  size 4: first half applies to 2432 graphs, fails on 0 states; second half applies to 1664 graphs, fails on 0; 'every observer of a member of U is in U' fails on 0
+           graphs where no chain leads from K back to K: 1200; graphs where some other member has no observer: 1352
+
+== F. If U is read literally as 'the members K does not reach', K included
+  example 1: {'K': ['X1'], 'X1': ['K'], 'X2': []} reached from K: ['K', 'X1']
+  example 2: {'K': ['X1'], 'X1': [], 'X2': ['K']} reached from K: ['X2'] U read literally: ['K', 'X1']
+    observers of members of U outside U: [] | K can start in every state: True
+
+== G. The round model's rule (a member stops when any one observer is silent)
+  3 + K, K can start first: game's rule (at least one observer running) -> always restarts True; 'every observer running' rule -> always restarts False
+  mesh of 3 plus K observing all, K can start first: game's rule (at least one observer running) -> always restarts True; 'every observer running' rule -> always restarts False
+  star: K observes each, nobody else observes: game's rule (at least one observer running) -> always restarts True; 'every observer running' rule -> always restarts True
+
+== H. No member can start first: 3 members
+  graphs that can always restart: 0 of 64
+
+== I. Two members that can start first (outside the statement, which assumes one)
+   {'A': [], 'B': [], 'X': ['A'], 'Y': ['B']} starters A and B -> stuck: None | A reaches: ['X']

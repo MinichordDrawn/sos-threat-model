@@ -1,0 +1,34 @@
+== A. Census, two monitors
+  systems generated: 1024 distinct: 1024
+  all plain: True | f values: {1} | work processes: {('W',)}
+  any monitor in its own hb_readers/checkers/fwd list: False
+
+== B. Census, three monitors: the 6,000 draws
+  draws: 6000 distinct: 4890
+  all plain: True | f values: {1}
+  uniform draws: 3000 | mesh draws: 3000 | edges in the full mesh: 24
+  edges removed from the mesh, values seen: [0, 1, 2, 3, 4, 5, 6]
+  mean edges in a uniform draw: 12.00
+  distinct among uniform draws: 3000 | distinct among mesh draws: 1890
+  mesh draws in which an entry of the work process's checkers or halt inputs was removed: 1540
+
+== C. Which section 3.2 predicates can fail in a plain system
+  systems where the P6 predicate equals 'every signal is read by another monitor': 7024 of 7024
+  systems where the P6 predicate fails: 2676
+
+== D. Theorem S without 'one fault per round'
+  mesh of 2, f=1: plain True, conditions (a)-(d) True, G1 None, G2 None
+  mesh of 2, f=2: plain True, conditions (a)-(d) True, G1 1, G2 1
+  mesh of 2, f=3: plain True, conditions (a)-(d) True, G1 1, G2 1
+  mesh of 3, f=1: plain True, conditions (a)-(d) True, G1 None, G2 None
+  mesh of 3, f=2: plain True, conditions (a)-(d) True, G1 None, G2 None
+  mesh of 3, f=3: plain True, conditions (a)-(d) True, G1 1, G2 1
+
+== E. Pass A's results against results.json
+  cases in results.json: 103 | cases in pass A's two files: 101
+  ids in both: 101 | differing results: []
+  ids only in results.json: ['mesh3-unread-M3/f1', 'mesh3-unread-M3/f2']
+  systems-all.json entries: 103 | keys of an entry: ['id', 'system'] | same ids and order as results.json: True
+
+== F. Counts quoted from run-output.txt
+  one-edge removals: 55 | of which break a judgement: 23

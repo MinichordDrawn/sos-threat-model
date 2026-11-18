@@ -1,0 +1,21 @@
+﻿n: 4
+k: 1
+labelled_systems_total_no_self_loops: 17592186044416
+(hb_readers,fwd) pairs visited over the halt-input shapes: 83886080
+labelled_triples_covered: 268435456
+feasible_triples_labelled: 159567872
+per_halt_input_size(unweighted): {'0': {'feasible_triples': 0, 'gap_free': 0, 'no_spare': 0}, '1': {'feasible_triples': 0, 'gap_free': 0, 'no_spare': 0}, '2': {'feasible_triples': 14467072, 'gap_free': 290694108032, 'no_spare': 103777264512}, '3': {'feasible_triples': 14553088, 'gap_free': 392980306944, 'no_spare': 65701872128}, '4': {'feasible_triples': 14553088, 'gap_free': 437255467008, 'no_spare': 38952673280}}
+gap_free_labelled: 3753341342976
+gap_free_by_failing_predicates: {'none': 1345935267930, 'Q1': 308247722424, 'Q4': 1693234035366, 'Q1+Q4': 405924317256}
+triples_where_an_empty_checker_list_is_allowed(Q3): 0
+feasible_triples_with_fewer_than_two_halt_inputs(Q8): 0
+gap_free_with_empty_fwd: 493015245
+no_spare_labelled: 924423748864
+no_spare_by_failing_predicates: {'none': 385722806764, 'Q1': 69543215544, 'Q4': 389452892436, 'Q1+Q4': 79704834120}
+no_spare_with_empty_fwd: 61709704
+no_spare_by_number_of_readerless_monitors: {0: 775175699200, 1: 147332582400, 2: 1915467264}
+no_spare_with_readerless_monitor_outside_halt_inputs: 0
+seconds: 144.5
+no-spare falsifiers failing Q1: min edges 13, 1 classes at that size
+no-spare falsifiers failing Q4: min edges 11, 56 classes at that size
+no-spare falsifiers failing Q1+Q4: min edges 11, 13 classes at that size

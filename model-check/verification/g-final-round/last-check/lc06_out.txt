@@ -1,0 +1,108 @@
+==== results.md: 285 changed or added lines of 1596
+      4 [passive (candidate)] and removing any one opens a gap" be proved? And can the ring structure be derived from it?
+     19 [passive (candidate)] passage is marked.
+     25 [passive (candidate)] observation, has no gap at one fault per round, and none of the eight can be removed from
+     30 [qualifier] has a gap, because a detection there does not reach the work (section 6, P4). No kind of
+     31 [passive (candidate)] fault was found that the eight do not answer. The claim stands until one of the
+     32 [passive (candidate)] framework's falsification criteria is met (section 12).
+     47 [passive (candidate)] The eight properties are listed in section 3.1 and the two judgements, G1 and G2, in
+     49 [passive (candidate)] execution violates either judgement. A *tier* is the class of fault a system is built to
+     56 [passive (candidate)] one that is never flagged. Judged against "no impact", every property but P6 is needed.
+     81 [passive (candidate)] is covered by the others. The other half, that these kinds of fault exist, is asserted
+     90 [passive (candidate)] construction what the halt on silence does by a check: when a substrate is lost,
+    115 [passive (candidate)] starts first is watched like any member, and it checks the others before it moves
+    273 [passive (candidate)] then be violated in two rounds. Its work process still halts, because work that cannot
+    330 [passive (candidate)] | Emergent: the framework | each property, by what it does; the gate; the reflex and the cascade (section 8); a member that can start first, from whic
+    372 [passive (candidate)] monitor's silence, so it needs P1 to be read.
+    406 [casual] **Checked.** The reference system of the next section shows the same thing in two more
+    433 [passive (candidate)] monitor is left flagged, and G1 is broken. R is built for one fault per round.
+    437 [passive (candidate)] Each removal is made alone, with `f` = 1. The checker explored each removal in full and
+    465 [passive (candidate)] P2 has two faces. The model checks the first. The second is proved from two executions.
+    714 [passive (candidate)] - The gap exists in any system because of how the model is built. The kinds of fault were
+    715 [casual] written down first, and each property was then written as the thing that catches one of
+    728 [passive (candidate)] claim about the systems being modelled:
+    730 [passive (candidate)] - everything in one boundary can be lost together;
+    732 [passive (candidate)] - a fault keeps acting while a response is being weighed;
+    734 [passive (candidate)] These last two faults were introduced to express a property.
+    766 [passive (candidate)] Both implementations are wired this way: the gate reads every member's own fault record
+    767 [capitals] as well as a relayed one (`observers/SPEC.md:827`, `:831`;
+    820 [passive (candidate)] Two conditions come with this. Both are argued.
+    924 [passive (candidate)] **Checked,** on the checker's copy of the module. The module has not been run through TLC.
+    926 [capitals] module in `check_model.py`, which finds 8 reachable states with `HB = TRUE`, all
+    927 [capitals] satisfying the invariant, and the seven-state trace above with `HB = FALSE`.
+    990 [passive (candidate)] | Three monitors and a coordinator that reads the members' signals and flags and checks no state; work reads the coordinator and one member | neither 
+   1036 [passive (candidate)] | Recover without an outside hand | one member that can start first, from which every other member is reached along observation edges | proved, and ch
+   1101 [capitals] member keeps cycling and keeps reading every other member (`observers/SPEC.md:28`,
+   1103 [capitals] (`PR2: observers/README.md:94-95`).
+   1125 [passive (candidate)] In the first row the rule does what it is for: it stops whatever is left unobserved. The
+   1131 [passive (candidate)] that member is observed like any member and checks the others like any member: it starts
+   1135 [passive (candidate)] **Every other member must be reached from it. Proved.** Let K be the one member that can
+   1143 [history word] running. Now suppose some member is not reached, and let U be the set of members K does
+   1145 [passive (candidate)] that K reaches would be reached too. The environment stops every running member of U and
+   1164 [capitals] (`observers/SPEC.md:564`). The asymmetry the theorem forces is there: "Detection is
+   1165 [passive (candidate)] unilateral, recovery is agreed" (`:568`). The coordinator stands down first, and each other
+   1170 [capitals] (`observers/SPEC.md:556`). Those assertions cover every other member: its store is
+   1177 [passive (candidate)] members clears while the coordinator is lost, because its silence is a failing assertion
+   1224 [capitals] | boundaries | five operating-system users, the proxy and each of the four members (`observers/SPEC.md:15`, `:890`); one store per member and one writ
+   1225 [capitals] | shared substrate | the proxy and its observers run on the one host (`observers/SPEC.md:834`, `:911`) | losing the host stops both, which is P2's sec
+   1226 [capitals; passive (candidate)] | P7 | members are declared, not discovered; a declared member with no store halts the ring (`observers/SPEC.md:266`, `:364`) | for monitors, absence 
+   1284 [passive (candidate)] - **A finite check covers the system checked.** "Neither judgement can be violated" for a
+   1285 [passive (candidate)] named system means every reachable state of that system was explored. It carries to
+   1390 [passive (candidate)] of every monitor the system depends on. A bad state is flagged and stops the work in the
+   1402 [passive (candidate)] is narrower, and is stated above: the function of section 3.1 in a smaller form.
+   1470 [capitals; passive (candidate)] The gate's was added after B's pass. The final round was given this note and the README,
+   1477 [passive (candidate)] knew the conclusion being claimed.
+   1485 [passive (candidate)] | A, reimplementation | the specification and the cases | implemented the model from the specification alone and computed every case | identical on al
+   1490 [capitals] | Final round, forwards | this note, the README and the folder, as they stood before the correction | checked every claim against the folder, from the
+   1493 [capitals] | Final round, sweep | the corrected note and README, and the folder | checked every claim again, and every sentence against the writing rules; ran th
+   1494 [capitals] | Last check | the passages changed in answer to the sweep | TODO-LAST | TODO-LAST |
+   1502 [capitals] correction, when the README had 178 lines and this note 1,330. The correction added
+   1505 [history word] their names at the time, and give line numbers of the text before the correction.
+   1526 [passive (candidate)] good processes first is the worst order (section 8.2). The narrowed claims were given
+   1530 [passive (candidate)] - the interleaved rings were checked at one fault per round;
+   1533 [passive (candidate)] - two of the falsifier's five sizes were decided wiring by wiring;
+   1537 [passive (candidate)] The comparison of section 10.5 was given a citation for every line it relies on. The
+   1538 [passive (candidate)] reconciler left three points for the author, and each was settled from the two public
+   1543 [passive (candidate)] added: that every property is needed against "no impact" alone (P6 is the exception),
+   1547 [passive (candidate)] - the result at the head of section 1 is stated for the reference system and for
+   1552 [passive (candidate)] be reached from the member that starts first is proved there, and the sweep checked it
+   1556 [passive (candidate)] - the census of section 12.1 says how its systems were drawn.
+   1558 [qualifier; passive (candidate)] A fourth kind of evidence, argued, was added at the head of this note, and the passages
+   1559 [passive (candidate)] of that kind are marked. The sweep's entries on style and sense were applied, two of
+   1560 [capitals; passive (candidate)] them in part: the README keeps the wording "Four cases are provided here", and the
+   1595 [passive (candidate)] `systems-all.json` were made with `--json results.json --systems systems-all.json`.
+==== README.md: 146 changed or added lines of 466
+     15 [qualifier] Under the four constraints, and against every kind of fault in the model, a reference
+     17 [passive (candidate)] has no gap at one fault per round, and none of the eight can be removed from it without
+     22 [qualifier; passive (candidate)] there does not reach the work. No kind of fault was found that the eight do not answer.
+     39 [passive (candidate)] | P3 | State check | a state that goes bad without a sign is seen |
+     42 [passive (candidate)] | P6 | Out-of-boundary signal | an observer's loss is seen from somewhere that survives it |
+     47 [passive (candidate)] before any work is done, so work runs only on a current observation. The *halt fan-out*:
+     48 [passive (candidate)] work takes its halt from at least two observers, and a halt is passed on to at least two
+     58 [passive (candidate)] The structure does not ask why a state is bad. A bug shipped in a release is stopped the
+    134 [passive (candidate)] nothing about a larger one. The method is called model checking. TLC, for the TLA+
+    190 [passive (candidate)] monitor has flagged. Both are reported, because together they say which half failed. A
+    199 [passive (candidate)] up to the falsifier search. It was given only the artefacts: the specification, the
+    210 [passive (candidate)] A to F were given the artefacts to check and never the author's reasoning, expected
+    212 [passive (candidate)] schedules. The final round was given the two documents and the folder.
+    221 [passive (candidate)] four that were defects in its code were fixed. One, that the script does not validate
+    240 [passive (candidate)] further points. All of its rulings were applied, and some of the wordings it gave were
+    245 [passive (candidate)] corrections were applied, and a last agent checked the passages they changed
+    246 [capitals] (TODO-LAST). No pass found a result of the checker wrong: every correction was to the
+    250 [passive (candidate)] conclusion being claimed. The verifiers were independent of the reasoning here.
+    263 [passive (candidate)] hold the reports of passes A and B and of the final round say that they were saved from
+    305 [passive (candidate)] restart exactly when every other member is reached from that member, which was also
+    328 [passive (candidate)] monitors and one or two work processes was decided at one fault per round, one by one or
+    331 [passive (candidate)] by which a silence is read, and the edge by which a flag reaches the work, vary from
+    334 [casual] form was that it is false. Two things do not vary. Another monitor, or the work, reads the
+    335 [passive (candidate)] silence of every monitor the system depends on. A bad state is flagged and stops the work
+    353 [passive (candidate)] has not been run through a model checker for TLA+.
+    378 [passive (candidate)] by how the system is built, so that no check has to run for it.
+    406 [passive (candidate)] then it is not. While a ring is being built the system has gaps: some observers do not
+    414 [passive (candidate)] been watching for that change then make the switch, and the old observation is dropped
+    416 [passive (candidate)] redundancy and removes nothing. No member is left unobserved at any point. The model
+    418 [passive (candidate)] note goes beyond what was checked.
+    420 [casual] silent, and they mean different things. Nothing depends yet on a member that has never
+    423 [passive (candidate)] member was seen once is enough to tell them apart. Without the distinction, a join
+    424 [passive (candidate)] reads as a loss, or a loss is excused as a member that has not started yet.
+    443 [passive (candidate)] `systems-all.json` were made by adding `--json results.json --systems systems-all.json`.

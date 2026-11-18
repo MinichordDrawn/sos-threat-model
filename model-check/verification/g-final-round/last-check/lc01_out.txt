@@ -1,0 +1,144 @@
+== A. Section 1: ring of three, each reports to the one it checks
+  relations: {'hb_readers': {'M2': ['M1'], 'M3': ['M2'], 'M1': ['M3']}, 'checkers': {'M2': ['M1'], 'M3': ['M2'], 'M1': ['M3'], 'W': ['M1']}, 'fwd': {'M1': ['M2'], 'M2': ['M3'], 'M3': ['M1']}, 'halt_inputs': {'W': ['M1', 'M2']}} boundary {'M1': 0, 'M2': 1, 'M3': 2}
+  P1 signal read by another monitor: True
+  P1 work halts on silence (coupling): True
+  P2 (no substrates: vacuous): True
+  P3 every process has a checker other than itself: True
+  P4 every other monitor reached from every monitor along report edges: True
+  P5 no switch: True
+  P6 every signal has a reader in a different boundary: True
+  P7 (no joiner: vacuous): True
+  P8 no window: True
+  P8b two halt sources for every work process: True
+  gate: True
+  all predicates hold: True
+  is_plain: True  Theorem S conditions: False
+  result: {'G1': 3, 'G2': 1} 47 states
+  shortest G1:
+      [mutate M1] bad=['M1'] out=['M3'] halted=[] worked=['W'] G1=False G2=True
+      [mutate M2] bad=['M1', 'M2'] out=['M3'] halted=[] worked=['W'] G1=False G2=True
+      [stop M3] bad=['M1', 'M2'] out=[] halted=[] worked=['W'] G1=True G2=True
+  shortest G2:
+      [mutate M1] bad=['M1'] out=['M3'] halted=[] worked=['W'] G1=False G2=True
+  reports to other: {'G1': None, 'G2': None}
+
+== B. Section 1 item 1 and section 6/7: which judgement each removal breaks in R
+  without P1   : {'G1': 1, 'G2': 1} (2210 states)
+  without P2   : {'G1': 1, 'G2': 1} (68 states)
+  without P3   : {'G1': 1, 'G2': 1} (777 states)
+  without P4   : {'G1': None, 'G2': 1} (59 states)
+  without P5   : {'G1': 2, 'G2': 2} (13116 states)
+  without P6   : {'G1': 2, 'G2': None} (239 states)
+  without P7   : {'G1': 2, 'G2': 2} (2565 states)
+  without P8   : {'G1': None, 'G2': 1} (228 states)
+  without P8b  : {'G1': 3, 'G2': 1} (1818 states)
+  without gate : {'G1': 3, 'G2': 1} (1257 states)
+  removals that break G2: ['P1', 'P2', 'P3', 'P4', 'P5', 'P7', 'P8', 'P8b', 'gate']
+  removals that break G1: ['P1', 'P2', 'P3', 'P5', 'P6', 'P7', 'P8b', 'gate']
+  removals that do not break G2: ['P6']
+  removals that do not break G1: ['P4', 'P8']
+
+== C. Section 2.7: mesh of four in one boundary
+  result: {'G1': 2, 'G2': None} 42
+      [stop-boundary 0] bad=[] out=[] halted=['W'] worked=[] G1=False G2=False
+      [mutate M1] bad=['M1'] out=[] halted=['W'] worked=[] G1=True G2=False
+  after stop-boundary alone: done ["[stop-boundary 0] bad=[] out=[] halted=['W'] worked=[] G1=False G2=False"]
+  nested with ring boundaries: {'G1': None, 'G2': None}
+  nested, stop-boundary A: done ["[stop-boundary A] bad=[] out=['B1', 'B2', 'B3', 'KB', 'U3'] halted=['WA', 'WB'] worked=[] G1=False G2=False"]
+
+== D. Section 5: R at f = 1 and the execution at f = 2
+  R f=1: {'G1': None, 'G2': None} (23 states)
+  R f=2: {'G1': 2, 'G2': 1} (731 states)
+   shortest G1 found by the search:
+      [mutate M1, mutate M3] bad=['M1', 'M3'] out=['M2'] halted=['W2'] worked=['W1'] G1=False G2=True
+      [stop M2] bad=['M1', 'M3'] out=[] halted=['W2'] worked=['W1'] G1=True G2=True
+   shortest G2 found by the search:
+      [mutate M1, mutate M3] bad=['M1', 'M3'] out=['M2'] halted=['W2'] worked=['W1'] G1=False G2=True
+  replay of the execution in the text: done
+      [mutate M1, mutate M3] bad=['M1', 'M3'] out=['M2'] halted=['W2'] worked=['W1'] G1=False G2=True
+      [stop M2] bad=['M1', 'M3'] out=[] halted=['W2'] worked=['W1'] G1=True G2=True
+  W1 halt inputs: ['M1', 'M3']
+
+== E. Section 6: P8b
+  halt inputs: {'W1': ['M1'], 'W2': ['M2'], 'J': ['M3']} coupling True
+  result: {'G1': 3, 'G2': 1}
+   shortest G1 found by the search:
+      [mutate M1] bad=['M1'] out=['M2', 'M3'] halted=['W2'] worked=['W1'] G1=False G2=True
+      [stop M2] bad=['M1'] out=['M3'] halted=['W2'] worked=['W1'] G1=False G2=True
+      [stop M3] bad=['M1'] out=[] halted=['W2'] worked=['W1'] G1=True G2=True
+   shortest G2 found by the search:
+      [mutate M1] bad=['M1'] out=['M2', 'M3'] halted=['W2'] worked=['W1'] G1=False G2=True
+  mutate M1 then stop M1: done
+      [mutate M1] bad=['M1'] out=['M2', 'M3'] halted=['W2'] worked=['W1'] G1=False G2=True
+      [stop M1] bad=['M1'] out=['M2', 'M3'] halted=['W1', 'W2'] worked=[] G1=False G2=False
+  mutate M1 then fail-substrate s1: done
+      [mutate M1] bad=['M1'] out=['M2', 'M3'] halted=['W2'] worked=['W1'] G1=False G2=True
+      [fail-substrate s1] bad=['M1', 'W1'] out=['M2', 'M3'] halted=['W1', 'W2'] worked=[] G1=False G2=False
+  rounds in which W1 halts while M1 is bad and alive: 0 over 1818 states
+
+== F. Section 6: every removal explored and every table execution replayed
+  P1    [[('stop', 'M1')], [('mutate', 'W1')]] -> done; breaks G1 and G2; in full R: ended, nothing
+        [stop M1] bad=[] out=[] halted=[] worked=['W1', 'W2'] G1=False G2=False
+        [mutate W1] bad=['W1'] out=[] halted=[] worked=['W1', 'W2'] G1=True G2=True
+  P2    [[('fail-substrate', 's1')]] -> done; breaks G1 and G2; in full R: done, nothing
+        [fail-substrate s1] bad=['W1'] out=[] halted=[] worked=['W1', 'W2'] G1=True G2=True
+  P3    [[('mutate', 'W1')]] -> done; breaks G1 and G2; in full R: done, nothing
+        [mutate W1] bad=['W1'] out=[] halted=[] worked=['W1', 'W2'] G1=True G2=True
+  P4    [[('mutate', 'W1')]] -> done; breaks G2; in full R: done, nothing
+        [mutate W1] bad=['W1'] out=['M1'] halted=['W1'] worked=['W2'] G1=False G2=True
+  P5    [[('disable', 'M1')], [('mutate', 'W1')]] -> done; breaks G1 and G2; in full R: no such step, nothing
+        [disable M1] bad=[] out=[] halted=[] worked=['W1', 'W2'] G1=False G2=False
+        [mutate W1] bad=['W1'] out=[] halted=[] worked=['W1', 'W2'] G1=True G2=True
+  P6    [[('stop-boundary', 1)], [('mutate', 'W1')]] -> done; breaks G1; in full R: no such step, nothing
+        [stop-boundary 1] bad=[] out=[] halted=['W1', 'W2'] worked=[] G1=False G2=False
+        [mutate W1] bad=['W1'] out=[] halted=['W1', 'W2'] worked=[] G1=True G2=False
+  P7    [[('join', 'J')], [('mutate', 'J')]] -> done; breaks G1 and G2; in full R: done, nothing
+        [join J] bad=[] out=[] halted=[] worked=['W1', 'W2', 'J'] G1=False G2=False
+        [mutate J] bad=['J'] out=[] halted=[] worked=['W1', 'W2', 'J'] G1=True G2=True
+  P8    [[('mutate', 'W1')]] -> done; breaks G2; in full R: done, nothing
+        [mutate W1] bad=['W1'] out=['M1', 'M2', 'M3'] halted=[] worked=['W1', 'W2'] G1=False G2=True
+  P8b   [[('mutate', 'M1')]] -> done; breaks G2; in full R: done, nothing
+        [mutate M1] bad=['M1'] out=['M2', 'M3'] halted=['W2'] worked=['W1'] G1=False G2=True
+  gate  [[('mutate', 'W1')], []] -> done; breaks G2; in full R: ended, nothing
+        [mutate W1] bad=['W1'] out=['M1', 'M2', 'M3'] halted=[] worked=['W1', 'W2'] G1=False G2=True
+        [] bad=['W1'] out=['M1', 'M2', 'M3'] halted=['W1', 'W2'] worked=[] G1=False G2=False
+
+== G. Section 6, the gate: G1 in three rounds
+      [mutate M1] bad=['M1'] out=['M2', 'M3'] halted=[] worked=['W1', 'W2'] G1=False G2=True
+      [mutate M3] bad=['M1', 'M3'] out=['M2'] halted=['W2'] worked=['W1'] G1=False G2=True
+      [stop M2] bad=['M1', 'M3'] out=[] halted=['W2'] worked=['W1'] G1=True G2=True
+
+== H. Section 8.1: the reflex table
+  direct=True slow=False: {'G1': None, 'G2': None} halt_inputs={'W': ['M1', 'M2']} checkers W=['M1']
+  direct=True slow=True: {'G1': None, 'G2': None} halt_inputs={'W': ['M1', 'M2']} checkers W=['M1']
+  direct=False slow=False: {'G1': None, 'G2': None} halt_inputs={'W': ['M2', 'M3']} checkers W=['M1']
+  direct=False slow=True: {'G1': None, 'G2': 1} halt_inputs={'W': ['M2', 'M3']} checkers W=['M1']
+
+== I. Section 8.2: the three bounds, recomputed with growth()
+  first bound (chain, damage >= n - h*ceil(log2 n)), n=2..3000, h in 1,2,3,4,8,16,64,128: failures 0 []
+  second bound (2 per hop, 2 hops per tick, damage <= sqrt(n/2)), n=2..3000: failures 0 []
+    n=2: damage 1, sqrt(n/2)=1.0000
+    n=3: damage 1, sqrt(n/2)=1.2247
+    n=4: damage 1, sqrt(n/2)=1.4142
+    n=5: damage 1, sqrt(n/2)=1.5811
+  third (2 per hop, 1 hop per tick), n=8..3000: share between 0.2002 and 0.4000; outside [1/5, 2/5]: []
+    n=2: damage 1 share 0.500
+    n=3: damage 1 share 0.333
+    n=4: damage 2 share 0.500
+    n=5: damage 2 share 0.400
+    n=6: damage 2 share 0.333
+    n=7: damage 2 share 0.286
+  exact n/4 for powers of two 2^3..2^24: True
+  powers of two 2^1..2^24: first bound failures [] second bound failures []
+
+== J. Section 10.1 table row 2 and section 10.2
+  3+K gate ['K']: {'G1': 4, 'G2': 1}
+  3+K gate ['K', 'M1']: {'G1': None, 'G2': None}
+  3+K gate ['K', 'M1', 'M2', 'M3']: {'G1': None, 'G2': None}
+  K checks states: [] | K reads signals of: ['M1', 'M2', 'M3'] | reports to K from: ['M1', 'M2', 'M3']
+  mesh 3 f=1: {'G1': None, 'G2': None}
+  mesh 3 f=2: {'G1': None, 'G2': None}
+  mesh 3 f=3: {'G1': 1, 'G2': 1}
+  mesh 4 f=1: {'G1': None, 'G2': None}
+  mesh 4 f=2: {'G1': None, 'G2': None}
+  mesh 4 f=3: {'G1': None, 'G2': None}

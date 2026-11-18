@@ -1,0 +1,1684 @@
+### F2x1-Q4-1  (2 monitors, 1 work, 7 edges)
+{"name": "F2x1-Q4-1", "f": 1, "monitors": ["a", "b"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"]}, "checkers": {"a": ["b"], "b": ["a"], "w": ["a"]}, "fwd": {"a": [], "b": []}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate w: flagged={a} out={a} halted={w}  -> responded, execution over
+
+### F3x1-Q1Q4-1  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q1Q4-1", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+
+### F3x1-Q1Q4-2  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q1Q4-2", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["c"]}, "fwd": {"a": [], "b": [], "c": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+
+### F3x1-Q1Q4-3  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q1Q4-3", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["a", "c"], "c": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop a'], ['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+
+### F3x1-Q1-1  (3 monitors, 1 work, 11 edges)
+{"name": "F3x1-Q1-1", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"]}, "fwd": {"a": ["b"], "b": ["c"], "c": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={a,b,c} out={a,b,c} halted={w}  -> responded, execution over
+
+### F3x1-Q1-2  (3 monitors, 1 work, 11 edges)
+{"name": "F3x1-Q1-2", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["c"]}, "fwd": {"a": ["b"], "b": ["c"], "c": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={a,b,c} out={a,b,c} halted={w}  -> responded, execution over
+
+### F3x1-Q4-1  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-1", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+
+### F3x1-Q4-2  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-2", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["c"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+
+### F3x1-Q4-3  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-3", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["c"], "b": ["a"], "c": ["a"], "w": ["a"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=2 G2=None; shortest G1 violation: [['stop a'], ['mutate c']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate w: flagged={a} out={a} halted={w}  -> responded, execution over
+
+### F3x1-Q4-4  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-4", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["c"], "b": ["a"], "c": ["a"], "w": ["c"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=2 G2=None; shortest G1 violation: [['stop a'], ['mutate c']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+
+### F3x1-Q4-5  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-5", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["c"], "b": ["c"], "c": ["a"], "w": ["a"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate c']]
+  without b: G1=2 G2=None; shortest G1 violation: [['stop a'], ['mutate c']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate w: flagged={a} out={a} halted={w}  -> responded, execution over
+
+### F3x1-Q4-6  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-6", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["c"], "b": ["c"], "c": ["a"], "w": ["c"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate c']]
+  without b: G1=2 G2=None; shortest G1 violation: [['stop a'], ['mutate c']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+
+### F3x1-Q4-7  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-7", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["c"], "b": ["c"], "c": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate c']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+
+### F3x1-Q4-8  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-8", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["c"], "b": ["c"], "c": ["b"], "w": ["c"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate c']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+
+### F3x1-Q4-9  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-9", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["c"], "c": ["a"]}, "checkers": {"a": ["b"], "b": ["a"], "c": ["a"], "w": ["a"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate w: flagged={a} out={a} halted={w}  -> responded, execution over
+
+### F3x1-Q4-10  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-10", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["c"], "c": ["a"]}, "checkers": {"a": ["b"], "b": ["a"], "c": ["a"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+
+### F3x1-Q4-11  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-11", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["c"], "c": ["a"]}, "checkers": {"a": ["b"], "b": ["a"], "c": ["b"], "w": ["a"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={a} out={a} halted={w}  -> responded, execution over
+
+### F3x1-Q4-12  (3 monitors, 1 work, 9 edges)
+{"name": "F3x1-Q4-12", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["c"], "c": ["a"]}, "checkers": {"a": ["b"], "b": ["a"], "c": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+
+### F2x2-Q4-1  (2 monitors, 2 work, 10 edges)
+{"name": "F2x2-Q4-1", "f": 1, "monitors": ["a", "b"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"]}, "checkers": {"a": ["b"], "b": ["a"], "w": ["a"], "v": ["a"]}, "fwd": {"a": [], "b": []}, "halt_inputs": {"w": ["a", "b"], "v": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate w: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate v: flagged={a} out={a} halted={v,w}  -> responded, execution over
+
+### F2x2-Q4-2  (2 monitors, 2 work, 10 edges)
+{"name": "F2x2-Q4-2", "f": 1, "monitors": ["a", "b"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"]}, "checkers": {"a": ["b"], "b": ["a"], "w": ["a"], "v": ["b"]}, "fwd": {"a": [], "b": []}, "halt_inputs": {"w": ["a", "b"], "v": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate w: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+
+### F3x2-Q1Q4-1  (3 monitors, 2 work, 12 edges)
+{"name": "F3x2-Q1Q4-1", "f": 1, "monitors": ["a", "b", "c"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"], "v": ["b"]}, "fwd": {"a": [], "b": [], "c": ["a"]}, "halt_inputs": {"w": ["a", "b"], "v": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={v,w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+
+### F3x2-Q1Q4-2  (3 monitors, 2 work, 12 edges)
+{"name": "F3x2-Q1Q4-2", "f": 1, "monitors": ["a", "b", "c"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"], "v": ["b"]}, "fwd": {"a": [], "b": [], "c": ["a"]}, "halt_inputs": {"w": ["a", "b"], "v": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+
+### F3x2-Q1-1  (3 monitors, 2 work, 14 edges)
+{"name": "F3x2-Q1-1", "f": 1, "monitors": ["a", "b", "c"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"], "v": ["b"]}, "fwd": {"a": ["b"], "b": ["c"], "c": ["a"]}, "halt_inputs": {"w": ["a", "b"], "v": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={v,w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate w: flagged={a,b,c} out={a,b,c} halted={v,w}  -> responded, execution over
+    mutate v: flagged={a,b,c} out={a,b,c} halted={v,w}  -> responded, execution over
+
+### F3x2-Q1-2  (3 monitors, 2 work, 14 edges)
+{"name": "F3x2-Q1-2", "f": 1, "monitors": ["a", "b", "c"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"], "v": ["b"]}, "fwd": {"a": ["b"], "b": ["c"], "c": ["a"]}, "halt_inputs": {"w": ["a", "b"], "v": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate w: flagged={a,b,c} out={a,b,c} halted={v,w}  -> responded, execution over
+    mutate v: flagged={a,b,c} out={a,b,c} halted={v,w}  -> responded, execution over
+
+### F3x2-Q4-1  (3 monitors, 2 work, 12 edges)
+{"name": "F3x2-Q4-1", "f": 1, "monitors": ["a", "b", "c"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"], "v": ["b"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["b", "c"], "v": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+
+### F3x2-Q4-2  (3 monitors, 2 work, 12 edges)
+{"name": "F3x2-Q4-2", "f": 1, "monitors": ["a", "b", "c"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"], "v": ["c"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["b", "c"], "v": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate v: flagged={c} out={c} halted={v,w}  -> responded, execution over
+
+### F4x1-Q1Q4-1  (4 monitors, 1 work, 11 edges)
+{"name": "F4x1-Q1Q4-1", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": [], "b": [], "c": ["d"], "d": ["c"]}, "checkers": {"a": ["c"], "b": ["d"], "c": ["d"], "d": ["c"], "w": ["c"]}, "fwd": {"a": [], "b": [], "c": ["b"], "d": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=2 G2=1; shortest G2 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={} out={} halted={w}  -> not responded, next round:
+            stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+            stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+        stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    stop b: flagged={} out={} halted={w}  -> not responded, next round:
+        stop a: flagged={} out={} halted={w}  -> not responded, next round:
+            stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+            stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+
+### F4x1-Q1Q4-2  (4 monitors, 1 work, 11 edges)
+{"name": "F4x1-Q1Q4-2", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"], "d": ["b"]}, "checkers": {"a": ["b"], "b": ["d"], "c": ["b"], "d": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": [], "d": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate a']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+        stop d: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate d: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop d: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate d: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+
+### F4x1-Q1-1  (4 monitors, 1 work, 13 edges)
+{"name": "F4x1-Q1-1", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": [], "b": [], "c": ["d"], "d": ["c"]}, "checkers": {"a": ["c"], "b": ["d"], "c": ["d"], "d": ["c"], "w": ["c"]}, "fwd": {"a": ["c"], "b": ["d"], "c": ["b"], "d": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=2 G2=1; shortest G2 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={} out={} halted={w}  -> not responded, next round:
+            stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+            stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+        stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate a: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over
+        mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate w: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over
+    stop b: flagged={} out={} halted={w}  -> not responded, next round:
+        stop a: flagged={} out={} halted={w}  -> not responded, next round:
+            stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+            stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate b: flagged={a,c,d} out={a,c,d} halted={w}  -> responded, execution over
+        mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate a: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over
+    mutate b: flagged={a,c,d} out={a,c,d} halted={w}  -> responded, execution over
+    mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate w: flagged={a,b,c,d} out={a,b,c,d} halted={w}  -> responded, execution over
+
+### F4x1-Q4-1  (4 monitors, 1 work, 11 edges)
+{"name": "F4x1-Q4-1", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"], "d": ["c"]}, "checkers": {"a": ["b"], "b": ["d"], "c": ["b"], "d": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": [], "d": []}, "halt_inputs": {"w": ["b", "d"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop d'], ['mutate b']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={}  -> not responded, next round:
+        stop a: flagged={a,b} out={b} halted={w}  -> responded, execution over
+        stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+        stop d: flagged={a} out={a} halted={w}  -> responded, execution over
+        mutate a: flagged={a,b} out={b} halted={w}  -> responded, execution over
+        mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate c: flagged={a,b} out={a,b} halted={w}  -> responded, execution over
+        mutate d: flagged={a,b} out={a,b} halted={w}  -> responded, execution over
+        mutate w: flagged={a,b} out={a,b} halted={w}  -> responded, execution over
+    stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate d: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+
+### F4x1-Q4-2  (4 monitors, 1 work, 11 edges)
+{"name": "F4x1-Q4-2", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a"], "c": ["a"], "d": ["c"]}, "checkers": {"a": ["b"], "b": ["d"], "c": ["b"], "d": ["b"], "w": ["d"]}, "fwd": {"a": [], "b": [], "c": [], "d": []}, "halt_inputs": {"w": ["b", "d"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop d'], ['mutate b']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={}  -> not responded, next round:
+        stop a: flagged={a,b} out={b} halted={w}  -> responded, execution over
+        stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+        stop d: flagged={a} out={a} halted={w}  -> responded, execution over
+        mutate a: flagged={a,b} out={b} halted={w}  -> responded, execution over
+        mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate c: flagged={a,b} out={a,b} halted={w}  -> responded, execution over
+        mutate d: flagged={a,b} out={a,b} halted={w}  -> responded, execution over
+        mutate w: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate d: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={d} out={d} halted={w}  -> responded, execution over
+
+### F4x1-two-silent-Q1Q4-1  (4 monitors, 1 work, 11 edges)
+{"name": "F4x1-two-silent-Q1Q4-1", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": [], "b": [], "c": ["d"], "d": ["c"]}, "checkers": {"a": ["c"], "b": ["d"], "c": ["d"], "d": ["c"], "w": ["c"]}, "fwd": {"a": [], "b": [], "c": ["b"], "d": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=2 G2=1; shortest G2 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={} out={} halted={w}  -> not responded, next round:
+            stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+            stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+        stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    stop b: flagged={} out={} halted={w}  -> not responded, next round:
+        stop a: flagged={} out={} halted={w}  -> not responded, next round:
+            stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+            stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+
+### F4x1-two-silent-Q1-1  (4 monitors, 1 work, 13 edges)
+{"name": "F4x1-two-silent-Q1-1", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": [], "b": [], "c": ["d"], "d": ["c"]}, "checkers": {"a": ["c"], "b": ["d"], "c": ["d"], "d": ["c"], "w": ["c"]}, "fwd": {"a": ["c"], "b": ["d"], "c": ["b"], "d": ["a"]}, "halt_inputs": {"w": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=2 G2=1; shortest G2 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={w}  -> not responded, next round:
+        stop b: flagged={} out={} halted={w}  -> not responded, next round:
+            stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+            stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+        stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate a: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over
+        mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate w: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over
+    stop b: flagged={} out={} halted={w}  -> not responded, next round:
+        stop a: flagged={} out={} halted={w}  -> not responded, next round:
+            stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+            stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+            mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+            mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate b: flagged={a,c,d} out={a,c,d} halted={w}  -> responded, execution over
+        mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate a: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over
+    mutate b: flagged={a,c,d} out={a,c,d} halted={w}  -> responded, execution over
+    mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate w: flagged={a,b,c,d} out={a,b,c,d} halted={w}  -> responded, execution over
+
+### S4x2-Q1Q4-sampled  (4 monitors, 2 work, 14 edges)
+{"name": "S4x2-Q1Q4-sampled", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": [], "b": ["d"], "c": [], "d": ["b"]}, "checkers": {"a": ["b"], "b": ["d"], "c": ["d"], "d": ["b"], "w": ["b"], "v": ["b"]}, "fwd": {"a": [], "b": ["c"], "c": [], "d": ["a"]}, "halt_inputs": {"w": ["a", "c"], "v": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=1; shortest G2 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=2 G2=1; shortest G2 violation: [['mutate a']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={v,w}  -> not responded, next round:
+        stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+        stop c: flagged={} out={} halted={v,w}  -> not responded, next round:
+            stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        stop d: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+        mutate c: flagged={d} out={d} halted={v,w}  -> responded, execution over
+        mutate d: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    stop b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+    stop c: flagged={} out={} halted={w}  -> not responded, next round:
+        stop a: flagged={} out={} halted={v,w}  -> not responded, next round:
+            stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            mutate c: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        stop b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        mutate c: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop d: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+    mutate c: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+    mutate d: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    mutate w: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+    mutate v: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+
+### S4x2-Q4-sampled  (4 monitors, 2 work, 14 edges)
+{"name": "S4x2-Q4-sampled", "f": 1, "monitors": ["a", "b", "c", "d"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d"}, "substrate": {}, "hb_readers": {"a": ["c"], "b": ["d"], "c": ["d"], "d": ["a"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "d": ["c"], "w": ["b"], "v": ["c"]}, "fwd": {"a": [], "b": [], "c": [], "d": []}, "halt_inputs": {"w": ["b", "c"], "v": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=3 G2=None; shortest G1 violation: [['stop d'], ['stop b'], ['mutate c']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without d: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={c} out={c} halted={v,w}  -> responded, execution over
+    stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+    stop c: flagged={d} out={d} halted={v,w}  -> responded, execution over
+    stop d: flagged={a} out={a} halted={}  -> not responded, next round:
+        stop a: flagged={a,c} out={c} halted={v,w}  -> responded, execution over
+        stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+        stop c: flagged={a} out={a} halted={v,w}  -> responded, execution over
+        mutate a: flagged={a,b} out={b} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate c: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over
+        mutate d: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate w: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over
+        mutate v: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate d: flagged={c} out={c} halted={v,w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate v: flagged={c} out={c} halted={v,w}  -> responded, execution over
+
+### S5x1-Q1Q4-sampled  (5 monitors, 1 work, 13 edges)
+{"name": "S5x1-Q1Q4-sampled", "f": 1, "monitors": ["a", "b", "c", "d", "e"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d", "e": "b_e"}, "substrate": {}, "hb_readers": {"a": ["d"], "b": ["a"], "c": ["d"], "d": ["b"], "e": []}, "checkers": {"a": ["c"], "b": ["d"], "c": ["d"], "d": ["c"], "e": ["d"], "w": ["c"]}, "fwd": {"a": [], "b": [], "c": ["e"], "d": [], "e": []}, "halt_inputs": {"w": ["d", "e"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=3 G2=None; shortest G1 violation: [['stop b'], ['stop d'], ['mutate b']]
+  without b: G1=2 G2=None; shortest G1 violation: [['stop d'], ['mutate c']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without e: G1=2 G2=1; shortest G2 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={d} out={d} halted={w}  -> responded, execution over
+    stop b: flagged={a} out={a} halted={}  -> not responded, next round:
+        stop a: flagged={a,d} out={d} halted={w}  -> responded, execution over
+        stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        stop d: flagged={a} out={a} halted={w}  -> responded, execution over
+        stop e: flagged={a} out={a} halted={w}  -> responded, execution over
+        mutate a: flagged={a,c,e} out={c,e} halted={w}  -> responded, execution over
+        mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate d: flagged={a,c,e} out={a,c,e} halted={w}  -> responded, execution over
+        mutate e: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate w: flagged={a,c,e} out={a,c,e} halted={w}  -> responded, execution over
+    stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+    stop d: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop e: flagged={} out={} halted={w}  -> not responded, next round:
+        stop a: flagged={d} out={d} halted={w}  -> responded, execution over
+        stop b: flagged={a} out={a} halted={w}  -> responded, execution over
+        stop c: flagged={d} out={d} halted={w}  -> responded, execution over
+        stop d: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate d: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate e: flagged={d} out={d} halted={w}  -> responded, execution over
+        mutate w: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate a: flagged={c,e} out={c,e} halted={w}  -> responded, execution over
+    mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate d: flagged={c,e} out={c,e} halted={w}  -> responded, execution over
+    mutate e: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate w: flagged={c,e} out={c,e} halted={w}  -> responded, execution over
+
+### S5x1-Q4-sampled  (5 monitors, 1 work, 13 edges)
+{"name": "S5x1-Q4-sampled", "f": 1, "monitors": ["a", "b", "c", "d", "e"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d", "e": "b_e"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["e"], "c": ["a"], "d": ["c"], "e": ["a"]}, "checkers": {"a": ["d"], "b": ["d"], "c": ["d"], "d": ["e"], "e": ["d"], "w": ["d"]}, "fwd": {"a": [], "b": [], "c": [], "d": [], "e": []}, "halt_inputs": {"w": ["d", "e"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=2 G2=None; shortest G1 violation: [['stop e'], ['mutate d']]
+  without b: G1=3 G2=None; shortest G1 violation: [['stop a'], ['stop e'], ['mutate d']]
+  without c: G1=2 G2=None; shortest G1 violation: [['stop d'], ['mutate a']]
+  without d: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without e: G1=1 G2=1; shortest G1 violation: [['mutate d']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={}  -> not responded, next round:
+        stop b: flagged={b,e} out={e} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={}  -> not responded, next round:
+            stop b: flagged={b,e} out={e} halted={w}  -> responded, execution over
+            stop d: flagged={b} out={b} halted={w}  -> responded, execution over
+            stop e: flagged={b} out={b} halted={w}  -> responded, execution over
+            mutate a: flagged={b,d} out={b,d} halted={w}  -> responded, execution over
+            mutate b: flagged={b,d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={b,d} out={b,d} halted={w}  -> responded, execution over
+            mutate d: flagged={b,e} out={b,e} halted={w}  -> responded, execution over
+            mutate e: flagged={b,d} out={b,d} halted={w}  -> responded, execution over
+            mutate w: flagged={b,d} out={b,d} halted={w}  -> responded, execution over
+        stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        stop e: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b,d} out={b,d} halted={w}  -> responded, execution over
+        mutate b: flagged={b,d} out={d} halted={w}  -> responded, execution over
+        mutate c: flagged={b,d} out={b,d} halted={w}  -> responded, execution over
+        mutate d: flagged={b,e} out={b,e} halted={w}  -> responded, execution over
+        mutate e: flagged={b,d} out={b,d} halted={w}  -> responded, execution over
+        mutate w: flagged={b,d} out={b,d} halted={w}  -> responded, execution over
+    stop b: flagged={e} out={e} halted={w}  -> responded, execution over
+    stop c: flagged={a} out={a} halted={}  -> not responded, next round:
+        stop a: flagged={a,b} out={b} halted={}  -> not responded, next round:
+            stop b: flagged={a,b,e} out={e} halted={w}  -> responded, execution over
+            stop d: flagged={a,b} out={b} halted={w}  -> responded, execution over
+            stop e: flagged={a,b} out={b} halted={w}  -> responded, execution over
+            mutate a: flagged={a,b,d} out={b,d} halted={w}  -> responded, execution over
+            mutate b: flagged={a,b,d} out={d} halted={w}  -> responded, execution over
+            mutate c: flagged={a,b,d} out={b,d} halted={w}  -> responded, execution over
+            mutate d: flagged={a,b,e} out={b,e} halted={w}  -> responded, execution over
+            mutate e: flagged={a,b,d} out={b,d} halted={w}  -> responded, execution over
+            mutate w: flagged={a,b,d} out={b,d} halted={w}  -> responded, execution over
+        stop b: flagged={a,e} out={a,e} halted={w}  -> responded, execution over
+        stop d: flagged={a} out={a} halted={w}  -> responded, execution over
+        stop e: flagged={a} out={a} halted={w}  -> responded, execution over
+        mutate a: flagged={a,d} out={d} halted={w}  -> responded, execution over
+        mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate d: flagged={a,e} out={a,e} halted={w}  -> responded, execution over
+        mutate e: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+        mutate w: flagged={a,d} out={a,d} halted={w}  -> responded, execution over
+    stop d: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop e: flagged={a} out={a} halted={w}  -> responded, execution over
+    mutate a: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate b: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate c: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate d: flagged={e} out={e} halted={w}  -> responded, execution over
+    mutate e: flagged={d} out={d} halted={w}  -> responded, execution over
+    mutate w: flagged={d} out={d} halted={w}  -> responded, execution over
+
+### S5x2-Q1Q4-sampled  (5 monitors, 2 work, 16 edges)
+{"name": "S5x2-Q1Q4-sampled", "f": 1, "monitors": ["a", "b", "c", "d", "e"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d", "e": "b_e"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["e"], "c": [], "d": [], "e": ["b"]}, "checkers": {"a": ["e"], "b": ["e"], "c": ["e"], "d": ["e"], "e": ["a", "c", "d"], "w": ["e"], "v": ["e"]}, "fwd": {"a": [], "b": [], "c": [], "d": [], "e": []}, "halt_inputs": {"w": ["d", "e"], "v": ["c", "e"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=3 G2=None; shortest G1 violation: [['stop c'], ['stop d'], ['mutate e']]
+  without b: G1=2 G2=None; shortest G1 violation: [['stop e'], ['mutate a']]
+  without c: G1=3 G2=1; shortest G2 violation: [['mutate e']]
+  without d: G1=3 G2=1; shortest G2 violation: [['mutate e']]
+  without e: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b} out={b} halted={}  -> not responded, next round:
+        stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={v}  -> not responded, next round:
+            stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+            stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        stop d: flagged={b} out={b} halted={w}  -> not responded, next round:
+            stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+            stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        mutate e: flagged={b,c,d} out={b,c,d} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+    stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    stop c: flagged={} out={} halted={v}  -> not responded, next round:
+        stop a: flagged={b} out={b} halted={v}  -> not responded, next round:
+            stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+            stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        stop d: flagged={} out={} halted={v,w}  -> not responded, next round:
+            stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a} out={a} halted={v,w}  -> responded, execution over
+            mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate e: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    stop d: flagged={} out={} halted={w}  -> not responded, next round:
+        stop a: flagged={b} out={b} halted={w}  -> not responded, next round:
+            stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+            stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        stop c: flagged={} out={} halted={v,w}  -> not responded, next round:
+            stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a} out={a} halted={v,w}  -> responded, execution over
+            mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    mutate e: flagged={a,c,d} out={a,c,d} halted={v,w}  -> responded, execution over
+    mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over
+
+### S5x2-Q4-sampled  (5 monitors, 2 work, 16 edges)
+{"name": "S5x2-Q4-sampled", "f": 1, "monitors": ["a", "b", "c", "d", "e"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d", "e": "b_e"}, "substrate": {}, "hb_readers": {"a": ["d"], "b": ["d"], "c": ["e"], "d": ["b"], "e": ["a"]}, "checkers": {"a": ["c"], "b": ["c"], "c": ["b"], "d": ["b"], "e": ["c"], "w": ["b"], "v": ["b"]}, "fwd": {"a": [], "b": [], "c": [], "d": [], "e": []}, "halt_inputs": {"w": ["b", "c"], "v": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=3 G2=None; shortest G1 violation: [['stop e'], ['stop c'], ['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate c']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without d: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate c']]
+  without e: G1=2 G2=None; shortest G1 violation: [['stop c'], ['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={d} out={d} halted={}  -> not responded, next round:
+        stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+        stop c: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over
+        stop d: flagged={b,d} out={b} halted={v,w}  -> responded, execution over
+        stop e: flagged={d} out={d} halted={}  -> not responded, next round:
+            stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            stop c: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            stop d: flagged={b,d} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over
+            mutate b: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,d} out={b} halted={v,w}  -> responded, execution over
+            mutate e: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+        mutate a: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over
+        mutate b: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+        mutate d: flagged={b,d} out={b} halted={v,w}  -> responded, execution over
+        mutate e: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+    stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+    stop c: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop e: flagged={a} out={a} halted={}  -> not responded, next round:
+        stop a: flagged={a,d} out={d} halted={}  -> not responded, next round:
+            stop b: flagged={a,d} out={d} halted={v,w}  -> responded, execution over
+            stop c: flagged={a,d} out={d} halted={v,w}  -> responded, execution over
+            stop d: flagged={a,b,d} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={a,c,d} out={c,d} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,c,d} out={c,d} halted={v,w}  -> responded, execution over
+            mutate c: flagged={a,b,d} out={b,d} halted={v,w}  -> responded, execution over
+            mutate d: flagged={a,b,d} out={b} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a,c,d} out={c,d} halted={v,w}  -> responded, execution over
+            mutate w: flagged={a,b,d} out={b,d} halted={v,w}  -> responded, execution over
+            mutate v: flagged={a,b,d} out={b,d} halted={v,w}  -> responded, execution over
+        stop b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        stop c: flagged={a} out={a} halted={v,w}  -> responded, execution over
+        stop d: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={a,c} out={c} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate c: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over
+        mutate d: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over
+        mutate e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate w: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over
+        mutate v: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over
+    mutate a: flagged={c} out={c} halted={v,w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate e: flagged={c} out={c} halted={v,w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+
+### S6x2-Q1Q4-sampled  (6 monitors, 2 work, 18 edges)
+{"name": "S6x2-Q1Q4-sampled", "f": 1, "monitors": ["a", "b", "c", "d", "e", "f"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d", "e": "b_e", "f": "b_f"}, "substrate": {}, "hb_readers": {"a": ["f"], "b": ["d"], "c": [], "d": ["f"], "e": [], "f": ["b"]}, "checkers": {"a": ["b"], "b": ["a", "c", "e"], "c": ["b"], "d": ["b"], "e": ["b"], "f": ["b"], "w": ["b"], "v": ["b"]}, "fwd": {"a": [], "b": [], "c": [], "d": [], "e": [], "f": []}, "halt_inputs": {"w": ["b", "c"], "v": ["b", "e"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=[]  falsifier=True
+  without a: G1=3 G2=None; shortest G1 violation: [['stop c'], ['stop e'], ['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=3 G2=1; shortest G2 violation: [['mutate b']]
+  without d: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate a']]
+  without e: G1=3 G2=1; shortest G2 violation: [['mutate b']]
+  without f: G1=3 G2=None; shortest G1 violation: [['stop d'], ['stop b'], ['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={f} out={f} halted={}  -> not responded, next round:
+        stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over
+        stop c: flagged={f} out={f} halted={w}  -> not responded, next round:
+            stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over
+            stop d: flagged={f} out={f} halted={w}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop d: flagged={f} out={f} halted={}  -> not responded, next round:
+            stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop c: flagged={f} out={f} halted={w}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop e: flagged={f} out={f} halted={v}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={c,e,f} out={c,e,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop e: flagged={f} out={f} halted={v}  -> not responded, next round:
+            stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over
+            stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop d: flagged={f} out={f} halted={v}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate b: flagged={c,e,f} out={c,e,f} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+    stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+    stop c: flagged={} out={} halted={w}  -> not responded, next round:
+        stop a: flagged={f} out={f} halted={w}  -> not responded, next round:
+            stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over
+            stop d: flagged={f} out={f} halted={w}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+        stop d: flagged={f} out={f} halted={w}  -> not responded, next round:
+            stop a: flagged={f} out={f} halted={w}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,e,f} out={a,e,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop e: flagged={} out={} halted={v,w}  -> not responded, next round:
+            stop a: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            stop d: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop d: flagged={f} out={f} halted={}  -> not responded, next round:
+        stop a: flagged={f} out={f} halted={}  -> not responded, next round:
+            stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop c: flagged={f} out={f} halted={w}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop e: flagged={f} out={f} halted={v}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={c,e,f} out={c,e,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+        stop c: flagged={f} out={f} halted={w}  -> not responded, next round:
+            stop a: flagged={f} out={f} halted={w}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,e,f} out={a,e,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop e: flagged={f} out={f} halted={v}  -> not responded, next round:
+            stop a: flagged={f} out={f} halted={v}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,c,f} out={a,c,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,c,e,f} out={a,c,e,f} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+    stop e: flagged={} out={} halted={v}  -> not responded, next round:
+        stop a: flagged={f} out={f} halted={v}  -> not responded, next round:
+            stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over
+            stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop d: flagged={f} out={f} halted={v}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+        stop c: flagged={} out={} halted={v,w}  -> not responded, next round:
+            stop a: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over
+            stop d: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        stop d: flagged={f} out={f} halted={v}  -> not responded, next round:
+            stop a: flagged={f} out={f} halted={v}  -> not responded, next round:
+                stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+                stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+                mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+                mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+                mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over
+            stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,c,f} out={a,c,f} halted={v,w}  -> responded, execution over
+            mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over
+            mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+            mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over
+        stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+        mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a,c,e} out={a,c,e} halted={v,w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over
+
+### S6x2-Q4-sampled  (6 monitors, 2 work, 18 edges)
+{"name": "S6x2-Q4-sampled", "f": 1, "monitors": ["a", "b", "c", "d", "e", "f"], "works": ["w", "v"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c", "d": "b_d", "e": "b_e", "f": "b_f"}, "substrate": {}, "hb_readers": {"a": ["f"], "b": ["e"], "c": ["e"], "d": ["c"], "e": ["a"], "f": ["d"]}, "checkers": {"a": ["b"], "b": ["a"], "c": ["a"], "d": ["a"], "e": ["a"], "f": ["b"], "w": ["a"], "v": ["a"]}, "fwd": {"a": [], "b": [], "c": [], "d": [], "e": [], "f": []}, "halt_inputs": {"w": ["a", "b"], "v": ["a", "b"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=[]  falsifier=True
+  without a: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=4 G2=None; shortest G1 violation: [['stop d'], ['stop f'], ['stop a'], ['mutate b']]
+  without d: G1=3 G2=None; shortest G1 violation: [['stop f'], ['stop a'], ['mutate b']]
+  without e: G1=2 G2=None; shortest G1 violation: [['stop b'], ['mutate a']]
+  without f: G1=2 G2=None; shortest G1 violation: [['stop a'], ['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={f} out={f} halted={v,w}  -> responded, execution over
+    stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+    stop c: flagged={e} out={e} halted={}  -> not responded, next round:
+        stop a: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+        stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+        stop d: flagged={e} out={e} halted={}  -> not responded, next round:
+            stop a: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over
+            stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+            stop e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over
+            stop f: flagged={e} out={e} halted={}  -> not responded, next round:
+                stop a: flagged={e} out={e} halted={v,w}  -> responded, execution over
+                stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over
+                stop e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate b: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate c: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate d: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate w: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate v: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate w: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+        stop e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over
+        stop f: flagged={d,e} out={d,e} halted={}  -> not responded, next round:
+            stop a: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over
+            stop b: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over
+            stop d: flagged={d,e} out={e} halted={}  -> not responded, next round:
+                stop a: flagged={d,e} out={e} halted={v,w}  -> responded, execution over
+                stop b: flagged={d,e} out={e} halted={v,w}  -> responded, execution over
+                stop e: flagged={a,d,e} out={a} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,d,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate b: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate c: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate d: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate e: flagged={a,d,e} out={a} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,d,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate w: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate v: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+            stop e: flagged={a,d,e} out={a,d} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,d,e} out={b,d,e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a,d,e} out={a,d} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,d,e} out={b,d,e} halted={v,w}  -> responded, execution over
+            mutate w: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+        mutate c: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+        mutate d: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+        mutate e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over
+        mutate f: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over
+        mutate w: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+        mutate v: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over
+    stop d: flagged={c} out={c} halted={}  -> not responded, next round:
+        stop a: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over
+        stop b: flagged={c,e} out={c,e} halted={v,w}  -> responded, execution over
+        stop c: flagged={c,e} out={e} halted={}  -> not responded, next round:
+            stop a: flagged={c,e,f} out={e,f} halted={v,w}  -> responded, execution over
+            stop b: flagged={c,e} out={e} halted={v,w}  -> responded, execution over
+            stop e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over
+            stop f: flagged={c,e} out={e} halted={}  -> not responded, next round:
+                stop a: flagged={c,e} out={e} halted={v,w}  -> responded, execution over
+                stop b: flagged={c,e} out={e} halted={v,w}  -> responded, execution over
+                stop e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate b: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate c: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate d: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate w: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate v: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over
+            mutate w: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+        stop e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        stop f: flagged={c} out={c} halted={}  -> not responded, next round:
+            stop a: flagged={c} out={c} halted={v,w}  -> responded, execution over
+            stop b: flagged={c,e} out={c,e} halted={v,w}  -> responded, execution over
+            stop c: flagged={c,e} out={e} halted={}  -> not responded, next round:
+                stop a: flagged={c,e} out={e} halted={v,w}  -> responded, execution over
+                stop b: flagged={c,e} out={e} halted={v,w}  -> responded, execution over
+                stop e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate b: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate c: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate d: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate w: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate v: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over
+            stop e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+            mutate c: flagged={a,c} out={a} halted={v,w}  -> responded, execution over
+            mutate d: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+            mutate w: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+            mutate v: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate c: flagged={a,c} out={a} halted={v,w}  -> responded, execution over
+        mutate d: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate f: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over
+        mutate w: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+        mutate v: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over
+    stop e: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    stop f: flagged={d} out={d} halted={}  -> not responded, next round:
+        stop a: flagged={d} out={d} halted={v,w}  -> responded, execution over
+        stop b: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over
+        stop c: flagged={d,e} out={d,e} halted={}  -> not responded, next round:
+            stop a: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over
+            stop b: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over
+            stop d: flagged={d,e} out={e} halted={}  -> not responded, next round:
+                stop a: flagged={d,e} out={e} halted={v,w}  -> responded, execution over
+                stop b: flagged={d,e} out={e} halted={v,w}  -> responded, execution over
+                stop e: flagged={a,d,e} out={a} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,d,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate b: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate c: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate d: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate e: flagged={a,d,e} out={a} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,d,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate w: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate v: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+            stop e: flagged={a,d,e} out={a,d} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,d,e} out={b,d,e} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over
+            mutate c: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over
+            mutate d: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a,d,e} out={a,d} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,d,e} out={b,d,e} halted={v,w}  -> responded, execution over
+            mutate w: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over
+            mutate v: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over
+        stop d: flagged={c,d} out={c} halted={}  -> not responded, next round:
+            stop a: flagged={c,d} out={c} halted={v,w}  -> responded, execution over
+            stop b: flagged={c,d,e} out={c,e} halted={v,w}  -> responded, execution over
+            stop c: flagged={c,d,e} out={e} halted={}  -> not responded, next round:
+                stop a: flagged={c,d,e} out={e} halted={v,w}  -> responded, execution over
+                stop b: flagged={c,d,e} out={e} halted={v,w}  -> responded, execution over
+                stop e: flagged={a,c,d,e} out={a} halted={v,w}  -> responded, execution over
+                mutate a: flagged={b,c,d,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate b: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate c: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate d: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate e: flagged={a,c,d,e} out={a} halted={v,w}  -> responded, execution over
+                mutate f: flagged={b,c,d,e} out={b,e} halted={v,w}  -> responded, execution over
+                mutate w: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over
+                mutate v: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over
+            stop e: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over
+            mutate a: flagged={b,c,d} out={b,c} halted={v,w}  -> responded, execution over
+            mutate b: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over
+            mutate c: flagged={a,c,d} out={a} halted={v,w}  -> responded, execution over
+            mutate d: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over
+            mutate e: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over
+            mutate f: flagged={b,c,d} out={b,c} halted={v,w}  -> responded, execution over
+            mutate w: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over
+            mutate v: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over
+        stop e: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        mutate a: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+        mutate b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        mutate c: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        mutate d: flagged={a,d} out={a} halted={v,w}  -> responded, execution over
+        mutate e: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        mutate f: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over
+        mutate w: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+        mutate v: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate c: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate d: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate e: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over
+    mutate w: flagged={a} out={a} halted={v,w}  -> responded, execution over
+    mutate v: flagged={a} out={a} halted={v,w}  -> responded, execution over
+
+### I3x1-with-spare-blamed  (3 monitors, 1 work, 10 edges)
+{"name": "I3x1-with-spare-blamed", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": ["c"], "c": ["b"]}, "halt_inputs": {"w": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=['a']  falsifier=False
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+
+### I3x1-with-spare-partial  (3 monitors, 1 work, 14 edges)
+{"name": "I3x1-with-spare-partial", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": ["b"], "b": ["a", "c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["a", "c"], "c": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": ["c"], "c": ["b"]}, "halt_inputs": {"w": ["a", "b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q4  spare=['a', 'c']  falsifier=False
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+    mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over
+
+### I3x1-with-spare-strict  (3 monitors, 1 work, 8 edges)
+{"name": "I3x1-with-spare-strict", "f": 1, "monitors": ["a", "b", "c"], "works": ["w"], "joiner": null, "boundary": {"a": "b_a", "b": "b_b", "c": "b_c"}, "substrate": {}, "hb_readers": {"a": [], "b": ["c"], "c": ["b"]}, "checkers": {"a": ["b"], "b": ["c"], "c": ["b"], "w": ["b"]}, "fwd": {"a": [], "b": [], "c": []}, "halt_inputs": {"w": ["b", "c"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+plain=True  G1=None G2=None  fails=Q1+Q4  spare=['a']  falsifier=True
+  without b: G1=1 G2=1; shortest G1 violation: [['mutate a']]
+  without c: G1=1 G2=1; shortest G1 violation: [['mutate b']]
+  every execution (idle rounds change nothing and are omitted):
+    stop a: flagged={} out={} halted={}  -> not responded, next round:
+        stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+        stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+        mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+        mutate w: flagged={b} out={b} halted={w}  -> responded, execution over
+    stop b: flagged={c} out={c} halted={w}  -> responded, execution over
+    stop c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate a: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate b: flagged={c} out={c} halted={w}  -> responded, execution over
+    mutate c: flagged={b} out={b} halted={w}  -> responded, execution over
+    mutate w: flagged={b} out={b} halted={w}  -> responded, execution over

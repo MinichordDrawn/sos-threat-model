@@ -1,0 +1,7788 @@
+[
+ {
+  "id": "F2x1-Q4-1",
+  "system": {
+   "name": "F2x1-Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 7,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a} out={a} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q1Q4-1",
+  "system": {
+   "name": "F3x1-Q1Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q1Q4-2",
+  "system": {
+   "name": "F3x1-Q1Q4-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a,c} out={a,c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q1Q4-3",
+  "system": {
+   "name": "F3x1-Q1Q4-3",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop a"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q1-1",
+  "system": {
+   "name": "F3x1-Q1-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 11,
+  "failing": [
+   "Q1"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a,b,c} out={a,b,c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q1-2",
+  "system": {
+   "name": "F3x1-Q1-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 11,
+  "failing": [
+   "Q1"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a,b,c} out={a,b,c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-1",
+  "system": {
+   "name": "F3x1-Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-2",
+  "system": {
+   "name": "F3x1-Q4-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={c} out={c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-3",
+  "system": {
+   "name": "F3x1-Q4-3",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop a"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a} out={a} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-4",
+  "system": {
+   "name": "F3x1-Q4-4",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop a"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={c} out={c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-5",
+  "system": {
+   "name": "F3x1-Q4-5",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate c"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop a"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a} out={a} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-6",
+  "system": {
+   "name": "F3x1-Q4-6",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate c"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop a"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={c} out={c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-7",
+  "system": {
+   "name": "F3x1-Q4-7",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate c"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-8",
+  "system": {
+   "name": "F3x1-Q4-8",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate c"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={c} out={c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-9",
+  "system": {
+   "name": "F3x1-Q4-9",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a} out={a} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-10",
+  "system": {
+   "name": "F3x1-Q4-10",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-11",
+  "system": {
+   "name": "F3x1-Q4-11",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a} out={a} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x1-Q4-12",
+  "system": {
+   "name": "F3x1-Q4-12",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 9,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F2x2-Q4-1",
+  "system": {
+   "name": "F2x2-Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ],
+    "v": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 10,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={a} out={a} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F2x2-Q4-2",
+  "system": {
+   "name": "F2x2-Q4-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 10,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x2-Q1Q4-1",
+  "system": {
+   "name": "F3x2-Q1Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 12,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x2-Q1Q4-2",
+  "system": {
+   "name": "F3x2-Q1Q4-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 12,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x2-Q1-1",
+  "system": {
+   "name": "F3x2-Q1-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 14,
+  "failing": [
+   "Q1"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={a,b,c} out={a,b,c} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={a,b,c} out={a,b,c} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x2-Q1-2",
+  "system": {
+   "name": "F3x2-Q1-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 14,
+  "failing": [
+   "Q1"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={a,b,c} out={a,b,c} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={a,b,c} out={a,b,c} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x2-Q4-1",
+  "system": {
+   "name": "F3x2-Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ],
+    "v": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 12,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F3x2-Q4-2",
+  "system": {
+   "name": "F3x2-Q4-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ],
+    "v": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 12,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={c} out={c} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F4x1-Q1Q4-1",
+  "system": {
+   "name": "F4x1-Q1Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 11,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "mutate d"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={} out={} halted={w}  -> not responded, next round:",
+   "          stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  stop b: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "          stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F4x1-Q1Q4-2",
+  "system": {
+   "name": "F4x1-Q1Q4-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 11,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate b"
+      ],
+      [
+       "stop d"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      stop d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F4x1-Q1-1",
+  "system": {
+   "name": "F4x1-Q1-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 13,
+  "failing": [
+   "Q1"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "mutate d"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={} out={} halted={w}  -> not responded, next round:",
+   "          stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over",
+   "  stop b: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "          stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={a,c,d} out={a,c,d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,c,d} out={a,c,d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a,b,c,d} out={a,b,c,d} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F4x1-Q4-1",
+  "system": {
+   "name": "F4x1-Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "d": [
+     "c"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "d"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 11,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={}  -> not responded, next round:",
+   "      stop a: flagged={a,b} out={b} halted={w}  -> responded, execution over",
+   "      stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      stop d: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={a,b} out={b} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={a,b} out={a,b} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={a,b} out={a,b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={a,b} out={a,b} halted={w}  -> responded, execution over",
+   "  stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F4x1-Q4-2",
+  "system": {
+   "name": "F4x1-Q4-2",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "d": [
+     "c"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "b"
+    ],
+    "w": [
+     "d"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "d"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 11,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={}  -> not responded, next round:",
+   "      stop a: flagged={a,b} out={b} halted={w}  -> responded, execution over",
+   "      stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      stop d: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={a,b} out={b} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={a,b} out={a,b} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={a,b} out={a,b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={d} out={d} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F4x1-two-silent-Q1Q4-1",
+  "system": {
+   "name": "F4x1-two-silent-Q1Q4-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 11,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "mutate d"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={} out={} halted={w}  -> not responded, next round:",
+   "          stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  stop b: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "          stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "F4x1-two-silent-Q1-1",
+  "system": {
+   "name": "F4x1-two-silent-Q1-1",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 13,
+  "failing": [
+   "Q1"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "mutate d"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop b: flagged={} out={} halted={w}  -> not responded, next round:",
+   "          stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over",
+   "  stop b: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop a: flagged={} out={} halted={w}  -> not responded, next round:",
+   "          stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={a,c,d} out={a,c,d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b,c,d} out={b,c,d} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,c,d} out={a,c,d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={a,b,c,d} out={a,b,c,d} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "S4x2-Q1Q4-sampled",
+  "system": {
+   "name": "S4x2-Q1Q4-sampled",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "d"
+    ],
+    "c": [],
+    "d": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [],
+    "d": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ],
+    "v": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 14,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate d"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "      stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "          stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop a: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "          stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop d: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "  mutate d: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "S4x2-Q4-sampled",
+  "system": {
+   "name": "S4x2-Q4-sampled",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "c"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ],
+    "v": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 14,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 3,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "  stop d: flagged={a} out={a} halted={}  -> not responded, next round:",
+   "      stop a: flagged={a,c} out={c} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={a,b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate d: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={c} out={c} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "S5x1-Q1Q4-sampled",
+  "system": {
+   "name": "S5x1-Q1Q4-sampled",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d",
+    "e": "b_e"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "d"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "b"
+    ],
+    "e": []
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "c"
+    ],
+    "e": [
+     "d"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "e"
+    ],
+    "d": [],
+    "e": []
+   },
+   "halt_inputs": {
+    "w": [
+     "d",
+     "e"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 13,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 3,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "stop d"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "e": {
+    "spare": false,
+    "G1": 2,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G1": [
+      [
+       "mutate d"
+      ],
+      [
+       "stop c"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a} out={a} halted={}  -> not responded, next round:",
+   "      stop a: flagged={a,d} out={d} halted={w}  -> responded, execution over",
+   "      stop c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      stop e: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={a,c,e} out={c,e} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={a,c,e} out={a,c,e} halted={w}  -> responded, execution over",
+   "      mutate e: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={a,c,e} out={a,c,e} halted={w}  -> responded, execution over",
+   "  stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  stop d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop e: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop a: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      stop b: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      stop c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate e: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={c,e} out={c,e} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={c,e} out={c,e} halted={w}  -> responded, execution over",
+   "  mutate e: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={c,e} out={c,e} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "S5x1-Q4-sampled",
+  "system": {
+   "name": "S5x1-Q4-sampled",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d",
+    "e": "b_e"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "e"
+    ],
+    "c": [
+     "a"
+    ],
+    "d": [
+     "c"
+    ],
+    "e": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "d"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "d"
+    ],
+    "d": [
+     "e"
+    ],
+    "e": [
+     "d"
+    ],
+    "w": [
+     "d"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": [],
+    "e": []
+   },
+   "halt_inputs": {
+    "w": [
+     "d",
+     "e"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 13,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop e"
+      ],
+      [
+       "mutate d"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 3,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop a"
+      ],
+      [
+       "stop e"
+      ],
+      [
+       "mutate d"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "e": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate d"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate d"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={}  -> not responded, next round:",
+   "      stop b: flagged={b,e} out={e} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={}  -> not responded, next round:",
+   "          stop b: flagged={b,e} out={e} halted={w}  -> responded, execution over",
+   "          stop d: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "          stop e: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={b,d} out={b,d} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={b,d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={b,d} out={b,d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={b,e} out={b,e} halted={w}  -> responded, execution over",
+   "          mutate e: flagged={b,d} out={b,d} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={b,d} out={b,d} halted={w}  -> responded, execution over",
+   "      stop d: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      stop e: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b,d} out={b,d} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={b,d} out={d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b,d} out={b,d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={b,e} out={b,e} halted={w}  -> responded, execution over",
+   "      mutate e: flagged={b,d} out={b,d} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b,d} out={b,d} halted={w}  -> responded, execution over",
+   "  stop b: flagged={e} out={e} halted={w}  -> responded, execution over",
+   "  stop c: flagged={a} out={a} halted={}  -> not responded, next round:",
+   "      stop a: flagged={a,b} out={b} halted={}  -> not responded, next round:",
+   "          stop b: flagged={a,b,e} out={e} halted={w}  -> responded, execution over",
+   "          stop d: flagged={a,b} out={b} halted={w}  -> responded, execution over",
+   "          stop e: flagged={a,b} out={b} halted={w}  -> responded, execution over",
+   "          mutate a: flagged={a,b,d} out={b,d} halted={w}  -> responded, execution over",
+   "          mutate b: flagged={a,b,d} out={d} halted={w}  -> responded, execution over",
+   "          mutate c: flagged={a,b,d} out={b,d} halted={w}  -> responded, execution over",
+   "          mutate d: flagged={a,b,e} out={b,e} halted={w}  -> responded, execution over",
+   "          mutate e: flagged={a,b,d} out={b,d} halted={w}  -> responded, execution over",
+   "          mutate w: flagged={a,b,d} out={b,d} halted={w}  -> responded, execution over",
+   "      stop b: flagged={a,e} out={a,e} halted={w}  -> responded, execution over",
+   "      stop d: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      stop e: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={a,d} out={d} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate d: flagged={a,e} out={a,e} halted={w}  -> responded, execution over",
+   "      mutate e: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={a,d} out={a,d} halted={w}  -> responded, execution over",
+   "  stop d: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop e: flagged={a} out={a} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate d: flagged={e} out={e} halted={w}  -> responded, execution over",
+   "  mutate e: flagged={d} out={d} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={d} out={d} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "S5x2-Q1Q4-sampled",
+  "system": {
+   "name": "S5x2-Q1Q4-sampled",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d",
+    "e": "b_e"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "e"
+    ],
+    "c": [],
+    "d": [],
+    "e": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "e"
+    ],
+    "b": [
+     "e"
+    ],
+    "c": [
+     "e"
+    ],
+    "d": [
+     "e"
+    ],
+    "e": [
+     "a",
+     "c",
+     "d"
+    ],
+    "w": [
+     "e"
+    ],
+    "v": [
+     "e"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": [],
+    "e": []
+   },
+   "halt_inputs": {
+    "w": [
+     "d",
+     "e"
+    ],
+    "v": [
+     "c",
+     "e"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 16,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 3,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "stop d"
+      ],
+      [
+       "mutate e"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop e"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 3,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate e"
+      ]
+     ],
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "mutate e"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 3,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate e"
+      ]
+     ],
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "mutate e"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "e": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={b} out={b} halted={}  -> not responded, next round:",
+   "      stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={v}  -> not responded, next round:",
+   "          stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={b} out={b} halted={w}  -> not responded, next round:",
+   "          stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={b,c,d} out={b,c,d} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={} out={} halted={v}  -> not responded, next round:",
+   "      stop a: flagged={b} out={b} halted={v}  -> not responded, next round:",
+   "          stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "          stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  stop d: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop a: flagged={b} out={b} halted={w}  -> not responded, next round:",
+   "          stop b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={b,e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "          stop a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  stop e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  mutate d: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  mutate e: flagged={a,c,d} out={a,c,d} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={e} out={e} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "S5x2-Q4-sampled",
+  "system": {
+   "name": "S5x2-Q4-sampled",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d",
+    "e": "b_e"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "d"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [
+     "e"
+    ],
+    "d": [
+     "b"
+    ],
+    "e": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "b"
+    ],
+    "e": [
+     "c"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": [],
+    "e": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ],
+    "v": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 16,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 3,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop e"
+      ],
+      [
+       "stop c"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate c"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate c"
+      ]
+     ]
+    }
+   },
+   "e": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={d} out={d} halted={}  -> not responded, next round:",
+   "      stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={b,d} out={b} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={d} out={d} halted={}  -> not responded, next round:",
+   "          stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={b,d} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,d} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={b,d} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  stop d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop e: flagged={a} out={a} halted={}  -> not responded, next round:",
+   "      stop a: flagged={a,d} out={d} halted={}  -> not responded, next round:",
+   "          stop b: flagged={a,d} out={d} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={a,d} out={d} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={a,b,d} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={a,c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={a,b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={a,b,d} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a,c,d} out={c,d} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={a,b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={a,b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={a,c} out={c} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={a,b} out={a,b} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate e: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "S6x2-Q1Q4-sampled",
+  "system": {
+   "name": "S6x2-Q1Q4-sampled",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d",
+    "e": "b_e",
+    "f": "b_f"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "f"
+    ],
+    "b": [
+     "d"
+    ],
+    "c": [],
+    "d": [
+     "f"
+    ],
+    "e": [],
+    "f": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c",
+     "e"
+    ],
+    "c": [
+     "b"
+    ],
+    "d": [
+     "b"
+    ],
+    "e": [
+     "b"
+    ],
+    "f": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": [],
+    "e": [],
+    "f": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ],
+    "v": [
+     "b",
+     "e"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 18,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 3,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "stop e"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 3,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "stop e"
+      ],
+      [
+       "mutate b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "e": {
+    "spare": false,
+    "G1": 3,
+    "G2": 1,
+    "witness": {
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G1": [
+      [
+       "stop c"
+      ],
+      [
+       "mutate b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "f": {
+    "spare": false,
+    "G1": 3,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q1",
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={f} out={f} halted={}  -> not responded, next round:",
+   "      stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "          stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={f} out={f} halted={}  -> not responded, next round:",
+   "          stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={c,e,f} out={c,e,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "          stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={c,e,f} out={c,e,f} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={} out={} halted={w}  -> not responded, next round:",
+   "      stop a: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "          stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "          stop a: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,e,f} out={a,e,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "          stop a: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop d: flagged={f} out={f} halted={}  -> not responded, next round:",
+   "      stop a: flagged={f} out={f} halted={}  -> not responded, next round:",
+   "          stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={c,e,f} out={c,e,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "          stop a: flagged={f} out={f} halted={w}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,e,f} out={a,e,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "          stop a: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,c,f} out={a,c,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,c,e,f} out={a,c,e,f} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "  stop e: flagged={} out={} halted={v}  -> not responded, next round:",
+   "      stop a: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "          stop b: flagged={d,f} out={d,f} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={} out={} halted={v,w}  -> not responded, next round:",
+   "          stop a: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "          stop a: flagged={f} out={f} halted={v}  -> not responded, next round:",
+   "              stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "              stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,c,f} out={a,c,f} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,f} out={b} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={b,f} out={b,f} halted={v,w}  -> responded, execution over",
+   "      stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  stop f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a,c,e} out={a,c,e} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate d: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate e: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={b} out={b} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "S6x2-Q4-sampled",
+  "system": {
+   "name": "S6x2-Q4-sampled",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c",
+    "d": "b_d",
+    "e": "b_e",
+    "f": "b_f"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "f"
+    ],
+    "b": [
+     "e"
+    ],
+    "c": [
+     "e"
+    ],
+    "d": [
+     "c"
+    ],
+    "e": [
+     "a"
+    ],
+    "f": [
+     "d"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "d": [
+     "a"
+    ],
+    "e": [
+     "a"
+    ],
+    "f": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ],
+    "v": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [],
+    "d": [],
+    "e": [],
+    "f": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 18,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [],
+  "why_each_monitor_is_not_spare": {
+   "a": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 4,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop d"
+      ],
+      [
+       "stop f"
+      ],
+      [
+       "stop a"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "d": {
+    "spare": false,
+    "G1": 3,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop f"
+      ],
+      [
+       "stop a"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   },
+   "e": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop b"
+      ],
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "f": {
+    "spare": false,
+    "G1": 2,
+    "G2": null,
+    "witness": {
+     "G1": [
+      [
+       "stop a"
+      ],
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={f} out={f} halted={v,w}  -> responded, execution over",
+   "  stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "  stop c: flagged={e} out={e} halted={}  -> not responded, next round:",
+   "      stop a: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={e} out={e} halted={}  -> not responded, next round:",
+   "          stop a: flagged={e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={e} out={e} halted={}  -> not responded, next round:",
+   "              stop a: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop b: flagged={e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over",
+   "      stop f: flagged={d,e} out={d,e} halted={}  -> not responded, next round:",
+   "          stop a: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={d,e} out={e} halted={}  -> not responded, next round:",
+   "              stop a: flagged={d,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop b: flagged={d,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={a,d,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,d,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={a,d,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,d,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={a,d,e} out={a,d} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,d,e} out={b,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a,d,e} out={a,d} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,d,e} out={b,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={a,e} out={a} halted={v,w}  -> responded, execution over",
+   "      mutate f: flagged={b,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={a,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "  stop d: flagged={c} out={c} halted={}  -> not responded, next round:",
+   "      stop a: flagged={c,f} out={c,f} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={c,e} out={c,e} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={c,e} out={e} halted={}  -> not responded, next round:",
+   "          stop a: flagged={c,e,f} out={e,f} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={c,e} out={e} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over",
+   "          stop f: flagged={c,e} out={e} halted={}  -> not responded, next round:",
+   "              stop a: flagged={c,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop b: flagged={c,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      stop f: flagged={c} out={c} halted={}  -> not responded, next round:",
+   "          stop a: flagged={c} out={c} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={c,e} out={c,e} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={c,e} out={e} halted={}  -> not responded, next round:",
+   "              stop a: flagged={c,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop b: flagged={c,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={a,c,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,c,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={a,c,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={a,c} out={a} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={a,c} out={a} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate f: flagged={b,c} out={b,c} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={a,c} out={a,c} halted={v,w}  -> responded, execution over",
+   "  stop e: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  stop f: flagged={d} out={d} halted={}  -> not responded, next round:",
+   "      stop a: flagged={d} out={d} halted={v,w}  -> responded, execution over",
+   "      stop b: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over",
+   "      stop c: flagged={d,e} out={d,e} halted={}  -> not responded, next round:",
+   "          stop a: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={d,e} out={d,e} halted={v,w}  -> responded, execution over",
+   "          stop d: flagged={d,e} out={e} halted={}  -> not responded, next round:",
+   "              stop a: flagged={d,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop b: flagged={d,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={a,d,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,d,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={a,d,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,d,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={a,d,e} out={a,d} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,d,e} out={b,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={a,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a,d,e} out={a,d} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,d,e} out={b,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={a,d,e} out={a,d,e} halted={v,w}  -> responded, execution over",
+   "      stop d: flagged={c,d} out={c} halted={}  -> not responded, next round:",
+   "          stop a: flagged={c,d} out={c} halted={v,w}  -> responded, execution over",
+   "          stop b: flagged={c,d,e} out={c,e} halted={v,w}  -> responded, execution over",
+   "          stop c: flagged={c,d,e} out={e} halted={}  -> not responded, next round:",
+   "              stop a: flagged={c,d,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop b: flagged={c,d,e} out={e} halted={v,w}  -> responded, execution over",
+   "              stop e: flagged={a,c,d,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate a: flagged={b,c,d,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate b: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate c: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate d: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate e: flagged={a,c,d,e} out={a} halted={v,w}  -> responded, execution over",
+   "              mutate f: flagged={b,c,d,e} out={b,e} halted={v,w}  -> responded, execution over",
+   "              mutate w: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "              mutate v: flagged={a,c,d,e} out={a,e} halted={v,w}  -> responded, execution over",
+   "          stop e: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate a: flagged={b,c,d} out={b,c} halted={v,w}  -> responded, execution over",
+   "          mutate b: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate c: flagged={a,c,d} out={a} halted={v,w}  -> responded, execution over",
+   "          mutate d: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate e: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate f: flagged={b,c,d} out={b,c} halted={v,w}  -> responded, execution over",
+   "          mutate w: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over",
+   "          mutate v: flagged={a,c,d} out={a,c} halted={v,w}  -> responded, execution over",
+   "      stop e: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      mutate a: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "      mutate b: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      mutate c: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      mutate d: flagged={a,d} out={a} halted={v,w}  -> responded, execution over",
+   "      mutate e: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      mutate f: flagged={b,d} out={b,d} halted={v,w}  -> responded, execution over",
+   "      mutate w: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "      mutate v: flagged={a,d} out={a,d} halted={v,w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate b: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate c: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate d: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate e: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate f: flagged={b} out={b} halted={v,w}  -> responded, execution over",
+   "  mutate w: flagged={a} out={a} halted={v,w}  -> responded, execution over",
+   "  mutate v: flagged={a} out={a} halted={v,w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "I3x1-with-spare-blamed",
+  "system": {
+   "name": "I3x1-with-spare-blamed",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 10,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [
+   "a"
+  ],
+  "why_each_monitor_is_not_spare": {
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   []
+  ],
+  "falsifier": false,
+  "executions": [
+   "  stop a: flagged={} out={} halted={}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "I3x1-with-spare-partial",
+  "system": {
+   "name": "I3x1-with-spare-partial",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 14,
+  "failing": [
+   "Q4"
+  ],
+  "spare_monitors": [
+   "a",
+   "c"
+  ],
+  "why_each_monitor_is_not_spare": {
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [],
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": false,
+  "executions": [
+   "  stop a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  stop b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b,c} out={b,c} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={a,c} out={a,c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b,c} out={b,c} halted={w}  -> responded, execution over"
+  ]
+ },
+ {
+  "id": "I3x1-with-spare-strict",
+  "system": {
+   "name": "I3x1-with-spare-strict",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "plain": true,
+  "G1": null,
+  "G2": null,
+  "edges": 8,
+  "failing": [
+   "Q1",
+   "Q4"
+  ],
+  "spare_monitors": [
+   "a"
+  ],
+  "why_each_monitor_is_not_spare": {
+   "b": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate a"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate a"
+      ]
+     ]
+    }
+   },
+   "c": {
+    "spare": false,
+    "G1": 1,
+    "G2": 1,
+    "witness": {
+     "G1": [
+      [
+       "mutate b"
+      ]
+     ],
+     "G2": [
+      [
+       "mutate b"
+      ]
+     ]
+    }
+   }
+  },
+  "terminal_systems_failing": [
+   [
+    "Q4"
+   ]
+  ],
+  "falsifier": true,
+  "executions": [
+   "  stop a: flagged={} out={} halted={}  -> not responded, next round:",
+   "      stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "      mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "      mutate w: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  stop b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  stop c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate a: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate b: flagged={c} out={c} halted={w}  -> responded, execution over",
+   "  mutate c: flagged={b} out={b} halted={w}  -> responded, execution over",
+   "  mutate w: flagged={b} out={b} halted={w}  -> responded, execution over"
+  ]
+ }
+]

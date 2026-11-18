@@ -1,0 +1,46 @@
+== table of section 8.2
+1024 [1, 32] [1014, 128, 256, 16, 4]
+1048576 [1, 32] [1048556, 1046016, 262144, 512, 16]
+== window: damage == min(2^w, n)?
+  mismatches with min(2^w, n): 0
+  cases where damage != 2^w (n < 2^w): 1699
+== (i) chain: damage >= n - h*ceil(log2 n)
+  violations n=1..3000: [] tight cases: 15871
+  violations for powers of two 2^12..2^20 (h = 16, 128): []
+== (ii) doubling halt, two hops per tick: damage <= sqrt(n/2)
+  violations n=1..3000: [(1, 1)]
+  violations for powers of two 2^12..2^60: []
+  max damage/sqrt(n/2), n=2..3000: (1.0, 8)
+== (iii) doubling halt, one hop per tick: damage vs n/4
+  n=1: damage 1  n/4=0.25
+  n=2: damage 1  n/4=0.5
+  n=4: damage 2  n/4=1.0
+  n=8: damage 2  n/4=2.0
+  n=16: damage 4  n/4=4.0
+  n=32: damage 8  n/4=8.0
+  n=64: damage 16  n/4=16.0
+  n=128: damage 32  n/4=32.0
+  powers of two 2^3..2^60 with damage != n/4: []
+  share lost for every n in 8..3000: min (0.2001563721657545, 2558) max (0.4, 10)
+  share lost for every n in 1000..3000: min (0.2001563721657545, 2558) max (0.33376792698826596, 1534)
+== halting order: good-first against the true worst order
+  c=2 h=1: n in 2..200 where some other order does more damage: 109; first [(8, 2, 3), (16, 4, 5), (17, 4, 5), (18, 4, 6), (19, 5, 6), (20, 6, 7)]
+     largest ratio worst/good-first: (1.5, 158, 32, 48)
+  c=2 h=2: n in 2..200 where some other order does more damage: 6; first [(32, 2, 3), (128, 4, 5), (129, 4, 5), (130, 4, 6), (131, 5, 6), (132, 6, 7)]
+     largest ratio worst/good-first: (1.5, 130, 4, 6)
+  c=2 h=4: n in 2..200 where some other order does more damage: 0; first []
+  c=1 h=1: n in 2..200 where some other order does more damage: 37; first [(4, 2, 3), (5, 3, 4), (6, 4, 5), (7, 4, 6), (8, 5, 7), (9, 6, 8)]
+     largest ratio worst/good-first: (1.5, 7, 4, 6)
+  c=1 h=4: n in 2..200 where some other order does more damage: 28; first [(10, 2, 3), (14, 4, 5), (15, 4, 5), (16, 4, 6), (17, 5, 6), (18, 6, 7)]
+     largest ratio worst/good-first: (1.5, 36, 16, 24)
+  n=8: c=2,h=1 good-first 2 worst 3; c=2,h=2 good-first 2 worst 2 sqrt(n/2)=2.00
+  n=16: c=2,h=1 good-first 4 worst 5; c=2,h=2 good-first 2 worst 2 sqrt(n/2)=2.83
+  n=64: c=2,h=1 good-first 16 worst 17; c=2,h=2 good-first 4 worst 4 sqrt(n/2)=5.66
+  n=256: c=2,h=1 good-first 64 worst 65; c=2,h=2 good-first 8 worst 8 sqrt(n/2)=11.31
+  n=1024: c=2,h=1 good-first 256 worst 257; c=2,h=2 good-first 16 worst 16 sqrt(n/2)=22.63
+== naming: a correct rule exists?
+  k=2 f=1: others only False; may name itself False
+  k=3 f=1: others only True; may name itself True
+  k=4 f=1: others only True; may name itself True
+  k=4 f=2: others only False; may name itself False
+  k=5 f=2: others only True; may name itself True

@@ -1,0 +1,6 @@
+validation against check_model.explore
+  all 2x1 systems: 1024 disagreements: 0
+  random 3x1 systems: 4000 of which no gap: 1205 disagreements: 0
+2 monitors, 1 work: {'systems': 1024, 'no_gap': 12, 'q1_fail': 0, 'q4_fail': 9, 'q3_fail': 0, 'q8_fail': 0, 'no_spare': 0, 'no_spare_failing': 0, 'no_spare_q1': 0, 'no_spare_q4': 0}
+   no gap with Q4 failing: 9 | all 2x1 systems with no gap have no spare monitor
+3 monitors, 1 work: {'systems': 16777216, 'no_gap': 1169616, 'q1_fail': 178176, 'q4_fail': 798222, 'q3_fail': 0, 'q8_fail': 0, 'no_spare': 742352, 'no_spare_failing': 515030, 'no_spare_q1': 67584, 'no_spare_q4': 491126}

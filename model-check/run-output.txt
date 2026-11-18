@@ -1,0 +1,203 @@
+1. Reference system R, every property present
+  R                                              f=1  G1 holds               G2 holds               (23 states)
+  R                                              f=2  G1 broken in 2 rounds  G2 broken in 1 round   (731 states)
+  R                                              f=3  G1 broken in 1 round   G2 broken in 1 round   (1470 states)
+
+2. R with one property removed (f = 1)
+  R without P1                                   f=1  G1 broken in 1 round   G2 broken in 1 round   (2210 states)
+  R without P2                                   f=1  G1 broken in 1 round   G2 broken in 1 round   (68 states)
+  R without P3                                   f=1  G1 broken in 1 round   G2 broken in 1 round   (777 states)
+  R without P4                                   f=1  G1 holds               G2 broken in 1 round   (59 states)
+  R without P5                                   f=1  G1 broken in 2 rounds  G2 broken in 2 rounds  (13116 states)
+  R without P6                                   f=1  G1 broken in 2 rounds  G2 holds               (239 states)
+  R without P7                                   f=1  G1 broken in 2 rounds  G2 broken in 2 rounds  (2565 states)
+  R without P8                                   f=1  G1 holds               G2 broken in 1 round   (228 states)
+  R without P8b                                  f=1  G1 broken in 3 rounds  G2 broken in 1 round   (1818 states)
+  R without gate                                 f=1  G1 broken in 3 rounds  G2 broken in 1 round   (1257 states)
+
+3. The executions in the write-up, replayed (f = 1)
+  without P1  : breaks G1 and G2; the same schedule in full R breaks nothing: the model ends in a complete response after round 1
+  without P2  : breaks G1 and G2; the same schedule in full R breaks nothing
+  without P3  : breaks G1 and G2; the same schedule in full R breaks nothing
+  without P4  : breaks G2; the same schedule in full R breaks nothing
+  without P5  : breaks G1 and G2; the same schedule in full R has a step that does not exist there
+  without P6  : breaks G1; the same schedule in full R has a step that does not exist there
+  without P7  : breaks G1 and G2; the same schedule in full R breaks nothing
+  without P8  : breaks G2; the same schedule in full R breaks nothing
+  without P8b : breaks G2; the same schedule in full R breaks nothing
+  without gate: breaks G2; the same schedule in full R breaks nothing: the model ends in a complete response after round 1
+
+4. The same missing edge at two tiers
+  R plus unread M4                               f=1  G1 holds               G2 holds               (50 states)
+  mesh of 3, nobody reads M3's signal            f=1  G1 holds               G2 holds               (14 states)
+  mesh of 3, nobody reads M3's signal            f=2  G1 broken in 2 rounds  G2 holds               (76 states)
+
+5. How many monitors: a mesh of n, one work process that reads all of them
+  mesh of 1                                      f=1  G1 broken in 1 round   G2 broken in 1 round   (8 states)
+  mesh of 1                                      f=2  G1 broken in 1 round   G2 broken in 1 round   (8 states)
+  mesh of 1                                      f=3  G1 broken in 1 round   G2 broken in 1 round   (8 states)
+  mesh of 2                                      f=1  G1 holds               G2 holds               (6 states)
+  mesh of 2                                      f=2  G1 broken in 1 round   G2 broken in 1 round   (30 states)
+  mesh of 2                                      f=3  G1 broken in 1 round   G2 broken in 1 round   (32 states)
+  mesh of 3                                      f=1  G1 holds               G2 holds               (8 states)
+  mesh of 3                                      f=2  G1 holds               G2 holds               (29 states)
+  mesh of 3                                      f=3  G1 broken in 1 round   G2 broken in 1 round   (110 states)
+  mesh of 4                                      f=1  G1 holds               G2 holds               (10 states)
+  mesh of 4                                      f=2  G1 holds               G2 holds               (46 states)
+  mesh of 4                                      f=3  G1 holds               G2 holds               (130 states)
+
+6. Report chains inside one ring
+  ring of 2, reports to other, work reads 2      f=1  G1 holds               G2 holds               (6 states)
+  ring of 3, reports to other, work reads 2      f=1  G1 holds               G2 holds               (8 states)
+  ring of 3, reports to same, work reads 2       f=1  G1 broken in 3 rounds  G2 broken in 1 round   (47 states)
+  ring of 3, reports to same, work reads 3       f=1  G1 holds               G2 holds               (8 states)
+  ring of 3, reports to other, work reads 1      f=1  G1 broken in 3 rounds  G2 broken in 1 round   (71 states)
+  ring of 3, reports to other, work reads 2      f=2  G1 broken in 2 rounds  G2 broken in 1 round   (60 states)
+  ring of 3, reports to other, work reads 3      f=2  G1 holds               G2 holds               (29 states)
+  ring of 3, reports to other, work reads 3      f=3  G1 broken in 1 round   G2 broken in 1 round   (110 states)
+
+7. Three monitors plus a coordinator K, one ring
+  3+K, work reads K                              f=1  G1 broken in 4 rounds  G2 broken in 1 round   (265 states)
+  3+K, work reads K+M1                           f=1  G1 holds               G2 holds               (10 states)
+  3+K, work reads K+M1+M2+M3                     f=1  G1 holds               G2 holds               (10 states)
+
+8. Nested rings: two base rings joined by an upper ring through coordinators
+  nested, base rings 3+K, upper ring of 3        f=1  G1 holds               G2 holds               (21 states)
+  nested, base rings 1+K, upper ring of 2        f=1  G1 holds               G2 holds               (11 states)
+  nested, base rings 1+K, upper ring of 2        f=2  G1 broken in 2 rounds  G2 broken in 1 round   (566 states)
+  Removing one edge from 'nested, base rings 3+K, upper ring of 3' (f = 1): 23 of 55 removals break a goal
+    needed: U3 reads KA's signal             (its removal breaks G1 and G2)
+    needed: KA reads KB's signal             (its removal breaks G1 and G2)
+    needed: KB reads U3's signal             (its removal breaks G1 and G2)
+    needed: A1 checks A2's state             (its removal breaks G1 and G2)
+    needed: A2 checks A3's state             (its removal breaks G1 and G2)
+    needed: A3 checks A1's state             (its removal breaks G1 and G2)
+    needed: A1 checks KA's state             (its removal breaks G1 and G2)
+    needed: U3 checks KA's state             (its removal breaks G1 and G2)
+    needed: A1 checks WA's state             (its removal breaks G1 and G2)
+    needed: B1 checks B2's state             (its removal breaks G1 and G2)
+    needed: B2 checks B3's state             (its removal breaks G1 and G2)
+    needed: B3 checks B1's state             (its removal breaks G1 and G2)
+    needed: B1 checks KB's state             (its removal breaks G1 and G2)
+    needed: KA checks KB's state             (its removal breaks G1 and G2)
+    needed: B1 checks WB's state             (its removal breaks G1 and G2)
+    needed: KB checks U3's state             (its removal breaks G1 and G2)
+    needed: KA reports to U3                 (its removal breaks G2)
+    needed: KB reports to KA                 (its removal breaks G2)
+    needed: U3 reports to KB                 (its removal breaks G2)
+    needed: WA takes its halt from A1        (its removal breaks G1 and G2)
+    needed: WA takes its halt from KA        (its removal breaks G1 and G2)
+    needed: WB takes its halt from B1        (its removal breaks G1 and G2)
+    needed: WB takes its halt from KB        (its removal breaks G1 and G2)
+    spare:  A1 reads A2's signal
+    spare:  KA reads A2's signal
+    spare:  KA reads A1's signal
+    spare:  A3 reads A1's signal
+    spare:  A2 reads A3's signal
+    spare:  KA reads A3's signal
+    spare:  A1 reads KA's signal
+    spare:  B1 reads B2's signal
+    spare:  KB reads B2's signal
+    spare:  KB reads B1's signal
+    spare:  B3 reads B1's signal
+    spare:  B2 reads B3's signal
+    spare:  KB reads B3's signal
+    spare:  B1 reads KB's signal
+    spare:  A1 reports to A3
+    spare:  A1 reports to KA
+    spare:  KA reports to A1
+    spare:  KA reports to A2
+    spare:  KA reports to A3
+    spare:  A2 reports to A1
+    spare:  A2 reports to KA
+    spare:  A3 reports to A2
+    spare:  A3 reports to KA
+    spare:  B1 reports to B3
+    spare:  B1 reports to KB
+    spare:  KB reports to B1
+    spare:  KB reports to B2
+    spare:  KB reports to B3
+    spare:  B2 reports to B1
+    spare:  B2 reports to KB
+    spare:  B3 reports to B2
+    spare:  B3 reports to KB
+
+8b. Scope: one environment step stops everything inside one boundary
+  mesh of 4, all in one boundary                 f=1  G1 broken in 2 rounds  G2 holds               (42 states)
+  nested, base rings 3+K, upper ring of 3, each base ring in one boundary f=1  G1 holds               G2 holds               (23 states)
+
+8c. The reflex: where the halt comes from when reports take time
+  work halted by its own checker, reports arrive at once f=1  G1 holds               G2 holds               (8 states)
+  work halted by its own checker, reports take a round f=1  G1 holds               G2 holds               (8 states)
+  work halted by other monitors only, reports arrive at once f=1  G1 holds               G2 holds               (8 states)
+  work halted by other monitors only, reports take a round f=1  G1 holds               G2 broken in 1 round   (15 states)
+
+9. Growth against response time: one bad process, doubling every tick
+  1024 processes
+    all halt together 0 ticks after detection: 1 bad
+    all halt together 1 ticks after detection: 2 bad
+    all halt together 2 ticks after detection: 4 bad
+    all halt together 5 ticks after detection: 32 bad
+    halt passed to 1 per hop, 1 hops per tick: 1014 bad (99.02%)
+    halt passed to 1 per hop, 16 hops per tick: 864 bad (84.38%)
+    halt passed to 1 per hop, 128 hops per tick: 128 bad (12.50%)
+    halt passed to 2 per hop, 1 hops per tick: 256 bad (25.00%)
+    halt passed to 2 per hop, 2 hops per tick: 16 bad (1.56%)
+    halt passed to 2 per hop, 4 hops per tick: 4 bad (0.39%)
+  1048576 processes
+    all halt together 0 ticks after detection: 1 bad
+    all halt together 1 ticks after detection: 2 bad
+    all halt together 2 ticks after detection: 4 bad
+    all halt together 5 ticks after detection: 32 bad
+    halt passed to 1 per hop, 1 hops per tick: 1048556 bad (100.00%)
+    halt passed to 1 per hop, 16 hops per tick: 1048256 bad (99.97%)
+    halt passed to 1 per hop, 128 hops per tick: 1046016 bad (99.76%)
+    halt passed to 2 per hop, 1 hops per tick: 262144 bad (25.00%)
+    halt passed to 2 per hop, 2 hops per tick: 512 bad (0.05%)
+    halt passed to 2 per hop, 4 hops per tick: 16 bad (0.00%)
+
+10. Heartbeat.tla, mirrored
+  HB = True: invariant holds in all 8 reachable states
+  HB = False: invariant broken, shortest trace has 7 states
+    1. Init      alive={m1,m2} bad=False flagged={} turn=env halted=False
+    2. Stop(m1)  alive={m2} bad=False flagged={} turn=mon halted=False
+    3. MonRound  alive={m2} bad=False flagged={} turn=env halted=False
+    4. Stop(m2)  alive={} bad=False flagged={} turn=mon halted=False
+    5. MonRound  alive={} bad=False flagged={} turn=env halted=False
+    6. Corrupt   alive={} bad=True flagged={} turn=mon halted=False
+    7. MonRound  alive={} bad=True flagged={} turn=env halted=False
+
+10b. Restarting: members that run only while another member observes them
+  ring of 3, each observed by the one before it (5 states): cannot restart after: stop X1, release X1
+  mesh of 3, each observed by the other two (14 states): cannot restart after: stop X1, release X1, stop X2, release X2
+  ring of 3 plus K; K observes all and starts by itself (45 states): can always restart
+  the same four, K not able to start by itself (36 states): cannot restart after: stop X1, release X1, stop K, release K
+
+11. The sufficiency conditions (a) to (d) against the search, plain systems, f = 1
+  conditions hold, both goals hold:      31
+  conditions hold, a goal is broken:     0   (must be 0)
+  conditions fail, both goals hold:      14
+  conditions fail, a goal is broken:     27
+
+12. Census: plain systems with one work process, f = 1
+  every system with 2 monitors: 1024 systems, 12 with no gap
+    Q1   every monitor's signal is read by another monitor    fails in    0, of which not down to spare monitors: 0
+    Q1f  ... or by a work process that halts on its silence   fails in    0, of which not down to spare monitors: 0
+    Q3   every process has a state checker other than itself  fails in    0, of which not down to spare monitors: 0
+    Q4   a flag reaches every other monitor                   fails in    9, of which not down to spare monitors: 9
+    Q4r  a flag reaches a halt source of every work process   fails in    0, of which not down to spare monitors: 0
+    Q8   every work process has two different halt sources    fails in    0, of which not down to spare monitors: 0
+    example for Q4: hb_readers {'M1': ['M2'], 'M2': ['M1']}; checkers {'M1': ['M2'], 'M2': ['M1'], 'W': ['M2']}; fwd {'M1': [], 'M2': []}; halt_inputs {'W': ['M1', 'M2']}
+  a sample of systems with 3 monitors: 4890 systems, 1721 with no gap
+    Q1   every monitor's signal is read by another monitor    fails in  103, of which not down to spare monitors: 22
+    Q1f  ... or by a work process that halts on its silence   fails in   23, of which not down to spare monitors: 0
+    Q3   every process has a state checker other than itself  fails in    0, of which not down to spare monitors: 0
+    Q4   a flag reaches every other monitor                   fails in  378, of which not down to spare monitors: 280
+    Q4r  a flag reaches a halt source of every work process   fails in   32, of which not down to spare monitors: 9
+    Q8   every work process has two different halt sources    fails in    0, of which not down to spare monitors: 0
+    example for Q4: hb_readers {'M1': ['M3'], 'M2': ['M1', 'M3'], 'M3': ['M1', 'M2']}; checkers {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M1'], 'W': ['M1', 'M2', 'M3']}; fwd {'M1': ['M2'], 'M2': ['M1'], 'M3': ['M1', 'M2']}; halt_inputs {'W': ['M1', 'M2', 'M3']}
+    example for Q1: hb_readers {'M1': [], 'M2': ['M1', 'M3'], 'M3': ['M1', 'M2']}; checkers {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M1', 'M2'], 'W': ['M1', 'M2']}; fwd {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M1', 'M2']}; halt_inputs {'W': ['M1', 'M3']}
+    example for Q4r: hb_readers {'M1': ['M3'], 'M2': ['M3'], 'M3': ['M1', 'M2']}; checkers {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M2'], 'W': ['M1', 'M2', 'M3']}; fwd {'M1': ['M2'], 'M2': ['M3'], 'M3': []}; halt_inputs {'W': ['M1', 'M2']}
+
+wrote 103 cases to results.json
+wrote 103 systems to systems-all.json

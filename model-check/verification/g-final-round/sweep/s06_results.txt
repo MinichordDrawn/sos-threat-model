@@ -1,0 +1,222 @@
+4 ['be proved', 'be derived'] | and removing any one opens a gap" be proved, and can the ring structure be derived from it?
+6 ['is written'] | It is written in the vocabulary of fault-tolerant distributed computing: processes,
+13 ['was explored'] | - **Checked.** Every reachable state of a small, fully specified system was explored by
+23 ['be removed', 'was found'] | has no gap, and none of the eight can be removed. No kind of fault was found that the eight
+24 ['is met'] | do not answer. The claim stands until one of the framework's falsification criteria is met
+36 ['is set'] | extra constraints. How much of the structure a system needs is set by the scaling law: by
+43 ['is flagged'] | too weak a goal. A fault that is flagged while work carries on has the same effect as
+50 ['is stopped'] | round the monitors must check before any work process steps, so that work is stopped by
+54 ['is needed'] | 3. *Necessity is relative to the tier.* A property is needed for every observer the
+57 ['are needed'] | round, where all three are needed (section 4).
+58 ['is checked'] | 4. *Every guarantee is relative to a rate, a scope and what is checked, and all three are
+59 ['be faulted'] | the implementation's to set.* If every monitor can be faulted before any of them steps,
+60 ['be stopped'] | or all can be stopped in one step, no arrangement inside the system survives. A fault
+61 ['is flagged'] | that changes nothing any monitor reads is flagged by none. The counts grow with the
+63 ['is answered'] | fault as wide as the whole system is answered by adding a level, and the conditions at
+67 ['is needed'] | of fault exist, each property is needed, the properties together leave no gap, and none
+68 ['is covered'] | is covered by the others. The other half, that these kinds of fault exist, is what the
+71 ['is wired'] | Only propagation depends on how a system is wired, and that is a matter of scale: a
+76 ['is lost'] | construction what the gate does by a check: when a substrate is lost, sharing it leaves
+88 ['is lost'] | base ring is lost in one step.
+96 ['be reached'] | C4. So one member must be able to start first, and every other member must be reached
+98 ['is watched'] | unobserved: it is watched like any member, and it checks the others before it moves
+105 ['be established'] | - *Unique:* not settled. Uniqueness cannot be established by any finite check, only
+106 ['was found'] | refuted by a counterexample, and none was found. The arrangements that pass the
+111 ['was found', 'be removed'] | configuration was found, no property could be removed whole without a gap, and nothing the
+112 ['was not tested'] | model needed turned out to be a fifth constraint. Independent reproduction was not tested.
+119 ['is described'] | work processes and each other. A system is described by who does what to whom:
+126 ['is flagged'] | | halt inputs | work process `w` halts when one of these monitors is flagged, or silent |
+134 ['is halted'] | **What "halted" stands for.** A work process is halted when the response has fired for it:
+136 ['is applied'] | the scope it is applied at. It may be to refuse (ghostunnel's proxy refuses new
+153 ['is unchanged'] | | stop `m` | `m` takes no more steps and emits nothing. Its state is unchanged. | a crash |
+174 ['is stopped'] | is stopped by default and runs on a current observation. Section 6 shows what happens when
+175 ['is reversed'] | the order is reversed.
+183 ['is flagged', 'was done'] | that is alive and not itself mutated is flagged. The request this work was done for set
+186 ['are reported'] | Both are reported because together they say which half failed. G1 broken means nothing in
+196 ['is bounded'] | 1. *The fault rate is bounded.* Theorem 0 below shows nothing holds otherwise.
+199 ['is put'] | model. One consequence is that the model never sees a state that goes bad and is put
+206 ['is treated'] | a stopped ring comes back is treated separately, through the coordinator, in section
+211 ['be seen'] | 6. *A substrate fault cannot be seen by a state check from off the substrate.* The
+215 ['is flagged'] | when one of its halt inputs is flagged or silent. The halt in the model is therefore
+217 ['is trusted'] | to act. A request that a faulty process is trusted to obey is a weaker thing, and the
+222 ['is used'] | | Condition | Where it is used |
+225 ['is taken'] | | C2, an undetected failure costs far more than a false flag | Any flag halts. No vote is taken and a flag needs no proof of origin, because a wrong halt is the
+226 ['be checked'] | | C3, a fault may look like health | The mutate step. It is why signals alone are not enough (P3) and why monitors must be checked by other monitors. |
+227 ['is taken', 'is not guaranteed', 'is not supervised'] | | C4, no outside operator | No step in the model is taken by a person. Enrolment is not guaranteed to happen (P7), and a switch is not supervised (P5). |
+229 ['is checked'] | ### 2.7 Theorem 0: the rate, the scope and what is checked
+234 ['be violated'] | monitors, G1 can be violated. *Proof.* The environment mutates every monitor in one
+235 ['be flagged'] | round. A state is bad and no correct monitor exists to be flagged.
+237 ['be violated'] | in one boundary), G1 can be violated in two rounds: that step, then mutate any process.
+239 ['is checked'] | 3. *What is checked.* A monitor detects two things only: the silence of a monitor whose
+242 ['is raised'] | detected by none, and no flag is raised. *Proof.* A flag starts only at a detection.
+244 ['is checked'] | So every guarantee is relative to a rate, to a scope and to what is checked. A fault as
+250 ['is flagged'] | one step can stop an entire ring. That step is flagged in the same round by the upper-ring
+252 ['be violated'] | work processes halt. Neither judgement can be violated at `f` = 1. A single ring of four
+267 ['are listed'] | beneath and the services beside. They are listed and not seen into.
+268 ['is left'] | - *Inward: what is left to vary unchecked.* A fault that passes every check the system
+270 ['is allowed', 'is fixed'] | system that is allowed to vary. A part that is fixed, and checked against a reference,
+271 ['is fixed'] | is out of its reach, and a system that is fixed throughout has no such side.
+283 ['be covered'] | model the least structure grows with the class of fault to be covered:
+287 ['be lost'] | - one more level for each wider boundary that may be lost in one step;
+290 ['is made'] | Which class is worth covering is a judgement about consequences, and it is made outside
+292 ['is checked'] | what is checked are therefore the implementation's to choose, and they are not further
+309 ['are reached'] | | Emergent: the framework | each property, by what it does; the gate; the reflex; the cascade; a member that can start first, from which the rest are reached; a
+310 ['is repaired'] | | Implementation: set by the scaling law | which edge carries a property; how many monitors and halt sources; cadence and thresholds; scope and levels; mesh or 
+314 ['is built'] | and the form varies with scale and with the tier the system is built for.
+320 ['is seen'] | | P3 State check | a state that goes bad without a sign is seen | a state comparison; a recomputation; a record that may only grow |
+321 ['is passed'] | | P4 Propagation | one detection stops the whole system | the work reads the detector directly; the flag is passed between observers; a chain through coordinato
+323 ['is seen'] | | P6 Out-of-boundary signal | an observer's loss is seen from somewhere that survives it | separate accounts, hosts or sites; a level above |
+338 ['is read'] | | P1 Liveness signal | every monitor's signal is read by another monitor; a work process halts when a halt input is silent | stop |
+341 ['is reached'] | | P4 Propagation | from every monitor's flag, every other monitor is reached along report edges, directly or through other monitors | any, when views are local 
+346 ['is passed', 'is counted'] | | P8b Halt fan-out | every work process takes its halt from at least two monitors (that every halt is passed to at least two more is counted in section 8.2, not
+351 ['be read'] | needs P1 to be read.
+355 ['is built'] | **Necessary for what the system is built to cover.** By the scaling law (section 2.7), how
+360 ['are proved'] | Two forms of this are proved or checked in what follows.
+363 ['is not implied'] | one, alone, opens a gap. So the property is not implied by the others, and the others do
+381 ['are needed'] | three are needed. The environment stops M3 unseen, then stops M1 and mutates M2 together,
+382 ['is left'] | and nothing is left to flag it. The missing property is a gap exactly where the tier relies
+391 ['is built'] | So section 6 establishes this: at the tier R is built for, each property, removed whole,
+404 ['is checked'] | - W1 halts on M1 or M3. W2 halts on M2 or M3. J, once joined, is checked by M3 and halts on
+407 ['be violated'] | **Checked.** With everything in place and `f` = 1, neither judgement can be violated (23
+410 ['is built'] | working. R is built for one fault per round.
+414 ['is made', 'was replayed'] | Each removal is made alone, with `f` = 1. Each execution in a table below was replayed in
+417 ['is removed'] | when nothing is removed. Section 7 sets each result beside an independent reviewer's
+441 ['is argued'] | P2 has two faces. The model checks the first. The second is argued from an execution.
+457 ['is defined'] | *Evidence:* checked, and immediate from the definition of the step. The step is defined as
+458 ['is granted'] | invisible to a state check from off the substrate, so once that is granted the result
+469 ['be made'] | runs and nothing watches it, and a system that is down cannot be made to act.
+506 ['be mutated'] | no state checker other than itself can be mutated, leaving a bad state and no flag. A
+523 ['is needed'] | *Evidence:* checked. P4 is needed because the response is system-wide and views are local.
+535 ['be violated'] | way and neither judgement can be violated. The rule "check one, report to a different one"
+536 ['is not delivered'] | is exactly the condition that a report about a faulty monitor is not delivered to that
+560 ['is checked'] | no substrates or switches, if some set of at most `f` monitors is checked by no monitor
+607 ['is flagged'] | *Evidence:* checked, and proved below. The result is one of timing. A fault that is flagged
+649 ['is detected'] | halt exists: to keep a fault from acting in the interval before it is detected.
+654 ['is answered'] | In R without the gate, no step that makes a state bad in round 1 is answered completely in
+664 ['is defined'] | (*dynamics*), or follows at once from how the fault step or the parameter is defined, and
+686 ['is built', 'were written'] | - It holds because of how the model is built. The kinds of fault were written down first,
+687 ['was then written'] | and each property was then written as the thing that catches one of them. In the model,
+693 ['is needed'] | - *If these kinds of fault exist, each property is needed.* This half is the checker's.
+699 ['being modelled'] | claim about the systems being modelled: that a process can stop, that everything in one
+700 ['be lost'] | boundary can be lost together, that processes join, that a fault keeps acting while a
+701 ['being weighed'] | response is being weighed, and, for the two faults introduced to express a property,
+705 ['is shown', 'be needed'] | A lock is shown to be needed by a burglar who comes through the door. That the lock stops
+720 ['be violated', 'be violated'] | | M1 and M2: its own checker is a halt source | neither judgement can be violated | neither judgement can be violated |
+721 ['be violated'] | | M2 and M3: monitors that must first hear from M1 | neither judgement can be violated | G2 broken in one round |
+734 ['be wired'] | So the monitor that sees a process's fault must be wired to stop that process directly.
+735 ['be registered'] | A halt that has to be registered somewhere else first arrives after the fault has acted.
+736 ['are wired'] | Both implementations (section 10.5) are wired this way: the gate reads every member's own
+779 ['were checked'] | verifier's, in `verification/d-claims/claims-verdicts.md`). All three were checked here by
+784 ['be paired'] | makes the halt grow as fast as the fault, and it must be paired with hops that are quick
+794 ['is bounded'] | - *The depth is bounded by time.* A chain of `d` hops, each taking `t`, responds in `d * t`.
+867 ['is judged'] | `NoUndetectedBad` is judged between rounds: once a monitor round has run on a bad state,
+868 ['is flagged'] | some live monitor is flagged.
+871 ['be stopped', 'is corrupted'] | live monitor flagged, both monitors must be stopped before the work process is corrupted.
+872 ['is followed'] | The first stop is followed by a monitor round in which the survivor sees the silence, flags
+873 ['is disabled'] | and sets `halted`, after which `Env` is disabled.
+890 ['be stopped'] | must be stopped first, which takes four steps, and then two more.
+892 ['been run', 'was produced'] | The module has not been run through TLC. The trace was produced by hand and checked
+911 ['is watched'] | - (a) every monitor is watched by some other monitor;
+913 ['is reached'] | - (c) for every monitor `z`, every other monitor either watches `z` or is reached from a
+915 ['is reached'] | - (d) every work process has a state checker from which every monitor is reached along
+918 ['be violated'] | Then neither judgement can be violated.
+925 ['are flagged'] | which are flagged, so every work process halts without taking a work step.
+928 ['is then flagged'] | other than `z` is then flagged. By (b) every work process has a halt input other than
+929 ['is flagged'] | `z`, which is flagged, so it halts without taking a work step.
+939 ['are checked'] | flag that passes through. So the conditions are checked on the whole graph at once, however
+945 ['are linked'] | that the rings are linked like a chain and not stacked like a tree with a root. (In the
+946 ['are labelled'] | checker's output these systems are labelled "nested".)
+950 ['be violated'] | 31 the search finds neither judgement can be violated. The conditions are sufficient and
+957 ['be violated'] | | Four monitors, all pairs watching, one work process reading all four. Both implementations build this ring: three members and a coordinator, every member watc
+958 ['be violated'] | | Three monitors and a coordinator with a surface view only; work reads the coordinator and one member | neither judgement can be violated at `f` = 1 |
+959 ['be violated'] | | Interleaved rings on two levels: two base rings, each three members and a coordinator, joined by an upper ring of the two coordinators and a third member | ne
+960 ['be violated'] | | The same, each base ring whole in one boundary | neither judgement can be violated at `f` = 1 |
+974 ['be violated'] | the two-level system, 23 of 55 removals let a judgement be violated:
+982 ['is read'] | rings. Each of those has a second edge doing the same job. A member's signal is read by its
+985 ['is needed'] | coordinator's signal it is the member's read: the upper ring's is needed. The upper ring,
+986 ['is needed'] | as built here, has no such pairs, and every edge in it is needed.
+990 ['be covered'] | By the scaling law (section 2.7) the structure grows with what must be covered. The table
+1004 ['is reached'] | | Recover without an outside hand | one member that can start first, from which every other member is reached along observation edges | the first proved, the se
+1008 ['be made'] | with a work process reading both, cannot be made to violate either judgement at `f` = 1.
+1017 ['be faulted'] | 1. *Two faults between rounds.* Two monitors can both be faulted before either steps.
+1022 ['is named'] | rule can tell which. With three or more, the faulty one is named by at least two and a
+1028 ['is needed'] | has at least three members. Section 8.2 shows why the rule is needed: a halt passed to
+1037 ['be reached'] | first, and every other member must be reached from it along observation edges. That
+1044 ['is checked', 'is read'] | rings only through a member that belongs to both, is checked from both and is read from
+1046 ['are needed'] | signal and every report in the upper ring are needed. Its own ring's read of its signal,
+1056 ['is read'] | members when each monitor's output is read directly. Three and one make four, which is
+1089 ['is stopped', 'are stopped'] | | three members, each observed by the one before it | cannot restart after one member is stopped and released: the stop passes round the ring and all three are 
+1090 ['are stopped'] | | three members, each observed by the other two | cannot restart after two members are stopped and released |
+1092 ['are stopped'] | | the same four, but the coordinator cannot start first | cannot restart after one member and the coordinator are stopped and released |
+1094 ['is left'] | In the first row the coupling does what it is for: it stops whatever is left unobserved.
+1099 ['is observed'] | kind from the rest in this one respect and in no other. It is observed like any member,
+1106 ['be reached'] | every other member must be reached from it along observation edges, which is the
+1128 ['is lost'] | and every member is up and reading it. None of them clears while the coordinator is lost,
+1135 ['be refuted'] | establish it. It can only be refuted, by a system that meets all four constraints, has no
+1138 ['was found'] | No such system was found. Several arrangements pass the detect-and-halt checks at one fault
+1165 ['is judged'] | | a round | one cycle; a change that lands after the first read of a path within a cycle is judged by the next cycle's first read, "a latency of at most one cyc
+1169 ['was seen'] | | not modelled | history checks: hash chains and a trace that may only grow (I1, I3, I4, `observers/SPEC.md:451-462`; `trace-consistent`, `:674`) | they catch a
+1174 ['is agreed'] | | the model ends here | the clear protocol (`observers/SPEC.md:554-568`): "Detection is unilateral, recovery is agreed" (`:568`) | the coordinator clears first;
+1177 ['are declared', 'is made'] | | P7 | members are declared, not discovered; a declared member with no store halts the ring (`observers/SPEC.md:266`) | for monitors, absence is made detectable
+1184 ['is lost'] | is gone (`observers/SPEC.md:554-558`). None of them clears while it is lost, because its
+1191 ['was put'] | was put back afterwards (I1, `observers/SPEC.md:451-454`; `trace-consistent`, `:674`).
+1205 ['be delayed'] | whose monitors can be delayed without bound is a different model, and the results would
+1207 ['is judged'] | - **A round hides what happens inside it.** G2 is judged per round, and a round is one
+1211 ['is treated'] | - **Recovery is treated only in a small model.** The round model ends at the first
+1213 ['is not joined'] | liveness; it is not joined to the round model. Lifting a halt while a fault may still be
+1214 ['are not modelled'] | present, and what a second fault does to a halted system, are not modelled. The argument
+1215 ['is proved'] | for three that rests on naming the faulty monitor is proved as a statement about
+1222 ['be removed'] | In R, 18 of 27 single edges can be removed one at a time without opening a gap (the
+1224 ['is needed'] | of it is needed.
+1228 ['is made'] | - **Repair, and a change that is made and undone, are outside it.** Both belong to the
+1230 ['are proved'] | - **Theorem S is for one fault per round.** For more, the necessary conditions are proved
+1231 ['is settled'] | and the mesh is settled, but no general sufficient condition for an arbitrary graph is
+1235 ['be violated'] | - **A finite check is a finite check.** "Neither judgement can be violated" for a named
+1236 ['was explored'] | system means every reachable state of that system was explored. It carries to other
+1241 ['be shown'] | The framework states four ways it could be shown wrong. This section sets the results
+1242 ['been satisfied'] | against each. A criterion that is "not met" has not been satisfied by anything found here.
+1243 ['is claimed'] | No proof is claimed that nothing could satisfy it.
+1250 ['is needed'] | | If these kinds of fault exist, each property is needed, and together they leave no gap | the checker, the independent provers and the falsifier search: done h
+1268 ['was tested'] | them have no gap. For each of those, the structural form of each property was tested.
+1269 ['were set'] | Where one failed, the monitors the system does not depend on were set aside first: a
+1276 ['is read'] | | every monitor's signal is read by another monitor | 103 | 22 |
+1277 ['is read'] | | every monitor's signal is read by another monitor, or by a work process that halts on its silence | 23 | 0 |
+1287 ['is read'] | - *The liveness signal* holds in every system with no gap, once it is read by what it
+1288 ['is read'] | does: the silence of every monitor the system depends on is read by another monitor, or
+1291 ['is needed'] | and there is still no gap. In 243 of the 289 no report is needed at all: the system has
+1306 ['been shown'] | none of these systems has been shown to meet the fourth constraint, and by section 10.3 a
+1332 ['is left', 'is proved'] | - What is left of the signal-read predicate is proved without exception: where no monitor
+1335 ['is read'] | So the form in which a signal is read, and the form in which a flag reaches the work, vary
+1342 ['was found'] | **Result:** not met. No system was found that meets all four constraints, has no gap, and
+1344 ['been shown'] | systems has been shown to meet the fourth constraint. Within them the predicate forms of
+1349 ['is read'] | monitor the system depends on is read, by another monitor or by the work, and a bad state
+1354 ['be removed'] | *A proof that one of the eight properties can be removed without creating a gap.*
+1378 ['be settled'] | No finite piece of work can list every constraint, so this cannot be settled here. What can
+1379 ['be reported'] | be reported is what the model turned out to need beyond the eight properties, and what kind
+1386 ['is reached'] | | a member that can start first, from which every other member is reached | emergent, from the fourth constraint |
+1394 ['was considered'] | One candidate was considered and not tested: a requirement to keep serving through a
+1395 ['is read'] | fault. The model's halt rule rejects it. If the halt is read as the system's own response,
+1398 ['is argued', 'was not checked'] | This paragraph is argued and was not checked.
+1407 ['was made'] | Not tested. An attempt was made with three agents given only the four constraints, but
+1409 ['are set'] | independent, and their derivations are set aside. The evidence that exists on this point
+1414 ['was checked'] | Every phase but those listed at the end of this section was checked by an agent started
+1415 ['was given'] | fresh for the purpose. Each was given only the artefacts to check, in a folder of its own,
+1421 ['was done'] | - An agent started in the workspace where this was done can see that workspace's one-line
+1431 ['were computed'] | | A, reimplementation | the specification and the cases | implemented the model from the specification alone and computed every case | identical on all 103 case
+1441 ['was lettered'] | The letters are those of the working folders. No pass was lettered C. The two verifiers of
+1448 ['was tightened'] | - *From A.* The specification's wording was tightened in eight places.
+1449 ['were fixed'] | - *From B.* Four defects in the script were fixed: a replay that ran past the point where
+1453 ['were added'] | limits were added to section 11.
+1455 ['were checked'] | are D's, which are sharper than the ones first claimed, and were checked by computation
+1456 ['being adopted'] | before being adopted.
+1461 ['were corrected'] | - *From the final round.* Four statements were wrong and were corrected: the Python
+1467 ['were checked'] | too; the interleaved rings were checked at one fault per round; the halt fan-out and the
+1469 ['were decided'] | falsifier's five sizes were decided wiring by wiring; and the result of section 12.1
+1471 ['was given'] | of section 10.5 was given a citation for every line it relies on.
+1476 ['were added'] | one unread signal at two tiers in section 4 were added after them. In the final round
+1477 ['was checked', 'was given'] | each was checked against the script and recomputed by the reconciler. None was given to
+1479 ['been run'] | - The TLA+ module of section 9 has not been run through TLC.
+1480 ['is not used'] | - One claim given to E, about lifting a halt, is not used. It rested on a premise that
+1484 ['was then read'] | Every line it cites was then read directly, and again by the reconciler, and every
+1491 ['is not established'] | | `README.md` | what this folder is, the method, and what is and is not established |
+1499 ['was given'] | | `verification/` | one folder for each independent pass, with what it was given and what it produced |

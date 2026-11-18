@@ -1,0 +1,6 @@
+D1 join offered to a joiner named 0: True
+D2 replay of P1's schedule in full R: ended after 1 round(s)
+D3 reference(without='P8b'): R without P8b | window 0 | halt inputs {'W1': ['M1'], 'W2': ['M2'], 'J': ['M3']}
+D4 no KeyError; checkers: {'W1': ['M4'], 'M4': ['M1', 'M2']}
+D5 window=2: {'G1': None, 'G2': 1} | window=1: {'G1': None, 'G2': 1}
+D5 f=0 accepted: {'G1': None, 'G2': None} 1 state(s)

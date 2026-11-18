@@ -1,0 +1,26 @@
+listing lines: 57 | module lines: 72 | listing lines matched in order: 57
+module lines the listing leaves out:
+    2: (* Property P1, the liveness signal, on its own.                           *)
+    3: (* Monitors state-check one work process. With HB = TRUE each monitor also *)
+    4: (* flags when another monitor's signal is absent. The environment takes at *)
+    5: (* most one step per round; then every live monitor takes its step.        *)
+   25: (* Environment steps. *)
+   44: (* What a live monitor m sees in its round. *)
+   56: (* The model ends at the first response; this step only lets TLC idle there. *)
+   63: TypeOK == /\ alive \subseteq Mon
+   64:           /\ bad \in BOOLEAN
+   65:           /\ out \in [Mon -> {"nominal", "flagged"}]
+   66:           /\ turn \in {"env", "mon"}
+   67:           /\ halted \in BOOLEAN
+   68: 
+   69: (* Judged between rounds: once a monitor round has run on a bad state, *)
+   70: (* some live monitor is flagged.                                        *)
+Heartbeat.cfg:
+  \* Set HB = TRUE to check the system with P1: the invariant then holds.
+  SPECIFICATION Spec
+  CONSTANTS
+      Mon = {m1, m2}
+      HB = FALSE
+  INVARIANTS
+      TypeOK
+      NoUndetectedBad

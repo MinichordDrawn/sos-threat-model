@@ -1,0 +1,9 @@
+  ... 250 compared, 63 skipped, 0 differences, t=47s
+  ... 500 compared, 116 skipped, 0 differences, t=143s
+  ... 750 compared, 167 skipped, 0 differences, t=220s
+  ... 1000 compared, 232 skipped, 0 differences, t=282s
+  ... 1250 compared, 278 skipped, 0 differences, t=369s
+  ... 1500 compared, 322 skipped, 0 differences, t=503s
+1648 random systems compared (352 skipped as over 1500 states) in 541s: 0 differences
+  feature coverage: {'joiner': 692, 'switches': 312, 'coupling': 986, 'window1': 506, 'f1': 697, 'f2': 640, 'f3': 311, 'stop-boundary enabled': 581, 'has substrate': 1577}
+  (G1, G2) result counts: {(1, 1): 1557, (1, 2): 4, (1, None): 6, (2, 1): 33, (2, 2): 18, (2, None): 5, (3, 1): 2, (3, 2): 2, (3, 3): 1, (3, None): 1, (None, 1): 1, (None, None): 18}

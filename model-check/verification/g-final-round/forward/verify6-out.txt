@@ -1,0 +1,17 @@
+R without the gate: every first-round environment choice
+  ()                               bad=[] flagged=[] halted=[] worked=['W1', 'W2'] complete-response=False
+  (('stop', 'M1'),)                bad=[] flagged=['M2', 'M3'] halted=['W1'] worked=['W2'] complete-response=False
+  (('stop', 'M2'),)                bad=[] flagged=['M1', 'M3'] halted=['W2'] worked=['W1'] complete-response=False
+  (('stop', 'M3'),)                bad=[] flagged=['M1', 'M2'] halted=['W1', 'W2'] worked=[] complete-response=True
+  (('fail-substrate', 's1'),)      bad=['W1'] flagged=['M2', 'M3'] halted=['W1'] worked=['W2'] complete-response=False
+  (('fail-substrate', 's2'),)      bad=['W2'] flagged=['M1', 'M3'] halted=['W2'] worked=['W1'] complete-response=False
+  (('mutate', 'M1'),)              bad=['M1'] flagged=['M2', 'M3'] halted=[] worked=['W1', 'W2'] complete-response=False
+  (('mutate', 'M2'),)              bad=['M2'] flagged=['M1', 'M3'] halted=[] worked=['W1', 'W2'] complete-response=False
+  (('mutate', 'M3'),)              bad=['M3'] flagged=['M1', 'M2'] halted=[] worked=['W1', 'W2'] complete-response=False
+  (('mutate', 'W1'),)              bad=['W1'] flagged=['M1', 'M2', 'M3'] halted=[] worked=['W1', 'W2'] complete-response=False
+  (('mutate', 'W2'),)              bad=['W2'] flagged=['M1', 'M2', 'M3'] halted=[] worked=['W1', 'W2'] complete-response=False
+  (('join', 'J'),)                 bad=[] flagged=[] halted=[] worked=['W1', 'W2', 'J'] complete-response=False
+  a round in which a state goes bad and the response is complete: (('fail-substrate', 's1'),) {'bad': ['W1'], 'out': ['M2', 'M3'], 'halted': ['W1', 'W2'], 'executed': [], 'G1': False, 'G2': False}
+  a round in which a state goes bad and the response is complete: (('fail-substrate', 's2'),) {'bad': ['W2'], 'out': ['M3'], 'halted': ['W1', 'W2'], 'executed': [], 'G1': False, 'G2': False}
+  a round in which a state goes bad and the response is complete: (('mutate', 'M1'),) {'bad': ['M1'], 'out': ['M2', 'M3'], 'halted': ['W1', 'W2'], 'executed': [], 'G1': False, 'G2': False}
+rounds in which a state goes bad: 2365 ; of which end in a complete response: 136 ; states 1257

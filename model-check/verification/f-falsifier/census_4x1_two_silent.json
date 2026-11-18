@@ -1,0 +1,215 @@
+{
+ "n": 4,
+ "k": 1,
+ "labelled_systems_total_no_self_loops": 17592186044416,
+ "(hb_readers,fwd) pairs visited over the halt-input shapes": 83886080,
+ "labelled_triples_covered": 268435456,
+ "feasible_triples_labelled": 4314624,
+ "per_halt_input_size(unweighted)": {
+  "0": {
+   "feasible_triples": 0,
+   "gap_free": 0,
+   "no_spare": 0
+  },
+  "1": {
+   "feasible_triples": 0,
+   "gap_free": 0,
+   "no_spare": 0
+  },
+  "2": {
+   "feasible_triples": 391424,
+   "gap_free": 1807632640,
+   "no_spare": 268323072
+  },
+  "3": {
+   "feasible_triples": 393216,
+   "gap_free": 2530050048,
+   "no_spare": 76382208
+  },
+  "4": {
+   "feasible_triples": 393216,
+   "gap_free": 2717908992,
+   "no_spare": 0
+  }
+ },
+ "gap_free_labelled": 23683905024,
+ "gap_free_by_failing_predicates": {
+  "none": 0,
+  "Q1": 9986519016,
+  "Q4": 0,
+  "Q1+Q4": 13697386008
+ },
+ "triples_where_an_empty_checker_list_is_allowed(Q3)": 0,
+ "feasible_triples_with_fewer_than_two_halt_inputs(Q8)": 0,
+ "gap_free_with_empty_fwd": 3967818,
+ "no_spare_labelled": 1915467264,
+ "no_spare_by_failing_predicates": {
+  "none": 0,
+  "Q1": 909201384,
+  "Q4": 0,
+  "Q1+Q4": 1006265880
+ },
+ "no_spare_with_empty_fwd": 195402,
+ "no_spare_by_number_of_readerless_monitors": {
+  "2": 1915467264
+ },
+ "no_spare_with_readerless_monitor_outside_halt_inputs": 0,
+ "families": {
+  "Q1": {
+   "min_edges": 13,
+   "classes_at_min_edges": 1,
+   "smallest": [
+    {
+     "name": "4x1 fails Q1 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ]
+  },
+  "Q1+Q4": {
+   "min_edges": 11,
+   "classes_at_min_edges": 1,
+   "smallest": [
+    {
+     "name": "4x1 fails Q1+Q4 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ]
+  }
+ },
+ "seconds": 7.4,
+ "restricted_to": "hb_readers relations in which at least two monitors have no reader"
+}

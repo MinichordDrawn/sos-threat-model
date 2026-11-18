@@ -1,0 +1,784 @@
+{
+ "4x2": {
+  "counts": {
+   "gap_free": 524846,
+   "gap_free fails Q1": 19613,
+   "gap_free fails Q1+Q4": 71449,
+   "gap_free fails Q4": 333399,
+   "gap_free fails none": 100385,
+   "no_spare": 74784,
+   "no_spare fails Q1": 3722,
+   "no_spare fails Q1+Q4": 11182,
+   "no_spare fails Q4": 39914,
+   "no_spare fails none": 19966,
+   "sampled": 3499776,
+   "thinned": 524846,
+   "thinned fails Q1+Q4": 336503,
+   "thinned fails Q4": 187357,
+   "thinned fails none": 986,
+   "thinned no_spare": 345134,
+   "thinned no_spare fails Q1+Q4": 157135,
+   "thinned no_spare fails Q4": 187013,
+   "thinned no_spare fails none": 986,
+   "thinned no_spare with 0 reader-less monitors": 187999,
+   "thinned no_spare with 1 reader-less monitors": 140571,
+   "thinned no_spare with 2 reader-less monitors": 16564
+  },
+  "fewest_edge_examples": {
+   "Q1+Q4": {
+    "name": "4x2 sampled, fails Q1+Q4, 14 edges",
+    "f": 1,
+    "monitors": [
+     "a",
+     "b",
+     "c",
+     "d"
+    ],
+    "works": [
+     "w",
+     "v"
+    ],
+    "joiner": null,
+    "boundary": {
+     "a": "b_a",
+     "b": "b_b",
+     "c": "b_c",
+     "d": "b_d"
+    },
+    "substrate": {},
+    "hb_readers": {
+     "a": [],
+     "b": [
+      "d"
+     ],
+     "c": [],
+     "d": [
+      "b"
+     ]
+    },
+    "checkers": {
+     "a": [
+      "b"
+     ],
+     "b": [
+      "d"
+     ],
+     "c": [
+      "d"
+     ],
+     "d": [
+      "b"
+     ],
+     "w": [
+      "b"
+     ],
+     "v": [
+      "b"
+     ]
+    },
+    "fwd": {
+     "a": [],
+     "b": [
+      "c"
+     ],
+     "c": [],
+     "d": [
+      "a"
+     ]
+    },
+    "halt_inputs": {
+     "w": [
+      "a",
+      "c"
+     ],
+     "v": [
+      "a",
+      "b"
+     ]
+    },
+    "switches": [],
+    "coupling": true,
+    "window": 0,
+    "gate": true,
+    "slow_reports": false
+   },
+   "Q4": {
+    "name": "4x2 sampled, fails Q4, 14 edges",
+    "f": 1,
+    "monitors": [
+     "a",
+     "b",
+     "c",
+     "d"
+    ],
+    "works": [
+     "w",
+     "v"
+    ],
+    "joiner": null,
+    "boundary": {
+     "a": "b_a",
+     "b": "b_b",
+     "c": "b_c",
+     "d": "b_d"
+    },
+    "substrate": {},
+    "hb_readers": {
+     "a": [
+      "c"
+     ],
+     "b": [
+      "d"
+     ],
+     "c": [
+      "d"
+     ],
+     "d": [
+      "a"
+     ]
+    },
+    "checkers": {
+     "a": [
+      "b"
+     ],
+     "b": [
+      "c"
+     ],
+     "c": [
+      "b"
+     ],
+     "d": [
+      "c"
+     ],
+     "w": [
+      "b"
+     ],
+     "v": [
+      "c"
+     ]
+    },
+    "fwd": {
+     "a": [],
+     "b": [],
+     "c": [],
+     "d": []
+    },
+    "halt_inputs": {
+     "w": [
+      "b",
+      "c"
+     ],
+     "v": [
+      "b",
+      "c"
+     ]
+    },
+    "switches": [],
+    "coupling": true,
+    "window": 0,
+    "gate": true,
+    "slow_reports": false
+   }
+  }
+ },
+ "5x1": {
+  "counts": {
+   "gap_free": 368734,
+   "gap_free fails Q1": 18166,
+   "gap_free fails Q1+Q4": 53700,
+   "gap_free fails Q4": 217657,
+   "gap_free fails none": 79211,
+   "no_spare": 6877,
+   "no_spare fails Q1": 525,
+   "no_spare fails Q1+Q4": 1468,
+   "no_spare fails Q4": 2720,
+   "no_spare fails none": 2164,
+   "sampled": 1107754,
+   "thinned": 368734,
+   "thinned fails Q1+Q4": 291213,
+   "thinned fails Q4": 77521,
+   "thinned no_spare": 135908,
+   "thinned no_spare fails Q1+Q4": 59105,
+   "thinned no_spare fails Q4": 76803,
+   "thinned no_spare with 0 reader-less monitors": 76803,
+   "thinned no_spare with 1 reader-less monitors": 50715,
+   "thinned no_spare with 2 reader-less monitors": 8104,
+   "thinned no_spare with 3 reader-less monitors": 286
+  },
+  "fewest_edge_examples": {
+   "Q1+Q4": {
+    "name": "5x1 sampled, fails Q1+Q4, 13 edges",
+    "f": 1,
+    "monitors": [
+     "a",
+     "b",
+     "c",
+     "d",
+     "e"
+    ],
+    "works": [
+     "w"
+    ],
+    "joiner": null,
+    "boundary": {
+     "a": "b_a",
+     "b": "b_b",
+     "c": "b_c",
+     "d": "b_d",
+     "e": "b_e"
+    },
+    "substrate": {},
+    "hb_readers": {
+     "a": [
+      "d"
+     ],
+     "b": [
+      "a"
+     ],
+     "c": [
+      "d"
+     ],
+     "d": [
+      "b"
+     ],
+     "e": []
+    },
+    "checkers": {
+     "a": [
+      "c"
+     ],
+     "b": [
+      "d"
+     ],
+     "c": [
+      "d"
+     ],
+     "d": [
+      "c"
+     ],
+     "e": [
+      "d"
+     ],
+     "w": [
+      "c"
+     ]
+    },
+    "fwd": {
+     "a": [],
+     "b": [],
+     "c": [
+      "e"
+     ],
+     "d": [],
+     "e": []
+    },
+    "halt_inputs": {
+     "w": [
+      "d",
+      "e"
+     ]
+    },
+    "switches": [],
+    "coupling": true,
+    "window": 0,
+    "gate": true,
+    "slow_reports": false
+   },
+   "Q4": {
+    "name": "5x1 sampled, fails Q4, 13 edges",
+    "f": 1,
+    "monitors": [
+     "a",
+     "b",
+     "c",
+     "d",
+     "e"
+    ],
+    "works": [
+     "w"
+    ],
+    "joiner": null,
+    "boundary": {
+     "a": "b_a",
+     "b": "b_b",
+     "c": "b_c",
+     "d": "b_d",
+     "e": "b_e"
+    },
+    "substrate": {},
+    "hb_readers": {
+     "a": [
+      "b"
+     ],
+     "b": [
+      "e"
+     ],
+     "c": [
+      "a"
+     ],
+     "d": [
+      "c"
+     ],
+     "e": [
+      "a"
+     ]
+    },
+    "checkers": {
+     "a": [
+      "d"
+     ],
+     "b": [
+      "d"
+     ],
+     "c": [
+      "d"
+     ],
+     "d": [
+      "e"
+     ],
+     "e": [
+      "d"
+     ],
+     "w": [
+      "d"
+     ]
+    },
+    "fwd": {
+     "a": [],
+     "b": [],
+     "c": [],
+     "d": [],
+     "e": []
+    },
+    "halt_inputs": {
+     "w": [
+      "d",
+      "e"
+     ]
+    },
+    "switches": [],
+    "coupling": true,
+    "window": 0,
+    "gate": true,
+    "slow_reports": false
+   }
+  }
+ },
+ "5x2": {
+  "counts": {
+   "gap_free": 258526,
+   "gap_free fails Q1": 13956,
+   "gap_free fails Q1+Q4": 35848,
+   "gap_free fails Q4": 146807,
+   "gap_free fails none": 61915,
+   "no_spare": 10026,
+   "no_spare fails Q1": 810,
+   "no_spare fails Q1+Q4": 1870,
+   "no_spare fails Q4": 3984,
+   "no_spare fails none": 3362,
+   "sampled": 1027213,
+   "thinned": 258526,
+   "thinned fails Q1+Q4": 202270,
+   "thinned fails Q4": 55430,
+   "thinned fails none": 826,
+   "thinned no_spare": 139018,
+   "thinned no_spare fails Q1+Q4": 82961,
+   "thinned no_spare fails Q4": 55231,
+   "thinned no_spare fails none": 826,
+   "thinned no_spare with 0 reader-less monitors": 56057,
+   "thinned no_spare with 1 reader-less monitors": 63914,
+   "thinned no_spare with 2 reader-less monitors": 17965,
+   "thinned no_spare with 3 reader-less monitors": 1082
+  },
+  "fewest_edge_examples": {
+   "Q1+Q4": {
+    "name": "5x2 sampled, fails Q1+Q4, 16 edges",
+    "f": 1,
+    "monitors": [
+     "a",
+     "b",
+     "c",
+     "d",
+     "e"
+    ],
+    "works": [
+     "w",
+     "v"
+    ],
+    "joiner": null,
+    "boundary": {
+     "a": "b_a",
+     "b": "b_b",
+     "c": "b_c",
+     "d": "b_d",
+     "e": "b_e"
+    },
+    "substrate": {},
+    "hb_readers": {
+     "a": [
+      "b"
+     ],
+     "b": [
+      "e"
+     ],
+     "c": [],
+     "d": [],
+     "e": [
+      "b"
+     ]
+    },
+    "checkers": {
+     "a": [
+      "e"
+     ],
+     "b": [
+      "e"
+     ],
+     "c": [
+      "e"
+     ],
+     "d": [
+      "e"
+     ],
+     "e": [
+      "a",
+      "c",
+      "d"
+     ],
+     "w": [
+      "e"
+     ],
+     "v": [
+      "e"
+     ]
+    },
+    "fwd": {
+     "a": [],
+     "b": [],
+     "c": [],
+     "d": [],
+     "e": []
+    },
+    "halt_inputs": {
+     "w": [
+      "d",
+      "e"
+     ],
+     "v": [
+      "c",
+      "e"
+     ]
+    },
+    "switches": [],
+    "coupling": true,
+    "window": 0,
+    "gate": true,
+    "slow_reports": false
+   },
+   "Q4": {
+    "name": "5x2 sampled, fails Q4, 16 edges",
+    "f": 1,
+    "monitors": [
+     "a",
+     "b",
+     "c",
+     "d",
+     "e"
+    ],
+    "works": [
+     "w",
+     "v"
+    ],
+    "joiner": null,
+    "boundary": {
+     "a": "b_a",
+     "b": "b_b",
+     "c": "b_c",
+     "d": "b_d",
+     "e": "b_e"
+    },
+    "substrate": {},
+    "hb_readers": {
+     "a": [
+      "d"
+     ],
+     "b": [
+      "d"
+     ],
+     "c": [
+      "e"
+     ],
+     "d": [
+      "b"
+     ],
+     "e": [
+      "a"
+     ]
+    },
+    "checkers": {
+     "a": [
+      "c"
+     ],
+     "b": [
+      "c"
+     ],
+     "c": [
+      "b"
+     ],
+     "d": [
+      "b"
+     ],
+     "e": [
+      "c"
+     ],
+     "w": [
+      "b"
+     ],
+     "v": [
+      "b"
+     ]
+    },
+    "fwd": {
+     "a": [],
+     "b": [],
+     "c": [],
+     "d": [],
+     "e": []
+    },
+    "halt_inputs": {
+     "w": [
+      "b",
+      "c"
+     ],
+     "v": [
+      "b",
+      "c"
+     ]
+    },
+    "switches": [],
+    "coupling": true,
+    "window": 0,
+    "gate": true,
+    "slow_reports": false
+   }
+  }
+ },
+ "6x2": {
+  "counts": {
+   "gap_free": 130852,
+   "gap_free fails Q1": 8452,
+   "gap_free fails Q1+Q4": 17275,
+   "gap_free fails Q4": 69195,
+   "gap_free fails none": 35930,
+   "no_spare": 1163,
+   "no_spare fails Q1": 113,
+   "no_spare fails Q1+Q4": 239,
+   "no_spare fails Q4": 433,
+   "no_spare fails none": 378,
+   "sampled": 365226,
+   "thinned": 130852,
+   "thinned fails Q1+Q4": 112337,
+   "thinned fails Q4": 18060,
+   "thinned fails none": 455,
+   "thinned no_spare": 56495,
+   "thinned no_spare fails Q1+Q4": 38038,
+   "thinned no_spare fails Q4": 18003,
+   "thinned no_spare fails none": 454,
+   "thinned no_spare with 0 reader-less monitors": 18457,
+   "thinned no_spare with 1 reader-less monitors": 25511,
+   "thinned no_spare with 2 reader-less monitors": 10777,
+   "thinned no_spare with 3 reader-less monitors": 1687,
+   "thinned no_spare with 4 reader-less monitors": 63
+  },
+  "fewest_edge_examples": {
+   "Q1+Q4": {
+    "name": "6x2 sampled, fails Q1+Q4, 18 edges",
+    "f": 1,
+    "monitors": [
+     "a",
+     "b",
+     "c",
+     "d",
+     "e",
+     "f"
+    ],
+    "works": [
+     "w",
+     "v"
+    ],
+    "joiner": null,
+    "boundary": {
+     "a": "b_a",
+     "b": "b_b",
+     "c": "b_c",
+     "d": "b_d",
+     "e": "b_e",
+     "f": "b_f"
+    },
+    "substrate": {},
+    "hb_readers": {
+     "a": [
+      "f"
+     ],
+     "b": [
+      "d"
+     ],
+     "c": [],
+     "d": [
+      "f"
+     ],
+     "e": [],
+     "f": [
+      "b"
+     ]
+    },
+    "checkers": {
+     "a": [
+      "b"
+     ],
+     "b": [
+      "a",
+      "c",
+      "e"
+     ],
+     "c": [
+      "b"
+     ],
+     "d": [
+      "b"
+     ],
+     "e": [
+      "b"
+     ],
+     "f": [
+      "b"
+     ],
+     "w": [
+      "b"
+     ],
+     "v": [
+      "b"
+     ]
+    },
+    "fwd": {
+     "a": [],
+     "b": [],
+     "c": [],
+     "d": [],
+     "e": [],
+     "f": []
+    },
+    "halt_inputs": {
+     "w": [
+      "b",
+      "c"
+     ],
+     "v": [
+      "b",
+      "e"
+     ]
+    },
+    "switches": [],
+    "coupling": true,
+    "window": 0,
+    "gate": true,
+    "slow_reports": false
+   },
+   "Q4": {
+    "name": "6x2 sampled, fails Q4, 18 edges",
+    "f": 1,
+    "monitors": [
+     "a",
+     "b",
+     "c",
+     "d",
+     "e",
+     "f"
+    ],
+    "works": [
+     "w",
+     "v"
+    ],
+    "joiner": null,
+    "boundary": {
+     "a": "b_a",
+     "b": "b_b",
+     "c": "b_c",
+     "d": "b_d",
+     "e": "b_e",
+     "f": "b_f"
+    },
+    "substrate": {},
+    "hb_readers": {
+     "a": [
+      "f"
+     ],
+     "b": [
+      "e"
+     ],
+     "c": [
+      "e"
+     ],
+     "d": [
+      "c"
+     ],
+     "e": [
+      "a"
+     ],
+     "f": [
+      "d"
+     ]
+    },
+    "checkers": {
+     "a": [
+      "b"
+     ],
+     "b": [
+      "a"
+     ],
+     "c": [
+      "a"
+     ],
+     "d": [
+      "a"
+     ],
+     "e": [
+      "a"
+     ],
+     "f": [
+      "b"
+     ],
+     "w": [
+      "a"
+     ],
+     "v": [
+      "a"
+     ]
+    },
+    "fwd": {
+     "a": [],
+     "b": [],
+     "c": [],
+     "d": [],
+     "e": [],
+     "f": []
+    },
+    "halt_inputs": {
+     "w": [
+      "a",
+      "b"
+     ],
+     "v": [
+      "a",
+      "b"
+     ]
+    },
+    "switches": [],
+    "coupling": true,
+    "window": 0,
+    "gate": true,
+    "slow_reports": false
+   }
+  }
+ }
+}

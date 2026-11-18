@@ -1,0 +1,158 @@
+{
+ "n": 2,
+ "k": 1,
+ "labelled_systems_total_no_self_loops": 1024,
+ "feasible_triples(hb_readers,fwd,halt_inputs)": 4,
+ "gap_free_labelled": 12,
+ "gap_free_by_failing_predicates": {
+  "none": 3,
+  "Q4": 9
+ },
+ "gap_free_by_number_of_spare_monitors": {
+  "0": 12
+ },
+ "no_spare_labelled": 12,
+ "no_spare_by_failing_predicates": {
+  "none": 3,
+  "Q4": 9
+ },
+ "verdicts_labelled": {
+  "strict": 9,
+  "all predicates hold": 3
+ },
+ "no_spare_falsifier_classes_up_to_renaming": 5,
+ "strict_falsifier_classes_with_spare_monitors": 0,
+ "families": {
+  "Q4": {
+   "classes": 5,
+   "edge_histogram": {
+    "7": 1,
+    "8": 3,
+    "9": 1
+   },
+   "min_edges": 7,
+   "smallest": [
+    {
+     "name": "2x1 Q4 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ]
+  }
+ },
+ "edge_minimal_gap_free_classes": 1,
+ "edge_minimal_by_failing": {
+  "Q4": 1
+ },
+ "edge_minimal_with_spare": 0,
+ "edge_minimal_edge_histogram": {
+  "7": 1
+ },
+ "upset_violations_in_checkers": 0,
+ "monotonicity_violations_in_hb_fwd_halt": 0,
+ "seconds": 0.0,
+ "edge_minimal_systems": [
+  {
+   "name": "2x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 7
+  }
+ ]
+}

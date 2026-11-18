@@ -1,0 +1,9285 @@
+{
+ "n": 3,
+ "k": 1,
+ "labelled_systems_total_no_self_loops": 16777216,
+ "feasible_triples(hb_readers,fwd,halt_inputs)": 9984,
+ "gap_free_labelled": 1169616,
+ "gap_free_failing_Q3_or_Q8": 0,
+ "gap_free_by_failing_predicates": {
+  "none": 316386,
+  "Q1": 55008,
+  "Q1+Q4": 123168,
+  "Q4": 675054
+ },
+ "gap_free_by_number_of_spare_monitors": {
+  "0": 742352,
+  "1": 412416,
+  "2": 14592,
+  "3": 256
+ },
+ "gap_free_with_empty_fwd": 13143,
+ "no_spare_labelled": 742352,
+ "no_spare_by_failing_predicates": {
+  "none": 227322,
+  "Q1": 23904,
+  "Q1+Q4": 43680,
+  "Q4": 447446
+ },
+ "no_spare_with_empty_fwd": 6467,
+ "no_spare_by_number_of_readerless_monitors": {
+  "0": 674768,
+  "1": 67584
+ },
+ "no_spare_with_readerless_monitor_outside_all_halt_inputs": 0,
+ "verdicts_labelled": {
+  "strict": 789294,
+  "blamed": 60660,
+  "partial": 3276,
+  "all predicates hold": 316386
+ },
+ "per_predicate": {
+  "Q1 fails, no spare monitor": 67584,
+  "Q1 fails, spare monitors, holds after every deletion order": 110592,
+  "Q4 fails, no spare monitor": 491126,
+  "Q4 fails, spare monitors, depends on the deletion order": 3276,
+  "Q4 fails, spare monitors, holds after every deletion order": 45108,
+  "Q4 fails, spare monitors, still fails after every deletion order": 258712
+ },
+ "no_spare_falsifier_classes_up_to_renaming": 85895,
+ "families": {
+  "Q1": {
+   "min_edges": 11,
+   "classes_at_min_edges": 2,
+   "smallest": [
+    {
+     "name": "3x1 fails Q1 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q1 #1",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ],
+   "classes": 3984,
+   "edge_histogram": {
+    "11": 2,
+    "12": 35,
+    "13": 197,
+    "14": 564,
+    "15": 961,
+    "16": 1042,
+    "17": 736,
+    "18": 336,
+    "19": 95,
+    "20": 15,
+    "21": 1
+   }
+  },
+  "Q1+Q4": {
+   "min_edges": 9,
+   "classes_at_min_edges": 3,
+   "smallest": [
+    {
+     "name": "3x1 fails Q1+Q4 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q1+Q4 #1",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q1+Q4 #2",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a",
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ],
+   "classes": 7280,
+   "edge_histogram": {
+    "9": 3,
+    "10": 40,
+    "11": 227,
+    "12": 724,
+    "13": 1442,
+    "14": 1880,
+    "15": 1629,
+    "16": 928,
+    "17": 333,
+    "18": 68,
+    "19": 6
+   }
+  },
+  "Q4": {
+   "min_edges": 9,
+   "classes_at_min_edges": 12,
+   "smallest": [
+    {
+     "name": "3x1 fails Q4 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #1",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #2",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #3",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #4",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #5",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #6",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #7",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #8",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #9",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #10",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "3x1 fails Q4 #11",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ],
+   "classes": 74631,
+   "edge_histogram": {
+    "9": 12,
+    "10": 226,
+    "11": 1549,
+    "12": 5698,
+    "13": 12739,
+    "14": 18456,
+    "15": 17868,
+    "16": 11626,
+    "17": 4961,
+    "18": 1302,
+    "19": 184,
+    "20": 10
+   }
+  }
+ },
+ "fewest_edge_examples_with_spare_monitors": {
+  "blamed": {
+   "name": "3x1 with spare monitors, verdict blamed, 10 edges",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "partial": {
+   "name": "3x1 with spare monitors, verdict partial, 14 edges",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  },
+  "strict": {
+   "name": "3x1 with spare monitors, verdict strict, 8 edges",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ "edge_minimal_gap_free_classes": 119,
+ "edge_minimal_by_failing": {
+  "Q1+Q4": 11,
+  "Q4": 108
+ },
+ "edge_minimal_with_spare": 2,
+ "edge_minimal_edge_histogram": {
+  "8": 2,
+  "9": 15,
+  "10": 82,
+  "11": 20
+ },
+ "seconds": 3.6,
+ "edge_minimal_systems": [
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 1,
+   "_edges": 8
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 1,
+   "_edges": 8
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 9
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a",
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a",
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q1",
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b",
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b",
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b",
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b",
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a",
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a",
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a",
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a",
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a",
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "c"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [],
+    "c": [
+     "a",
+     "b"
+    ]
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b",
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b",
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "a"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [
+     "b",
+     "c"
+    ],
+    "b": [],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "b",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  },
+  {
+   "name": "3x1 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b",
+    "c"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b",
+    "c": "b_c"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "c"
+    ],
+    "c": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "c": [
+     "b"
+    ],
+    "w": [
+     "c"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": [
+     "a",
+     "c"
+    ],
+    "c": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "c"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 11
+  }
+ ]
+}

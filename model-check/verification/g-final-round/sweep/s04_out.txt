@@ -1,0 +1,19 @@
+== R single-edge removals (f=1)
+  edges 27 needed 9 spare 18
+  needed: ["M1 checks W1's state", "M2 checks W2's state", "M3 checks J's state", 'W1 takes its halt from M1', 'W1 takes its halt from M3', 'W2 takes its halt from M2', 'W2 takes its halt from M3', 'J takes its halt from M3', 'J takes its halt from M1']
+
+== pass B's P4 systems without report edges
+  R-P4, every work process reads all three: ({'G1': None, 'G2': None}, 23)
+  R-P4, W1 and W2 also checked by M3: ({'G1': None, 'G2': None}, 23)
+  mesh of 3 with no report edges: ({'G1': None, 'G2': None}, 8)
+
+== falsifier system 6.6 (four monitors, Q4 alone fails)
+  result ({'G1': None, 'G2': None}, 18) predicates {'Q1': True, 'Q1f': True, 'Q3': True, 'Q4': False, 'Q4r': False, 'Q8': True} plain True
+  after stop c: flagged ['a'] out ['a'] worked ['w'] halted [] responded False
+  spare monitors: []
+
+== census: Q4 failures not down to spare monitors; of those, gap-free with every report edge removed
+  n=2: systems 1024, no gap 12, Q4 fails and not down to spares 9, of those gap-free with no report edges 9, the rest 0
+  n=3: systems 4890, no gap 1721, Q4 fails and not down to spares 280, of those gap-free with no report edges 234, the rest 46
+  totals: systems 5914 no gap 1733 | Q4 stays 289 | no report needed 243 | other 46
+  other predicate counts: {'Q1_fail': 103, 'Q1_stay': 22, 'Q1f_fail': 23, 'Q1f_stay': 0, 'Q4r_fail': 32, 'Q4r_stay': 9, 'Q3': 0, 'Q8': 0, 'Q4_fail': 387}

@@ -1,0 +1,5 @@
+d = 3 (c -> p -> q -> h); plain apart from slow reports: True
+  only the mutation: W takes a work step in rounds [1, 2, 3] (ended, 4 rounds run)
+  then stop the halt input in round 2: W takes a work step in rounds [1] (ended, 2 rounds run)
+  then mutate the relay p in round 2: W takes a work step in rounds [1, 2, 3, 4, 5, 6, 7] (done, 7 rounds run)
+  then stop the relay p in round 2: W takes a work step in rounds [1, 2, 3, 4, 5, 6, 7] (done, 7 rounds run)

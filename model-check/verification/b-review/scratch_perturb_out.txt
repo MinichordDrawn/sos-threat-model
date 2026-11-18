@@ -1,0 +1,8 @@
+  ... 100 compared, 60 skipped, 0 differences, t=73s
+  ... 200 compared, 131 skipped, 0 differences, t=230s
+  ... 300 compared, 190 skipped, 0 differences, t=370s
+  ... 400 compared, 247 skipped, 0 differences, t=467s
+  ... 500 compared, 297 skipped, 0 differences, t=538s
+  ... 600 compared, 371 skipped, 0 differences, t=611s
+600 perturbed reference systems compared (371 skipped as over 2500 states): 0 differences
+  (G1, G2) result counts: {(1, 1): 271, (1, 2): 1, (1, None): 1, (2, 1): 99, (2, 2): 25, (2, None): 8, (3, 1): 38, (3, 2): 6, (3, None): 3, (4, 1): 3, (4, 2): 5, (None, 1): 28, (None, None): 112}

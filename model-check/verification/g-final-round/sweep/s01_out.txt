@@ -1,0 +1,234 @@
+== section 5
+R f 1 {'G1': None, 'G2': None} 23
+R f 2 {'G1': 2, 'G2': 1} 731
+  shortest G1
+     round 1: env: mutate M1, mutate M3
+              bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+     round 2: env: stop M2
+              bad: M1 M3 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+  shortest G2
+     round 1: env: mutate M1, mutate M3
+              bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+R f 3 {'G1': 1, 'G2': 1} 1470
+--- sec5 f=2 named execution: R f=2
+   round 1: env [('mutate', 'M1'), ('mutate', 'M3')] | bad ['M1', 'M3'] | out ['M2'] | flagged ['M2'] | halted ['W2'] | worked ['W1'] | G1viol False G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+
+== section 6: removals, search results
+P1 {'G1': 1, 'G2': 1} 2210
+  shortest G1
+     round 1: env: fail-substrate s1
+              bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  shortest G2
+     round 1: env: fail-substrate s1
+              bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+P2 {'G1': 1, 'G2': 1} 68
+  shortest G1
+     round 1: env: fail-substrate s1
+              bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  shortest G2
+     round 1: env: fail-substrate s1
+              bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+P3 {'G1': 1, 'G2': 1} 777
+  shortest G1
+     round 1: env: mutate M1
+              bad: M1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  shortest G2
+     round 1: env: mutate M1
+              bad: M1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+P4 {'G1': None, 'G2': 1} 59
+  shortest G2
+     round 1: env: mutate W1
+              bad: W1 | flagged: M1 | halted: W1 | worked: W2   <-- breaks G2
+P5 {'G1': 2, 'G2': 2} 13116
+  shortest G1
+     round 1: env: disable M1
+              bad: - | flagged: - | halted: - | worked: W1 W2
+     round 2: env: mutate W1
+              bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  shortest G2
+     round 1: env: disable M1
+              bad: - | flagged: - | halted: - | worked: W1 W2
+     round 2: env: mutate M3
+              bad: M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+P6 {'G1': 2, 'G2': None} 239
+  shortest G1
+     round 1: env: stop-boundary 1
+              bad: - | flagged: - | halted: W1 W2 | worked: -
+     round 2: env: fail-substrate s1
+              bad: W1 | flagged: - | halted: W1 W2 | worked: -   <-- breaks G1
+P7 {'G1': 2, 'G2': 2} 2565
+  shortest G1
+     round 1: env: join J
+              bad: - | flagged: - | halted: - | worked: W1 W2 J
+     round 2: env: mutate J
+              bad: J | flagged: - | halted: - | worked: W1 W2 J   <-- breaks G1 and G2
+  shortest G2
+     round 1: env: join J
+              bad: - | flagged: - | halted: - | worked: W1 W2 J
+     round 2: env: fail-substrate s1
+              bad: W1 | flagged: M2 M3 | halted: W1 W2 | worked: J   <-- breaks G2
+P8 {'G1': None, 'G2': 1} 228
+  shortest G2
+     round 1: env: fail-substrate s1
+              bad: W1 | flagged: M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+P8b {'G1': 3, 'G2': 1} 1818
+  shortest G1
+     round 1: env: mutate M1
+              bad: M1 | flagged: M2 M3 | halted: W2 | worked: W1   <-- breaks G2
+     round 2: env: stop M2
+              bad: M1 | flagged: M3 | halted: W2 | worked: W1   <-- breaks G2
+     round 3: env: stop M3
+              bad: M1 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+  shortest G2
+     round 1: env: mutate M1
+              bad: M1 | flagged: M2 M3 | halted: W2 | worked: W1   <-- breaks G2
+gate {'G1': 3, 'G2': 1} 1257
+  shortest G1
+     round 1: env: mutate M1
+              bad: M1 | flagged: M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+     round 2: env: mutate M3
+              bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+     round 3: env: stop M2
+              bad: M1 M3 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+  shortest G2
+     round 1: env: fail-substrate s1
+              bad: W1 | flagged: M2 M3 | halted: W1 | worked: W2   <-- breaks G2
+
+== section 6: tables replayed in reduced and in full R
+--- without P1: R without P1 f=1
+   round 1: env [('stop', 'M1')] | bad [] | out [] | flagged [] | halted [] | worked ['W1', 'W2'] | G1viol False G2viol False | alive ['M2', 'M3', 'W1', 'W2'] | responded False
+   round 2: env [('mutate', 'W1')] | bad ['W1'] | out [] | flagged [] | halted [] | worked ['W1', 'W2'] | G1viol True G2viol True | alive ['M2', 'M3', 'W1', 'W2'] | responded False
+--- full R same schedule (P1): R f=1
+   round 1: env [('stop', 'M1')] | bad [] | out ['M2', 'M3'] | flagged ['M2', 'M3'] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['M2', 'M3', 'W1', 'W2'] | responded True
+   round 2: model already ended (responded)
+--- without P2: R without P2 f=1
+   round 1: env [('fail-substrate', 's1')] | bad ['W1'] | out [] | flagged [] | halted [] | worked ['W1', 'W2'] | G1viol True G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+--- full R same schedule (P2): R f=1
+   round 1: env [('fail-substrate', 's1')] | bad ['W1'] | out ['M2', 'M3'] | flagged ['M2', 'M3'] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['M2', 'M3', 'W1', 'W2'] | responded True
+--- without P3: R without P3 f=1
+   round 1: env [('mutate', 'W1')] | bad ['W1'] | out [] | flagged [] | halted [] | worked ['W1', 'W2'] | G1viol True G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+--- full R same schedule (P3): R f=1
+   round 1: env [('mutate', 'W1')] | bad ['W1'] | out ['M1', 'M2', 'M3'] | flagged ['M1', 'M2', 'M3'] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded True
+--- without P4: R without P4 f=1
+   round 1: env [('mutate', 'W1')] | bad ['W1'] | out ['M1'] | flagged ['M1'] | halted ['W1'] | worked ['W2'] | G1viol False G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+--- full R same schedule (P4): R f=1
+   round 1: env [('mutate', 'W1')] | bad ['W1'] | out ['M1', 'M2', 'M3'] | flagged ['M1', 'M2', 'M3'] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded True
+--- without P5: R without P5 f=1
+   round 1: env [('disable', 'M1')] | bad [] | out [] | flagged [] | halted [] | worked ['W1', 'W2'] | G1viol False G2viol False | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+   round 2: env [('mutate', 'W1')] | bad ['W1'] | out [] | flagged [] | halted [] | worked ['W1', 'W2'] | G1viol True G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+--- full R same schedule (P5): R f=1
+   full R: ('not enabled', ('disable', 'M1'))
+--- without P6: R without P6 f=1
+   round 1: env [('stop-boundary', 1)] | bad [] | out [] | flagged [] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['W1', 'W2'] | responded False
+   round 2: env [('mutate', 'W1')] | bad ['W1'] | out [] | flagged [] | halted ['W1', 'W2'] | worked [] | G1viol True G2viol False | alive ['W1', 'W2'] | responded False
+--- full R same schedule (P6): R f=1
+   full R: ('not enabled', ('stop-boundary', 1))
+--- without P7: R without P7 f=1
+   round 1: env [('join', 'J')] | bad [] | out [] | flagged [] | halted [] | worked ['W1', 'W2', 'J'] | G1viol False G2viol False | alive ['J', 'M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+   round 2: env [('mutate', 'J')] | bad ['J'] | out [] | flagged [] | halted [] | worked ['W1', 'W2', 'J'] | G1viol True G2viol True | alive ['J', 'M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+--- full R same schedule (P7): R f=1
+   round 1: env [('join', 'J')] | bad [] | out [] | flagged [] | halted [] | worked ['W1', 'W2', 'J'] | G1viol False G2viol False | alive ['J', 'M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+   round 2: env [('mutate', 'J')] | bad ['J'] | out ['M1', 'M2', 'M3'] | flagged ['M1', 'M2', 'M3'] | halted ['J', 'W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['J', 'M1', 'M2', 'M3', 'W1', 'W2'] | responded True
+--- without P8: R without P8 f=1
+   round 1: env [('mutate', 'W1')] | bad ['W1'] | out ['M1', 'M2', 'M3'] | flagged ['M1', 'M2', 'M3'] | halted [] | worked ['W1', 'W2'] | G1viol False G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+--- full R same schedule (P8): R f=1
+   round 1: env [('mutate', 'W1')] | bad ['W1'] | out ['M1', 'M2', 'M3'] | flagged ['M1', 'M2', 'M3'] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded True
+--- without P8b: R without P8b f=1
+   round 1: env [('mutate', 'M1')] | bad ['M1'] | out ['M2', 'M3'] | flagged ['M2', 'M3'] | halted ['W2'] | worked ['W1'] | G1viol False G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+--- full R same schedule (P8b): R f=1
+   round 1: env [('mutate', 'M1')] | bad ['M1'] | out ['M2', 'M3'] | flagged ['M2', 'M3'] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded True
+--- without gate: R without gate f=1
+   round 1: env [('mutate', 'W1')] | bad ['W1'] | out ['M1', 'M2', 'M3'] | flagged ['M1', 'M2', 'M3'] | halted [] | worked ['W1', 'W2'] | G1viol False G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+   round 2: env [] | bad ['W1'] | out ['M1', 'M2', 'M3'] | flagged ['M1', 'M2', 'M3'] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded True
+--- full R same schedule (gate): R f=1
+   round 1: env [('mutate', 'W1')] | bad ['W1'] | out ['M1', 'M2', 'M3'] | flagged ['M1', 'M2', 'M3'] | halted ['W1', 'W2'] | worked [] | G1viol False G2viol False | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded True
+   round 2: model already ended (responded)
+
+== P8b: G1 in three rounds: mutate M1, stop M2, stop M3
+--- P8b 3 rounds: R without P8b f=1
+   round 1: env [('mutate', 'M1')] | bad ['M1'] | out ['M2', 'M3'] | flagged ['M2', 'M3'] | halted ['W2'] | worked ['W1'] | G1viol False G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+   round 2: env [('stop', 'M2')] | bad ['M1'] | out ['M3'] | flagged ['M2', 'M3'] | halted ['W2'] | worked ['W1'] | G1viol False G2viol True | alive ['M1', 'M3', 'W1', 'W2'] | responded False
+   round 3: env [('stop', 'M3')] | bad ['M1'] | out [] | flagged ['M2', 'M3'] | halted ['W2'] | worked ['W1'] | G1viol True G2viol True | alive ['M1', 'W1', 'W2'] | responded False
+
+== gate: G1 in three: mutate M1, M3, stop M2, W1 working throughout
+--- gate 3 rounds: R without gate f=1
+   round 1: env [('mutate', 'M1')] | bad ['M1'] | out ['M2', 'M3'] | flagged ['M2', 'M3'] | halted [] | worked ['W1', 'W2'] | G1viol False G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+   round 2: env [('mutate', 'M3')] | bad ['M1', 'M3'] | out ['M2'] | flagged ['M2', 'M3'] | halted ['W2'] | worked ['W1'] | G1viol False G2viol True | alive ['M1', 'M2', 'M3', 'W1', 'W2'] | responded False
+   round 3: env [('stop', 'M2')] | bad ['M1', 'M3'] | out [] | flagged ['M2', 'M3'] | halted ['W2'] | worked ['W1'] | G1viol True G2viol True | alive ['M1', 'M3', 'W1', 'W2'] | responded False
+
+== gate: no step that makes a state bad in round 1 is answered completely in that round
+   (('fail-substrate', 's1'),) bad ['W1'] responded False worked ['W2'] G2 True
+   (('fail-substrate', 's2'),) bad ['W2'] responded False worked ['W1'] G2 True
+   (('mutate', 'M1'),) bad ['M1'] responded False worked ['W1', 'W2'] G2 True
+   (('mutate', 'M2'),) bad ['M2'] responded False worked ['W1', 'W2'] G2 True
+   (('mutate', 'M3'),) bad ['M3'] responded False worked ['W1', 'W2'] G2 True
+   (('mutate', 'W1'),) bad ['W1'] responded False worked ['W1', 'W2'] G2 True
+   (('mutate', 'W2'),) bad ['W2'] responded False worked ['W1', 'W2'] G2 True
+  all first-round steps without the gate:
+     () responded False worked ['W1', 'W2']
+     (('stop', 'M1'),) responded False worked ['W2']
+     (('stop', 'M2'),) responded False worked ['W1']
+     (('stop', 'M3'),) responded True worked []
+     (('fail-substrate', 's1'),) responded False worked ['W2']
+     (('fail-substrate', 's2'),) responded False worked ['W1']
+     (('mutate', 'M1'),) responded False worked ['W1', 'W2']
+     (('mutate', 'M2'),) responded False worked ['W1', 'W2']
+     (('mutate', 'M3'),) responded False worked ['W1', 'W2']
+     (('mutate', 'W1'),) responded False worked ['W1', 'W2']
+     (('mutate', 'W2'),) responded False worked ['W1', 'W2']
+     (('join', 'J'),) responded False worked ['W1', 'W2', 'J']
+
+== section 1 item 1: without P4 / P8, G1 holds in every reachable state (search result None)
+P4 {'G1': None, 'G2': 1}
+P8 {'G1': None, 'G2': 1}
+
+== R f=1: every first fault answered in its own round (Limits: one-step result)
+   () | bad [] | responded False | worked ['W1', 'W2'] | G1 False G2 False
+   (('stop', 'M1'),) | bad [] | responded True | worked [] | G1 False G2 False
+   (('stop', 'M2'),) | bad [] | responded True | worked [] | G1 False G2 False
+   (('stop', 'M3'),) | bad [] | responded True | worked [] | G1 False G2 False
+   (('fail-substrate', 's1'),) | bad ['W1'] | responded True | worked [] | G1 False G2 False
+   (('fail-substrate', 's2'),) | bad ['W2'] | responded True | worked [] | G1 False G2 False
+   (('mutate', 'M1'),) | bad ['M1'] | responded True | worked [] | G1 False G2 False
+   (('mutate', 'M2'),) | bad ['M2'] | responded True | worked [] | G1 False G2 False
+   (('mutate', 'M3'),) | bad ['M3'] | responded True | worked [] | G1 False G2 False
+   (('mutate', 'W1'),) | bad ['W1'] | responded True | worked [] | G1 False G2 False
+   (('mutate', 'W2'),) | bad ['W2'] | responded True | worked [] | G1 False G2 False
+   (('join', 'J'),) | bad [] | responded False | worked ['W1', 'W2', 'J'] | G1 False G2 False
+  R states 23
+
+== section 4
+mesh3 f 1 unread None {'G1': None, 'G2': None} 8
+mesh3 f 1 unread M3 {'G1': None, 'G2': None} 14
+mesh3 f 2 unread None {'G1': None, 'G2': None} 29
+mesh3 f 2 unread M3 {'G1': 2, 'G2': None} 76
+     round 1: env: stop M3
+              bad: - | flagged: - | halted: W | worked: -
+     round 2: env: stop M1, mutate M2
+              bad: M2 | flagged: - | halted: W | worked: -   <-- breaks G1
+--- sec4 named execution: mesh of 3, nobody reads M3's signal f=2
+   round 1: env [('stop', 'M3')] | bad [] | out [] | flagged [] | halted ['W'] | worked [] | G1viol False G2viol False | alive ['M1', 'M2', 'W'] | responded False
+   round 2: env [('stop', 'M1'), ('mutate', 'M2')] | bad ['M2'] | out [] | flagged [] | halted ['W'] | worked [] | G1viol True G2viol False | alive ['M2', 'W'] | responded False
+R plus unread M4 f=1 {'G1': None, 'G2': None} 50
+  hb_readers of M4: None
+  R checkers: {'W1': ['M1'], 'W2': ['M2'], 'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M1', 'M2'], 'J': ['M3']}
+mesh2 f1 ({'G1': None, 'G2': None}, 6)
+
+== section 2.7
+nested ring boundaries ({'G1': None, 'G2': None}, 23)
+--- stop-boundary A: nested, base rings 3+K, upper ring of 3, each base ring in one boundary f=1
+   round 1: env [('stop-boundary', 'A')] | bad [] | out ['B1', 'B2', 'B3', 'KB', 'U3'] | flagged ['B1', 'B2', 'B3', 'KB', 'U3'] | halted ['WA', 'WB'] | worked [] | G1viol False G2viol False | alive ['B1', 'B2', 'B3', 'KB', 'U3', 'WA', 'WB'] | responded True
+--- stop-boundary B: nested, base rings 3+K, upper ring of 3, each base ring in one boundary f=1
+   round 1: env [('stop-boundary', 'B')] | bad [] | out ['A1', 'A2', 'A3', 'KA', 'U3'] | flagged ['A1', 'A2', 'A3', 'KA', 'U3'] | halted ['WA', 'WB'] | worked [] | G1viol False G2viol False | alive ['A1', 'A2', 'A3', 'KA', 'U3', 'WA', 'WB'] | responded True
+mesh4 one boundary {'G1': 2, 'G2': None} 42
+     round 1: env: stop-boundary 0
+              bad: - | flagged: - | halted: W | worked: -
+     round 2: env: mutate M1
+              bad: M1 | flagged: - | halted: W | worked: -   <-- breaks G1
+--- mesh4 one boundary: mesh of 4, all in one boundary f=1
+   round 1: env [('stop-boundary', 0)] | bad [] | out [] | flagged [] | halted ['W'] | worked [] | G1viol False G2viol False | alive ['W'] | responded False
+   round 2: env [('mutate', 'W')] | bad ['W'] | out [] | flagged [] | halted ['W'] | worked [] | G1viol True G2viol False | alive ['W'] | responded False
+mesh 1 f 1 {'G1': 1, 'G2': 1}
+mesh 2 f 2 {'G1': 1, 'G2': 1}
+mesh 3 f 3 {'G1': 1, 'G2': 1}
+mesh 4 f 4 {'G1': 1, 'G2': 1}

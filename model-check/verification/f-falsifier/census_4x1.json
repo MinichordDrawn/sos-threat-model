@@ -1,0 +1,3806 @@
+{
+ "n": 4,
+ "k": 1,
+ "labelled_systems_total_no_self_loops": 17592186044416,
+ "(hb_readers,fwd) pairs visited over the halt-input shapes": 83886080,
+ "labelled_triples_covered": 268435456,
+ "feasible_triples_labelled": 159567872,
+ "per_halt_input_size(unweighted)": {
+  "0": {
+   "feasible_triples": 0,
+   "gap_free": 0,
+   "no_spare": 0
+  },
+  "1": {
+   "feasible_triples": 0,
+   "gap_free": 0,
+   "no_spare": 0
+  },
+  "2": {
+   "feasible_triples": 14467072,
+   "gap_free": 290694108032,
+   "no_spare": 103777264512
+  },
+  "3": {
+   "feasible_triples": 14553088,
+   "gap_free": 392980306944,
+   "no_spare": 65701872128
+  },
+  "4": {
+   "feasible_triples": 14553088,
+   "gap_free": 437255467008,
+   "no_spare": 38952673280
+  }
+ },
+ "gap_free_labelled": 3753341342976,
+ "gap_free_by_failing_predicates": {
+  "none": 1345935267930,
+  "Q1": 308247722424,
+  "Q4": 1693234035366,
+  "Q1+Q4": 405924317256
+ },
+ "triples_where_an_empty_checker_list_is_allowed(Q3)": 0,
+ "feasible_triples_with_fewer_than_two_halt_inputs(Q8)": 0,
+ "gap_free_with_empty_fwd": 493015245,
+ "no_spare_labelled": 924423748864,
+ "no_spare_by_failing_predicates": {
+  "none": 385722806764,
+  "Q1": 69543215544,
+  "Q4": 389452892436,
+  "Q1+Q4": 79704834120
+ },
+ "no_spare_with_empty_fwd": 61709704,
+ "no_spare_by_number_of_readerless_monitors": {
+  "0": 775175699200,
+  "1": 147332582400,
+  "2": 1915467264
+ },
+ "no_spare_with_readerless_monitor_outside_halt_inputs": 0,
+ "families": {
+  "Q1": {
+   "min_edges": 13,
+   "classes_at_min_edges": 1,
+   "smallest": [
+    {
+     "name": "4x1 fails Q1 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ]
+  },
+  "Q4": {
+   "min_edges": 11,
+   "classes_at_min_edges": 56,
+   "smallest": [
+    {
+     "name": "4x1 fails Q4 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #1",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #2",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #3",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #4",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #5",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #6",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #7",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #8",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #9",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #10",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #11",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #12",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #13",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #14",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #15",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #16",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #17",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #18",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #19",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #20",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #21",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #22",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #23",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #24",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "c",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #25",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "c",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #26",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "c",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #27",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "c",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #28",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #29",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #30",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #31",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "a"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #32",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "c",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #33",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "c",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #34",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #35",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #36",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #37",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "b",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #38",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q4 #39",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "d"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "a"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "d"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ]
+  },
+  "Q1+Q4": {
+   "min_edges": 11,
+   "classes_at_min_edges": 13,
+   "smallest": [
+    {
+     "name": "4x1 fails Q1+Q4 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #1",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #2",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #3",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #4",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #5",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a",
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #6",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "c"
+      ],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "a",
+       "d"
+      ],
+      "d": [
+       "c"
+      ],
+      "w": [
+       "c"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "c"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #7",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a",
+       "c"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #8",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #9",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #10",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #11",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "d"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "d"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": [
+       "a"
+      ]
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "4x1 fails Q1+Q4 #12",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "works": [
+      "w"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b",
+      "c": "b_c",
+      "d": "b_d"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [],
+      "b": [
+       "c"
+      ],
+      "c": [
+       "d"
+      ],
+      "d": [
+       "b"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a",
+       "d"
+      ],
+      "c": [
+       "b"
+      ],
+      "d": [
+       "b"
+      ],
+      "w": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ]
+  }
+ },
+ "seconds": 144.5
+}

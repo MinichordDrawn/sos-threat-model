@@ -1,0 +1,82 @@
+== section 1 / README result: R and the removals
+  R f=1 (None, None, 23)
+  R f=2 (2, 1, 731)
+  R f=3 (1, 1, 1470)
+  R without P1 (1, 1, 2210)
+  R without P2 (1, 1, 68)
+  R without P3 (1, 1, 777)
+  R without P4 (None, 1, 59)
+  R without P5 (2, 2, 13116)
+  R without P6 (2, None, 239)
+  R without P7 (2, 2, 2565)
+  R without P8 (None, 1, 228)
+  R without P8b (3, 1, 1818)
+  R without gate (3, 1, 1257)
+
+== section 1: ring of three, reports to the one it checks, work reads 2
+   P1 signal read by another monitor True
+   P1 work halts on silence (coupling) True
+   P2 (no substrates: vacuous) True
+   P3 checker other than itself True
+   P4 every other monitor reached True
+   P5 no switch True
+   P6 reader in a different boundary True
+   P7 (no joiner: vacuous) True
+   P8 no window True
+   P8b two halt inputs True
+   gate True
+  all predicates hold: True  result: (3, 1, 47)  plain: True  sufficient_f1: False
+    round 1: env: mutate M1
+             bad: M1 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+  ring3 reports to other, reads 2: (None, None, 8)
+
+== section 2.7: mesh of 4 in one boundary, and nested with ring boundaries
+  mesh4 one boundary: (2, None, 42)
+    round 1: env: stop-boundary 0
+             bad: - | flagged: - | halted: W | worked: -
+    round 2: env: mutate M1
+             bad: M1 | flagged: - | halted: W | worked: -   <-- breaks G1
+  replay stop-boundary only: done
+    round 1: env: stop-boundary 0
+             bad: - | flagged: - | halted: W | worked: -
+  replay stop-boundary, then an empty round: done [(False, False), (False, False)]
+  replay stop-boundary, then mutate W: done [(False, False, ['W']), (True, False, ['W'])]
+  nested ring boundaries f=1: (None, None, 23)
+
+== section 4: unread fourth monitor, single checker, and f = 2
+  R plus unread M4 f=1: (None, None, 50)
+  checkers of R: {'W1': ['M1'], 'W2': ['M2'], 'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M1', 'M2'], 'J': ['M3']}
+  halt inputs of R: {'W1': ['M1', 'M3'], 'W2': ['M2', 'M3'], 'J': ['M3', 'M1']}
+  f=1 R as is: (None, None, 23)
+  f=1 single checker, three halt sources each: (None, None, 23)
+  f=1 two checkers each, two halt sources: (None, None, 23)
+  f=1 three checkers each, two halt sources: (None, None, 23)
+  f=1 three checkers and three halt sources: (None, None, 23)
+  f=2 R as is: (2, 1, 731)
+  f=2 single checker, three halt sources each: (None, None, 115)
+  f=2 two checkers each, two halt sources: (2, 1, 731)
+  f=2 three checkers each, two halt sources: (2, 1, 731)
+  f=2 three checkers and three halt sources: (None, None, 115)
+  f=2 single checker, three halt sources, no joiner: (None, None, 52)
+
+== section 5: the two rounds at f = 2
+  shortest G2:
+    round 1: env: mutate M1, mutate M3
+             bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+  shortest G1:
+    round 1: env: mutate M1, mutate M3
+             bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+    round 2: env: stop M2
+             bad: M1 M3 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+  replay mutate M1, mutate M3; stop M2: done
+    round 1: env: mutate M1, mutate M3
+             bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+    round 2: env: stop M2
+             bad: M1 M3 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+
+== section 7: P6 (Theorem 0, part 2) on random one-boundary systems
+  one-boundary systems tried: 400  G1 not broken within two rounds: 0
+
+== section 10.1: plain systems f = 1 in the catalogue (needs results.json of the folder)
+  cases: 103
+   {(False, True): 14, (False, False): 27, (True, True): 31}  total plain f=1: 72

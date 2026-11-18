@@ -1,0 +1,4 @@
+validation against check_model.explore (trials, disagreements): (400, 0)
+(2, 1) {'systems': 1024, 'gap_free': 12, 'no_spare': 12, 'no_spare_failing_Q1_or_Q4': 9, 'gap_free_failing_Q1': 0, 'gap_free_failing_Q4': 9, 'gap_free_failing_Q1_or_Q4': 9, 'triples_allowing_a_Q3_or_Q8_failure': 0, 'no_spare_with_unread_monitor_outside_halt_inputs': 0}
+(2, 2) {'systems': 16384, 'gap_free': 36, 'no_spare': 36, 'no_spare_failing_Q1_or_Q4': 27, 'gap_free_failing_Q1': 0, 'gap_free_failing_Q4': 27, 'gap_free_failing_Q1_or_Q4': 27, 'triples_allowing_a_Q3_or_Q8_failure': 0, 'no_spare_with_unread_monitor_outside_halt_inputs': 0}
+(3, 1) {'systems': 16777216, 'gap_free': 1169616, 'no_spare': 742352, 'no_spare_failing_Q1_or_Q4': 515030, 'gap_free_failing_Q1': 178176, 'gap_free_failing_Q4': 798222, 'gap_free_failing_Q1_or_Q4': 853230, 'triples_allowing_a_Q3_or_Q8_failure': 0, 'no_spare_with_unread_monitor_outside_halt_inputs': 0}

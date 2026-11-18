@@ -1,0 +1,298 @@
+{
+ "n": 2,
+ "k": 2,
+ "labelled_systems_total_no_self_loops": 16384,
+ "feasible_triples(hb_readers,fwd,halt_inputs)": 4,
+ "gap_free_labelled": 36,
+ "gap_free_by_failing_predicates": {
+  "none": 9,
+  "Q4": 27
+ },
+ "gap_free_by_number_of_spare_monitors": {
+  "0": 36
+ },
+ "no_spare_labelled": 36,
+ "no_spare_by_failing_predicates": {
+  "none": 9,
+  "Q4": 27
+ },
+ "verdicts_labelled": {
+  "strict": 27,
+  "all predicates hold": 9
+ },
+ "no_spare_falsifier_classes_up_to_renaming": 10,
+ "strict_falsifier_classes_with_spare_monitors": 0,
+ "families": {
+  "Q4": {
+   "classes": 10,
+   "edge_histogram": {
+    "10": 2,
+    "11": 4,
+    "12": 3,
+    "13": 1
+   },
+   "min_edges": 10,
+   "smallest": [
+    {
+     "name": "2x2 Q4 #0",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b"
+     ],
+     "works": [
+      "w",
+      "v"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ],
+      "v": [
+       "a"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ],
+      "v": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    },
+    {
+     "name": "2x2 Q4 #1",
+     "f": 1,
+     "monitors": [
+      "a",
+      "b"
+     ],
+     "works": [
+      "w",
+      "v"
+     ],
+     "joiner": null,
+     "boundary": {
+      "a": "b_a",
+      "b": "b_b"
+     },
+     "substrate": {},
+     "hb_readers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ]
+     },
+     "checkers": {
+      "a": [
+       "b"
+      ],
+      "b": [
+       "a"
+      ],
+      "w": [
+       "a"
+      ],
+      "v": [
+       "b"
+      ]
+     },
+     "fwd": {
+      "a": [],
+      "b": []
+     },
+     "halt_inputs": {
+      "w": [
+       "a",
+       "b"
+      ],
+      "v": [
+       "a",
+       "b"
+      ]
+     },
+     "switches": [],
+     "coupling": true,
+     "window": 0,
+     "gate": true,
+     "slow_reports": false
+    }
+   ]
+  }
+ },
+ "edge_minimal_gap_free_classes": 2,
+ "edge_minimal_by_failing": {
+  "Q4": 2
+ },
+ "edge_minimal_with_spare": 0,
+ "edge_minimal_edge_histogram": {
+  "10": 2
+ },
+ "upset_violations_in_checkers": 0,
+ "monotonicity_violations_in_hb_fwd_halt": 0,
+ "seconds": 0.0,
+ "edge_minimal_systems": [
+  {
+   "name": "2x2 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ],
+    "v": [
+     "a"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  },
+  {
+   "name": "2x2 minimal",
+   "f": 1,
+   "monitors": [
+    "a",
+    "b"
+   ],
+   "works": [
+    "w",
+    "v"
+   ],
+   "joiner": null,
+   "boundary": {
+    "a": "b_a",
+    "b": "b_b"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ]
+   },
+   "checkers": {
+    "a": [
+     "b"
+    ],
+    "b": [
+     "a"
+    ],
+    "w": [
+     "a"
+    ],
+    "v": [
+     "b"
+    ]
+   },
+   "fwd": {
+    "a": [],
+    "b": []
+   },
+   "halt_inputs": {
+    "w": [
+     "a",
+     "b"
+    ],
+    "v": [
+     "a",
+     "b"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false,
+   "_failing": [
+    "Q4"
+   ],
+   "_spare": 0,
+   "_edges": 10
+  }
+ ]
+}

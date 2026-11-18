@@ -1,0 +1,37 @@
+[
+ {
+  "id": "mesh4-one-boundary/f1",
+  "G1": 2,
+  "G2": null
+ },
+ {
+  "id": "nested3-upper3-ring-boundaries/f1",
+  "G1": null,
+  "G2": null
+ },
+ {
+  "id": "R-gate/f1",
+  "G1": 3,
+  "G2": 1
+ },
+ {
+  "id": "reflex-direct-instant/f1",
+  "G1": null,
+  "G2": null
+ },
+ {
+  "id": "reflex-direct-slow/f1",
+  "G1": null,
+  "G2": null
+ },
+ {
+  "id": "reflex-relayed-instant/f1",
+  "G1": null,
+  "G2": null
+ },
+ {
+  "id": "reflex-relayed-slow/f1",
+  "G1": null,
+  "G2": 1
+ }
+]

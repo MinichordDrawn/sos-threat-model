@@ -1,0 +1,13 @@
+Claim holds in every random system with the removal forced:
+  no hb_readers, no coupling        => G1 broken within |monitors|+1 rounds  400/400 systems
+  a work process on a monitor-free substrate => G1 broken in round 1         400/400 systems
+  no checkers                       => G1 broken in round 1                  400/400 systems
+  every monitor has a switch        => G1 broken within |monitors|+1 rounds  400/400 systems
+  all monitors (>= 2) in one boundary => G1 broken within 2 rounds           400/400 systems
+  joiner with no checker            => G1 broken within 2 rounds             400/400 systems
+  window = 1                        => G2 broken in round 1                  400/400 systems
+  a work process with one halt input => G2 broken in round 1                 400/400 systems
+
+P4 is the exception. Systems with fwd = {} that hold both goals at f=1:
+  R without P4, every work process reads all three monitors: G1 holds, G2 holds (23 states)
+  mesh of 3 with no report edges: G1 holds, G2 holds (8 states)

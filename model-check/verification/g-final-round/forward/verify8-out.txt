@@ -1,0 +1,7 @@
+(2,1): systems 1024, no gap 12, no spare monitor 12
+(2,2): systems 16384, no gap 36, no spare monitor 36
+(3,1) uniform sample of 40000: no gap 2780 (0.0695; exhaustive count gives 0.0697)
+   of those: no spare 0.642 (exhaustive 0.635); signal predicate fails 0.151 (exhaustive 0.152); propagation predicate fails 0.681 (exhaustive 0.682); no-spare failing either 0.683 (exhaustive 0.694)
+seconds 150.0
+
+[exited with code 0]

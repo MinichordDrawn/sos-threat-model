@@ -58,6 +58,7 @@ LICENSE                          CC BY 4.0 for the documents, MIT for the script
 images/                          the figure above
 examples/chernobyl/              a finished run on a document: Chernobyl Unit 4 from INSAG-7
 examples/constitution/           a finished run on an institution: the US Constitution as amended
+model-check/                     a model check of the eight properties and the 3+1 ring
 sos-rule-cases/                  abstract cases and answer keys for checking rule changes
 sos-threat-model/                an agent skill (SKILL.md is the entry point)
   LICENSE                        a copy, so the licence travels with the skill

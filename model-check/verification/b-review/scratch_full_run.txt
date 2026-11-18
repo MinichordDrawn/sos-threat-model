@@ -1,0 +1,345 @@
+1. Reference system R, every property present
+  R                                              f=1  G1 holds               G2 holds               (23 states)
+  R                                              f=2  G1 broken in 2 rounds  G2 broken in 1 round   (731 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1, mutate M3
+               bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+      round 2: env: stop M2
+               bad: M1 M3 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1, mutate M3
+               bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+  R                                              f=3  G1 broken in 1 round   G2 broken in 1 round   (1470 states)
+    shortest execution breaking G1:
+      round 1: env: stop M1, stop M2, mutate M3
+               bad: M3 | flagged: - | halted: W1 W2 | worked: -   <-- breaks G1
+    shortest execution breaking G2:
+      round 1: env: mutate M1, mutate M3
+               bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+
+2. R with one property removed (f = 1)
+  R without P1                                   f=1  G1 broken in 1 round   G2 broken in 1 round   (2210 states)
+    shortest execution breaking G1:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  R without P2                                   f=1  G1 broken in 1 round   G2 broken in 1 round   (68 states)
+    shortest execution breaking G1:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  R without P3                                   f=1  G1 broken in 1 round   G2 broken in 1 round   (777 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  R without P4                                   f=1  G1 holds               G2 broken in 1 round   (59 states)
+    shortest execution breaking G2:
+      round 1: env: mutate W1
+               bad: W1 | flagged: M1 | halted: W1 | worked: W2   <-- breaks G2
+  R without P5                                   f=1  G1 broken in 2 rounds  G2 broken in 2 rounds  (13116 states)
+    shortest execution breaking G1:
+      round 1: env: disable M1
+               bad: - | flagged: - | halted: - | worked: W1 W2
+      round 2: env: mutate W1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: disable M1
+               bad: - | flagged: - | halted: - | worked: W1 W2
+      round 2: env: mutate M3
+               bad: M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+  R without P6                                   f=1  G1 broken in 2 rounds  G2 holds               (239 states)
+    shortest execution breaking G1:
+      round 1: env: stop-boundary 1
+               bad: - | flagged: - | halted: W1 W2 | worked: -
+      round 2: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: W1 W2 | worked: -   <-- breaks G1
+  R without P7                                   f=1  G1 broken in 2 rounds  G2 broken in 2 rounds  (2565 states)
+    shortest execution breaking G1:
+      round 1: env: join J
+               bad: - | flagged: - | halted: - | worked: W1 W2 J
+      round 2: env: mutate J
+               bad: J | flagged: - | halted: - | worked: W1 W2 J   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: join J
+               bad: - | flagged: - | halted: - | worked: W1 W2 J
+      round 2: env: fail-substrate s1
+               bad: W1 | flagged: M2 M3 | halted: W1 W2 | worked: J   <-- breaks G2
+  R without P8                                   f=1  G1 holds               G2 broken in 1 round   (228 states)
+    shortest execution breaking G2:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+  R without P8b                                  f=1  G1 broken in 3 rounds  G2 broken in 1 round   (1818 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M2 M3 | halted: W2 | worked: W1   <-- breaks G2
+      round 2: env: stop M2
+               bad: M1 | flagged: M3 | halted: W2 | worked: W1   <-- breaks G2
+      round 3: env: stop M3
+               bad: M1 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M2 M3 | halted: W2 | worked: W1   <-- breaks G2
+
+3. The executions in the write-up, replayed (f = 1)
+  without P1 : breaks G1 and G2; the same schedule in full R breaks nothing
+    round 1: env: stop M1
+             bad: - | flagged: - | halted: - | worked: W1 W2
+    round 2: env: mutate W1
+             bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  without P2 : breaks G1 and G2; the same schedule in full R breaks nothing
+    round 1: env: fail-substrate s1
+             bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  without P3 : breaks G1 and G2; the same schedule in full R breaks nothing
+    round 1: env: mutate W1
+             bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  without P4 : breaks G2; the same schedule in full R breaks nothing
+    round 1: env: mutate W1
+             bad: W1 | flagged: M1 | halted: W1 | worked: W2   <-- breaks G2
+  without P5 : breaks G1 and G2; the same schedule in full R has a step that does not exist there
+    round 1: env: disable M1
+             bad: - | flagged: - | halted: - | worked: W1 W2
+    round 2: env: mutate W1
+             bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  without P6 : breaks G1; the same schedule in full R has a step that does not exist there
+    round 1: env: stop-boundary 1
+             bad: - | flagged: - | halted: W1 W2 | worked: -
+    round 2: env: mutate W1
+             bad: W1 | flagged: - | halted: W1 W2 | worked: -   <-- breaks G1
+  without P7 : breaks G1 and G2; the same schedule in full R breaks nothing
+    round 1: env: join J
+             bad: - | flagged: - | halted: - | worked: W1 W2 J
+    round 2: env: mutate J
+             bad: J | flagged: - | halted: - | worked: W1 W2 J   <-- breaks G1 and G2
+  without P8 : breaks G2; the same schedule in full R breaks nothing
+    round 1: env: mutate W1
+             bad: W1 | flagged: M1 M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+  without P8b: breaks G2; the same schedule in full R breaks nothing
+    round 1: env: mutate M1
+             bad: M1 | flagged: M2 M3 | halted: W2 | worked: W1   <-- breaks G2
+
+4. A property can fail with no violation
+  R plus unread M4                               f=1  G1 holds               G2 holds               (50 states)
+
+5. How many monitors: a mesh of n, one work process that reads all of them
+  mesh of 1                                      f=1  G1 broken in 1 round   G2 broken in 1 round   (8 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  mesh of 1                                      f=2  G1 broken in 1 round   G2 broken in 1 round   (8 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  mesh of 1                                      f=3  G1 broken in 1 round   G2 broken in 1 round   (8 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  mesh of 2                                      f=1  G1 holds               G2 holds               (6 states)
+  mesh of 2                                      f=2  G1 broken in 1 round   G2 broken in 1 round   (30 states)
+    shortest execution breaking G1:
+      round 1: env: stop M1, mutate M2
+               bad: M2 | flagged: - | halted: W | worked: -   <-- breaks G1
+    shortest execution breaking G2:
+      round 1: env: mutate M1, mutate M2
+               bad: M1 M2 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  mesh of 2                                      f=3  G1 broken in 1 round   G2 broken in 1 round   (32 states)
+    shortest execution breaking G1:
+      round 1: env: stop M1, mutate M2
+               bad: M2 | flagged: - | halted: W | worked: -   <-- breaks G1
+    shortest execution breaking G2:
+      round 1: env: mutate M1, mutate M2
+               bad: M1 M2 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  mesh of 3                                      f=1  G1 holds               G2 holds               (8 states)
+  mesh of 3                                      f=2  G1 holds               G2 holds               (29 states)
+  mesh of 3                                      f=3  G1 broken in 1 round   G2 broken in 1 round   (110 states)
+    shortest execution breaking G1:
+      round 1: env: stop M1, stop M2, mutate M3
+               bad: M3 | flagged: - | halted: W | worked: -   <-- breaks G1
+    shortest execution breaking G2:
+      round 1: env: mutate M1, mutate M2, mutate M3
+               bad: M1 M2 M3 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  mesh of 4                                      f=1  G1 holds               G2 holds               (10 states)
+  mesh of 4                                      f=2  G1 holds               G2 holds               (46 states)
+  mesh of 4                                      f=3  G1 holds               G2 holds               (130 states)
+
+6. Report chains inside one ring
+  ring of 2, reports to other, work reads 2      f=1  G1 holds               G2 holds               (6 states)
+  ring of 3, reports to other, work reads 2      f=1  G1 holds               G2 holds               (8 states)
+  ring of 3, reports to same, work reads 2       f=1  G1 broken in 3 rounds  G2 broken in 1 round   (47 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+      round 2: env: mutate M2
+               bad: M1 M2 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+      round 3: env: stop M3
+               bad: M1 M2 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+  ring of 3, reports to same, work reads 3       f=1  G1 holds               G2 holds               (8 states)
+  ring of 3, reports to other, work reads 1      f=1  G1 broken in 3 rounds  G2 broken in 1 round   (71 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M2 M3 | halted: - | worked: W   <-- breaks G2
+      round 2: env: stop M2
+               bad: M1 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+      round 3: env: stop M3
+               bad: M1 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M2 M3 | halted: - | worked: W   <-- breaks G2
+  ring of 3, reports to other, work reads 2      f=2  G1 broken in 2 rounds  G2 broken in 1 round   (60 states)
+    shortest execution breaking G1:
+      round 1: env: mutate M1, mutate M2
+               bad: M1 M2 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+      round 2: env: stop M3
+               bad: M1 M2 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate M1, mutate M2
+               bad: M1 M2 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+  ring of 3, reports to other, work reads 3      f=2  G1 holds               G2 holds               (29 states)
+  ring of 3, reports to other, work reads 3      f=3  G1 broken in 1 round   G2 broken in 1 round   (110 states)
+    shortest execution breaking G1:
+      round 1: env: stop M1, stop M2, mutate M3
+               bad: M3 | flagged: - | halted: W | worked: -   <-- breaks G1
+    shortest execution breaking G2:
+      round 1: env: mutate M1, mutate M2, mutate M3
+               bad: M1 M2 M3 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+
+7. Three monitors plus a coordinator K, one ring
+  3+K, work reads K                              f=1  G1 broken in 4 rounds  G2 broken in 1 round   (265 states)
+    shortest execution breaking G1:
+      round 1: env: mutate K
+               bad: K | flagged: M1 M2 M3 | halted: - | worked: W   <-- breaks G2
+      round 2: env: stop M1
+               bad: K | flagged: M2 M3 | halted: - | worked: W   <-- breaks G2
+      round 3: env: stop M2
+               bad: K | flagged: M3 | halted: - | worked: W   <-- breaks G2
+      round 4: env: stop M3
+               bad: K | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate K
+               bad: K | flagged: M1 M2 M3 | halted: - | worked: W   <-- breaks G2
+  3+K, work reads K+M1                           f=1  G1 holds               G2 holds               (10 states)
+  3+K, work reads K+M1+M2+M3                     f=1  G1 holds               G2 holds               (10 states)
+
+8. Nested rings: two base rings joined by an upper ring through coordinators
+  nested, base rings 3+K, upper ring of 3        f=1  G1 holds               G2 holds               (21 states)
+  nested, base rings 1+K, upper ring of 2        f=1  G1 holds               G2 holds               (11 states)
+  nested, base rings 1+K, upper ring of 2        f=2  G1 broken in 2 rounds  G2 broken in 1 round   (566 states)
+    shortest execution breaking G1:
+      round 1: env: mutate A1, mutate KA
+               bad: A1 KA | flagged: B1 KB | halted: WB | worked: WA   <-- breaks G2
+      round 2: env: stop B1, stop KB
+               bad: A1 KA | flagged: - | halted: WB | worked: WA   <-- breaks G1 and G2
+    shortest execution breaking G2:
+      round 1: env: mutate A1, mutate KA
+               bad: A1 KA | flagged: B1 KB | halted: WB | worked: WA   <-- breaks G2
+  Removing one edge from 'nested, base rings 3+K, upper ring of 3' (f = 1): 23 of 55 removals break a goal
+    needed: U3 reads KA's signal             (its removal breaks G1 and G2)
+    needed: KA reads KB's signal             (its removal breaks G1 and G2)
+    needed: KB reads U3's signal             (its removal breaks G1 and G2)
+    needed: A1 checks A2's state             (its removal breaks G1 and G2)
+    needed: A2 checks A3's state             (its removal breaks G1 and G2)
+    needed: A3 checks A1's state             (its removal breaks G1 and G2)
+    needed: A1 checks KA's state             (its removal breaks G1 and G2)
+    needed: U3 checks KA's state             (its removal breaks G1 and G2)
+    needed: A1 checks WA's state             (its removal breaks G1 and G2)
+    needed: B1 checks B2's state             (its removal breaks G1 and G2)
+    needed: B2 checks B3's state             (its removal breaks G1 and G2)
+    needed: B3 checks B1's state             (its removal breaks G1 and G2)
+    needed: B1 checks KB's state             (its removal breaks G1 and G2)
+    needed: KA checks KB's state             (its removal breaks G1 and G2)
+    needed: B1 checks WB's state             (its removal breaks G1 and G2)
+    needed: KB checks U3's state             (its removal breaks G1 and G2)
+    needed: KA reports to U3                 (its removal breaks G2)
+    needed: KB reports to KA                 (its removal breaks G2)
+    needed: U3 reports to KB                 (its removal breaks G2)
+    needed: WA takes its halt from A1        (its removal breaks G1 and G2)
+    needed: WA takes its halt from KA        (its removal breaks G1 and G2)
+    needed: WB takes its halt from B1        (its removal breaks G1 and G2)
+    needed: WB takes its halt from KB        (its removal breaks G1 and G2)
+    spare:  A1 reads A2's signal
+    spare:  KA reads A2's signal
+    spare:  KA reads A1's signal
+    spare:  A3 reads A1's signal
+    spare:  A2 reads A3's signal
+    spare:  KA reads A3's signal
+    spare:  A1 reads KA's signal
+    spare:  B1 reads B2's signal
+    spare:  KB reads B2's signal
+    spare:  KB reads B1's signal
+    spare:  B3 reads B1's signal
+    spare:  B2 reads B3's signal
+    spare:  KB reads B3's signal
+    spare:  B1 reads KB's signal
+    spare:  A1 reports to A3
+    spare:  A1 reports to KA
+    spare:  KA reports to A1
+    spare:  KA reports to A2
+    spare:  KA reports to A3
+    spare:  A2 reports to A1
+    spare:  A2 reports to KA
+    spare:  A3 reports to A2
+    spare:  A3 reports to KA
+    spare:  B1 reports to B3
+    spare:  B1 reports to KB
+    spare:  KB reports to B1
+    spare:  KB reports to B2
+    spare:  KB reports to B3
+    spare:  B2 reports to B1
+    spare:  B2 reports to KB
+    spare:  B3 reports to B2
+    spare:  B3 reports to KB
+
+9. Growth against response time: one bad process, doubling every tick
+  1024 processes
+    all halt together 0 ticks after detection: 1 bad
+    all halt together 1 ticks after detection: 2 bad
+    all halt together 2 ticks after detection: 4 bad
+    all halt together 5 ticks after detection: 32 bad
+    halt passed to 1 per hop, 1 hops per tick: 1014 bad (99.02%)
+    halt passed to 1 per hop, 16 hops per tick: 864 bad (84.38%)
+    halt passed to 1 per hop, 128 hops per tick: 128 bad (12.50%)
+    halt passed to 2 per hop, 1 hops per tick: 256 bad (25.00%)
+    halt passed to 2 per hop, 2 hops per tick: 16 bad (1.56%)
+    halt passed to 2 per hop, 4 hops per tick: 4 bad (0.39%)
+  1048576 processes
+    all halt together 0 ticks after detection: 1 bad
+    all halt together 1 ticks after detection: 2 bad
+    all halt together 2 ticks after detection: 4 bad
+    all halt together 5 ticks after detection: 32 bad
+    halt passed to 1 per hop, 1 hops per tick: 1048556 bad (100.00%)
+    halt passed to 1 per hop, 16 hops per tick: 1048256 bad (99.97%)
+    halt passed to 1 per hop, 128 hops per tick: 1046016 bad (99.76%)
+    halt passed to 2 per hop, 1 hops per tick: 262144 bad (25.00%)
+    halt passed to 2 per hop, 2 hops per tick: 512 bad (0.05%)
+    halt passed to 2 per hop, 4 hops per tick: 16 bad (0.00%)
+
+10. Heartbeat.tla, mirrored
+  HB = True: invariant holds in all 8 reachable states
+  HB = False: invariant broken, shortest trace has 7 states
+    1. Init      alive={m1,m2} bad=False flagged={} turn=env halted=False
+    2. Stop(m1)  alive={m2} bad=False flagged={} turn=mon halted=False
+    3. MonRound  alive={m2} bad=False flagged={} turn=env halted=False
+    4. Stop(m2)  alive={} bad=False flagged={} turn=mon halted=False
+    5. MonRound  alive={} bad=False flagged={} turn=env halted=False
+    6. Corrupt   alive={} bad=True flagged={} turn=mon halted=False
+    7. MonRound  alive={} bad=True flagged={} turn=env halted=False
+
+wrote 94 cases to scratch_cases.json

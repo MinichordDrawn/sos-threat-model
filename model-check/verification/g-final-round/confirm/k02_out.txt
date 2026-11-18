@@ -1,0 +1,16 @@
+n=3 self-loops=False: graphs 64, (graph, K) pairs 192; K reaches every other in 96; restart_game agrees with reachability in 192; own decider agrees in 192; exceptions 0; second half of the proof holds step by step in 96 of 96; pairs whose all-running start state is not settled: 84
+n=4 self-loops=False: graphs 4096, (graph, K) pairs 16384; K reaches every other in 9728; restart_game agrees with reachability in 16384; own decider agrees in 16384; exceptions 0; second half of the proof holds step by step in 6656 of 6656; pairs whose all-running start state is not settled: 5408
+n=3 self-loops=True: graphs 512, (graph, K) pairs 1536; K reaches every other in 768; restart_game agrees with reachability in 1536; own decider agrees in 1536; exceptions 0; second half of the proof holds step by step in 768 of 768; pairs whose all-running start state is not settled: 360
+n=4 self-loops=True: graphs 65536, (graph, K) pairs 65536; K reaches every other in 38912; restart_game agrees with reachability in 65536; own decider agrees in 65536; exceptions 0; second half of the proof holds step by step in 26624 of 26624; pairs whose all-running start state is not settled: 11536
+
+the four rings of the table (run-output 10b):
+  ring3 (['stop X1', 'release X1'], 5)
+  mesh3 (['stop X1', 'release X1', 'stop X2', 'release X2'], 14)
+  3+K (None, 45)
+  3+K, K bound (['stop X1', 'release X1', 'stop K', 'release K'], 36)
+
+weaker form: in the mesh of 3, one stop leaves the other two running:
+  settle(all - X1) = ['X2', 'X3']
+with no member able to start first, a full stop is reachable and final, on every graph of 3 and 4:
+  n=3: graphs 64, of which can always restart with no self-starting member: 0
+  n=4: graphs 4096, of which can always restart with no self-starting member: 0

@@ -1,0 +1,35 @@
+== two-level rings at f = 2 (section 1 says they 'hold too' after 'up to three faults')
+    round 1: env: mutate A1, mutate KA
+             bad: A1 KA | flagged: A2 A3 B1 B2 B3 KB U3 | halted: WB | worked: WA   <-- breaks G2
+== README Theorem S wording: conditions (a)-(d) on a non-plain system
+  mesh of 4 in one boundary: (a)-(d) hold: True plain: False result: {'G1': 2, 'G2': None}
+  mesh of 3 with a window: (a)-(d) hold: True plain: False result: {'G1': None, 'G2': 1}
+  mesh of 2.. (a)-(d) at f=2, mesh of 2: True {'G1': 1, 'G2': 1}
+== Theorem S: random plain systems at f = 1 that satisfy (a)-(d)
+  systems satisfying (a)-(d): 16150; neither judgement violated in 16150
+== falsifier report 6.6 (F4x1-Q4-1): a detection that does not stop the work
+  result: {'G1': None, 'G2': None} 18 states
+    round 1: env: stop c
+             bad: - | flagged: a | halted: - | worked: w
+    round 2: env: (none)
+             bad: - | flagged: a | halted: - | worked: w
+  spare monitors: []
+  predicates: {'Q1': True, 'Q1f': True, 'Q3': True, 'Q4': False, 'Q4r': False, 'Q8': True}
+== the census example for Q4r (run-output line 200)
+  result: {'G1': None, 'G2': None} spare: [] {'Q1': True, 'Q1f': True, 'Q3': True, 'Q4': False, 'Q4r': False, 'Q8': True}
+== fixes from B: D3 (string argument) and D4 (missing key)
+  reference(without='P8b'): R without P8b window 0 halt_inputs {'W1': ['M1'], 'W2': ['M2'], 'J': ['M3']}
+  reference(without=('P3',), unread_extra=True): ok, R without P3 plus unread M4
+== P2 second face against the model's own fail-substrate step
+    full R: round 1: env: fail-substrate s1
+    full R:          bad: W1 | flagged: M2 M3 | halted: W1 W2 | worked: -
+    R with a one-round window (shared substrate kept): round 1: env: fail-substrate s1
+    R with a one-round window (shared substrate kept):          bad: W1 | flagged: M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+    M and W on one substrate, window 1: round 1: env: fail-substrate s
+    M and W on one substrate, window 1:          bad: W | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+== worst halting order against the stated bounds, n = 2..400
+  c=2,h=2: sizes where the worst order exceeds sqrt(n/2): [] 0
+  c=2,h=2: max worst/sqrt(n/2): (1.0, 8)
+  c=2,h=1: max share lost under the worst order: (0.4, 10) ; at powers of two: [(8, 3, 2), (16, 5, 4), (32, 9, 8), (64, 17, 16), (128, 33, 32), (256, 65, 64)]
+  c=2,h=1: sizes in 2..400 where another order beats good-first: 234
+  n=8, c=2, h=1: good-first 2 worst 3

@@ -1,0 +1,46 @@
+proposed wordings: 50 found word for word: 35 not found: 15
+
+R2: NOT FOUND. Matches up to char 224 of 483.
+   proposed: efacts: the specification, the cases, the code, or a claim as a bare statement. None was given the author's reasoning or expected results. Three results added afterwards did not get this check: the restart result, the second face of P2, and
+
+R8: NOT FOUND. Matches up to char 12 of 125.
+   proposed: The ring as ghostunnel builds it (four members, every pair watching each other) holds at one, two and three faults per round.
+
+R8: NOT FOUND. Matches up to char 12 of 147.
+   proposed: The ring as ghostunnel builds it (three members and a coordinator, every pair watching each other) holds up to three faults per round in the model.
+
+R8: NOT FOUND. Matches up to char 91 of 217.
+   proposed: rs, all pairs watching, one work process reading all four. Both implementations have three members and a coordinator. In ghostunnel every member watches every other (`observers/README.md` line 20; SPEC 28).
+
+R8: NOT FOUND. Matches up to char 11 of 130.
+   proposed: all pairs (28)". The check that a heartbeat "must change" is V6 at 375; 358 and 370 are the bound and the backstop, so "(358, 375)
+
+R10: NOT FOUND. Matches up to char 112 of 407.
+   proposed: ead, and the edge by which a flag reaches the work, vary from system to system. Two things do not vary. Another monitor, or the work, reads the silence of every monitor the system depends on. A bad state stops the work in the round it appea
+
+R27: NOT FOUND. Matches up to char 1 of 257.
+   proposed: *Verdict:* against the loss of a substrate, P2 is the gate made structural. The gate keeps work from outliving its observer by a check, and a check has a thresho
+
+R30: NOT FOUND. Matches up to char 28 of 92.
+   proposed: G2 in one round; G1 in three". Row "The gate", judgement cell: "G2 in one round; G1 in three
+
+R37: NOT FOUND. Matches up to char 62 of 225.
+   proposed: | Recover without an outside hand | one member that can start by itself, from which every other member is reached along observation edges | the first proved, the second argued, both checked on one ring of four, section 10.
+
+R37: NOT FOUND. Matches up to char 33 of 180.
+   proposed: One member must be able to start by itself, and every other member must be reached from it along observation edges. Observing all of them directly is the shortest such arrangement.
+
+R37: NOT FOUND. Matches up to char 159 of 214.
+   proposed: observe. So every other member must be reached from it along observation edges, and observing all of them directly is the shortest way.
+
+R37: NOT FOUND. Matches up to char 26 of 114.
+   proposed: | a member that can start alone, from which every other member is reached | emergent, from the fourth constraint |
+
+R39: NOT FOUND. Matches up to char 66 of 221.
+   proposed: The coordinator clears first, when no member's store holds a fault; the others clear only once its halt is gone (554 to 558). None of them clears while it is lost, because its silence is a failing assertion of each (383).
+
+R43: NOT FOUND. Matches up to char 186 of 403.
+   proposed:  a state that was bad when some member read it and was put back afterwards (I1, 451 to 454; `trace-consistent`, 674). Both compare the store with what a member recorded at an earlier read. A change made and undone between two reads, seen by
+
+R52: NOT FOUND. Matches up to char 28 of 423.
+   proposed: a record that may only grow catches it". 10.5 says the implementation's hash chains and append-only trace catch such a change by "neither". Suggested wording for 2.5: "Whether such a chang

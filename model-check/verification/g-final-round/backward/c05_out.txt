@@ -1,0 +1,17 @@
+n=2: total 1024, gap-free 12, fails {'Q1': 0, 'Q1f': 0, 'Q3': 0, 'Q4': 9, 'Q4r': 0, 'Q8': 0}, stays {'Q1': 0, 'Q1f': 0, 'Q3': 0, 'Q4': 9, 'Q4r': 0, 'Q8': 0}
+   Q4 still fails in 9; of those:
+     not gap-free once all report edges are removed (a flag does have to travel): 0
+     work reads every monitor: 9
+     every monitor whose flag does not reach all others is spare: 0
+     some round ends with a live correct flag and a work step: 0
+n=3: total 4890, gap-free 1721, fails {'Q1': 103, 'Q1f': 23, 'Q3': 0, 'Q4': 378, 'Q4r': 32, 'Q8': 0}, stays {'Q1': 22, 'Q1f': 0, 'Q3': 0, 'Q4': 280, 'Q4r': 9, 'Q8': 0}
+   Q4 still fails in 280; of those:
+     not gap-free once all report edges are removed (a flag does have to travel): 46
+     work reads every monitor: 129
+     every monitor whose flag does not reach all others is spare: 20
+     some round ends with a live correct flag and a work step: 0
+     example needing a report: {'hb_readers': {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M2']}, 'checkers': {'M1': ['M2'], 'M2': ['M1'], 'M3': ['M1', 'M2'], 'W': ['M1', 'M2', 'M3']}, 'fwd': {'M1': ['M2', 'M3'], 'M2': ['M3'], 'M3': ['M2']}, 'halt_inputs': {'W': ['M2', 'M3']}}
+     example needing a report: {'hb_readers': {'M1': ['M2'], 'M2': ['M3'], 'M3': ['M2']}, 'checkers': {'M1': ['M2', 'M3'], 'M2': ['M1'], 'M3': ['M1'], 'W': ['M2']}, 'fwd': {'M1': ['M2', 'M3'], 'M2': [], 'M3': ['M1', 'M2']}, 'halt_inputs': {'W': ['M2', 'M3']}}
+     example, unreaching monitors all spare: {'hb_readers': {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M2']}, 'checkers': {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M2'], 'W': ['M2', 'M3']}, 'fwd': {'M1': [], 'M2': ['M1', 'M3'], 'M3': ['M1']}, 'halt_inputs': {'W': ['M1', 'M2', 'M3']}}
+     example, unreaching monitors all spare: {'hb_readers': {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M1']}, 'checkers': {'M1': ['M2', 'M3'], 'M2': ['M1', 'M3'], 'M3': ['M1', 'M2'], 'W': ['M1', 'M2', 'M3']}, 'fwd': {'M1': ['M2', 'M3'], 'M2': ['M3'], 'M3': []}, 'halt_inputs': {'W': ['M1', 'M2', 'M3']}}
+sums: {'Q1': (103, 22), 'Q1f': (23, 0), 'Q3': (0, 0), 'Q4': (387, 289), 'Q4r': (32, 9), 'Q8': (0, 0)} gap-free 1733 systems 1024 4890

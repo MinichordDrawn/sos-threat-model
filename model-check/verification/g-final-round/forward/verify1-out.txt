@@ -1,0 +1,239 @@
+== section 5: R
+  R                                                            f=1 G1 holds; G2 holds; 23 states
+  R                                                            f=2 G1 broken in 2 rounds; G2 broken in 1 round; 731 states
+  R                                                            f=3 G1 broken in 1 round; G2 broken in 1 round; 1470 states
+  R f=2 shortest G2 / G1:
+      round 1: env: mutate M1, mutate M3
+               bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+      round 1: env: mutate M1, mutate M3
+               bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+      round 2: env: stop M2
+               bad: M1 M3 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+  R data: {"name": "R", "f": 1, "monitors": ["M1", "M2", "M3"], "works": ["W1", "W2"], "joiner": "J", "boundary": {"M1": 1, "M2": 2, "M3": 3}, "substrate": {"W1": "s1", "W2": "s2", "M3": "s3", "M1": "s1", "M2": "s2"}, "hb_readers": {"M1": ["M2", "M3"], "M2": ["M1", "M3"], "M3": ["M1", "M2"]}, "checkers": {"W1": ["M1"], "W2": ["M2"], "M1": ["M2", "M3"], "M2": ["M1", "M3"], "M3": ["M1", "M2"], "J": ["M3"]}, "fwd": {"M1": ["M2", "M3"], "M2": ["M1", "M3"], "M3": ["M1", "M2"]}, "halt_inputs": {"W1": ["M1", "M3"], "W2": ["M2", "M3"], "J": ["M3", "M1"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+== section 6: schedules replayed in R-minus-one and in full R
+ -- without P1: [[('stop', 'M1')], [('mutate', 'W1')]]
+    removed: round 1: env: stop M1
+    removed:          bad: - | flagged: - | halted: - | worked: W1 W2
+    removed: round 2: env: mutate W1
+    removed:          bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    full R -> ended
+    full R:  round 1: env: stop M1
+    full R:           bad: - | flagged: M2 M3 | halted: W1 W2 | worked: -
+ -- without P2: [[('fail-substrate', 's1')]]
+    removed: round 1: env: fail-substrate s1
+    removed:          bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    full R -> done
+    full R:  round 1: env: fail-substrate s1
+    full R:           bad: W1 | flagged: M2 M3 | halted: W1 W2 | worked: -
+ -- without P3: [[('mutate', 'W1')]]
+    removed: round 1: env: mutate W1
+    removed:          bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    full R -> done
+    full R:  round 1: env: mutate W1
+    full R:           bad: W1 | flagged: M1 M2 M3 | halted: W1 W2 | worked: -
+ -- without P4: [[('mutate', 'W1')]]
+    removed: round 1: env: mutate W1
+    removed:          bad: W1 | flagged: M1 | halted: W1 | worked: W2   <-- breaks G2
+    full R -> done
+    full R:  round 1: env: mutate W1
+    full R:           bad: W1 | flagged: M1 M2 M3 | halted: W1 W2 | worked: -
+ -- without P5: [[('disable', 'M1')], [('mutate', 'W1')]]
+    removed: round 1: env: disable M1
+    removed:          bad: - | flagged: - | halted: - | worked: W1 W2
+    removed: round 2: env: mutate W1
+    removed:          bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    full R -> no such step
+ -- without P6: [[('stop-boundary', 1)], [('mutate', 'W1')]]
+    removed: round 1: env: stop-boundary 1
+    removed:          bad: - | flagged: - | halted: W1 W2 | worked: -
+    removed: round 2: env: mutate W1
+    removed:          bad: W1 | flagged: - | halted: W1 W2 | worked: -   <-- breaks G1
+    full R -> no such step
+ -- without P7: [[('join', 'J')], [('mutate', 'J')]]
+    removed: round 1: env: join J
+    removed:          bad: - | flagged: - | halted: - | worked: W1 W2 J
+    removed: round 2: env: mutate J
+    removed:          bad: J | flagged: - | halted: - | worked: W1 W2 J   <-- breaks G1 and G2
+    full R -> done
+    full R:  round 1: env: join J
+    full R:           bad: - | flagged: - | halted: - | worked: W1 W2 J
+    full R:  round 2: env: mutate J
+    full R:           bad: J | flagged: M1 M2 M3 | halted: J W1 W2 | worked: -
+ -- without P8: [[('mutate', 'W1')]]
+    removed: round 1: env: mutate W1
+    removed:          bad: W1 | flagged: M1 M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+    full R -> done
+    full R:  round 1: env: mutate W1
+    full R:           bad: W1 | flagged: M1 M2 M3 | halted: W1 W2 | worked: -
+ -- without P8b: [[('mutate', 'M1')]]
+    removed: round 1: env: mutate M1
+    removed:          bad: M1 | flagged: M2 M3 | halted: W2 | worked: W1   <-- breaks G2
+    full R -> done
+    full R:  round 1: env: mutate M1
+    full R:           bad: M1 | flagged: M2 M3 | halted: W1 W2 | worked: -
+ -- without gate: [[('mutate', 'W1')], []]
+    removed: round 1: env: mutate W1
+    removed:          bad: W1 | flagged: M1 M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+    removed: round 2: env: (none)
+    removed:          bad: W1 | flagged: M1 M2 M3 | halted: W1 W2 | worked: -
+    full R -> ended
+    full R:  round 1: env: mutate W1
+    full R:           bad: W1 | flagged: M1 M2 M3 | halted: W1 W2 | worked: -
+== section 6: shortest executions found by the search
+  R without P1                                                 f=1 G1 broken in 1 round; G2 broken in 1 round; 2210 states
+    shortest G1:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    shortest G2:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  R without P2                                                 f=1 G1 broken in 1 round; G2 broken in 1 round; 68 states
+    shortest G1:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    shortest G2:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  R without P3                                                 f=1 G1 broken in 1 round; G2 broken in 1 round; 777 states
+    shortest G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    shortest G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+  R without P4                                                 f=1 G1 holds; G2 broken in 1 round; 59 states
+    shortest G2:
+      round 1: env: mutate W1
+               bad: W1 | flagged: M1 | halted: W1 | worked: W2   <-- breaks G2
+  R without P5                                                 f=1 G1 broken in 2 rounds; G2 broken in 2 rounds; 13116 states
+    shortest G1:
+      round 1: env: disable M1
+               bad: - | flagged: - | halted: - | worked: W1 W2
+      round 2: env: mutate W1
+               bad: W1 | flagged: - | halted: - | worked: W1 W2   <-- breaks G1 and G2
+    shortest G2:
+      round 1: env: disable M1
+               bad: - | flagged: - | halted: - | worked: W1 W2
+      round 2: env: mutate M3
+               bad: M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+  R without P6                                                 f=1 G1 broken in 2 rounds; G2 holds; 239 states
+    shortest G1:
+      round 1: env: stop-boundary 1
+               bad: - | flagged: - | halted: W1 W2 | worked: -
+      round 2: env: fail-substrate s1
+               bad: W1 | flagged: - | halted: W1 W2 | worked: -   <-- breaks G1
+  R without P7                                                 f=1 G1 broken in 2 rounds; G2 broken in 2 rounds; 2565 states
+    shortest G1:
+      round 1: env: join J
+               bad: - | flagged: - | halted: - | worked: W1 W2 J
+      round 2: env: mutate J
+               bad: J | flagged: - | halted: - | worked: W1 W2 J   <-- breaks G1 and G2
+    shortest G2:
+      round 1: env: join J
+               bad: - | flagged: - | halted: - | worked: W1 W2 J
+      round 2: env: fail-substrate s1
+               bad: W1 | flagged: M2 M3 | halted: W1 W2 | worked: J   <-- breaks G2
+  R without P8                                                 f=1 G1 holds; G2 broken in 1 round; 228 states
+    shortest G2:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+  R without P8b                                                f=1 G1 broken in 3 rounds; G2 broken in 1 round; 1818 states
+    shortest G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M2 M3 | halted: W2 | worked: W1   <-- breaks G2
+      round 2: env: stop M2
+               bad: M1 | flagged: M3 | halted: W2 | worked: W1   <-- breaks G2
+      round 3: env: stop M3
+               bad: M1 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+    shortest G2:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M2 M3 | halted: W2 | worked: W1   <-- breaks G2
+  R without gate                                               f=1 G1 broken in 3 rounds; G2 broken in 1 round; 1257 states
+    shortest G1:
+      round 1: env: mutate M1
+               bad: M1 | flagged: M2 M3 | halted: - | worked: W1 W2   <-- breaks G2
+      round 2: env: mutate M3
+               bad: M1 M3 | flagged: M2 | halted: W2 | worked: W1   <-- breaks G2
+      round 3: env: stop M2
+               bad: M1 M3 | flagged: - | halted: W2 | worked: W1   <-- breaks G1 and G2
+    shortest G2:
+      round 1: env: fail-substrate s1
+               bad: W1 | flagged: M2 M3 | halted: W1 | worked: W2   <-- breaks G2
+== section 4
+  R plus unread M4                                             f=1 G1 holds; G2 holds; 50 states
+  mesh of 3, nobody reads M3's signal                          f=1 G1 holds; G2 holds; 14 states
+  mesh of 3, nobody reads M3's signal                          f=2 G1 broken in 2 rounds; G2 holds; 76 states
+      round 1: env: stop M3
+               bad: - | flagged: - | halted: W | worked: -
+      round 2: env: stop M1, mutate M2
+               bad: M2 | flagged: - | halted: W | worked: -   <-- breaks G1
+  mesh3 full signals:
+  mesh of 3                                                    f=1 G1 holds; G2 holds; 8 states
+  mesh of 3                                                    f=2 G1 holds; G2 holds; 29 states
+== section 6 P4: ring chains
+  ring of 3, reports to same, work reads 2                     f=1 G1 broken in 3 rounds; G2 broken in 1 round; 47 states
+    {"name": "ring of 3, reports to same, work reads 2", "f": 1, "monitors": ["M1", "M2", "M3"], "works": ["W"], "joiner": null, "boundary": {"M1": 0, "M2": 1, "M3": 2}, "substrate": {}, "hb_readers": {"M2": ["M1"], "M3": ["M2"], "M1": ["M3"]}, "checkers": {"M2": ["M1"], "M3": ["M2"], "M1": ["M3"], "W": ["M1"]}, "fwd": {"M1": ["M2"], "M2": ["M3"], "M3": ["M1"]}, "halt_inputs": {"W": ["M1", "M2"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+      round 1: env: mutate M1
+               bad: M1 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+    mutate M1: round 1: env: mutate M1
+    mutate M1:          bad: M1 | flagged: M3 | halted: - | worked: W   <-- breaks G2
+  ring of 3, reports to other, work reads 2                    f=1 G1 holds; G2 holds; 8 states
+    {"name": "ring of 3, reports to other, work reads 2", "f": 1, "monitors": ["M1", "M2", "M3"], "works": ["W"], "joiner": null, "boundary": {"M1": 0, "M2": 1, "M3": 2}, "substrate": {}, "hb_readers": {"M2": ["M1"], "M3": ["M2"], "M1": ["M3"]}, "checkers": {"M2": ["M1"], "M3": ["M2"], "M1": ["M3"], "W": ["M1"]}, "fwd": {"M1": ["M3"], "M2": ["M1"], "M3": ["M2"]}, "halt_inputs": {"W": ["M1", "M2"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+    mutate M1: round 1: env: mutate M1
+    mutate M1:          bad: M1 | flagged: M2 M3 | halted: W | worked: -
+== section 8.1 reflex
+  work halted by its own checker, reports arrive at once       f=1 G1 holds; G2 holds; 8 states
+  work halted by its own checker, reports take a round         f=1 G1 holds; G2 holds; 8 states
+  work halted by other monitors only, reports arrive at once   f=1 G1 holds; G2 holds; 8 states
+  work halted by other monitors only, reports take a round     f=1 G1 holds; G2 broken in 1 round; 15 states
+      round 1: env: mutate W
+               bad: W | flagged: M1 | halted: - | worked: W   <-- breaks G2
+== section 10.1
+  mesh of 4                                                    f=1 G1 holds; G2 holds; 10 states
+  mesh of 4                                                    f=2 G1 holds; G2 holds; 46 states
+  mesh of 4                                                    f=3 G1 holds; G2 holds; 130 states
+  3+K, work reads K                                            f=1 G1 broken in 4 rounds; G2 broken in 1 round; 265 states
+      round 1: env: mutate K
+               bad: K | flagged: M1 M2 M3 | halted: - | worked: W   <-- breaks G2
+      round 1: env: mutate K
+               bad: K | flagged: M1 M2 M3 | halted: - | worked: W   <-- breaks G2
+      round 2: env: stop M1
+               bad: K | flagged: M2 M3 | halted: - | worked: W   <-- breaks G2
+      round 3: env: stop M2
+               bad: K | flagged: M3 | halted: - | worked: W   <-- breaks G2
+      round 4: env: stop M3
+               bad: K | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  3+K, work reads K+M1                                         f=1 G1 holds; G2 holds; 10 states
+  3+K, work reads K+M1+M2+M3                                   f=1 G1 holds; G2 holds; 10 states
+  nested, base rings 3+K, upper ring of 3                      f=1 G1 holds; G2 holds; 21 states
+  nested, base rings 3+K, upper ring of 3, each base ring in one boundary f=1 G1 holds; G2 holds; 23 states
+    stop-boundary A: round 1: env: stop-boundary A
+    stop-boundary A:          bad: - | flagged: B1 B2 B3 KB U3 | halted: WA WB | worked: -
+     done responded-after:
+   nested data: {"name": "nested, base rings 3+K, upper ring of 3", "f": 1, "monitors": ["A1", "A2", "A3", "KA", "B1", "B2", "B3", "KB", "U3"], "works": ["WA", "WB"], "joiner": null, "boundary": {"A1": 0, "A2": 1, "A3": 2, "KA": 3, "B1": 4, "B2": 5, "B3": 6, "KB": 7, "U3": 8}, "substrate": {}, "hb_readers": {"A2": ["A1", "KA"], "A1": ["KA", "A3"], "A3": ["A2", "KA"], "KA": ["A1", "U3"], "B2": ["B1", "KB"], "B1": ["KB", "B3"], "B3": ["B2", "KB"], "KB": ["B1", "KA"], "U3": ["KB"]}, "checkers": {"A2": ["A1"], "A3": ["A2"], "A1": ["A3"], "KA": ["A1", "U3"], "WA": ["A1"], "B2": ["B1"], "B3": ["B2"], "B1": ["B3"], "KB": ["B1", "KA"], "WB": ["B1"], "U3": ["KB"]}, "fwd": {"A1": ["A3", "KA"], "KA": ["A1", "A2", "A3", "U3"], "A2": ["A1", "KA"], "A3": ["A2", "KA"], "B1": ["B3", "KB"], "KB": ["B1", "B2", "B3", "KA"], "B2": ["B1", "KB"], "B3": ["B2", "KB"], "U3": ["KB"]}, "halt_inputs": {"WA": ["A1", "KA"], "WB": ["B1", "KB"]}, "switches": [], "coupling": true, "window": 0, "gate": true, "slow_reports": false}
+  mesh of 4, all in one boundary                               f=1 G1 broken in 2 rounds; G2 holds; 42 states
+      round 1: env: stop-boundary 0
+               bad: - | flagged: - | halted: W | worked: -
+      round 2: env: mutate M1
+               bad: M1 | flagged: - | halted: W | worked: -   <-- breaks G1
+  nested, base rings 1+K, upper ring of 2                      f=1 G1 holds; G2 holds; 11 states
+  nested, base rings 1+K, upper ring of 2                      f=2 G1 broken in 2 rounds; G2 broken in 1 round; 566 states
+  mesh of 2                                                    f=1 G1 holds; G2 holds; 6 states
+  mesh of 2                                                    f=2 G1 broken in 1 round; G2 broken in 1 round; 30 states
+  mesh of 3                                                    f=2 G1 holds; G2 holds; 29 states
+== section 11: single-edge removals from full R
+  needed 9 spare 18 of 27
+  needed: ["M1 checks W1's state", "M2 checks W2's state", "M3 checks J's state", 'W1 takes its halt from M1', 'W1 takes its halt from M3', 'W2 takes its halt from M2', 'W2 takes its halt from M3', 'J takes its halt from M3', 'J takes its halt from M1']
+== section 10.1 catalogue tally (recomputed from results.json systems)
+  plain f=1 systems: 72 {(False, True): 14, (False, False): 27, (True, True): 31}
+  cases: 103 edge removals: 55
+== 10.3 restart
+   ring3 (['stop X1', 'release X1'], 5)
+   mesh3 (['stop X1', 'release X1', 'stop X2', 'release X2'], 14)
+   3+K self (None, 45)
+   3+K not self (['stop X1', 'release X1', 'stop K', 'release K'], 36)
+   all self (None, 81)
+   3 self, K not (None, 49)
+== section 9 mirror
+  HB True states 8 trace None
+  HB False states 16 trace [('Init', ['m1', 'm2'], False, [], 'env', False), ('Stop(m1)', ['m2'], False, [], 'mon', False), ('MonRound', ['m2'], False, [], 'env', False), ('Stop(m2)', [], False, [], 'mon', False), ('MonRound', [], False, [], 'env', False), ('Corrupt', [], True, [], 'mon', False), ('MonRound', [], True, [], 'env', False)]
