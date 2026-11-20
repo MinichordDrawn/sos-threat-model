@@ -1,0 +1,9 @@
+name = "SelfObserving"
+version = "0.1.0"
+defaultTargets = ["SelfObserving"]
+
+[leanOptions]
+relaxedAutoImplicit = false
+
+[[lean_lib]]
+name = "SelfObserving"

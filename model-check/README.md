@@ -151,9 +151,13 @@ Where this work stands:
 - **Results about systems of any size** meet the second. Each is proved in writing, and
   each was proved again or tested by an independent agent. They have not been through peer
   review.
-- **Nothing here is at the fourth standard.** Reaching it would mean porting the model to
-  an established model checker and writing the theorems in a proof assistant. That would
-  guard against a slip in a proof. It would not change what is claimed.
+- **Nothing in this folder is at the fourth standard. Part of the work now is, in
+  `../lean-proof/`.** That folder restates the model in Lean 4, a proof assistant, and
+  proves two results there at one fault per round: Theorem S, and that the reference
+  system has no gap while each of the ten removals opens one. Everything else stands where
+  this list puts it, and the model has not been ported to an established model checker. A
+  machine-checked proof guards against a slip in a proof. It does not change what is
+  claimed.
 
 One question lies outside all four standards: whether the definitions in the model say
 what the framework's words mean. The framework is stated in prose and the model in
@@ -263,7 +267,8 @@ verification/            one folder for each independent pass: what it was given
 - **One model.** Author and verifiers are the same model. A mistake that model makes
   consistently would pass every gate. For results about named systems, the
   reimplementation and the exhaustive searches guard against it. The written proofs have
-  no guard of that kind, and have not been through peer review.
+  no guard of that kind in this folder, and have not been through peer review. Theorem S
+  is also proved in Lean, in `../lean-proof/`, where a separate program checks the proof.
 
 Section 13 of `results.md` records what each pass was given, what changed because of it,
 and what the passes before the final round did not cover. Each folder under

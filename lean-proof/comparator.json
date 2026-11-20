@@ -1,0 +1,21 @@
+{
+    "challenge_module": "SelfObserving.Challenge",
+    "solution_module": "SelfObserving.Solution",
+    "theorem_names": [
+        "SelfObserving.theorem_S",
+        "SelfObserving.mesh_noGap",
+        "SelfObserving.unwatched_gap",
+        "SelfObserving.reference_noGap",
+        "SelfObserving.withoutP1_gap",
+        "SelfObserving.withoutP2_gap",
+        "SelfObserving.withoutP3_gap",
+        "SelfObserving.withoutP4_gap",
+        "SelfObserving.withoutP5_gap",
+        "SelfObserving.withoutP6_gap",
+        "SelfObserving.withoutP7_gap",
+        "SelfObserving.withoutP8_gap",
+        "SelfObserving.withoutP8b_gap",
+        "SelfObserving.withoutGate_gap"
+    ],
+    "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

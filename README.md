@@ -54,11 +54,12 @@ describes the system in scope.
 
 ```
 .claude-plugin/                  the plugin and marketplace manifests for Claude Code
-LICENSE                          CC BY 4.0 for the documents, MIT for the scripts
+LICENSE                          CC BY 4.0 for the documents, MIT for the scripts and proofs
 images/                          the figure above
 examples/chernobyl/              a finished run on a document: Chernobyl Unit 4 from INSAG-7
 examples/constitution/           a finished run on an institution: the US Constitution as amended
 model-check/                     a model check of the eight properties and the 3+1 ring
+lean-proof/                      the main results of the model check, machine-checked in Lean 4
 sos-rule-cases/                  abstract cases and answer keys for checking rule changes
 sos-threat-model/                an agent skill (SKILL.md is the entry point)
   LICENSE                        a copy, so the licence travels with the skill
@@ -145,7 +146,7 @@ unchanged under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 ## Licence
 
 Free to use, share and adapt, with credit: "SOS: Threat Modeling For Self-Observing
-Systems, by Alexandra Thaler". The documents are under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the scripts under the MIT
-licence; the figure keeps its own CC BY-SA 4.0 licence. Quotations from other works stay
-their owners'. See [LICENSE](LICENSE).
+Systems, by Alexandra Thaler". The documents are under [CC BY
+4.0](https://creativecommons.org/licenses/by/4.0/) and the scripts and proofs under the
+MIT licence; the figure keeps its own CC BY-SA 4.0 licence. Quotations from other works
+stay their owners'. See [LICENSE](LICENSE).

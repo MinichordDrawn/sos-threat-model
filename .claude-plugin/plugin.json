@@ -1,7 +1,7 @@
 {
   "name": "sos-threat-model",
   "description": "SOS: Threat Modeling For Self-Observing Systems. Audits a system against the self-observing-systems model and produces a source-cited STRIDE threat model.",
-  "version": "1.3.1",
+  "version": "1.4.1",
   "author": {
     "name": "Alexandra Thaler"
   },
