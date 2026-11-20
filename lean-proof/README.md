@@ -113,7 +113,7 @@ size and with any wiring. The first says where a flag comes from. The other nine
 that a system which lacks something has a gap, whatever else it has. In them `f` is the
 number of faults that may land in one round, and may be any number from 1 up.
 
-| | For every system |
+| Id | For every system |
 |---|---|
 | 15 | A flag starts only at a detection. With no flag up, if no monitor detects, none is raised |
 | 16 | If some non-empty set of at most `f` monitors is checked by no monitor outside the set, detection can fail |
