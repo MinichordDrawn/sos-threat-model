@@ -11,7 +11,7 @@ convincing.
 
 ## The result
 
-Two results of the model check are proved in Lean.
+Three groups of results from the model check are proved in Lean.
 
 The first is general. Take any system of monitors and work processes, of any size, that is
 plain and whose wiring meets four conditions. Let at most one fault land between two
@@ -23,6 +23,11 @@ The second is about the model check's reference system, which has the eight prop
 one fault per round it has no gap. Take away any one of ten features, the eight properties
 among them, and a gap opens.
 
+The third group is about every system. Ten statements give what any system needs: one
+says that a flag starts only at a detection, and nine say that a system which lacks
+something has a gap, whatever else it has. Two more say that a faulty monitor cannot be
+named with two monitors and can be named with three.
+
 Lean's kernel accepts the proofs, and so do four independent checkers.
 
 `results.md` in the model check gives the full account of the model. This page says what
@@ -30,7 +35,7 @@ is proved in Lean, what "checked" means for it, and what is still to do.
 
 ## Overview
 
-### The fourteen statements
+### The twenty-six statements
 
 **1. Theorem S.** A plain system that meets the four conditions has no gap at one fault
 per round. The numbers of monitors and of work processes are arbitrary, and neither has to
@@ -103,6 +108,41 @@ work takes one more step. The halt fan-out is the clause of the eighth property 
 work process takes its halt from more than one monitor, and the gate is the rule that the
 monitors check before any work is done.
 
+**15 to 24. What any system needs.** These ten statements are about every system, of any
+size and with any wiring. The first says where a flag comes from. The other nine each say
+that a system which lacks something has a gap, whatever else it has. In them `f` is the
+number of faults that may land in one round, and may be any number from 1 up.
+
+| | For every system |
+|---|---|
+| 15 | A flag starts only at a detection. With no flag up, if no monitor detects, none is raised |
+| 16 | If some non-empty set of at most `f` monitors is checked by no monitor outside the set, detection can fail |
+| 17 | If there is at least one monitor, and `f` is at least their number, detection can fail |
+| 18 | A monitor with no state checker but itself can be corrupted with no flag |
+| 19 | A work process that no monitor checks can be corrupted with no flag, whether it is present from the start or joins later |
+| 20 | If every monitor sits in one boundary, and there are at least two, detection can fail |
+| 21 | With a waiting period before a halt, a corrupted work process acts |
+| 22 | A work process with at most `f` halt inputs keeps working after all of them are corrupted |
+| 23 | Without the gate, a corrupted work process acts before any flag exists |
+| 24 | When reports take a round, a work process none of whose halt inputs checks its state acts while bad |
+
+Statements 16, 17 and 22 are the counts in the model check's scaling law, in the direction
+of need. Each further fault that may land in one round needs one more monitor, no set of
+that many monitors left unchecked from outside, and one more halt input for each work
+process.
+
+Statements 21 to 24 are stated for a work process that is present from the start, as the
+model check words 21 and 23. They hold for one that joins later as well. The agent that
+wrote the proofs reports a Lean proof of that outside this folder, the tests of the third
+agent described under "The run" agree, and it is not among the statements.
+
+**25 and 26. Naming the faulty monitor.** Responding to a fault does not need to know
+which monitor is at fault. Recovering without outside help does. Exactly one monitor is
+faulty. Every other monitor names it, the faulty one may name anyone, and a rule reads the
+names. With two monitors no rule is always right, because "each names the other" arises
+whichever of the two is faulty (25). With three or more, a rule exists that is always
+right (26). This is one of the reasons the ring has three members beside its coordinator.
+
 ### Level of assurance
 
 The model check's README sets out four standards a result can be held to: an argument in
@@ -110,10 +150,10 @@ prose; a precise model with written proofs; exhaustive checking of a finite syst
 machine-checked proof. It places the general results of the model check at the second, and
 says that nothing there is at the fourth.
 
-The fourteen statements above are at the fourth. Theorem S moves from the second standard
-to the fourth. The reference system's result and the ten removals move from the third to
-the fourth, at one fault per round. Every other result of the model check stays where that
-README puts it.
+The twenty-six statements above are at the fourth. Theorem S moves from the second
+standard to the fourth, and so do the results about every system, statements 15 to 26. The
+reference system's result and the ten removals move from the third to the fourth, at one
+fault per round. Every other result of the model check stays where that README puts it.
 
 One question lies outside all four standards, here as there: whether the definitions say
 what the words mean. The model check translates the framework's words into a
@@ -132,9 +172,9 @@ in the post's order.
 
 | Question | How it is answered | Answer |
 |---|---|---|
-| Does the Lean statement say what the plain-language claim says? | by reading; the definitions are in four files that import nothing outside this folder | an independent agent compared 73 clauses of the specification with the Lean and found none stated differently, then tested the Lean model against the model check's own checker; the reference system and its ten removals are proved equal, field by field, to the systems that checker builds, and a second agent read them and their statements against the checker's results and found that they agree |
+| Does the Lean statement say what the plain-language claim says? | by reading; the definitions are in four files that import nothing outside this folder | an independent agent compared 73 clauses of the specification with the Lean and found none stated differently, then tested the Lean model against the model check's own checker; the reference system and its ten removals are proved equal, field by field, to the systems that checker builds, and a second agent read them and their statements against the checker's results and found that they agree; a third compared statements 15 to 26 with the model check's text, tested statements 15 to 24 on random systems with the Python checker, and tried every case of 25 and 26 for up to five monitors |
 | Does the code compile? | `lake build`, from a clean copy | yes, in under a minute |
-| Does the proof prove that statement, with the standard axioms only? | `lake comparator`, Lean's own judge, in its sandbox | accepted, for all fourteen |
+| Does the proof prove that statement, with the standard axioms only? | `lake comparator`, Lean's own judge, in its sandbox | accepted, for all twenty-six |
 | Could a fault in Lean's checker have let a wrong proof through? | `lake comparator --paranoid`, which checks the proofs again with every independent checker shipped with Lean | accepted by Lean's kernel in both its forms and by four independent checkers |
 
 ## What is here
@@ -142,18 +182,20 @@ in the post's order.
 ```
 SelfObserving/Model.lean        the model: a system, a state, the environment's steps, one
                                 round, the two goals, executions. It follows model-spec.md
-                                section by section (291 lines)
+                                section by section (292 lines)
 SelfObserving/Conditions.lean   what "plain" means, and the four conditions (61 lines)
 SelfObserving/Systems.lean      two named systems: the full mesh and the unwatched work
                                 process (47 lines)
 SelfObserving/Reference.lean    the reference system and its ten removals, as one
                                 definition with a switch for each feature (145 lines)
-SelfObserving/Challenge.lean    the fourteen statements, with the proofs left out (87 lines)
-SelfObserving/Solution.lean     the proofs of the fourteen statements (370 lines)
-SelfObserving/Proofs/           four files. Three carry the proofs for the reference
+SelfObserving/Challenge.lean    the twenty-six statements, with the proofs left out (195
+                                lines)
+SelfObserving/Solution.lean     the proofs of the twenty-six statements (472 lines)
+SelfObserving/Proofs/           five files. Three carry the proofs for the reference
                                 system: they make one round computable, and say what each
-                                computation establishes. The fourth states the agreement
-                                with the checker (1,143 lines)
+                                computation establishes. One carries the proofs of the
+                                statements about every system. The fifth states the
+                                agreement with the checker (1,656 lines)
 SelfObserving/Generated/        six files written by tools/gen.py from the model check's
                                 checker: the systems as the checker builds them, the
                                 executions that show each gap, and the lists of reachable
@@ -169,10 +211,11 @@ living-things.md                the full comparison with living things that this
                                 summarises: grades, limits, sources
 ```
 
-To trust the result, read the first five files against `model-spec.md` and sections 5 to
-7 and 10.1 of `results.md` in the model check. They hold definitions and statements and no
-proofs. Nothing else needs to be read. The kernel checks the rest, and the judge confirms
-that `Solution.lean` proves the statements of `Challenge.lean` and no others.
+To trust the result, read the first five files against `model-spec.md` and sections 2.7, 5
+to 7, 8.1, 10.1, 10.2 and 12.1 of `results.md` in the model check. They hold definitions
+and statements and no proofs. Nothing else needs to be read. The kernel checks the rest,
+and the judge confirms that `Solution.lean` proves the statements of `Challenge.lean` and
+no others.
 
 The project imports nothing outside the Lean core. A set is written as a yes-or-no
 question about each element: `s.alive p` reads "is `p` alive in state `s`".
@@ -190,8 +233,8 @@ question about each element: `s.alive p` reads "is `p` alive in state `s`".
    which nothing has happened, a round with no fault changes nothing. A round with one
    fault ends with a live monitor flagged and every work process halted, and the model
    ends there.
-4. **Guard against an empty statement.** The two smaller statements show that the
-   theorem's conditions can hold and that its conclusion can fail.
+4. **Guard against an empty statement.** Statements 2 and 3 show that the theorem's
+   conditions can hold and that its conclusion can fail.
 5. **Define the reference system.** One Lean definition follows the checker's builder,
    `reference(without=...)`, line for line, with a switch for each of the ten features.
 6. **Prove its statements by computation.** The reference system is finite, so one round
@@ -201,31 +244,40 @@ question about each element: `s.alive p` reads "is `p` alive in state `s`".
    into, with no violation on the way. That some execution violates a goal is shown by one
    such execution. The Python checker supplies the lists and the executions and nothing
    else. A statement that is false of the Lean model fails, whatever the Python says.
-7. **Judge.** `lake comparator` builds the statement file and the proof file separately,
+7. **Prove the statements about every system by hand.** Each of the nine gaps is shown by
+   one or two rounds that the environment can always play in a system of that kind: it
+   corrupts monitors that nobody else checks, or every monitor a work process takes its
+   halt from, or stops the one boundary, or corrupts a work process that nothing checks or
+   nothing will halt in time. The proof follows those rounds through the model's
+   definitions, for either order of the monitor and work phases.
+8. **Judge.** `lake comparator` builds the statement file and the proof file separately,
    confirms that each proved statement is the stated one, checks that only the permitted
    axioms are used, and replays the proofs in the kernel. With `--paranoid` it replays
    them in every other checker shipped with Lean.
-8. **Compare with the specification.** A separate agent, which has not seen the proofs,
+9. **Compare with the specification.** A separate agent, which has not seen the proofs,
    reads the Lean definitions against the specification clause by clause, and proves in
    Lean that executions the model check's own checker reports do occur in the Lean model.
    A second reads the reference system and its statements against the checker and its
-   recorded results.
+   recorded results. A third reads the statements about every system against the model
+   check's text, and tests those about systems with the checker on random systems.
 
 ## The run
 
 - **Models.** Claude Fable 5.2 wrote the Lean definitions and the proofs, from the
-  specification of the model check. The two comparisons, with the specification and with
-  the checker's results, are by separate agents of the same model, started fresh and not
-  shown the proofs. The checks of the generated data are by other fresh agents.
+  specification of the model check. The three comparisons, with the specification, with
+  the checker's results and with the model check's general results, are by separate agents
+  of the same model, started fresh and not shown the proofs. The checks of the generated
+  data are by other fresh agents.
 - **Gates.**
-  - *Build.* From a clean copy, with no dependencies to fetch: 28 build steps for the
+  - *Build.* From a clean copy, with no dependencies to fetch: 30 build steps for the
     proofs, the slowest of them about a quarter of a minute, and under a minute in all.
-  - *Axioms.* The statements depend on `propext`, `Quot.sound` and `Classical.choice`, the
-    three axioms nearly all of mathematics in Lean uses, and on nothing else. The third
-    statement depends on `propext` alone. No step is skipped with `sorry`, and no result
-    is taken from compiled code: every computation is carried out by the kernel.
+  - *Axioms.* No statement depends on anything but `propext`, `Quot.sound` and
+    `Classical.choice`, the three axioms nearly all of mathematics in Lean uses.
+    Statements 15 and 25 depend on no axiom at all, and eight others on `propext` alone.
+    No step is skipped with `sorry`, and no result is taken from compiled code: every
+    computation is carried out by the kernel.
   - *Judge.* `lake comparator`, in its sandbox, on a clean copy under Linux: accepted, for
-    all fourteen statements.
+    all twenty-six statements.
   - *Independent checkers.* `lake comparator --paranoid`: accepted by Lean's kernel in its
     default and paranoid forms and by `lean4lean`, `nanoda`, `con-leche` and `con-ron`. The
     last two ran in the mode they call `--verified`.
@@ -246,6 +298,16 @@ question about each element: `s.alive p` reads "is `p` alive in state `s`".
     separate program and ran it beside the checker. On all eleven systems the reachable
     states and the outcome of every round were the same. The agent did not run Lean: what
     it says of the Lean rests on its reading of the text and on that hand-written copy.
+  - *The statements about every system, read without the proofs.* A third separate agent
+    compared statements 15 to 26 with the passages of `results.md` they formalise. Six say
+    the same as their passage. Six say more in some respect, and each wider claim is true:
+    three of them drop the model check's restriction to systems with no substrates or
+    switches. The agent then tested each of the nine statements about a gap with the
+    Python checker, on 19,500 random systems built to meet its hypotheses and on two
+    sweeps of 60,000 and 196,608 systems. Every system that met a statement's hypotheses
+    showed the gap. It tested statement 15 on some 200,000 random states, none of which
+    raised a flag, and statements 25 and 26 on every case for up to five monitors. It
+    found no counterexample, and it did not run Lean.
   - *The reference system against the checker.* Every field of the reference system and of
     each removal is proved equal to the system the Python checker builds, as the generator
     writes it out. For the reference system and the three removals in which a goal is
@@ -253,12 +315,13 @@ question about each element: `s.alive p` reads "is `p` alive in state `s`".
     states the checker's search reaches: 23, 59, 239 and 228 of them.
   - *Checks of the generated data.* Fresh agents checked this part of the work in five
     passes. One derived all the generated data again from the Python with a script of its
-    own, and found no difference. It also made 33 single changes to the files, of which
-    Lean rejected 29 and accepted 4. Three of the four changed data, and one changed the
-    model's rule for slow reports, which none of the eleven systems uses. Data changed in
-    a way that leaves a statement true is accepted: an execution need not be the shortest,
-    and a list need not be in the order of the checker's search. `tools/gen.py --check` is
-    what shows that the files are still the generator's.
+    own, and found no difference. Before statements 15 to 26 were added, it also made 33
+    single changes to the files, of which Lean rejected 29 and accepted 4. Three of the
+    four changed data, and one changed the model's rule for slow reports, which none of
+    the eleven systems uses. Data changed in a way that leaves a statement true is
+    accepted: an execution need not be the shortest, and a list need not be in the order
+    of the checker's search. `tools/gen.py --check` is what shows that the files are still
+    the generator's.
   - *Test against the model check's checker.* The agent that made the first comparison
     wrote a generator of its own, which turns a system into Lean statements of exactly
     what the Python checker computes for it, so that Lean has to prove each one. Lean
@@ -299,16 +362,28 @@ question about each element: `s.alive p` reads "is `p` alive in state `s`".
 - The reference system has no gap at one fault per round, whatever the environment does.
 - Each of ten features of the reference system is needed: taking it away opens a gap. For
   three of them one goal still holds, and that is proved too.
+- Ten results about every system: a flag starts only at a detection, and nine ways in
+  which a system that lacks something has a gap (statements 15 to 24).
+- A faulty monitor cannot be named with two monitors, and can be named with three.
 
 ## What is not established
 
-- **That each property is needed in every system.** The removals are proved for the
-  reference system. The model check's general results on what any system needs are
-  written proofs and are not in Lean.
+- **A general result for every property.** Statements 15 to 24 cover most of the general
+  results the model check proves on what any system needs. It proves none for propagation,
+  and for the liveness signal only one about plain systems with no gap and no spare
+  monitor (section 12.1), which is not in Lean: whether a system needs those depends on
+  what it relies on, and the removals show it for the reference system. Its general result
+  for shared substrate needs a model with a silence threshold, which the round model does
+  not have. Three more of its results are not in Lean: the holding half of the mesh result
+  (below), the count of work steps that a slow report costs, of which statement 24 is the
+  case of at least one, and that naming a faulty monitor after losing one takes four.
 - **When a gap first opens.** The statements say that some execution violates a goal, and
   not in which round. The tests against the checker prove the round for some of the
   removals, in working files outside this folder.
-- **More than one fault per round.** Every statement here is for one.
+- **No gap at more than one fault per round.** Statements 1, 2 and 4 are for one fault per
+  round. The model check proves that a mesh of `n` monitors has no gap exactly when `f` is
+  at most `n - 1`. That it has a gap beyond that follows from statement 17. That it has
+  none up to it is not in Lean.
 - **Restarting, and how fast a halt must travel.** Both are separate small models in the
   model check. Neither is in Lean yet.
 - **Every clause of the model, by test.** The eleven systems of the reference family do

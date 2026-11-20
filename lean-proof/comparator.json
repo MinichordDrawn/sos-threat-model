@@ -15,7 +15,19 @@
         "SelfObserving.withoutP7_gap",
         "SelfObserving.withoutP8_gap",
         "SelfObserving.withoutP8b_gap",
-        "SelfObserving.withoutGate_gap"
+        "SelfObserving.withoutGate_gap",
+        "SelfObserving.flag_needs_detection",
+        "SelfObserving.unchecked_set_gap",
+        "SelfObserving.rate_bound",
+        "SelfObserving.unchecked_monitor_gap",
+        "SelfObserving.unchecked_work_gap",
+        "SelfObserving.one_boundary_gap",
+        "SelfObserving.window_gap",
+        "SelfObserving.few_halt_inputs_gap",
+        "SelfObserving.noGate_gap",
+        "SelfObserving.slow_report_gap",
+        "SelfObserving.two_cannot_name",
+        "SelfObserving.three_can_name"
     ],
     "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
 }

@@ -22,7 +22,8 @@ The typing of the fields follows the specification's table. The field `name` is 
 the model does not use it. -/
 structure System (M W B S : Type) where
   /-- the most environment steps in one round; the specification requires f >= 1, which
-  this type does not enforce (every statement in `Challenge.lean` fixes f = 1) -/
+  this type does not enforce (a statement in `Challenge.lean` that depends on `f` either
+  fixes f = 1, assumes `1 ≤ f`, or bounds a non-empty list by `f`) -/
   f : Nat
   /-- a work process that is absent at the start and may join -/
   joiner : Option W

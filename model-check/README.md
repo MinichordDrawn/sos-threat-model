@@ -153,11 +153,13 @@ Where this work stands:
   review.
 - **Nothing in this folder is at the fourth standard. Part of the work now is, in
   `../lean-proof/`.** That folder restates the model in Lean 4, a proof assistant, and
-  proves two results there at one fault per round: Theorem S, and that the reference
-  system has no gap while each of the ten removals opens one. Everything else stands where
-  this list puts it, and the model has not been ported to an established model checker. A
-  machine-checked proof guards against a slip in a proof. It does not change what is
-  claimed.
+  proves three groups of results there. Two are at one fault per round: Theorem S, and
+  that the reference system has no gap while each of the ten removals opens one. The third
+  is most of the general results of sections 2.7, 6, 8.1 and 10.2 of `results.md` on what
+  any system needs, for any number of faults per round, and the result that naming one
+  faulty monitor takes three. Everything else stands where this list puts it, and the
+  model has not been ported to an established model checker. A machine-checked proof
+  guards against a slip in a proof. It does not change what is claimed.
 
 One question lies outside all four standards: whether the definitions in the model say
 what the framework's words mean. The framework is stated in prose and the model in
@@ -268,7 +270,8 @@ verification/            one folder for each independent pass: what it was given
   consistently would pass every gate. For results about named systems, the
   reimplementation and the exhaustive searches guard against it. The written proofs have
   no guard of that kind in this folder, and have not been through peer review. Theorem S
-  is also proved in Lean, in `../lean-proof/`, where a separate program checks the proof.
+  and most of the results on what any system needs are also proved in Lean, in
+  `../lean-proof/`, where a separate program checks the proofs.
 
 Section 13 of `results.md` records what each pass was given, what changed because of it,
 and what the passes before the final round did not cover. Each folder under

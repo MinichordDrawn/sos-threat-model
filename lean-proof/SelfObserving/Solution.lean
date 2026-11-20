@@ -2,12 +2,17 @@
 Proofs of the statements in `Challenge.lean`. Nothing outside this project is imported.
 
 The first three statements are proved here in full. The eleven about the reference system
-and its removals are at the end of the file. Each of those is settled by a computation
+and its removals come after them. Each of those is settled by a computation
 that the kernel carries out (`Proofs/Finite.lean`, `Proofs/Explore.lean`), on data that
 `tools/gen.py` takes from the model check's checker (`Generated/`): for a goal that can be
 violated, a violating execution; for a goal that cannot, the reachable states.
+
+The last twelve, about what any system needs and about naming the faulty monitor, are at
+the end of the file. They are proved in `Proofs/Necessity.lean`, with no computation, and
+stated again here.
 -/
 import SelfObserving.Systems
+import SelfObserving.Proofs.Necessity
 import SelfObserving.Generated.Executions
 import SelfObserving.Generated.StatesReference
 import SelfObserving.Generated.StatesWithoutP4
@@ -366,5 +371,102 @@ theorem withoutP8b_gap : ViolatesG1 withoutP8b ∧ ViolatesG2 withoutP8b :=
 theorem withoutGate_gap : ViolatesG1 withoutGate ∧ ViolatesG2 withoutGate :=
   ⟨violatesG1_of_trace rfl Py.withoutGate_g1_trace rfl,
     violatesG2_of_trace rfl Py.withoutGate_g2_trace rfl⟩
+
+/-! ### What any system needs
+
+Each statement below is about every system, and is proved in `Proofs/Necessity.lean` under
+the same name. A statement about a gap is proved there by giving an execution: one round
+from the initial state, or two. -/
+
+/-- Theorem 0, part 3. A flag starts only at a detection: from a state with no flag, if no
+monitor detects, the monitor phase raises no flag. -/
+theorem flag_needs_detection (sys : System M W B S) (s : State M W)
+    (hflag : ∀ m, ¬ s.flagged m) (hdet : ∀ m, ¬ Detects sys s m) :
+    ∀ m, ¬ flaggedAfter sys s m :=
+  Necessity.flag_needs_detection sys s hflag hdet
+
+/-- The rate form of P5 (section 6). If some non-empty set of at most `f` monitors is
+checked by no monitor outside the set, G1 can be violated: the environment mutates the whole
+set in one round, and nothing flags. -/
+theorem unchecked_set_gap (sys : System M W B S) (zs : List M) (hne : zs ≠ [])
+    (hnd : zs.Nodup) (hlen : zs.length ≤ sys.f)
+    (hin : ∀ z, z ∈ zs → ∀ r, sys.checkers (.inl z) r → r ∈ zs) : ViolatesG1 sys :=
+  Necessity.unchecked_set_gap sys zs hne hnd hlen hin
+
+/-- Theorem 0, part 1. If there is at least one monitor and `f` is at least the number of
+monitors, G1 can be violated. `ms` lists every monitor once. -/
+theorem rate_bound (sys : System M W B S) (ms : List M) (hne : ms ≠ []) (hnd : ms.Nodup)
+    (hall : ∀ m, m ∈ ms) (hlen : ms.length ≤ sys.f) : ViolatesG1 sys :=
+  Necessity.rate_bound sys ms hne hnd hall hlen
+
+/-- P3 for monitors (section 6). A monitor with no state checker other than itself can be
+mutated, leaving a bad state and no flag. -/
+theorem unchecked_monitor_gap (sys : System M W B S) (hf : 1 ≤ sys.f) (z : M)
+    (hz : ∀ r, sys.checkers (.inl z) r → r = z) : ViolatesG1 sys :=
+  Necessity.unchecked_monitor_gap sys hf z hz
+
+/-- P3 for work, and the state-check half of P7. `results.md` checks both on R (section 6)
+and cites a proof of the first elsewhere (section 12.1). A non-monitor process that no
+monitor checks can be mutated once it is present, leaving a bad state and no flag. This
+holds whether the process is present from the start or joins later. -/
+theorem unchecked_work_gap (sys : System M W B S) (hf : 1 ≤ sys.f) (w : W)
+    (hw : ∀ m, ¬ sys.checkers (.inr w) m) : ViolatesG1 sys :=
+  Necessity.unchecked_work_gap sys hf w hw
+
+/-- Theorem 0, part 2, which is also the general form of the P6 removal (section 7). If
+every monitor sits in one boundary, and there are at least two monitors, G1 can be
+violated: the boundary is stopped, then in the next round a process is mutated. -/
+theorem one_boundary_gap (sys : System M W B S) (hf : 1 ≤ sys.f) (b : B) {m₀ m₁ : M}
+    (hne : m₀ ≠ m₁) (hb : ∀ m, sys.boundary m = some b) : ViolatesG1 sys :=
+  Necessity.one_boundary_gap sys hf b hne hb
+
+/-- P8 in general (section 6). In a system with a window and a work process present from
+the start, G2 can be violated: the environment mutates a work process, and none may halt
+before the window has passed. -/
+theorem window_gap (sys : System M W B S) (hf : 1 ≤ sys.f) (hwin : sys.window ≠ 0) (w : W)
+    (hw : ¬ sys.IsJoiner w) : ViolatesG2 sys :=
+  Necessity.window_gap sys hf hwin w hw
+
+/-- P8b in general (section 6). A work process with at most `f` halt inputs keeps working
+after the environment mutates all of them, so G2 can be violated. `hs` contains every halt
+input of `w`, and may contain other monitors. -/
+theorem few_halt_inputs_gap (sys : System M W B S) (hf : 1 ≤ sys.f) (w : W)
+    (hw : ¬ sys.IsJoiner w) (hs : List M) (hnd : hs.Nodup)
+    (hall : ∀ m, sys.haltInputs w m → m ∈ hs) (hlen : hs.length ≤ sys.f) :
+    ViolatesG2 sys :=
+  Necessity.few_halt_inputs_gap sys hf w hw hs hnd hall hlen
+
+/-- The gate in general (section 6). In a system without the gate and with a work process
+present from the start, G2 can be violated: in round 1 no flag exists yet when the work
+processes step. -/
+theorem noGate_gap (sys : System M W B S) (hf : 1 ≤ sys.f) (hgate : sys.gate = false)
+    (w : W) (hw : ¬ sys.IsJoiner w) : ViolatesG2 sys :=
+  Necessity.noGate_gap sys hf hgate w hw
+
+/-- The reflex (section 8.1). When reports take a round, a work process none of whose halt
+inputs checks its state takes a work step while bad, so G2 can be violated. -/
+theorem slow_report_gap (sys : System M W B S) (hf : 1 ≤ sys.f)
+    (hslow : sys.slowReports = true) (w : W) (hw : ¬ sys.IsJoiner w)
+    (hsep : ∀ m, sys.haltInputs w m → ¬ sys.checkers (.inr w) m) : ViolatesG2 sys :=
+  Necessity.slow_report_gap sys hf hslow w hw hsep
+
+/-! ### Naming the faulty monitor
+
+Proved in `Proofs/Necessity.lean` under the same names. -/
+
+/-- With two monitors, no rule is always right: "each names the other" arises both when the
+first is faulty and when the second is. -/
+theorem two_cannot_name :
+    ¬ ∃ rule : (Bool → Bool) → Bool,
+        ∀ (z : Bool) (names : Bool → Bool),
+          (∀ m, m ≠ z → names m = z) → rule names = z :=
+  Necessity.two_cannot_name
+
+/-- With three or more monitors, a rule exists that is always right: the faulty monitor is
+the one named by two others. -/
+theorem three_can_name (a b c : M) (hab : a ≠ b) (hac : a ≠ c) (hbc : b ≠ c) :
+    ∃ rule : (M → M) → M,
+      ∀ (z : M) (names : M → M), (∀ m, m ≠ z → names m = z) → rule names = z :=
+  Necessity.three_can_name a b c hab hac hbc
 
 end SelfObserving

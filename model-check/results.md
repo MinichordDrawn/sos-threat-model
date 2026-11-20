@@ -1496,8 +1496,9 @@ Two caveats apply to all of them.
 - The author's work and every pass ran on one model, Claude Fable 5.2. A mistake that
   model makes consistently would pass every one of them. The reimplementation and the
   exhaustive searches guard against it for results about named systems. The written proofs
-  have no guard of that kind in this folder. Theorem S is also proved in Lean, in
-  `../lean-proof/`, where a separate program checks the proof.
+  have no guard of that kind in this folder. Theorem S and most of the results on what any
+  system needs are also proved in Lean, in `../lean-proof/`, where a separate program
+  checks the proofs.
 
 | Pass | Given | What it did | Result |
 |---|---|---|---|
