@@ -1,0 +1,9 @@
+name = "GateProof"
+version = "0.1.0"
+defaultTargets = ["GateProof"]
+
+[leanOptions]
+relaxedAutoImplicit = false
+
+[[lean_lib]]
+name = "GateProof"

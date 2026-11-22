@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Spider</title>
+<style>
+/* A screen and a pointer. The game itself runs on the server. This page draws what it is sent,
+   and sends back where the pointer is, where it clicked, and what is typed at the backdoor. */
+:root {
+  color-scheme: dark;
+  --night: #1c2a3a; --deep: #0f1822; --silk: #dfe8ec; --dim: #8ea2b0; --line: rgba(223, 232, 236, 0.16);
+  --panel: #15202c; --accent: #ffc86b; --moth: #cdc2da; --ok: #7fd1ae; --alarm: #ff7a8a; --bad: #d48bff;
+  --text: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+}
+html { font-size: 133.33%; }
+html, body { height: 100%; }
+body { margin: 0; box-sizing: border-box; background: var(--deep); color: var(--silk); font: 0.875rem/1.5 var(--text);
+  /* The middle column is as wide as the game can be: as wide as the window's height allows, or as
+     the two side panels at their narrowest leave. The side panels share everything else. */
+  --game: min(calc(100vw - 2rem - 1.5rem - 24rem), calc((100vh - 2rem - 2px - 10.5rem) * 3 / 2 + 2px));
+  display: grid; grid-template-columns: minmax(11rem, 1fr) var(--game) minmax(13rem, 1fr); gap: 0.75rem; padding: 1rem; overflow: hidden; }
+button, input { font: inherit; color: inherit; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* Four panels: what the game says on the left, the game with the backdoor under it in the middle, the state on the right. */
+.panel { min-width: 0; min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: 0.875rem; padding: 0.875rem; box-sizing: border-box; border: 1px solid var(--line); border-radius: 0.875rem; }
+.panel > * { flex: none; }      /* a panel with more in it than fits is scrolled, and nothing in it is squeezed */
+h1 { margin: 0; font: 700 1.6rem/1.2 var(--text); }
+.count { display: flex; align-items: baseline; gap: 0.625rem; }
+.count b { font: 600 3.2rem/1 var(--text); font-variant-numeric: tabular-nums; color: var(--accent); }
+.count span { color: var(--dim); }
+.count i { font: 600 1.6rem/1 var(--text); font-variant-numeric: tabular-nums; color: var(--accent); opacity: 0.85; }   /* the tenths of a moth, smaller than the whole ones */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr)); gap: 0.5rem 0.75rem; margin: 0; }
+.stats div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+.stats dt { color: var(--dim); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.stats dd { margin: 0; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.stats.game { grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr)); }
+.stats .two { grid-column: span 2; }
+.meter { height: 0.625rem; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); overflow: hidden; }
+.meter i { display: block; height: 100%; width: 0; background: var(--accent); }
+#ribbon { margin: 0; min-height: 4.5em; padding: 0.5rem 0.75rem; background: var(--panel); border: 1px solid var(--line); border-radius: 0.625rem; }
+#ribbon.alarm { border-color: var(--alarm); color: var(--alarm); }
+#ribbon.bad { border-color: var(--bad); color: var(--bad); }
+.group { display: grid; gap: 0.375rem; }
+.group h2 { margin: 0; font: 600 0.6875rem/1.4 var(--text); text-transform: uppercase; letter-spacing: 0.06em; color: var(--dim); }
+.group h2 span { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem; }
+.row button { display: inline-flex; align-items: center; gap: 0.375rem; background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+  padding: 3px 0.6875rem 3px 0.5625rem; cursor: pointer; color: var(--silk); }
+.row button:hover { border-color: var(--dim); }
+.row button:disabled { opacity: 0.45; cursor: default; }
+/* The shop: a row for each upgrade, with what there is of it now and a button for one more. */
+.upgrades { background: var(--panel); border: 1px solid var(--line); border-radius: 0.625rem; padding: 0.125rem 0.75rem; }
+.upgrades:empty { display: none; }
+/* The button keeps to the right of its row. What is said of the upgrade takes the room that is left, and
+   if that is too little it breaks between the name and the amount. Only in a very narrow panel does the
+   button go under it, and then still to the right. */
+.upgrade { justify-content: space-between; gap: 0.25rem 0.625rem; padding: 0.375rem 0; }
+.upgrade + .upgrade { border-top: 1px solid var(--line); }
+.upgrade > span { flex: 1 1 6.5rem; min-width: 0; }
+.upgrade strong { font-weight: 600; display: inline-block; }
+.upgrade > span > span { color: var(--dim); display: inline-block; }
+.upgrade button { flex: none; margin-left: auto; padding-left: 0.6875rem; background: var(--deep); white-space: nowrap; }
+.row i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--ok); }
+.row .flagged i { background: var(--alarm); }
+.row .silent i { background: transparent; box-shadow: inset 0 0 0 2px var(--dim); }
+/* How a halt ends: one of three, and a button to ask for it when that is the way set. */
+.row button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+#right { justify-self: start; background: var(--panel); border: 1px solid var(--alarm); border-radius: 0.625rem; padding: 0.3125rem 0.875rem; cursor: pointer; color: var(--alarm); font-weight: 600; }
+#right:disabled { border-color: var(--line); color: var(--dim); cursor: default; font-weight: 400; }
+#right[hidden] { display: none; }
+
+/* The game's window keeps its shape, and the backdoor sits under it at the same width and fills the rest. */
+.middle { min-width: 0; min-height: 0; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+.stage, .backdoor { width: calc(100% - 2px); }
+.stage { position: relative; aspect-ratio: 3 / 2; flex: none; border: 1px solid var(--line); border-radius: 0.875rem; overflow: hidden; background: var(--night); }
+canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.backdoor { flex: 1 1 9.75rem; min-height: 9.75rem; display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: 0.625rem; overflow: hidden; font: 0.75rem/1.5 var(--mono); }
+.said { flex: 1; min-height: 0; overflow: auto; padding: 0.375rem 0.75rem; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--dim); }
+.said .typed { color: var(--silk); }
+.said .halt { color: var(--alarm); }
+.said .fixed { color: var(--ok); }
+.said .bad { color: var(--bad); }
+.line { display: flex; align-items: center; gap: 0.5rem; padding: 0.3125rem 0.75rem; border-top: 1px solid var(--line); }
+.line span { color: var(--accent); }
+.line input { flex: 1; min-width: 0; background: transparent; border: 0; outline: none; color: var(--silk); }
+.line input::placeholder { color: var(--dim); opacity: 0.8; }
+/* What could be typed next: each is a button, and Tab takes the first. */
+.hints { display: flex; flex-wrap: wrap; gap: 0.25rem; padding: 0.25rem 0.75rem; border-top: 1px solid var(--line); max-height: 3.4rem; overflow: auto; }
+.hints:empty { display: none; }
+.hints button { background: transparent; border: 1px solid var(--line); border-radius: 0.375rem; padding: 0 0.375rem; cursor: pointer; color: var(--silk); font: inherit; }
+.hints button:first-child { border-color: var(--accent); }
+.hints button small { color: var(--dim); font-size: inherit; margin-left: 0.375rem; }
+/* The state, every field of it with what it holds now. A click on a field begins a line at the backdoor. */
+.state { font: 0.6875rem/1.45 var(--mono); display: grid; gap: 0.125rem; }
+.state details { border: 1px solid var(--line); border-radius: 0.5rem; background: var(--panel); }
+.state summary { cursor: pointer; padding: 0.1875rem 0.5rem; color: var(--silk); }
+.state summary small { color: var(--dim); font-size: inherit; margin-left: 0.375rem; }
+.state .field { display: flex; justify-content: space-between; gap: 0.75rem; width: 100%; box-sizing: border-box; background: transparent; border: 0; border-top: 1px solid var(--line); padding: 0.0625rem 0.5rem; cursor: pointer; text-align: left; font: inherit; color: var(--dim); }
+.state .field:hover { background: rgba(223, 232, 236, 0.06); color: var(--silk); }
+.state .field span { color: var(--silk); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+@media (max-width: 1000px) {
+  html, body { height: auto; }
+  body { grid-template-columns: minmax(0, 1fr); overflow: visible; }
+  .middle { order: -1; }
+  .panel { overflow: visible; }
+  .backdoor { flex: none; height: 11rem; }
+}
+</style>
+</head>
+<body>
+<aside class="panel">
+  <h1>One Spider</h1>
+  <div class="count"><span class="num"><b id="n-moths">0</b><i id="n-tenths">.0</i></span><span>moths</span></div>
+  <dl class="stats game">
+    <div><dt>a minute</dt><dd id="n-rate">0</dd></div>
+    <div><dt>webs made</dt><dd id="n-webs">0</dd></div>
+    <div><dt>spider no.</dt><dd>1</dd></div>
+    <div><dt>dead spiders</dt><dd id="n-dead">0</dd></div>
+    <div class="two"><dt>age</dt><dd id="n-age">0:00</dd></div>
+    <div><dt>moths caught</dt><dd id="n-meals">0</dd></div>
+    <div><dt>boost</dt><dd id="n-boost">none</dd></div>
+  </dl>
+  <div class="group">
+    <h2 id="h-food">Food <span id="n-food"></span></h2>
+    <div class="meter" id="food" role="meter" aria-labelledby="h-food" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="food-bar"></i></div>
+  </div>
+  <div class="group">
+    <h2 id="h-shop">Upgrades</h2>
+    <div class="upgrades" id="shelf" role="group" aria-labelledby="h-shop"></div>
+  </div>
+  <p id="ribbon">Waiting for the server</p>
+  <dl class="stats">
+    <div><dt>halts</dt><dd id="n-halts">0</dd></div>
+    <div><dt>restarts</dt><dd id="n-restarts">0</dd></div>
+    <div><dt>calm for</dt><dd id="n-calm">0:00</dd></div>
+  </dl>
+  <div class="group">
+    <h2 id="h-how">Put a change right</h2>
+    <div class="row" id="how" role="group" aria-labelledby="h-how">
+      <button type="button" data-how="at once" aria-pressed="false">at once</button>
+      <button type="button" data-how="after a pause" aria-pressed="false">after a pause</button>
+      <button type="button" data-how="on a click" aria-pressed="false">on a click</button>
+    </div>
+    <button type="button" id="right" hidden disabled>Put it right</button>
+  </div>
+  <div class="group">
+    <h2 id="h-ring0">The spider's observers</h2>
+    <div class="row" id="ring0" role="group" aria-labelledby="h-ring0"></div>
+    <h2 id="h-ring1">The world's observers</h2>
+    <div class="row" id="ring1" role="group" aria-labelledby="h-ring1"></div>
+  </div>
+</aside>
+<main class="middle">
+  <div class="stage"><canvas id="page" aria-label="The game. A spider hunts moths, and makes a web when it is full. The moths keep away from the pointer, and the spider follows it. A click on a moth caught in the web takes it. The spider can be picked up by its body or dragged by a leg."></canvas></div>
+  <div class="backdoor">
+    <div class="said" id="said" aria-live="polite"></div>
+    <div class="hints" id="hints"></div>
+    <label class="line"><span>&gt;</span><input id="backdoor" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="name a field and change it, as in spider.body.x += 150   (Tab completes)" aria-label="A backdoor: read and write the game's state"></label>
+  </div>
+</main>
+<aside class="panel">
+  <div class="group">
+    <h2 id="h-state">The state</h2>
+    <div class="state" id="state" role="group" aria-labelledby="h-state"></div>
+  </div>
+</aside>
+
+<script>
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const cvs = $('page'), ctx = cvs.getContext('2d'), TAU = Math.PI * 2;
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+// For the drawing only. The game area in its own units, the length of the spider's body that a
+// moth is drawn to, and the legs: lengths in body lengths, from the front pair to the back pair.
+const W = 1200, H = 800, BODY = 53, HIP = [0.87, 1.36, 1.71, 2.13], LEN = [1.8, 1.4, 1.42, 1.95];
+const calm = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+let S = null, heard = -1e9, zoom = 1, DPR = 1, C = {}, PLANS = null, flash = 0;
+
+// ---- what the server sends, round after round: the open state, laid out by the names the
+// backdoor knows it by, with no more than the beginning of anything a fault has made long, and
+// what the game has to say about itself. And once, the steps of a web of each size, to draw one from.
+// If the stream is lost, the browser asks for it again by itself. If it was refused outright, the
+// browser gives up, and so it is asked for again here, a second later, for as long as it takes.
+function listen() {
+  const stream = new EventSource('/stream');
+  stream.onmessage = ev => { try { S = JSON.parse(ev.data); heard = performance.now(); } catch (e) {} };
+  stream.onerror = () => { if (stream.readyState === EventSource.CLOSED) setTimeout(listen, 1000); };
+}
+listen();
+fetch('/plans').then(r => r.ok ? r.json() : null).then(plans => { PLANS = plans; }).catch(() => {});
+
+// ---- drawing. A changed state is drawn as it stands, as far as it can be drawn at all.
+const num = v => typeof v === 'number' && isFinite(v);
+const planOf = web => PLANS ? PLANS[web.level] || PLANS[0] : null;      // the steps of the web now standing
+const isHalted = m => typeof S.halted === 'string' && (',' + S.halted + ',').includes(',' + m.id + ',');   // halted in the web
+function drawLeg(body, L, fx, fy) {
+  const s = body.size, cx = body.x + fx * s * 0.18, cy = body.y + fy * s * 0.18;     // the legs join the front part of the body
+  // Work in the leg's own frame: u runs forward, and w runs outward on the leg's side.
+  const world = (u, w) => [cx + u * fx - w * L.side * fy, cy + u * fy + w * L.side * fx];
+  const hu = Math.cos(HIP[L.pair]) * s * 0.17, hw = Math.sin(HIP[L.pair]) * s * 0.17;
+  const fu = (L.x - cx) * fx + (L.y - cy) * fy, fw = L.side * ((L.y - cy) * fx - (L.x - cx) * fy);
+  // The leg has two parts that meet at a knee, and the upper part is the shorter.
+  const l1 = s * LEN[L.pair] * 0.42, l2 = s * LEN[L.pair] * 0.58;
+  const d = clamp(Math.hypot(fu - hu, fw - hw), l2 - l1 + 0.01, (l1 + l2) * 0.985), a = Math.atan2(fw - hw, fu - hu);
+  const b = Math.acos(clamp((l1 * l1 + d * d - l2 * l2) / (2 * l1 * d), -1, 1));
+  const ka = L.pair < 2 ? a + b : a - b;      // the knee sits behind the line on the front pairs and ahead of it on the back pairs
+  const hip = world(hu, hw), knee = world(hu + l1 * Math.cos(ka), hw + l1 * Math.sin(ka));
+  ctx.lineWidth = s * 0.085; ctx.beginPath(); ctx.moveTo(hip[0], hip[1]); ctx.lineTo(knee[0], knee[1]); ctx.stroke();
+  ctx.lineWidth = s * 0.055; ctx.beginPath(); ctx.moveTo(knee[0], knee[1]); ctx.lineTo(L.x, L.y); ctx.stroke();
+}
+function drawMoth(m, now, still) {
+  const s = BODY * 0.34, fx = Math.cos(m.h), fy = Math.sin(m.h);
+  const beat = still || calm ? 0.8 : 0.4 + 0.6 * Math.abs(Math.sin(now * 0.025 + (num(m.id) ? m.id : 0) * 2.1));   // the wings open and close
+  const at = (u, w) => [m.x + fx * u * s - fy * w * s, m.y + fy * u * s + fx * w * s];
+  ctx.fillStyle = C.moth;
+  for (const side of [-1, 1]) {
+    ctx.globalAlpha = 0.5;                                                    // the hind wing, then the fore wing over it
+    ctx.beginPath(); ctx.moveTo(...at(-0.1, 0)); ctx.quadraticCurveTo(...at(-0.5, side * 1.5 * beat), ...at(-1.25, side * 0.95 * beat)); ctx.quadraticCurveTo(...at(-1.0, side * 0.2), ...at(-0.55, 0)); ctx.fill();
+    ctx.globalAlpha = 0.82;
+    ctx.beginPath(); ctx.moveTo(...at(0.45, 0)); ctx.quadraticCurveTo(...at(0.7, side * 1.5 * beat), ...at(-0.25, side * 1.95 * beat)); ctx.quadraticCurveTo(...at(-0.55, side * 0.7 * beat), ...at(-0.35, 0)); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  ctx.strokeStyle = C.silk; ctx.lineWidth = s * 0.34; ctx.lineCap = 'round';   // its body
+  ctx.beginPath(); ctx.moveTo(...at(0.55, 0)); ctx.lineTo(...at(-0.75, 0)); ctx.stroke();
+}
+function drawSpider(colour, b, feet) {    // a spider's legs and its two-part body, in one colour
+  const s = b.size, fx = Math.cos(b.h), fy = Math.sin(b.h);
+  ctx.strokeStyle = ctx.fillStyle = colour; ctx.lineCap = 'round';
+  for (const L of feet) if (num(L.x) && num(L.y) && num(L.side) && LEN[L.pair] !== undefined) drawLeg(b, L, fx, fy);
+  ctx.beginPath(); ctx.ellipse(b.x - fx * s * 0.36, b.y - fy * s * 0.36, Math.abs(s * 0.42), Math.abs(s * 0.34), b.h, 0, TAU); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(b.x + fx * s * 0.18, b.y + fy * s * 0.18, Math.abs(s * 0.27), Math.abs(s * 0.23), b.h, 0, TAU); ctx.fill();
+}
+function curled(b) {                      // a dead spider's pose: every foot drawn in under the body
+  const feet = [];
+  for (let k = 0; k < 8; k++) {
+    const side = k < 4 ? -1 : 1, pair = k % 4, a = b.h + side * HIP[pair], c = b.size * 0.18, r = b.size * 0.75;
+    feet.push({ side, pair, x: b.x + c * Math.cos(b.h) + r * Math.cos(a), y: b.y + c * Math.sin(b.h) + r * Math.sin(a) });
+  }
+  return feet;
+}
+function drawWeb(web, b) {                // the web so far
+  const plan = planOf(web);
+  if (!plan || web.on !== true || !num(web.made) || !num(web.x) || !num(web.y) || !num(S.reach)) return;
+  const made = clamp(Math.floor(web.made), 0, plan.length), last = plan[made - 1];
+  const point = k => plan[k] ? [web.x + S.reach * plan[k].u, web.y + S.reach * plan[k].v] : [web.x, web.y];
+  const closeAt = last && last.kind === 'close' ? last.f : made >= plan.length ? 0 : 2;   // how far in the close spiral has come
+  const torn = typeof web.torn === 'string' ? ',' + web.torn + ',' : ',,';
+  ctx.strokeStyle = C.silk; ctx.lineWidth = 1; ctx.lineCap = 'butt';
+  for (const close of [false, true]) {                                       // the close spiral is drawn a little stronger
+    ctx.globalAlpha = close ? 0.7 : 0.4; ctx.beginPath();
+    for (let k = 1; k < made; k++) {
+      const step = plan[k];
+      if (!step.lay || (step.kind === 'close') !== close || (step.kind === 'wide' && step.f >= closeAt) || torn.includes(',' + k + ',')) continue;   // the wide spiral goes as the close one passes
+      ctx.moveTo(...point(k - 1)); ctx.lineTo(...point(k));
+    }
+    ctx.stroke();
+  }
+  // the strand being laid runs from the last place to the spider, while it has hold of the thread
+  if (made > 0 && made < plan.length && plan[made].lay && web.tied === true && web.old !== true && num(b.x) && num(b.y)) {
+    ctx.globalAlpha = 0.4; ctx.beginPath(); ctx.moveTo(...point(made - 1)); ctx.lineTo(b.x, b.y); ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+}
+function draw(now) {
+  ctx.setTransform(DPR * zoom, 0, 0, DPR * zoom, 0, 0);     // everything below is drawn in the game's own units
+  ctx.globalAlpha = 1; ctx.fillStyle = C.night; ctx.fillRect(0, 0, W, H);
+  if (!S) return;
+  const alarm = S.halt !== null || now < flash, b = S.state.spider.body, legs = S.state.spider.legs, edge = S.state.world.edge;
+  if (num(edge.inset) && num(edge.w) && num(edge.h)) {                        // the edge
+    ctx.strokeStyle = alarm ? C.alarm : C.silk; ctx.globalAlpha = alarm ? 0.9 : 0.28; ctx.lineWidth = alarm ? 1.5 : 1; ctx.setLineDash([4, 7]);
+    ctx.strokeRect(edge.inset + 0.5, edge.inset + 0.5, edge.w - 2 * edge.inset - 1, edge.h - 2 * edge.inset - 1);
+    ctx.setLineDash([]); ctx.globalAlpha = 1;
+  }
+  const over = S.over;                                                        // what the pointer could take hold of, or take: the game says
+  if (over && num(over.x) && num(over.y) && num(over.r)) { ctx.strokeStyle = C.accent; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(over.x, over.y, over.r, 0, TAU); ctx.stroke(); }
+  drawWeb(S.state.world.web, b);
+  for (const m of S.state.world.moths.slice(0, 60)) if (num(m.x) && num(m.y) && num(m.h)) drawMoth(m, now, S.halt !== null || isHalted(m));
+  ctx.globalAlpha = 1;
+  const old = S.state.spider.old;                                             // the spider before this one, curled up
+  if (old.on === true && num(old.x) && num(old.y) && num(old.h) && num(old.size)) drawSpider(C.dim, old, curled(old));
+  if (!num(b.x) || !num(b.y) || !num(b.h) || !num(b.size)) return;
+  const s = b.size, fx = Math.cos(b.h), fy = Math.sin(b.h);
+  drawSpider(C.silk, b, legs);
+  ctx.fillStyle = C.deep;                                                     // two eyes
+  for (const side of [-1, 1]) { ctx.beginPath(); ctx.arc(b.x + fx * s * 0.34 - fy * side * s * 0.08, b.y + fy * s * 0.34 + fx * side * s * 0.08, Math.abs(s * 0.04), 0, TAU); ctx.fill(); }
+  // its four observers, the markings on its back: the two for the legs in front, the body's behind, its coordinator in the middle
+  const ax = b.x - fx * s * 0.36, ay = b.y - fy * s * 0.36;
+  [[0.15, -0.17], [0.15, 0.17], [-0.21, 0], [-0.02, 0]].forEach(([u, w], i) => {
+    const st = S.watch[i] ? S.watch[i].state : 'silent', x = ax + (u * fx - w * fy) * s, y = ay + (u * fy + w * fx) * s;
+    ctx.beginPath(); ctx.arc(x, y, Math.abs(s * 0.07), 0, TAU);
+    if (st === 'silent') { ctx.strokeStyle = C.dim; ctx.lineWidth = 1; ctx.stroke(); }
+    else { ctx.fillStyle = st === 'flagged' || now < flash ? C.alarm : C.night; ctx.fill(); }
+  });
+  for (const k of sparks) {                                                   // a moth caught: a ring, and what it was worth going up
+    const t = (now - k.t0) / 900;
+    ctx.globalAlpha = Math.max(0, 1 - t); ctx.strokeStyle = ctx.fillStyle = C.accent; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(k.x, k.y, BODY * (0.5 + 1.4 * t), 0, TAU); ctx.stroke();
+    ctx.font = '600 ' + Math.round(BODY * 0.5) + 'px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.fillText('+' + amount(k.worth), k.x, k.y - BODY * (1 + 1.2 * t));
+  }
+  ctx.globalAlpha = 1;
+  if (alarm) {                                                                // a halt: a ring round the spider
+    const pulse = calm ? 0 : 0.5 + 0.5 * Math.sin(now * 0.012);
+    ctx.strokeStyle = C.alarm; ctx.lineWidth = 1.5; ctx.setLineDash([3, 5]);
+    ctx.beginPath(); ctx.arc(b.x, b.y, Math.abs(s * (2.4 + 0.15 * pulse)), 0, TAU); ctx.stroke(); ctx.setLineDash([]);
+  }
+}
+
+// ---- what the page says
+const shown = {}, chips = [], shelf = [], sparks = [], hows = [...document.querySelectorAll('#how button')];
+function say(id, text) { if (shown[id] !== text) { shown[id] = text; $(id).textContent = text; } }
+const cap = t => t.charAt(0).toUpperCase() + t.slice(1);
+const amount = hundredths => (hundredths / 100).toFixed(2).replace(/\.?0+$/, '');   // hundredths of a moth, written as moths
+const clock = seconds => Math.floor(seconds / 60) + ':' + String(Math.floor(seconds % 60)).padStart(2, '0');   // seconds, written as minutes and seconds
+let seen = null, ticks = 0, lastGain = 0, told = null, toast = null;
+function show(now) {
+  const silent = !S || now - heard > 1000;
+  const body = S ? S.state.spider.body : null, moths = S ? S.state.world.moths : [], web = S ? S.state.world.web : null, plan = S ? planOf(web) : null;
+  const old = S ? S.state.spider.old : null;
+  // what has just happened in the game, said for a few seconds: an old spider eaten, and so many moths caught
+  if (S && S.halt === null) {
+    const eaten = body.husks, caught = S.state.world.tally.caught;
+    if (told === null) told = { husks: eaten, caught };
+    if (num(eaten) && eaten > told.husks) toast = { text: 'The new spider has eaten the old one, which had eaten ' + (num(old.meals) ? old.meals : 0) + ' moths', until: now + 6000 };
+    if (num(caught) && caught > told.caught) for (const mile of [10, 25, 50, 100, 250, 500, 1000]) if (told.caught < mile && caught >= mile) toast = { text: mile + ' moths caught', until: now + 4000 };
+    if (num(eaten)) told.husks = eaten;
+    if (num(caught)) told.caught = caught;
+  }
+  const doing = !S ? '' : body.state === 'panic' ? (body.grip === 8 ? 'Picked up, and panicking' : 'Dragged by a leg, and panicking')
+    : body.state === 'recovering' ? 'Getting over it'
+    : old.on === true ? 'The spider has died, and the next one is walking in to it'
+    : body.full === true && web.on === true ? (web.old === true ? 'Full, and taking down its old web' : plan && web.made < plan.length ? 'Full, and making its web' : 'Full, and sitting in its web')
+    : body.full === false && moths.length ? 'Hunting' : body.state === 'walking' ? 'Walking' : 'Resting';
+  const line = silent ? 'The server is silent. The game runs there, so there is nothing to show.'
+    : S.halt !== null ? 'Halted. ' + cap(S.halt) + '.' + (S.stuck ? ' The game cannot go on from here. "Put it right" begins it again.' : '')
+    : S.fixed !== null ? 'Put right: ' + S.fixed + '.'
+    : toast && now < toast.until ? toast.text : doing;
+  say('ribbon', line);
+  const tone = silent || (S && S.stuck) ? 'bad' : S.halt !== null ? 'alarm' : '';
+  if ($('ribbon').className !== tone) $('ribbon').className = tone;
+  if (!S) return;
+  const tally = S.state.world.tally, fill = num(body.food) ? Math.round(clamp(body.food, 0, 1) * 100) : 0;
+  // what there is to spend, in hundredths of a moth: shown as whole moths and the tenths over, never rounded up
+  const purse = num(tally.gained) && num(tally.spent) ? tally.gained - 100 * tally.spent : NaN;
+  say('n-moths', num(purse) ? String(Math.floor(purse / 100)) : '?'); say('n-tenths', num(purse) ? '.' + ((Math.floor(purse / 10) % 10 + 10) % 10) : '');
+  say('n-rate', String(S.rate));
+  say('n-webs', num(tally.webs) ? String(Math.floor(tally.webs)) : '?');
+  say('n-meals', num(body.meals) ? String(body.meals) : '?');
+  // It is always spider no. 1. The ones before it are counted as dead.
+  say('n-dead', num(body.gen) ? String(body.gen - 1) : '?');
+  say('n-age', num(body.age) ? clock(body.age) + ' of ' + clock(S.life) : '?');
+  say('n-boost', num(body.boost) ? (body.boost > 0 ? '+' + Math.round(body.boost * 100) + '%' : 'none') : '?');
+  if (shown.fill !== fill) { shown.fill = fill; $('food-bar').style.width = fill + '%'; $('food').setAttribute('aria-valuenow', String(fill)); }
+  say('n-food', (body.full === true ? 'full, so it makes its web' : 'hungry') + '. ' + S.stomach + ' moths fill it');
+  // the shop: what there is of each now, what the next one costs, and whether there are moths enough for it
+  if (!shelf.length) makeShelf();
+  S.shelf.forEach((u, k) => {
+    if (!shelf[k]) return;
+    const [had, button] = shelf[k], price = u.cost === null ? 'no more' : u.step + ' for ' + u.cost + ' moths', off = !u.can || S.halt !== null;
+    if (shown['now' + k] !== u.now) { shown['now' + k] = u.now; had.textContent = u.now; }
+    if (shown['price' + k] !== price) { shown['price' + k] = price; button.textContent = price; }
+    if (button.disabled !== off) button.disabled = off;
+  });
+  // a moth caught is shown once, where it was caught, with what it was worth
+  if (S.gains.length && S.gains[S.gains.length - 1][0] < lastGain) lastGain = 0;
+  for (const [n, x, y, worth] of S.gains) if (n > lastGain) { lastGain = n; if (S.halt === null && num(x) && num(y)) sparks.push({ x, y, worth, t0: now }); }
+  while (sparks.length && now - sparks[0].t0 > 900) sparks.shift();
+  say('n-halts', String(S.halts)); say('n-restarts', String(S.restarts));
+  say('n-calm', Math.floor(S.calm / 60) + ':' + String(S.calm % 60).padStart(2, '0'));
+  // the pointer's look says what a press would do: take hold of the spider, take a moth, or nothing
+  const cursor = S.holding ? 'grabbing' : S.over ? (S.over.what === 'moth' ? 'pointer' : 'grab') : 'default';
+  if (cvs.style.cursor !== cursor) cvs.style.cursor = cursor;
+  if (!chips.length) makeChips();
+  chips.forEach(([b, i]) => { const c = S.watch[i] ? S.watch[i].state : 'silent'; if (b.className !== c) b.className = c; });
+  // how a halt ends, as it is set now, and the button that asks for it when that is the way
+  if (shown.how !== S.how) { shown.how = S.how; hows.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.how === S.how))); }
+  // the button is there when a halt waits for it: when that is how halts end, and when a halt cannot be put right, where it begins the game again
+  const asks = S.how === 'on a click' || S.stuck, waits = S.halt === null;
+  if ($('right').hidden === asks) $('right').hidden = !asks;
+  if ($('right').disabled !== waits) $('right').disabled = waits;
+  // in a halt that only the button ends, the button is brought into sight, in case the panel is scrolled away from it
+  if (shown.stuck !== S.stuck) { shown.stuck = S.stuck; if (S.stuck) $('right').scrollIntoView({ block: 'nearest' }); }
+  if (ticks++ % 6 === 0) stateNow();                      // the state shown is brought up to date ten times a second
+  // what happens to the game is said at the backdoor too, so that what was typed and what came of it are in one place
+  // a game begun again is another game: its counts start from nothing, and nothing the page was keeping of the old one is carried over
+  if (seen !== null && S.games !== seen.games) { seen = null; told = null; toast = null; lastGain = 0; sparks.length = 0; tell('the game was begun again', 'fixed'); }
+  if (seen === null) seen = { halts: S.halts, restarts: S.restarts, stuck: S.stuck, passed: S.passed, unwritten: S.unwritten, games: S.games };
+  // a line kept to be written during the work that could not be written when its time came
+  if (S.unwritten !== seen.unwritten) { seen.unwritten = S.unwritten; if (S.not !== null) tell('not written: ' + S.not + '. When the time came to write it during the work, it could not be done.', 'bad'); }
+  // something written during the work that was recorded all the same: the work done a second time gave it too, and it broke no rule
+  if (S.passed !== seen.passed) { seen.passed = S.passed; if (S.let !== null) tell('let through: ' + S.let + '. The work done a second time gave the same, and no rule of the game forbids it.', 'bad'); }
+  // a halt is said once: when it is counted, or, for one that was counted earlier and has since been found past putting right, when that is found
+  if (S.halts !== seen.halts) { seen.halts = S.halts; flash = now + 400; if (S.why !== null) tell('halted: ' + S.why, 'halt'); }
+  else if (S.stuck && !seen.stuck && S.halt !== null) tell('halted: ' + S.halt, 'halt');
+  seen.stuck = S.stuck;
+  if (S.restarts !== seen.restarts) { seen.restarts = S.restarts; if (S.did !== null) tell('put right: ' + S.did, 'fixed'); }
+}
+function frame(now) {
+  try { draw(now); } catch (e) {}
+  try { show(now); } catch (e) {}
+  requestAnimationFrame(frame);
+}
+
+// ---- the pointer: only where it is, sent to the server about thirty times a second, where it
+// was pressed, and that it was let up. What a press means is the game's to decide: it may take
+// hold of the spider, or take a moth out of the web, or nothing.
+function resize() {
+  zoom = (cvs.clientWidth || W) / W; DPR = window.devicePixelRatio || 1;
+  cvs.width = Math.round(W * zoom * DPR); cvs.height = Math.round(H * zoom * DPR);
+}
+let want = null, down = false;
+const where = ev => { const r = cvs.getBoundingClientRect(); return [(ev.clientX - r.left) * W / (r.width || W), (ev.clientY - r.top) * H / (r.height || H)]; };
+cvs.addEventListener('pointermove', ev => {
+  const [x, y] = where(ev); if (!isFinite(x) || !isFinite(y)) return;
+  want = x.toFixed(1) + ',' + y.toFixed(1) + ',1';
+});
+cvs.addEventListener('pointerleave', () => { if (!down) want = '0,0,0'; });
+cvs.addEventListener('pointerdown', ev => {
+  const [x, y] = where(ev); if (!isFinite(x) || !isFinite(y)) return;
+  down = true;
+  try { cvs.setPointerCapture(ev.pointerId); } catch (e) {}      // so that a drag that leaves the game area is still followed
+  fetch('/down', { method: 'POST', body: x.toFixed(1) + ',' + y.toFixed(1) }).catch(() => {});
+});
+function letGo() { if (!down) return; down = false; fetch('/up', { method: 'POST', body: '' }).catch(() => {}); }
+cvs.addEventListener('pointerup', letGo);
+cvs.addEventListener('pointercancel', letGo);
+window.addEventListener('blur', letGo);
+setInterval(() => { if (want === null) return; const body = want; want = null; fetch('/pointer', { method: 'POST', body }).catch(() => {}); }, 33);
+
+// ---- the shop: a row for each upgrade the server lists. A click only asks for one more. Whether
+// it can be paid for is the game's to decide.
+function makeShelf() {
+  for (const u of S.shelf) {
+    const row = document.createElement('div'), text = document.createElement('span'), name = document.createElement('strong'), had = document.createElement('span'), button = document.createElement('button');
+    row.className = 'row upgrade'; name.textContent = u.name; button.type = 'button'; button.disabled = true;
+    text.appendChild(name); text.appendChild(document.createTextNode(' ')); text.appendChild(had);
+    button.addEventListener('click', () => ask('/buy', u.what));
+    row.appendChild(text); row.appendChild(button); $('shelf').appendChild(row); shelf.push([had, button]);
+  }
+}
+
+// ---- how a halt ends: the three ways, and asking for it
+// What a button asks of the server. If the server does not take it, that is said at the backdoor.
+function ask(what, body) {
+  fetch(what, { method: 'POST', body }).then(r => r.ok ? null : Promise.reject()).catch(() => tell('the server did not answer', 'bad'));
+}
+hows.forEach(b => b.addEventListener('click', () => ask('/how', b.dataset.how)));
+$('right').addEventListener('click', () => ask('/right', ''));
+
+// ---- the backdoor: what is typed is sent to the server, which writes it straight into the state
+const said = $('said'), box = $('backdoor'), past = [];
+let at = 0;
+function tell(text, kind) {
+  const line = document.createElement('div');
+  line.className = kind; line.textContent = text;
+  said.appendChild(line);
+  while (said.children.length > 300) said.removeChild(said.firstChild);
+  said.scrollTop = said.scrollHeight;
+}
+function type(line) {
+  tell('> ' + line, 'typed');
+  fetch('/backdoor', { method: 'POST', body: line }).then(r => r.ok ? r.text() : Promise.reject()).then(text => tell(text, 'answer')).catch(() => tell('the server did not answer', 'bad'));
+}
+
+// What can be said at the backdoor. Every field there is can be found by walking what the server
+// sends. The shape is fixed but for the lists that grow and shrink, so the walk is made
+// again whenever one of those has changed.
+let ALL = [], FIELDS = [], shape = '';
+const VERBS = ['world.moths.push()', 'world.moths.pop()'];
+function walk(node, path, out) {
+  if (Array.isArray(node)) node.forEach((kid, i) => walk(kid, path + '[' + i + ']', out));
+  else if (node && typeof node === 'object') for (const key of Object.keys(node)) walk(node[key], path ? path + '.' + key : key, out);
+  else out.push(path);
+  return out;
+}
+function learn() {
+  FIELDS = walk(S.state, '', []);
+  const all = new Set(FIELDS);
+  for (const path of FIELDS) {                // and with [*] for every one of a list, in each place a list is
+    const places = path.match(/\[\d+\]/g) || [];
+    for (let mask = 1; mask < 1 << places.length; mask++) { let n = 0; all.add(path.replace(/\[\d+\]/g, m => mask >> n++ & 1 ? '[*]' : m)); }
+  }
+  ALL = [...all].concat(VERBS);
+}
+function valueAt(path) {                    // what a path holds now, as far as this screen has been told ([*] shows the first)
+  let at = S.state;
+  for (const key of path.split(/[.\[\]]+/).filter(Boolean)) at = at === undefined || at === null ? undefined : at[key === '*' ? 0 : key];
+  return at;
+}
+const brief = v => typeof v === 'number' ? String(+v.toFixed(2)) : typeof v === 'string' ? JSON.stringify(v.length > 22 ? v.slice(0, 22) + '...' : v) : String(v);
+// What could come next, for what has been typed so far: the next step of a path, then a way of
+// writing, then a value of the kind the field holds.
+function hintsFor(text, inner) {
+  if (!S) return [];
+  // "during" in front of a line has it written during the game's own work: what follows it is a line like any other
+  const lead = inner ? null : /^\s*during\s+/.exec(text);
+  if (lead) return hintsFor(text.slice(lead[0].length), true).map(hint => ({ text: lead[0] + hint.text, label: hint.label, value: hint.value }));
+  const cut = text.lastIndexOf(';') + 1, head = text.slice(0, cut) + /^\s*/.exec(text.slice(cut))[0], part = text.slice(head.length);
+  const op = /^(\S+)\s*([-+*\/]?=)\s*(.*)$/.exec(part);
+  if (op) {
+    if (!ALL.includes(op[1])) return [];
+    const now = valueAt(op[1]), start = head + op[1] + ' ' + op[2] + ' ';
+    const offers = typeof now === 'boolean' ? ['true', 'false'] : typeof now === 'number' ? (op[2] === '=' ? [String(+now.toFixed(2)), '0', 'NaN'] : ['10', '150'])
+      : op[1].endsWith('.state') ? ["'walking'", "'resting'", "'flying'"] : ["''", "'" + String(now).slice(0, 16).replace(/'/g, '') + "'"];
+    return offers.filter(o => o.startsWith(op[3]) && o !== op[3]).map(o => ({ text: start + o, label: o, value: '' }));
+  }
+  const half = /^(\S+?)\s*([-+*\/])$/.exec(part);           // a field and the first half of += and the like
+  if (half && ALL.includes(half[1]) && typeof valueAt(half[1]) === 'number') return [{ text: head + half[1] + ' ' + half[2] + '= ', label: half[2] + '=', value: '' }];
+  const name = part.trim(), out = [];
+  if (ALL.includes(name) && !name.endsWith(')')) for (const o of typeof valueAt(name) === 'number' ? ['=', '+=', '-=', '*=', '/='] : ['=']) out.push({ text: head + name + ' ' + o + ' ', label: o, value: '' });
+  if (/\s/.test(part)) return out;
+  const found = new Set(), from = part.lastIndexOf('.') + 1;
+  for (const full of ALL) {
+    if (!full.startsWith(part)) continue;
+    let end = part.length;
+    while (end < full.length && !'.[]'.includes(full[end])) end++;
+    let next = full.slice(0, end + 1);
+    if (full[end] === ']' && full[end + 1] === '.') next = full.slice(0, end + 2);
+    if (next === part || found.has(next)) continue;
+    found.add(next);
+    out.push({ text: head + next, label: next.slice(from), value: next === full && !full.endsWith(')') ? brief(valueAt(full)) : '' });
+  }
+  if (!inner && cut === 0 && 'during '.startsWith(part) && part !== 'during ') out.push({ text: 'during ', label: 'during', value: 'in the work itself' });
+  return out.slice(0, 18);
+}
+const hintBox = $('hints');
+let offered = [];
+function offer() {
+  offered = hintsFor(box.value);
+  hintBox.textContent = '';
+  for (const hint of offered) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = hint.label;
+    if (hint.value) { const v = document.createElement('small'); v.textContent = hint.value; b.appendChild(v); }
+    b.addEventListener('click', () => { box.value = hint.text; box.focus(); offer(); });
+    hintBox.appendChild(b);
+  }
+}
+box.addEventListener('input', offer);
+box.addEventListener('focus', offer);
+box.addEventListener('keydown', ev => {
+  if (ev.key === 'Tab' && !ev.shiftKey && offered.length) { box.value = offered[0].text; offer(); ev.preventDefault(); }   // Tab takes the first of what is offered
+  else if (ev.key === 'Enter' && box.value.trim()) { const line = box.value.trim().replace(/[.\[]$/, ''); past.push(line); at = past.length; type(line); box.value = ''; offer(); }
+  else if (ev.key === 'ArrowUp' && at > 0) { box.value = past[--at]; offer(); ev.preventDefault(); }
+  else if (ev.key === 'ArrowDown' && at < past.length) { at++; box.value = past[at] || ''; offer(); ev.preventDefault(); }
+});
+
+// ---- the state, shown: every field with what it holds now, in a group for each piece. A
+// click on a field begins a line at the backdoor. It is laid out again when a list has grown or shrunk.
+const open = new Set(['spider.body', 'world.tally', 'world.shop', 'world.web']);
+let cells = [];
+function layOut() {
+  const host = $('state'), groups = new Map(), pane = host.closest('.panel'), top = pane.scrollTop;
+  for (const path of FIELDS) { const cut = path.lastIndexOf('.'), of = path.slice(0, cut); if (!groups.has(of)) groups.set(of, []); groups.get(of).push(path.slice(cut + 1)); }
+  host.textContent = ''; cells = [];
+  for (const [of, names] of groups) {
+    const d = document.createElement('details'), s = document.createElement('summary');
+    d.open = open.has(of); s.textContent = of;
+    d.addEventListener('toggle', () => { if (d.open) open.add(of); else open.delete(of); });
+    const label = /\.ring\[\d+\]$/.test(of) ? valueAt(of + '.name') : /\.moths\[\d+\]$/.test(of) ? 'no. ' + valueAt(of + '.id') : '';
+    if (label) { const l = document.createElement('small'); l.textContent = label; s.appendChild(l); }
+    d.appendChild(s);
+    for (const name of names) {
+      const b = document.createElement('button'), v = document.createElement('span'), full = of + '.' + name;
+      b.type = 'button'; b.className = 'field'; b.title = full;
+      b.appendChild(document.createTextNode(name)); b.appendChild(v);
+      b.addEventListener('click', () => { box.value = full + ' = '; box.focus(); offer(); });
+      d.appendChild(b); cells.push([v, full]);
+    }
+    host.appendChild(d);
+  }
+  pane.scrollTop = top;
+}
+function stateNow() {
+  const now = S.state.world.moths.map(m => m.id).join(',') + ':' + S.state.spider.legs.length;      // the lists that can grow and shrink, and which moths are in them
+  if (now !== shape) { shape = now; learn(); layOut(); if (document.activeElement === box) offer(); }
+  for (const [cell, full] of cells) { const text = brief(valueAt(full)); if (cell.textContent !== text) cell.textContent = text; }
+}
+
+// A button for each observer, in the order the backdoor lists them. Stopping one is a line at the
+// backdoor like any other. The server says what there are, which scope each is listed with, and
+// what the backdoor calls it.
+function makeChips() {
+  S.watch.map((o, i) => [o, i]).sort((a, b) => a[0].at < b[0].at ? -1 : 1).forEach(([o, i]) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.title = 'Stop the ' + o.name + ' observer';
+    b.appendChild(document.createElement('i')); b.appendChild(document.createTextNode(o.name));
+    b.addEventListener('click', () => type(o.at + '.alive = false'));
+    $(o.row === 0 ? 'ring0' : 'ring1').appendChild(b); chips.push([b, i]);
+  });
+}
+
+const st = getComputedStyle(document.documentElement);
+for (const k of ['night', 'deep', 'silk', 'dim', 'accent', 'moth', 'alarm']) C[k] = st.getPropertyValue('--' + k).trim();
+resize();
+window.addEventListener('resize', resize);
+if (window.ResizeObserver) new ResizeObserver(resize).observe(cvs);
+tell('A backdoor. What is typed here is written straight into the game\'s state. Every field is listed on the right: click one to begin, or start typing and press Tab.', 'answer');
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

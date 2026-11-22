@@ -1,0 +1,11 @@
+[package]
+name = "one-spider"
+version = "0.1.0"
+edition = "2021"
+description = "One Spider: a small game whose state is watched by two rings of observers and a gate, in one program"
+
+# Nothing but the standard library.
+[dependencies]
+
+[profile.release]
+opt-level = 2

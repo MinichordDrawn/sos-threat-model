@@ -58,6 +58,8 @@ LICENSE                          CC BY 4.0 for the documents, MIT for the script
 images/                          the figure above
 examples/chernobyl/              a finished run on a document: Chernobyl Unit 4 from INSAG-7
 examples/constitution/           a finished run on an institution: the US Constitution as amended
+examples/one-spider/             a system built on the model: a game with a backdoor for faults,
+                                 and a Lean 4 proof about a model of its protocol
 lean-proof/                      the main results of the model check, machine-checked in Lean 4
 model-check/                     a model check of the eight properties and the 3+1 ring
 sos-rule-cases/                  abstract cases and answer keys for checking rule changes
@@ -147,6 +149,6 @@ unchanged under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 Free to use, share and adapt, with credit: "SOS: Threat Modeling For Self-Observing
 Systems, by Alexandra Thaler". The documents are under [CC BY
-4.0](https://creativecommons.org/licenses/by/4.0/) and the scripts and proofs under the
-MIT licence; the figure keeps its own CC BY-SA 4.0 licence. Quotations from other works
+4.0](https://creativecommons.org/licenses/by/4.0/) and the scripts, the proofs and the
+example program under the MIT licence; the figure keeps its own CC BY-SA 4.0 licence. Quotations from other works
 stay their owners'. See [LICENSE](LICENSE).

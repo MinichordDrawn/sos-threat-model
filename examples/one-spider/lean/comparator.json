@@ -1,0 +1,21 @@
+{
+    "challenge_module": "GateProof.Challenge",
+    "solution_module": "GateProof.Solution",
+    "theorem_names": [
+        "Gate.reach_clean",
+        "Gate.nofault_round",
+        "Gate.T1",
+        "Gate.T2",
+        "Gate.T2_at_once",
+        "Gate.found_counts",
+        "Gate.T3",
+        "Gate.T3_ends",
+        "Gate.T4",
+        "Gate.T5",
+        "Gate.Toy.sound",
+        "Gate.Toy.T6_wrong_recorded",
+        "Gate.Toy.T6_stuck",
+        "Gate.Toy.T6_spacing"
+    ],
+    "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}
