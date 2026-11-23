@@ -1,0 +1,14 @@
+flow W reads all f=1: no edge: no gap False; single edges that leave no gap: ['chk N<A', 'chk N<B', 'chk N<C', 'chk N<D']; whole list: fewest 5 edges, 6 sets, all of the form 'two watch N and N reports to D': True
+flow W reads all f=2: no edge: no gap False; single edges that leave no gap: ['chk N<A', 'chk N<B', 'chk N<C', 'chk N<D']; whole list: fewest 5 edges, 6 sets, all of the form 'two watch N and N reports to D': True
+flow W reads all f=3: no edge: no gap False; single edges that leave no gap: ['chk N<A', 'chk N<B', 'chk N<C', 'chk N<D']; whole list: fewest 5 edges, 6 sets, all of the form 'two watch N and N reports to D': True
+flow W reads two f=1: no edge: no gap False; single edges that leave no gap: ['chk N<A', 'chk N<B', 'chk N<C', 'chk N<D']; whole list: fewest 5 edges, 6 sets, all of the form 'two watch N and N reports to D': True
+actor W reads all f=1: no edge: no gap False; single edges that leave no gap: ['chk N<A', 'chk N<B', 'chk N<C', 'chk N<D']; whole list: fewest 5 edges, 6 sets, all of the form 'two watch N and N reports to D': True
+actor W reads all f=2: no edge: no gap False; single edges that leave no gap: ['chk N<A', 'chk N<B', 'chk N<C', 'chk N<D']; whole list: fewest 5 edges, 6 sets, all of the form 'two watch N and N reports to D': True
+actor W reads all f=3: no edge: no gap False; single edges that leave no gap: ['chk N<A', 'chk N<B', 'chk N<C', 'chk N<D']; whole list: fewest 5 edges, 6 sets, all of the form 'two watch N and N reports to D': True
+actor W reads two f=1: no edge: no gap False; single edges that leave no gap: ['chk N<A', 'chk N<B', 'chk N<C', 'chk N<D']; whole list: fewest 5 edges, 6 sets, all of the form 'two watch N and N reports to D': True
+forty, scopes, flow, freeze, f=2, 1 round: G1 base None | G2 base None | G1 upper None | G2 upper None | told None | spill None  [0s]
+forty, scopes, flow, freeze, f=3, 1 round: G1 base None | G2 base None | G1 upper None | G2 upper None | told 1 | spill None  [5s]
+forty, scopes, flow, freeze, reads two, f=1, 2 rounds: G1 base None | G2 base None | G1 upper None | G2 upper None | told None | spill None  [0s]
+forty, scopes, actor, freeze, f=2, 1 round: G1 base None | G2 base None | G1 upper None | G2 upper None | told None | spill None  [0s]
+forty, scopes, actor, freeze, f=3, 1 round: G1 base None | G2 base None | G1 upper None | G2 upper None | told 1 | spill None  [6s]
+forty, scopes, actor, freeze, reads two, f=1, 2 rounds: G1 base None | G2 base None | G1 upper None | G2 upper None | told None | spill None  [0s]

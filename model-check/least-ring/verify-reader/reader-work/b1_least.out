@@ -1,0 +1,10 @@
+=== least wirings for the whole list ===
+k=3 flow: 24 wirings of 8 connections meet R2 and R5 with the fewest; whole list met by: f=1 24, f=2 24, f=3 18, reads two f=1 22; shapes at f=1: 4  [0s]
+k=3 actor: 27 wirings of 9 connections meet R2 and R5 with the fewest; whole list met by: f=1 26, f=2 26, f=3 26, reads two f=1 26; shapes at f=1: 6; failures at f=1 as (R3, R1, R6) -> count: {(False, True, True): 1}  [0s]
+      the cycle with a coordinator is among the actor least: True
+k=4 flow: 486 wirings of 10 connections meet R2 and R5 with the fewest; whole list met by: f=1 486, f=2 486, f=3 432, reads two f=1 405; shapes at f=1: 24  [2s]
+k=4 actor: 1296 wirings of 12 connections meet R2 and R5 with the fewest; whole list met by: f=1 1203, f=2 1203, f=3 1203, reads two f=1 1203; shapes at f=1: 59; failures at f=1 as (R3, R1, R6) -> count: {(False, True, True): 93}  [2s]
+      the cycle with a coordinator is among the actor least: True
+k=5 flow: 10240 wirings of 12 connections meet R2 and R5 with the fewest; whole list met by: f=1 10240, f=2 10240, f=3 9600, reads two f=1 7840; shapes at f=1: 97  [169s]
+k=5 actor: 100000 wirings of 15 connections meet R2 and R5 with the fewest; whole list met by: f=1 90204, f=2 -, f=3 -, reads two f=1 -; shapes at f=1: -; failures at f=1 as (R3, R1, R6) -> count: {(False, True, True): 9796}  [7s]
+      the cycle with a coordinator is among the actor least: True

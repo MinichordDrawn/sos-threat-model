@@ -1,0 +1,8 @@
+wrote 39 added cases and their answers
+   {"id": "added/r2-readers/fifteen-edges/f1", "G1": null, "G2": null, "scopes": {"ring": {"G1": null, "G2": null, "told": null}}, "spill": null}
+   {"id": "added/r2-readers/fifteen-edges/f2", "G1": null, "G2": null, "scopes": {"ring": {"G1": null, "G2": null, "told": null}}, "spill": null}
+   {"id": "added/r2-readers/fifteen-edges/f3", "G1": null, "G2": null, "scopes": {"ring": {"G1": null, "G2": null, "told": null}}, "spill": null}
+   {"id": "added/r2-readers/fourteen-edges/f1", "G1": 1, "G2": 1, "scopes": {"ring": {"G1": 1, "G2": 1, "told": null}}, "spill": null}
+   {"id": "added/grow/coordinators-together/flow/one/f1", "G1": null, "G2": null}
+   {"id": "added/grow/coordinators-together/flow/one/f2", "G1": null, "G2": null}
+   {"id": "added/grow/coordinators-together/flow/one/f3", "G1": null, "G2": null}

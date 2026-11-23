@@ -1,0 +1,13 @@
+naive-part-a-.txt: 175 the same, 0 different, 0 skipped as too large
+naive-part-b-.txt: 37 the same, 0 different, 0 skipped as too large
+naive-part-c-flat.txt: 9 the same, 0 different, 0 skipped as too large
+naive-part-c-forty.txt: 6 the same, 0 different, 4 skipped as too large
+naive-part-c-minus.txt: 51 the same, 0 different, 5 skipped as too large
+naive-part-c-nineteen.txt: 2 the same, 0 different, 2 skipped as too large
+naive-part-c-one.txt: 20 the same, 0 different, 4 skipped as too large
+naive-part-c-scoped.txt: 10 the same, 0 different, 16 skipped as too large
+naive-part-d-fifth.txt: 45 the same, 0 different, 0 skipped as too large
+naive-part-d-grow.txt: 38 the same, 0 different, 32 skipped as too large
+naive-part-example-.txt: 8 the same, 0 different, 1 skipped as too large
+
+With the later runs of naive-extra.txt: 417 of the 465 cases compared, all the same; 48 too large for the plain implementation and not compared.

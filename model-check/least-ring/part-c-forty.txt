@@ -1,0 +1,27 @@
+
+== C.4 One more level: forty monitors
+as one system, flow, work reads all: f=1: G1 None, G2 None (90 states, 0 s); f=2: G1 None, G2 None (4006 states, 0 s); f=3: G1 None, G2 None (117570 states, 3 s)
+as one system, flow, work reads two: f=1: G1 None, G2 None (90 states, 0 s); f=2: G1 None, G2 1 (2832 states, 0 s)
+as one system, actor, work reads all: f=1: G1 None, G2 None (90 states, 0 s); f=2: G1 None, G2 None (4006 states, 0 s); f=3: G1 None, G2 None (117570 states, 3 s)
+as one system, actor, work reads two: f=1: G1 None, G2 None (90 states, 0 s); f=2: G1 None, G2 1 (2832 states, 0 s)
+-- flow, forty monitors, f=4: the four monitors of one base ring
+   round 1: env: mutate A1, mutate B1, mutate C1, mutate D1 | bad: A1 B1 C1 D1 | stopped: - | flagged: A2 B2 C2 D2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E1 E2 E3 T | halted: W2 W3 W4 W5 W6 W7 W8 W9 | worked: W1   <-- breaks G2
+-- actor, forty monitors, f=4: the four monitors of one base ring
+   round 1: env: mutate A1, mutate B1, mutate C1, mutate D1 | bad: A1 B1 C1 D1 | stopped: - | flagged: A2 B2 C2 D2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E1 E2 E3 T | halted: W2 W3 W4 W5 W6 W7 W8 W9 | worked: W1   <-- breaks G2
+as one system, flow, each base ring in one boundary, f=1: G1 None, G2 None
+as one system, actor, each base ring in one boundary, f=1: G1 None, G2 None
+with scopes, flow, work reads all, freeze, f=1, every execution of at most 3 rounds: G1 None, G2 None, told 3, spill None (484740 states, 26 s)
+
+-- flow, forty monitors, f=1: told of ring 3
+   round 1: env: stop D1 | bad: - | stopped: D1 | flagged: for ring 1: A1 B1 C1 A2 B2 C2 D2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E1 E2 E3 T | halted: W1 | worked: W2 W3 W4 W5 W6 W7 W8 W9 | closed: ring 1
+   round 2: env: stop E1 | bad: - | stopped: D1 E1 | flagged: for ring 1: A1 B1 C1 A2 B2 C2 D2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E2 E3 T; for upper E1: A2 B2 C2 D2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E2 E3 T | halted: W1 W2 W3 | worked: W4 W5 W6 W7 W8 W9 | closed: ring 1, upper E1
+   round 3: env: mutate A3 | bad: A3 | stopped: D1 E1 | flagged: for ring 1: A1 B1 C1 A2 B2 C2 D2 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E2 E3 T; for ring 3: B3 C3 D3; for upper E1: A2 B2 C2 D2 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E2 E3 T | halted: W1 W2 W3 | worked: W4 W5 W6 W7 W8 W9 | closed: ring 1, ring 3, upper E1   <-- breaks told of ring 3
+with scopes, flow, f=2, every execution of 1 round: G1 None, G2 None, told None, spill None (0 s)
+with scopes, actor, work reads all, freeze, f=1, every execution of at most 3 rounds: G1 None, G2 None, told 3, spill None (484740 states, 25 s)
+
+-- actor, forty monitors, f=1: told of ring 2
+   round 1: env: stop D1 | bad: - | stopped: D1 | flagged: for ring 1: A1 B1 C1 A2 B2 C2 D2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E1 E2 E3 T | halted: W1 | worked: W2 W3 W4 W5 W6 W7 W8 W9 | closed: ring 1
+   round 2: env: stop E1 | bad: - | stopped: D1 E1 | flagged: for ring 1: A1 B1 C1 A2 B2 C2 D2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E2 E3 T; for upper E1: A2 B2 C2 D2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E2 E3 T | halted: W1 W2 W3 | worked: W4 W5 W6 W7 W8 W9 | closed: ring 1, upper E1
+   round 3: env: mutate D2 | bad: D2 | stopped: D1 E1 | flagged: for ring 1: A1 B1 C1 A2 B2 C2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E2 E3 T; for ring 2: A2 B2 C2; for upper E1: A2 B2 C2 A3 B3 C3 D3 A4 B4 C4 D4 A5 B5 C5 D5 A6 B6 C6 D6 A7 B7 C7 D7 A8 B8 C8 D8 A9 B9 C9 D9 E2 E3 T | halted: W1 W2 W3 | worked: W4 W5 W6 W7 W8 W9 | closed: ring 1, ring 2, upper E1   <-- breaks told of ring 2
+with scopes, actor, f=2, every execution of 1 round: G1 None, G2 None, told None, spill None (0 s)
+

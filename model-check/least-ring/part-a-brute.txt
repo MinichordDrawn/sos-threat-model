@@ -1,0 +1,11 @@
+sets explored by size 0..6: [1, 36, 630, 7140, 58905, 376992, 1947792] total 2391496
+the empty set has no gap: False
+sets with no gap, by size: {6: 24}
+
+the whole list, by listing: 81 sets of 19 edges
+work reads all, f=1: 78 of the 81 meet the whole list
+work reads all, f=2: 78 of the 81 meet the whole list
+work reads all, f=3: 69 of the 81 meet the whole list
+work reads two, f=1: 52 of the 81 meet the whole list
+work reads two, f=2: 0 of the 81 meet the whole list
+work reads two, f=3: 0 of the 81 meet the whole list

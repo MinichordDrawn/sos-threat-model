@@ -1,0 +1,143 @@
+[
+ {
+  "id": "first",
+  "system": {
+   "name": "cx",
+   "f": 1,
+   "monitors": [
+    "x",
+    "m1",
+    "m2",
+    "m3",
+    "m4",
+    "z",
+    "zp",
+    "z2",
+    "y"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "x": "bx",
+    "m1": "b",
+    "m2": "b",
+    "m3": "b",
+    "m4": "b",
+    "z": "bz",
+    "zp": "bzp",
+    "z2": "bz2",
+    "y": "by"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "m1": [
+     "z",
+     "zp"
+    ]
+   },
+   "checkers": {
+    "y": [
+     "m2",
+     "m3",
+     "m4"
+    ]
+   },
+   "fwd": {},
+   "halt_inputs": {
+    "w": [
+     "m1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "scope": {
+    "x": "p",
+    "m1": "p",
+    "m2": "q",
+    "m3": "q",
+    "m4": "q",
+    "z": "o",
+    "zp": "o",
+    "z2": "o",
+    "y": "r",
+    "w": "ws"
+   },
+   "freeze": true
+  }
+ },
+ {
+  "id": "second",
+  "system": {
+   "name": "cx",
+   "f": 1,
+   "monitors": [
+    "x",
+    "m1",
+    "m2",
+    "m3",
+    "m4",
+    "z",
+    "zp",
+    "z2",
+    "y"
+   ],
+   "works": [
+    "w"
+   ],
+   "joiner": null,
+   "boundary": {
+    "x": "bx",
+    "m1": "b",
+    "m2": "b",
+    "m3": "b",
+    "m4": "b",
+    "z": "bz",
+    "zp": "bzp",
+    "z2": "bz2",
+    "y": "by"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "m1": [
+     "z",
+     "zp"
+    ],
+    "x": [
+     "z2"
+    ]
+   },
+   "checkers": {
+    "y": [
+     "m2",
+     "m3",
+     "m4"
+    ]
+   },
+   "fwd": {},
+   "halt_inputs": {
+    "w": [
+     "m1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "scope": {
+    "x": "p",
+    "m1": "p",
+    "m2": "q",
+    "m3": "q",
+    "m4": "q",
+    "z": "o",
+    "zp": "o",
+    "z2": "o",
+    "y": "r",
+    "w": "ws"
+   },
+   "freeze": true
+  }
+ }
+]

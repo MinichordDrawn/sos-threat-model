@@ -1,0 +1,457 @@
+====================================================================================================
+part-a 2.1: candidate, flow, W reads two, f=2
+  round 1: mutate A; mutate D
+    stopped: - | bad: A,D
+    flag for ring    held by B,C   (out: B,C)
+    closed: -
+    halted: - | newly halted: - | took a work step: W
+    VIOLATED: G2[ring]
+====================================================================================================
+part-a 2.1: candidate, actor, W reads two, f=2
+  round 1: mutate A; mutate D
+    stopped: - | bad: A,D
+    flag for ring    held by B,C   (out: B,C)
+    closed: -
+    halted: - | newly halted: - | took a work step: W
+    VIOLATED: G2[ring]
+====================================================================================================
+part-a 2.2: flow, eight-connection wiring, W reads all, f=3
+  round 1: mutate A; mutate B; mutate D
+    stopped: - | bad: A,B,D
+    closed: -
+    halted: - | newly halted: - | took a work step: W
+    VIOLATED: G1[ring], G2[ring]
+====================================================================================================
+rm 4.1 (a): tower one system, flow, reads all, f=4
+  round 1: mutate A1; mutate B1; mutate C1; mutate D1
+    stopped: - | bad: A1,B1,C1,D1
+    flagged: A2,B2,C2,D2,A3,B3,C3,D3,T (out: A2,B2,C2,D2,A3,B3,C3,D3,T)
+    halted: W2,W3 | newly halted: W2,W3 | took a work step: W1
+    VIOLATED: G2
+====================================================================================================
+rm 4.1 (b): tower one system, flow, ring boundaries, f=4
+  round 1: stopb ['A1', 'B1', 'C1', 'D1']; stopb ['A2', 'B2', 'C2', 'D2']; stopb ['A3', 'B3', 'C3', 'D3']; mutate T
+    stopped: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,D3 | bad: T
+    flagged: - (out: -)
+    halted: W1,W2,W3 | newly halted: W1,W2,W3 | took a work step: -
+    VIOLATED: G1
+====================================================================================================
+rm 4.1 (a): tower one system, actor, reads all, f=4
+  round 1: mutate A1; mutate B1; mutate C1; mutate D1
+    stopped: - | bad: A1,B1,C1,D1
+    flagged: A2,B2,C2,D2,A3,B3,C3,D3,T (out: A2,B2,C2,D2,A3,B3,C3,D3,T)
+    halted: W2,W3 | newly halted: W2,W3 | took a work step: W1
+    VIOLATED: G2
+====================================================================================================
+rm 4.1 (b): tower one system, actor, ring boundaries, f=4
+  round 1: stopb ['A1', 'B1', 'C1', 'D1']; stopb ['A2', 'B2', 'C2', 'D2']; stopb ['A3', 'B3', 'C3', 'D3']; mutate T
+    stopped: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,D3 | bad: T
+    flagged: - (out: -)
+    halted: W1,W2,W3 | newly halted: W1,W2,W3 | took a work step: -
+    VIOLATED: G1
+====================================================================================================
+rm 4.1 (c): flow, without T->D1, scopes, f=1, freeze=True
+  round 1: stop D3
+    stopped: D3 | bad: -
+    flag for sD3     held by A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,T   (out: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,T)
+    closed: sD3
+    halted: W3 | newly halted: W3 | took a work step: W1,W2
+    VIOLATED: nothing
+  round 2: mutate T
+    stopped: D3 | bad: T
+    flag for sD3     held by A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,T   (out: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3)
+    flag for sT      held by A2,B2,C2,D2   (out: A2,B2,C2,D2)
+    closed: sD3
+    halted: W2,W3 | newly halted: W2 | took a work step: W1
+    VIOLATED: G2[sT]
+====================================================================================================
+rm 4.1 (c): flow, without T->D1, scopes, f=1, freeze=False
+  round 1: stop D3
+    stopped: D3 | bad: -
+    flag for sD3     held by A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,T   (out: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,T)
+    closed: sD3
+    halted: W3 | newly halted: W3 | took a work step: W1,W2
+    VIOLATED: nothing
+  round 2: mutate T
+    stopped: D3 | bad: T
+    flag for sD3     held by A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,T   (out: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3)
+    flag for sT      held by A2,B2,C2,D2   (out: A2,B2,C2,D2)
+    closed: sD3
+    halted: W2,W3 | newly halted: W2 | took a work step: W1
+    VIOLATED: G2[sT]
+====================================================================================================
+rm 4.3 (a): scopes, flow, f=2, freeze=True: G1 of top
+  round 1: stop D1; stop D2
+    stopped: D1,D2 | bad: -
+    flag for sD1     held by A1,B1,C1,A3,B3,C3,D3,T   (out: A1,B1,C1,A3,B3,C3,D3,T)
+    flag for sD2     held by A2,B2,C2,A3,B3,C3,D3,T   (out: A2,B2,C2,A3,B3,C3,D3,T)
+    closed: sD1,sD2
+    halted: W1,W2 | newly halted: W1,W2 | took a work step: W3
+    VIOLATED: nothing
+  round 2: stop D3; mutate T
+    stopped: D1,D2,D3 | bad: T
+    flag for sD1     held by A1,B1,C1,A3,B3,C3,D3,T   (out: A1,B1,C1,A3,B3,C3)
+    flag for sD2     held by A2,B2,C2,A3,B3,C3,D3,T   (out: A2,B2,C2,A3,B3,C3)
+    flag for sD3     held by A3,B3,C3   (out: A3,B3,C3)
+    closed: sD1,sD2,sD3
+    halted: W1,W2,W3 | newly halted: W3 | took a work step: -
+    VIOLATED: G1[sT]
+====================================================================================================
+rm 4.3 (b): scopes, flow, f=2, freeze=True: told of ring 1
+  round 1: stop D2
+    stopped: D2 | bad: -
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T   (out: A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T)
+    closed: sD2
+    halted: W2 | newly halted: W2 | took a work step: W1,W3
+    VIOLATED: nothing
+  round 2: stop T; mutate A1
+    stopped: D2,T | bad: A1
+    flag for sD1     held by B1,C1,D1   (out: B1,C1,D1)
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T   (out: B1,C1,D1,A2,B2,C2,A3,B3,C3,D3)
+    flag for sT      held by B1,C1,D1,A3,B3,C3,D3   (out: B1,C1,D1,A3,B3,C3,D3)
+    closed: sD1,sD2,sT
+    halted: W1,W2,W3 | newly halted: W1,W3 | took a work step: -
+    VIOLATED: told[sD1]
+====================================================================================================
+rm 4.3 (a): scopes, flow, f=2, freeze=False: G1 of top
+  round 1: stop D1; stop D2
+    stopped: D1,D2 | bad: -
+    flag for sD1     held by A1,B1,C1,A3,B3,C3,D3,T   (out: A1,B1,C1,A3,B3,C3,D3,T)
+    flag for sD2     held by A2,B2,C2,A3,B3,C3,D3,T   (out: A2,B2,C2,A3,B3,C3,D3,T)
+    closed: sD1,sD2
+    halted: W1,W2 | newly halted: W1,W2 | took a work step: W3
+    VIOLATED: nothing
+  round 2: stop D3; mutate T
+    stopped: D1,D2,D3 | bad: T
+    flag for sD1     held by A1,B1,C1,A3,B3,C3,D3,T   (out: A1,B1,C1,A3,B3,C3)
+    flag for sD2     held by A2,B2,C2,A3,B3,C3,D3,T   (out: A2,B2,C2,A3,B3,C3)
+    flag for sD3     held by A3,B3,C3   (out: A3,B3,C3)
+    closed: sD1,sD2,sD3
+    halted: W1,W2,W3 | newly halted: W3 | took a work step: -
+    VIOLATED: G1[sT]
+====================================================================================================
+rm 4.3 (b): scopes, flow, f=2, freeze=False: told of ring 1
+  round 1: stop D2
+    stopped: D2 | bad: -
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T   (out: A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T)
+    closed: sD2
+    halted: W2 | newly halted: W2 | took a work step: W1,W3
+    VIOLATED: nothing
+  round 2: stop T; mutate A1
+    stopped: D2,T | bad: A1
+    flag for sD1     held by B1,C1,D1   (out: B1,C1,D1)
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T   (out: B1,C1,D1,A2,B2,C2,A3,B3,C3,D3)
+    flag for sT      held by B1,C1,D1,A3,B3,C3,D3   (out: B1,C1,D1,A3,B3,C3,D3)
+    closed: sD1,sD2,sT
+    halted: W1,W2,W3 | newly halted: W1,W3 | took a work step: -
+    VIOLATED: told[sD1]
+====================================================================================================
+rm 4.3 (b'): scopes, flow, f=3: the same three steps in one round
+  round 1: stop D2; stop T; mutate A1
+    stopped: D2,T | bad: A1
+    flag for sD1     held by B1,C1,D1   (out: B1,C1,D1)
+    flag for sD2     held by B1,C1,D1,A2,B2,C2,A3,B3,C3,D3   (out: B1,C1,D1,A2,B2,C2,A3,B3,C3,D3)
+    flag for sT      held by B1,C1,D1,A3,B3,C3,D3   (out: B1,C1,D1,A3,B3,C3,D3)
+    closed: sD1,sD2,sT
+    halted: W1,W2,W3 | newly halted: W1,W2,W3 | took a work step: -
+    VIOLATED: told[sD1]
+====================================================================================================
+rm 4.3 (c): scopes, flow, f=4
+  round 1: mutate A1; mutate B1; mutate C1; mutate D1
+    stopped: - | bad: A1,B1,C1,D1
+    flag for sD1     held by A2,B2,C2,D2,A3,B3,C3,D3,T   (out: A2,B2,C2,D2,A3,B3,C3,D3,T)
+    closed: -
+    halted: - | newly halted: - | took a work step: W1,W2,W3
+    VIOLATED: G2[sD1]
+====================================================================================================
+rm 4.3 (d): scopes, flow, ring boundaries, freeze, f=2
+  round 1: stopb ['A1', 'B1', 'C1', 'D1']; stopb ['A2', 'B2', 'C2', 'D2']
+    stopped: A1,B1,C1,D1,A2,B2,C2,D2 | bad: -
+    flag for sD1     held by A3,B3,C3,D3,T   (out: A3,B3,C3,D3,T)
+    flag for sD2     held by A3,B3,C3,D3,T   (out: A3,B3,C3,D3,T)
+    closed: sD1,sD2
+    halted: W1,W2 | newly halted: W1,W2 | took a work step: W3
+    VIOLATED: nothing
+  round 2: stopb ['A3', 'B3', 'C3', 'D3']; stop T
+    stopped: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,D3,T | bad: -
+    flag for sD1     held by A3,B3,C3,D3,T   (out: -)
+    flag for sD2     held by A3,B3,C3,D3,T   (out: -)
+    closed: sD1,sD2
+    halted: W1,W2,W3 | newly halted: W3 | took a work step: -
+    VIOLATED: nothing
+  round 3: mutate W3
+    stopped: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,D3,T | bad: W3
+    flag for sD1     held by A3,B3,C3,D3,T   (out: -)
+    flag for sD2     held by A3,B3,C3,D3,T   (out: -)
+    closed: sD1,sD2
+    halted: W1,W2,W3 | newly halted: - | took a work step: -
+    VIOLATED: G1[sD3]
+====================================================================================================
+rm 4.6: forty monitors, scopes, flow, freeze, f=1
+  round 1: stop D1
+    stopped: D1 | bad: -
+    flag for sD1     held by A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E1,E2,E3,T   (out: A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E1,E2,E3,T)
+    closed: sD1
+    halted: W1 | newly halted: W1 | took a work step: W2,W3,W4,W5,W6,W7,W8,W9
+    VIOLATED: nothing
+  round 2: stop E1
+    stopped: D1,E1 | bad: -
+    flag for sD1     held by A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E1,E2,E3,T   (out: A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T)
+    flag for sE1     held by A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T   (out: A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T)
+    closed: sD1,sE1
+    halted: W1,W2,W3 | newly halted: W2,W3 | took a work step: W4,W5,W6,W7,W8,W9
+    VIOLATED: nothing
+  round 3: mutate A3
+    stopped: D1,E1 | bad: A3
+    flag for sD1     held by A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E1,E2,E3,T   (out: A1,B1,C1,A2,B2,C2,D2,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T)
+    flag for sD3     held by B3,C3,D3   (out: B3,C3,D3)
+    flag for sE1     held by A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T   (out: A2,B2,C2,D2,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T)
+    closed: sD1,sD3,sE1
+    halted: W1,W2,W3 | newly halted: - | took a work step: W4,W5,W6,W7,W8,W9
+    VIOLATED: told[sD3]
+====================================================================================================
+rm 4.3 (a): scopes, actor, f=2, freeze=True: G1 of top
+  round 1: stop D1; stop D2
+    stopped: D1,D2 | bad: -
+    flag for sD1     held by A1,B1,C1,A3,B3,C3,D3,T   (out: A1,B1,C1,A3,B3,C3,D3,T)
+    flag for sD2     held by A2,B2,C2,A3,B3,C3,D3,T   (out: A2,B2,C2,A3,B3,C3,D3,T)
+    closed: sD1,sD2
+    halted: W1,W2 | newly halted: W1,W2 | took a work step: W3
+    VIOLATED: nothing
+  round 2: stop D3; mutate T
+    stopped: D1,D2,D3 | bad: T
+    flag for sD1     held by A1,B1,C1,A3,B3,C3,D3,T   (out: A1,B1,C1,A3,B3,C3)
+    flag for sD2     held by A2,B2,C2,A3,B3,C3,D3,T   (out: A2,B2,C2,A3,B3,C3)
+    flag for sD3     held by A3,B3,C3   (out: A3,B3,C3)
+    closed: sD1,sD2,sD3
+    halted: W1,W2,W3 | newly halted: W3 | took a work step: -
+    VIOLATED: G1[sT]
+====================================================================================================
+rm 4.3 (b): scopes, actor, f=2, freeze=True: told of ring 1
+  round 1: stop D2
+    stopped: D2 | bad: -
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T   (out: A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T)
+    closed: sD2
+    halted: W2 | newly halted: W2 | took a work step: W1,W3
+    VIOLATED: nothing
+  round 2: stop T; mutate A1
+    stopped: D2,T | bad: A1
+    flag for sD1     held by B1,C1,D1   (out: B1,C1,D1)
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T   (out: B1,C1,D1,A2,B2,C2,A3,B3,C3,D3)
+    flag for sT      held by B1,C1,D1,A3,B3,C3,D3   (out: B1,C1,D1,A3,B3,C3,D3)
+    closed: sD1,sD2,sT
+    halted: W1,W2,W3 | newly halted: W1,W3 | took a work step: -
+    VIOLATED: told[sD1]
+====================================================================================================
+rm 4.3 (a): scopes, actor, f=2, freeze=False: G1 of top
+  round 1: stop D1; stop D2
+    stopped: D1,D2 | bad: -
+    flag for sD1     held by A1,B1,C1,A3,B3,C3,D3,T   (out: A1,B1,C1,A3,B3,C3,D3,T)
+    flag for sD2     held by A2,B2,C2,A3,B3,C3,D3,T   (out: A2,B2,C2,A3,B3,C3,D3,T)
+    closed: sD1,sD2
+    halted: W1,W2 | newly halted: W1,W2 | took a work step: W3
+    VIOLATED: nothing
+  round 2: stop D3; mutate T
+    stopped: D1,D2,D3 | bad: T
+    flag for sD1     held by A1,B1,C1,A3,B3,C3,D3,T   (out: A1,B1,C1,A3,B3,C3)
+    flag for sD2     held by A2,B2,C2,A3,B3,C3,D3,T   (out: A2,B2,C2,A3,B3,C3)
+    flag for sD3     held by A3,B3,C3   (out: A3,B3,C3)
+    closed: sD1,sD2,sD3
+    halted: W1,W2,W3 | newly halted: W3 | took a work step: -
+    VIOLATED: G1[sT]
+====================================================================================================
+rm 4.3 (b): scopes, actor, f=2, freeze=False: told of ring 1
+  round 1: stop D2
+    stopped: D2 | bad: -
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T   (out: A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T)
+    closed: sD2
+    halted: W2 | newly halted: W2 | took a work step: W1,W3
+    VIOLATED: nothing
+  round 2: stop T; mutate A1
+    stopped: D2,T | bad: A1
+    flag for sD1     held by B1,C1,D1   (out: B1,C1,D1)
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2,A3,B3,C3,D3,T   (out: B1,C1,D1,A2,B2,C2,A3,B3,C3,D3)
+    flag for sT      held by B1,C1,D1,A3,B3,C3,D3   (out: B1,C1,D1,A3,B3,C3,D3)
+    closed: sD1,sD2,sT
+    halted: W1,W2,W3 | newly halted: W1,W3 | took a work step: -
+    VIOLATED: told[sD1]
+====================================================================================================
+rm 4.3 (b'): scopes, actor, f=3: the same three steps in one round
+  round 1: stop D2; stop T; mutate A1
+    stopped: D2,T | bad: A1
+    flag for sD1     held by B1,C1,D1   (out: B1,C1,D1)
+    flag for sD2     held by B1,C1,D1,A2,B2,C2   (out: B1,C1,D1,A2,B2,C2)
+    flag for sT      held by B1,C1,D1,A3,B3,C3,D3   (out: B1,C1,D1,A3,B3,C3,D3)
+    closed: sD1,sD2,sT
+    halted: W1,W2,W3 | newly halted: W1,W2,W3 | took a work step: -
+    VIOLATED: told[sD1]
+====================================================================================================
+rm 4.3 (c): scopes, actor, f=4
+  round 1: mutate A1; mutate B1; mutate C1; mutate D1
+    stopped: - | bad: A1,B1,C1,D1
+    flag for sD1     held by A2,B2,C2,D2,A3,B3,C3,D3,T   (out: A2,B2,C2,D2,A3,B3,C3,D3,T)
+    closed: -
+    halted: - | newly halted: - | took a work step: W1,W2,W3
+    VIOLATED: G2[sD1]
+====================================================================================================
+rm 4.3 (d): scopes, actor, ring boundaries, freeze, f=2
+  round 1: stopb ['A1', 'B1', 'C1', 'D1']; stopb ['A2', 'B2', 'C2', 'D2']
+    stopped: A1,B1,C1,D1,A2,B2,C2,D2 | bad: -
+    flag for sD1     held by A3,B3,C3,D3,T   (out: A3,B3,C3,D3,T)
+    flag for sD2     held by A3,B3,C3,D3,T   (out: A3,B3,C3,D3,T)
+    closed: sD1,sD2
+    halted: W1,W2 | newly halted: W1,W2 | took a work step: W3
+    VIOLATED: nothing
+  round 2: stopb ['A3', 'B3', 'C3', 'D3']; stop T
+    stopped: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,D3,T | bad: -
+    flag for sD1     held by A3,B3,C3,D3,T   (out: -)
+    flag for sD2     held by A3,B3,C3,D3,T   (out: -)
+    closed: sD1,sD2
+    halted: W1,W2,W3 | newly halted: W3 | took a work step: -
+    VIOLATED: nothing
+  round 3: mutate W3
+    stopped: A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,D3,T | bad: W3
+    flag for sD1     held by A3,B3,C3,D3,T   (out: -)
+    flag for sD2     held by A3,B3,C3,D3,T   (out: -)
+    closed: sD1,sD2
+    halted: W1,W2,W3 | newly halted: - | took a work step: -
+    VIOLATED: G1[sD3]
+====================================================================================================
+rm 4.6: forty monitors, scopes, actor, freeze, f=1
+  round 1: stop D1
+    stopped: D1 | bad: -
+    flag for sD1     held by A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E1,E2,E3,T   (out: A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E1,E2,E3,T)
+    closed: sD1
+    halted: W1 | newly halted: W1 | took a work step: W2,W3,W4,W5,W6,W7,W8,W9
+    VIOLATED: nothing
+  round 2: stop E1
+    stopped: D1,E1 | bad: -
+    flag for sD1     held by A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E1,E2,E3,T   (out: A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T)
+    flag for sE1     held by A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T   (out: A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T)
+    closed: sD1,sE1
+    halted: W1,W2,W3 | newly halted: W2,W3 | took a work step: W4,W5,W6,W7,W8,W9
+    VIOLATED: nothing
+  round 3: mutate A3
+    stopped: D1,E1 | bad: A3
+    flag for sD1     held by A1,B1,C1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E1,E2,E3,T   (out: A1,B1,C1,A2,B2,C2,D2,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T)
+    flag for sD3     held by B3,C3,D3   (out: B3,C3,D3)
+    flag for sE1     held by A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T   (out: A2,B2,C2,D2,B3,C3,D3,A4,B4,C4,D4,A5,B5,C5,D5,A6,B6,C6,D6,A7,B7,C7,D7,A8,B8,C8,D8,A9,B9,C9,D9,E2,E3,T)
+    closed: sD1,sD3,sE1
+    halted: W1,W2,W3 | newly halted: - | took a work step: W4,W5,W6,W7,W8,W9
+    VIOLATED: told[sD3]
+====================================================================================================
+rm 5.1 (a): author order, flow, f=1, scoped=False
+  round 1: joinbad ['D2'] D2
+    stopped: - | bad: D2
+    flagged: - (out: -)
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: G1, G2
+====================================================================================================
+rm 5.1 (b): author order, actor, f=1, scoped=False
+  round 1: join ['D2']
+    stopped: - | bad: -
+    flagged: - (out: -)
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: nothing
+  round 2: joinbad ['A2'] A2
+    stopped: - | bad: A2
+    flagged: D2 (out: D2)
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: G2
+====================================================================================================
+rm 5.1 (a): author order, flow, f=1, scoped=True
+  round 1: joinbad ['D2'] D2
+    stopped: - | bad: D2
+    closed: -
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: G1[sD2], told[sD2]
+====================================================================================================
+rm 5.1 (b): author order, actor, f=1, scoped=True
+  round 1: join ['D2']
+    stopped: - | bad: -
+    closed: -
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: nothing
+  round 2: joinbad ['A2'] A2
+    stopped: - | bad: A2
+    flag for sD2     held by D2   (out: D2)
+    closed: sD2
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: told[sD2]
+====================================================================================================
+rm 5.1 (c): author order, actor, scopes, freeze, f=1
+  round 1: join ['D2']
+    stopped: - | bad: -
+    closed: -
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: nothing
+  round 2: join ['A2']
+    stopped: - | bad: -
+    closed: -
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: nothing
+  round 3: join ['B2']
+    stopped: - | bad: -
+    closed: -
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: nothing
+  round 4: join ['C2']
+    stopped: - | bad: -
+    closed: -
+    halted: - | newly halted: - | took a work step: W1
+    VIOLATED: nothing
+  round 5: join ['W2']
+    stopped: - | bad: -
+    closed: -
+    halted: - | newly halted: - | took a work step: W1,W2
+    VIOLATED: nothing
+  round 6: stop D2
+    stopped: D2 | bad: -
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2   (out: A1,B1,C1,D1,A2,B2,C2)
+    closed: sD2
+    halted: W2 | newly halted: W2 | took a work step: W1
+    VIOLATED: nothing
+  round 7: joinbad ['D3'] D3
+    stopped: D2 | bad: D3
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2   (out: A1,B1,C1,D1,A2,B2,C2)
+    closed: sD2
+    halted: W2 | newly halted: - | took a work step: W1
+    VIOLATED: G1[sD3], told[sD3]
+  round 8: joinbad ['A3'] A3
+    stopped: D2 | bad: A3,D3
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2   (out: A1,B1,C1,D1,A2,B2,C2)
+    closed: sD2
+    halted: W2 | newly halted: - | took a work step: W1
+    VIOLATED: G1[sD3], told[sD3]
+  round 9: joinbad ['B3'] B3
+    stopped: D2 | bad: A3,B3,D3
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2   (out: A1,B1,C1,D1,A2,B2,C2)
+    closed: sD2
+    halted: W2 | newly halted: - | took a work step: W1
+    VIOLATED: G1[sD3], told[sD3]
+  round 10: joinbad ['C3'] C3
+    stopped: D2 | bad: A3,B3,C3,D3
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2   (out: A1,B1,C1,D1,A2,B2,C2)
+    closed: sD2
+    halted: W2 | newly halted: - | took a work step: W1
+    VIOLATED: G1[sD3], told[sD3]
+  round 11: join ['W3']
+    stopped: D2 | bad: A3,B3,C3,D3
+    flag for sD2     held by A1,B1,C1,D1,A2,B2,C2   (out: A1,B1,C1,D1,A2,B2,C2)
+    closed: sD2
+    halted: W2 | newly halted: - | took a work step: W1,W3
+    VIOLATED: G1[sD3], G2[sD3], told[sD3]
+====================================================================================================
+rm 5.3: N with no connection, flow, f=1
+  round 1: joinbad ['N'] N
+    stopped: - | bad: N
+    closed: -
+    halted: - | newly halted: - | took a work step: W
+    VIOLATED: G1[ring], G2[ring], told[ring]
+====================================================================================================
+rm 5.3: N with no connection, actor, f=1
+  round 1: joinbad ['N'] N
+    stopped: - | bad: N
+    closed: -
+    halted: - | newly halted: - | took a work step: W
+    VIOLATED: G1[ring], G2[ring], told[ring]

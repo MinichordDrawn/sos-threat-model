@@ -1,0 +1,9 @@
+=== section 5: where a report takes a round ===
+candidate flow  W reads all: f=1 G1 None G2 None told None | f=2 G1 None G2 None told None | f=3 G1 None G2 None told None
+candidate flow  W reads two: f=1 G1 None G2 None told 1 | f=2 G1 2 G2 1 told 1 | f=3 G1 2 G2 1 told 1
+candidate actor W reads all: f=1 G1 None G2 None told None | f=2 G1 None G2 None told None | f=3 G1 None G2 None told None
+candidate actor W reads two: f=1 G1 None G2 None told 1 | f=2 G1 2 G2 1 told 1 | f=3 G1 2 G2 1 told 1
+mesh      flow  W reads all: f=1 G1 None G2 None told None | f=2 G1 None G2 None told None | f=3 G1 None G2 None told None
+mesh      flow  W reads two: f=1 G1 None G2 None told 1 | f=2 G1 2 G2 1 told 1 | f=3 G1 2 G2 1 told 1
+mesh      actor W reads all: f=1 G1 None G2 None told None | f=2 G1 None G2 None told None | f=3 G1 None G2 None told None
+mesh      actor W reads two: f=1 G1 None G2 None told 1 | f=2 G1 2 G2 1 told 1 | f=3 G1 2 G2 1 told 1

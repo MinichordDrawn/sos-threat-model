@@ -1,0 +1,3547 @@
+{
+ "all/f1/R1": {
+  "fewest": 6,
+  "sets": 24,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to - | B: watched by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by -; state checked by B; reports to -",
+   "A: watched by -; state checked by B; reports to - | B: watched by D; reports to - | C: watched by -; state checked by B; reports to - | D: watched by B; reports to -",
+   "A: watched by -; state checked by B; reports to - | B: watched by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by B; reports to -",
+   "A: watched by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "all/f1/R2": {
+  "fewest": 16,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R3": {
+  "fewest": 6,
+  "sets": 16,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by B; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; reports to -",
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; reports to -"
+  ]
+ },
+ "all/f1/R5": {
+  "fewest": 3,
+  "sets": 1,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; reports to D | B: watched by -; reports to D | C: watched by -; reports to D | D: watched by -; reports to -"
+  ]
+ },
+ "all/f1/R6": {
+  "fewest": 4,
+  "sets": 3,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; state checked by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R2": {
+  "fewest": 16,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R1+R3": {
+  "fewest": 8,
+  "sets": 144,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; signal read by A; state checked by B; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by B; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; signal read by C; state checked by B; reports to -"
+  ]
+ },
+ "all/f1/R1+R4": {
+  "fewest": 6,
+  "sets": 24,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to - | B: watched by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by -; state checked by B; reports to -",
+   "A: watched by -; state checked by B; reports to - | B: watched by D; reports to - | C: watched by -; state checked by B; reports to - | D: watched by B; reports to -",
+   "A: watched by -; state checked by B; reports to - | B: watched by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by B; reports to -",
+   "A: watched by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R5": {
+  "fewest": 9,
+  "sets": 24,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by B; reports to -",
+   "A: watched by -; state checked by B; reports to D | B: watched by D; reports to D | C: watched by -; state checked by B; reports to D | D: watched by B; reports to -",
+   "A: watched by -; state checked by B; reports to D | B: watched by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by B; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R6": {
+  "fewest": 6,
+  "sets": 3,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "all/f1/R2+R3": {
+  "fewest": 16,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R2+R4": {
+  "fewest": 16,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R2+R5": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R2+R6": {
+  "fewest": 16,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by C,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R3+R4": {
+  "fewest": 6,
+  "sets": 16,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by B; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; reports to -",
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; reports to -"
+  ]
+ },
+ "all/f1/R3+R5": {
+  "fewest": 9,
+  "sets": 16,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; reports to -",
+   "A: watched by D; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; reports to -"
+  ]
+ },
+ "all/f1/R3+R6": {
+  "fewest": 7,
+  "sets": 3,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R4+R5": {
+  "fewest": 3,
+  "sets": 1,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; reports to D | B: watched by -; reports to D | C: watched by -; reports to D | D: watched by -; reports to -"
+  ]
+ },
+ "all/f1/R4+R6": {
+  "fewest": 4,
+  "sets": 3,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; state checked by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R5+R6": {
+  "fewest": 7,
+  "sets": 3,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; state checked by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R3": {
+  "fewest": 16,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R4": {
+  "fewest": 16,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R5": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R6": {
+  "fewest": 16,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by C,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R3+R4": {
+  "fewest": 8,
+  "sets": 144,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; signal read by A; state checked by B; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by B; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; signal read by C; state checked by B; reports to -"
+  ]
+ },
+ "all/f1/R1+R3+R5": {
+  "fewest": 11,
+  "sets": 144,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by A; state checked by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by B; reports to -"
+  ]
+ },
+ "all/f1/R1+R3+R6": {
+  "fewest": 8,
+  "sets": 9,
+  "classes": 2,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; signal read by B; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R4+R5": {
+  "fewest": 9,
+  "sets": 24,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by B; reports to -",
+   "A: watched by -; state checked by B; reports to D | B: watched by D; reports to D | C: watched by -; state checked by B; reports to D | D: watched by B; reports to -",
+   "A: watched by -; state checked by B; reports to D | B: watched by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by B; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R4+R6": {
+  "fewest": 6,
+  "sets": 3,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R5+R6": {
+  "fewest": 9,
+  "sets": 24,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by B; reports to -",
+   "A: watched by -; state checked by B; reports to D | B: watched by D; reports to D | C: watched by -; state checked by B; reports to D | D: watched by B; reports to -",
+   "A: watched by -; state checked by B; reports to D | B: watched by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by B; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "all/f1/R2+R3+R4": {
+  "fewest": 16,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R2+R3+R5": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R2+R3+R6": {
+  "fewest": 16,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by C,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R2+R4+R5": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R2+R4+R6": {
+  "fewest": 16,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by C,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R2+R5+R6": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R3+R4+R5": {
+  "fewest": 9,
+  "sets": 16,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; reports to -",
+   "A: watched by D; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; reports to -"
+  ]
+ },
+ "all/f1/R3+R4+R6": {
+  "fewest": 7,
+  "sets": 3,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R3+R5+R6": {
+  "fewest": 10,
+  "sets": 48,
+  "classes": 9,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; state checked by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; state checked by C; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; state checked by B; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R4+R5+R6": {
+  "fewest": 7,
+  "sets": 3,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; state checked by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R3+R4": {
+  "fewest": 16,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R3+R5": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R3+R6": {
+  "fewest": 16,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by C,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R4+R5": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R4+R6": {
+  "fewest": 16,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by C,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R5+R6": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R1+R3+R4+R5": {
+  "fewest": 11,
+  "sets": 144,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by A; state checked by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by B; reports to -"
+  ]
+ },
+ "all/f1/R1+R3+R4+R6": {
+  "fewest": 8,
+  "sets": 9,
+  "classes": 2,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; signal read by B; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R3+R5+R6": {
+  "fewest": 11,
+  "sets": 144,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by A; state checked by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by B; reports to -"
+  ]
+ },
+ "all/f1/R1+R4+R5+R6": {
+  "fewest": 9,
+  "sets": 24,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by B; reports to -",
+   "A: watched by -; state checked by B; reports to D | B: watched by D; reports to D | C: watched by -; state checked by B; reports to D | D: watched by B; reports to -",
+   "A: watched by -; state checked by B; reports to D | B: watched by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by B; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "all/f1/R2+R3+R4+R5": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R2+R3+R4+R6": {
+  "fewest": 16,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by C,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R2+R3+R5+R6": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R2+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R3+R4+R5+R6": {
+  "fewest": 10,
+  "sets": 48,
+  "classes": 9,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; state checked by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; state checked by C; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; state checked by B; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R3+R4+R5": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R3+R4+R6": {
+  "fewest": 16,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by C,D; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R3+R5+R6": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 15,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "all/f1/R1+R3+R4+R5+R6": {
+  "fewest": 11,
+  "sets": 144,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by A; state checked by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by B; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by B; reports to -"
+  ]
+ },
+ "all/f1/R2+R3+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f1/R1+R2+R3+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f2/R1": {
+  "fewest": 7,
+  "sets": 24,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by A; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by -; state checked by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by B; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by -; state checked by B; reports to - | D: watched by A; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "all/f2/R6": {
+  "fewest": 5,
+  "sets": 9,
+  "classes": 2,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; state checked by B,D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by -; state checked by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A,B; reports to -"
+  ]
+ },
+ "all/f2/R1+R6": {
+  "fewest": 8,
+  "sets": 18,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; state checked by D; reports to - | B: watched by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to D | C: watched by -; state checked by B; reports to - | D: watched by A; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to D | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "all/f2/R1+R2+R3+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "all/f3/R1": {
+  "fewest": 8,
+  "sets": 6,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "all/f3/R6": {
+  "fewest": 6,
+  "sets": 16,
+  "classes": 4,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; state checked by B,C,D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by -; state checked by B,D; reports to - | B: watched by -; state checked by C,D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by -; state checked by B,D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A,C; reports to -",
+   "A: watched by -; state checked by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A,B,C; reports to -"
+  ]
+ },
+ "all/f3/R1+R6": {
+  "fewest": 10,
+  "sets": 30,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; state checked by C; reports to - | B: watched by C; reports to - | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; state checked by D; reports to - | B: watched by C; state checked by D; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by B; state checked by D; reports to - | B: watched by C; reports to - | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to C | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to - | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "all/f3/R1+R2+R3+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 69,
+  "classes": 12,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1": {
+  "fewest": 6,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R2": {
+  "fewest": 16,
+  "sets": 81,
+  "classes": 42,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R3": {
+  "fewest": 6,
+  "sets": 16,
+  "classes": 9,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by A; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by B; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by -; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by B; reports to - | D: watched by -; reports to -"
+  ]
+ },
+ "two/f1/R5": {
+  "fewest": 3,
+  "sets": 1,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; reports to D | B: watched by -; reports to D | C: watched by -; reports to D | D: watched by -; reports to -"
+  ]
+ },
+ "two/f1/R6": {
+  "fewest": 6,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R2": {
+  "fewest": 16,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R1+R3": {
+  "fewest": 8,
+  "sets": 12,
+  "classes": 7,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R4": {
+  "fewest": 6,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R5": {
+  "fewest": 9,
+  "sets": 8,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by B; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R6": {
+  "fewest": 7,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R2+R3": {
+  "fewest": 16,
+  "sets": 78,
+  "classes": 40,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by B,C; reports to -"
+  ]
+ },
+ "two/f1/R2+R4": {
+  "fewest": 16,
+  "sets": 81,
+  "classes": 42,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R2+R5": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 42,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R2+R6": {
+  "fewest": 17,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R3+R4": {
+  "fewest": 6,
+  "sets": 16,
+  "classes": 9,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by A; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by B; reports to - | D: watched by -; reports to -",
+   "A: watched by B; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by -; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by B; reports to - | D: watched by -; reports to -"
+  ]
+ },
+ "two/f1/R3+R5": {
+  "fewest": 9,
+  "sets": 16,
+  "classes": 9,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to D | C: watched by A; reports to D | D: watched by -; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to D | C: watched by B; reports to D | D: watched by -; reports to -"
+  ]
+ },
+ "two/f1/R3+R6": {
+  "fewest": 8,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R4+R5": {
+  "fewest": 3,
+  "sets": 1,
+  "classes": 1,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by -; reports to D | B: watched by -; reports to D | C: watched by -; reports to D | D: watched by -; reports to -"
+  ]
+ },
+ "two/f1/R4+R6": {
+  "fewest": 6,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R5+R6": {
+  "fewest": 8,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by D; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R3": {
+  "fewest": 16,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R4": {
+  "fewest": 16,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R5": {
+  "fewest": 19,
+  "sets": 54,
+  "classes": 27,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R6": {
+  "fewest": 17,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R1+R3+R4": {
+  "fewest": 8,
+  "sets": 12,
+  "classes": 7,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by D; reports to - | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by D; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R3+R5": {
+  "fewest": 11,
+  "sets": 48,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; signal read by C; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R3+R6": {
+  "fewest": 9,
+  "sets": 12,
+  "classes": 7,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R4+R5": {
+  "fewest": 9,
+  "sets": 8,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by B; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R4+R6": {
+  "fewest": 7,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by A; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to - | C: watched by -; state checked by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R5+R6": {
+  "fewest": 9,
+  "sets": 8,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by B; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R2+R3+R4": {
+  "fewest": 16,
+  "sets": 78,
+  "classes": 40,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by B,C; reports to -"
+  ]
+ },
+ "two/f1/R2+R3+R5": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 40,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "two/f1/R2+R3+R6": {
+  "fewest": 17,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R2+R4+R5": {
+  "fewest": 19,
+  "sets": 81,
+  "classes": 42,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R2+R4+R6": {
+  "fewest": 17,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R2+R5+R6": {
+  "fewest": 19,
+  "sets": 54,
+  "classes": 27,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R3+R4+R5": {
+  "fewest": 9,
+  "sets": 16,
+  "classes": 9,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to D | C: watched by A; reports to D | D: watched by -; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to D | C: watched by B; reports to D | D: watched by -; reports to -"
+  ]
+ },
+ "two/f1/R3+R4+R6": {
+  "fewest": 8,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R3+R5+R6": {
+  "fewest": 10,
+  "sets": 16,
+  "classes": 9,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to D | C: watched by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to D | C: watched by B; reports to D | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R4+R5+R6": {
+  "fewest": 8,
+  "sets": 4,
+  "classes": 3,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by D; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R3+R4": {
+  "fewest": 16,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R3+R5": {
+  "fewest": 19,
+  "sets": 52,
+  "classes": 26,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R3+R6": {
+  "fewest": 17,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R4+R5": {
+  "fewest": 19,
+  "sets": 54,
+  "classes": 27,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R4+R6": {
+  "fewest": 17,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R5+R6": {
+  "fewest": 19,
+  "sets": 54,
+  "classes": 27,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1+R3+R4+R5": {
+  "fewest": 11,
+  "sets": 48,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; signal read by C; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R3+R4+R6": {
+  "fewest": 9,
+  "sets": 12,
+  "classes": 7,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by A; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to - | C: watched by D; reports to - | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R3+R5+R6": {
+  "fewest": 11,
+  "sets": 48,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; signal read by C; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R4+R5+R6": {
+  "fewest": 9,
+  "sets": 8,
+  "classes": 5,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by A; reports to D | C: watched by -; state checked by B; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by A; reports to D | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by A; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -",
+   "A: watched by D; reports to D | B: watched by -; state checked by D; reports to D | C: watched by -; state checked by D; reports to D | D: watched by A; reports to -"
+  ]
+ },
+ "two/f1/R2+R3+R4+R5": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 40,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by B,C; reports to -"
+  ]
+ },
+ "two/f1/R2+R3+R4+R6": {
+  "fewest": 17,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R2+R3+R5+R6": {
+  "fewest": 19,
+  "sets": 52,
+  "classes": 26,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R2+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 54,
+  "classes": 27,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R3+R4+R5+R6": {
+  "fewest": 10,
+  "sets": 16,
+  "classes": 9,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by B; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by D; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to D | C: watched by A; reports to D | D: watched by -; state checked by A; reports to -",
+   "A: watched by D; reports to D | B: watched by A; reports to D | C: watched by B; reports to D | D: watched by -; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R3+R4+R5": {
+  "fewest": 19,
+  "sets": 52,
+  "classes": 26,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R3+R4+R6": {
+  "fewest": 17,
+  "sets": 36,
+  "classes": 18,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,B; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by A,C; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,B; reports to -",
+   "A: watched by B,D; reports to D | B: watched by A,C; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R3+R5+R6": {
+  "fewest": 19,
+  "sets": 52,
+  "classes": 26,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 54,
+  "classes": 27,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,B; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1+R3+R4+R5+R6": {
+  "fewest": 11,
+  "sets": 48,
+  "classes": 25,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by C; reports to D | C: watched by D; reports to D | D: watched by -; signal read by C; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; signal read by B; state checked by A; reports to -",
+   "A: watched by B; reports to D | B: watched by D; reports to D | C: watched by A; reports to D | D: watched by -; signal read by C; state checked by A; reports to -"
+  ]
+ },
+ "two/f1/R2+R3+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 52,
+  "classes": 26,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f1/R1+R2+R3+R4+R5+R6": {
+  "fewest": 19,
+  "sets": 52,
+  "classes": 26,
+  "candidate_meets": {
+   "flow": true,
+   "actor": true
+  },
+  "candidate_holds_a_least_set": {
+   "flow": true,
+   "actor": true
+  },
+  "examples": [
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -",
+   "A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -"
+  ]
+ },
+ "two/f2/R1": {
+  "fewest": null
+ },
+ "two/f2/R6": {
+  "fewest": null
+ },
+ "two/f2/R1+R6": {
+  "fewest": null
+ },
+ "two/f2/R1+R2+R3+R4+R5+R6": {
+  "fewest": null
+ },
+ "two/f3/R1": {
+  "fewest": null
+ },
+ "two/f3/R6": {
+  "fewest": null
+ },
+ "two/f3/R1+R6": {
+  "fewest": null
+ },
+ "two/f3/R1+R2+R3+R4+R5+R6": {
+  "fewest": null
+ },
+ "all/f1/other/R3 with 'observes' = reads the signal": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14
+ },
+ "all/f1/other/naming read at the wiring (R4w)": {
+  "fewest": 19,
+  "sets": 78,
+  "classes": 14
+ },
+ "all/f1/other/naming after a loss read at the wiring (R4wl)": {
+  "fewest": 19,
+  "sets": 9,
+  "classes": 2
+ },
+ "all/f1/other/R3 alone, observes = watches": {
+  "fewest": 6,
+  "sets": 16,
+  "classes": 4
+ },
+ "all/f1/other/R3 alone, observes = reads the signal": {
+  "fewest": 3,
+  "sets": 16,
+  "classes": 4
+ },
+ "all/f1/other/R4w alone": {
+  "fewest": 8,
+  "sets": 30,
+  "classes": 5
+ },
+ "all/f1/other/R4wl alone": {
+  "fewest": 16,
+  "sets": 9,
+  "classes": 2
+ },
+ "two/f1/other/R3 with 'observes' = reads the signal": {
+  "fewest": 19,
+  "sets": 52,
+  "classes": 26
+ },
+ "two/f1/other/naming read at the wiring (R4w)": {
+  "fewest": 19,
+  "sets": 52,
+  "classes": 26
+ },
+ "two/f1/other/naming after a loss read at the wiring (R4wl)": {
+  "fewest": 19,
+  "sets": 6,
+  "classes": 3
+ },
+ "two/f1/other/R3 alone, observes = watches": {
+  "fewest": 6,
+  "sets": 16,
+  "classes": 9
+ },
+ "two/f1/other/R3 alone, observes = reads the signal": {
+  "fewest": 3,
+  "sets": 16,
+  "classes": 9
+ },
+ "two/f1/other/R4w alone": {
+  "fewest": 8,
+  "sets": 30,
+  "classes": 15
+ },
+ "two/f1/other/R4wl alone": {
+  "fewest": 16,
+  "sets": 9,
+  "classes": 5
+ },
+ "label/flow/all/f1": {
+  "fewest": 19,
+  "ways": 3,
+  "in_every_least_set": [
+   "A checks C's state",
+   "A reads C's signal",
+   "A reports to D",
+   "B checks A's state",
+   "B reads A's signal",
+   "B reports to D",
+   "C checks B's state",
+   "C reads B's signal",
+   "C reports to D",
+   "D checks A's state",
+   "D checks B's state",
+   "D checks C's state",
+   "D reads A's signal",
+   "D reads B's signal",
+   "D reads C's signal"
+  ],
+  "in_some": [
+   "A checks D's state",
+   "A reads D's signal",
+   "B checks D's state",
+   "B reads D's signal",
+   "C checks D's state",
+   "C reads D's signal"
+  ],
+  "in_none": [
+   "A reports to B",
+   "B reports to C",
+   "C reports to A",
+   "D reports to A",
+   "D reports to B",
+   "D reports to C"
+  ],
+  "serves": {
+   "A checks C's state": [
+    "R2"
+   ],
+   "D reads B's signal": [
+    "R2"
+   ],
+   "C reports to D": [
+    "R5"
+   ],
+   "C checks B's state": [
+    "R2"
+   ],
+   "A checks D's state": [
+    "R2"
+   ],
+   "B checks D's state": [
+    "R2"
+   ],
+   "A reports to D": [
+    "R5"
+   ],
+   "D checks B's state": [
+    "R2"
+   ],
+   "C reads B's signal": [
+    "R2"
+   ],
+   "B reports to D": [
+    "R5"
+   ],
+   "D checks A's state": [
+    "R2"
+   ],
+   "A reads D's signal": [
+    "R2"
+   ],
+   "B reads D's signal": [
+    "R2"
+   ],
+   "D reads C's signal": [
+    "R2"
+   ],
+   "B reads A's signal": [
+    "R2"
+   ],
+   "B checks A's state": [
+    "R2"
+   ],
+   "D reads A's signal": [
+    "R2"
+   ],
+   "A reads C's signal": [
+    "R2"
+   ],
+   "D checks C's state": [
+    "R2"
+   ],
+   "C reads D's signal": [
+    "R2"
+   ],
+   "C checks D's state": [
+    "R2"
+   ]
+  }
+ },
+ "label/flow/all/f2": {
+  "fewest": 19,
+  "ways": 3,
+  "in_every_least_set": [
+   "A checks C's state",
+   "A reads C's signal",
+   "A reports to D",
+   "B checks A's state",
+   "B reads A's signal",
+   "B reports to D",
+   "C checks B's state",
+   "C reads B's signal",
+   "C reports to D",
+   "D checks A's state",
+   "D checks B's state",
+   "D checks C's state",
+   "D reads A's signal",
+   "D reads B's signal",
+   "D reads C's signal"
+  ],
+  "in_some": [
+   "A checks D's state",
+   "A reads D's signal",
+   "B checks D's state",
+   "B reads D's signal",
+   "C checks D's state",
+   "C reads D's signal"
+  ],
+  "in_none": [
+   "A reports to B",
+   "B reports to C",
+   "C reports to A",
+   "D reports to A",
+   "D reports to B",
+   "D reports to C"
+  ],
+  "serves": {
+   "A checks C's state": [
+    "R2"
+   ],
+   "D reads B's signal": [
+    "R2"
+   ],
+   "C reports to D": [
+    "R5"
+   ],
+   "C checks B's state": [
+    "R2"
+   ],
+   "A checks D's state": [
+    "R2"
+   ],
+   "B checks D's state": [
+    "R2"
+   ],
+   "A reports to D": [
+    "R5"
+   ],
+   "D checks B's state": [
+    "R2"
+   ],
+   "C reads B's signal": [
+    "R2"
+   ],
+   "B reports to D": [
+    "R5"
+   ],
+   "D checks A's state": [
+    "R2"
+   ],
+   "A reads D's signal": [
+    "R2"
+   ],
+   "B reads D's signal": [
+    "R2"
+   ],
+   "D reads C's signal": [
+    "R2"
+   ],
+   "B reads A's signal": [
+    "R2"
+   ],
+   "B checks A's state": [
+    "R2"
+   ],
+   "D reads A's signal": [
+    "R2"
+   ],
+   "A reads C's signal": [
+    "R2"
+   ],
+   "D checks C's state": [
+    "R2"
+   ],
+   "C reads D's signal": [
+    "R2"
+   ],
+   "C checks D's state": [
+    "R2"
+   ]
+  }
+ },
+ "label/flow/all/f3": {
+  "fewest": 19,
+  "ways": 3,
+  "in_every_least_set": [
+   "A checks C's state",
+   "A reads C's signal",
+   "A reports to D",
+   "B checks A's state",
+   "B reads A's signal",
+   "B reports to D",
+   "C checks B's state",
+   "C reads B's signal",
+   "C reports to D",
+   "D checks A's state",
+   "D checks B's state",
+   "D checks C's state",
+   "D reads A's signal",
+   "D reads B's signal",
+   "D reads C's signal"
+  ],
+  "in_some": [
+   "A checks D's state",
+   "A reads D's signal",
+   "B checks D's state",
+   "B reads D's signal",
+   "C checks D's state",
+   "C reads D's signal"
+  ],
+  "in_none": [
+   "A reports to B",
+   "B reports to C",
+   "C reports to A",
+   "D reports to A",
+   "D reports to B",
+   "D reports to C"
+  ],
+  "serves": {
+   "A checks C's state": [
+    "R1+R2+R6",
+    "R2"
+   ],
+   "D reads B's signal": [
+    "R2"
+   ],
+   "C reports to D": [
+    "R5"
+   ],
+   "C checks B's state": [
+    "R1+R2+R6",
+    "R2"
+   ],
+   "A checks D's state": [
+    "R2"
+   ],
+   "B checks D's state": [
+    "R2"
+   ],
+   "A reports to D": [
+    "R5"
+   ],
+   "D checks B's state": [
+    "R2"
+   ],
+   "C reads B's signal": [
+    "R1+R2",
+    "R2"
+   ],
+   "B reports to D": [
+    "R5"
+   ],
+   "D checks A's state": [
+    "R2"
+   ],
+   "A reads D's signal": [
+    "R2"
+   ],
+   "B reads D's signal": [
+    "R2"
+   ],
+   "D reads C's signal": [
+    "R2"
+   ],
+   "B reads A's signal": [
+    "R1+R2",
+    "R2"
+   ],
+   "B checks A's state": [
+    "R1+R2+R6",
+    "R2"
+   ],
+   "D reads A's signal": [
+    "R2"
+   ],
+   "A reads C's signal": [
+    "R1+R2",
+    "R2"
+   ],
+   "D checks C's state": [
+    "R2"
+   ],
+   "C reads D's signal": [
+    "R2"
+   ],
+   "C checks D's state": [
+    "R2"
+   ]
+  }
+ },
+ "label/flow/two/f1": {
+  "fewest": 19,
+  "ways": 2,
+  "in_every_least_set": [
+   "A checks C's state",
+   "A checks D's state",
+   "A reads C's signal",
+   "A reads D's signal",
+   "A reports to D",
+   "B checks A's state",
+   "B reads A's signal",
+   "B reports to D",
+   "C checks B's state",
+   "C reads B's signal",
+   "C reports to D",
+   "D checks A's state",
+   "D checks B's state",
+   "D checks C's state",
+   "D reads A's signal",
+   "D reads B's signal",
+   "D reads C's signal"
+  ],
+  "in_some": [
+   "B checks D's state",
+   "B reads D's signal",
+   "C checks D's state",
+   "C reads D's signal"
+  ],
+  "in_none": [
+   "A reports to B",
+   "B reports to C",
+   "C reports to A",
+   "D reports to A",
+   "D reports to B",
+   "D reports to C"
+  ],
+  "serves": {
+   "A checks C's state": [
+    "R2"
+   ],
+   "D reads B's signal": [
+    "R2"
+   ],
+   "C reports to D": [
+    "R5"
+   ],
+   "C checks B's state": [
+    "R2"
+   ],
+   "A checks D's state": [
+    "R1+R2+R6"
+   ],
+   "B checks D's state": [
+    "R2"
+   ],
+   "A reports to D": [
+    "R5+R6"
+   ],
+   "D checks B's state": [
+    "R2"
+   ],
+   "C reads B's signal": [
+    "R2"
+   ],
+   "B reports to D": [
+    "R5"
+   ],
+   "D checks A's state": [
+    "R2"
+   ],
+   "A reads D's signal": [
+    "R2"
+   ],
+   "B reads D's signal": [
+    "R2"
+   ],
+   "D reads C's signal": [
+    "R2"
+   ],
+   "B reads A's signal": [
+    "R2"
+   ],
+   "B checks A's state": [
+    "R2"
+   ],
+   "D reads A's signal": [
+    "R2"
+   ],
+   "A reads C's signal": [
+    "R2"
+   ],
+   "D checks C's state": [
+    "R2"
+   ],
+   "C reads D's signal": [
+    "R2"
+   ],
+   "C checks D's state": [
+    "R2"
+   ]
+  }
+ },
+ "label/actor/all/f1": {
+  "fewest": 19,
+  "ways": 3,
+  "in_every_least_set": [
+   "A checks B's state",
+   "A reads B's signal",
+   "A reports to D",
+   "B checks C's state",
+   "B reads C's signal",
+   "B reports to D",
+   "C checks A's state",
+   "C reads A's signal",
+   "C reports to D",
+   "D checks A's state",
+   "D checks B's state",
+   "D checks C's state",
+   "D reads A's signal",
+   "D reads B's signal",
+   "D reads C's signal"
+  ],
+  "in_some": [
+   "A checks D's state",
+   "A reads D's signal",
+   "B checks D's state",
+   "B reads D's signal",
+   "C checks D's state",
+   "C reads D's signal"
+  ],
+  "in_none": [
+   "A reports to B",
+   "B reports to C",
+   "C reports to A",
+   "D reports to A",
+   "D reports to B",
+   "D reports to C"
+  ],
+  "serves": {
+   "C reports to D": [
+    "R5"
+   ],
+   "A reads B's signal": [
+    "R2"
+   ],
+   "D reads B's signal": [
+    "R2"
+   ],
+   "B checks C's state": [
+    "R2"
+   ],
+   "A checks D's state": [
+    "R2"
+   ],
+   "C checks A's state": [
+    "R2"
+   ],
+   "B checks D's state": [
+    "R2"
+   ],
+   "A reports to D": [
+    "R5"
+   ],
+   "C reads A's signal": [
+    "R2"
+   ],
+   "A checks B's state": [
+    "R2"
+   ],
+   "D checks B's state": [
+    "R2"
+   ],
+   "B reports to D": [
+    "R5"
+   ],
+   "D checks A's state": [
+    "R2"
+   ],
+   "A reads D's signal": [
+    "R2"
+   ],
+   "B reads D's signal": [
+    "R2"
+   ],
+   "D reads C's signal": [
+    "R2"
+   ],
+   "D reads A's signal": [
+    "R2"
+   ],
+   "B reads C's signal": [
+    "R2"
+   ],
+   "D checks C's state": [
+    "R2"
+   ],
+   "C reads D's signal": [
+    "R2"
+   ],
+   "C checks D's state": [
+    "R2"
+   ]
+  }
+ },
+ "label/actor/all/f2": {
+  "fewest": 19,
+  "ways": 3,
+  "in_every_least_set": [
+   "A checks B's state",
+   "A reads B's signal",
+   "A reports to D",
+   "B checks C's state",
+   "B reads C's signal",
+   "B reports to D",
+   "C checks A's state",
+   "C reads A's signal",
+   "C reports to D",
+   "D checks A's state",
+   "D checks B's state",
+   "D checks C's state",
+   "D reads A's signal",
+   "D reads B's signal",
+   "D reads C's signal"
+  ],
+  "in_some": [
+   "A checks D's state",
+   "A reads D's signal",
+   "B checks D's state",
+   "B reads D's signal",
+   "C checks D's state",
+   "C reads D's signal"
+  ],
+  "in_none": [
+   "A reports to B",
+   "B reports to C",
+   "C reports to A",
+   "D reports to A",
+   "D reports to B",
+   "D reports to C"
+  ],
+  "serves": {
+   "C reports to D": [
+    "R5"
+   ],
+   "A reads B's signal": [
+    "R2"
+   ],
+   "D reads B's signal": [
+    "R2"
+   ],
+   "B checks C's state": [
+    "R2"
+   ],
+   "A checks D's state": [
+    "R2"
+   ],
+   "C checks A's state": [
+    "R2"
+   ],
+   "B checks D's state": [
+    "R2"
+   ],
+   "A reports to D": [
+    "R5"
+   ],
+   "C reads A's signal": [
+    "R2"
+   ],
+   "A checks B's state": [
+    "R2"
+   ],
+   "D checks B's state": [
+    "R2"
+   ],
+   "B reports to D": [
+    "R5"
+   ],
+   "D checks A's state": [
+    "R2"
+   ],
+   "A reads D's signal": [
+    "R2"
+   ],
+   "B reads D's signal": [
+    "R2"
+   ],
+   "D reads C's signal": [
+    "R2"
+   ],
+   "D reads A's signal": [
+    "R2"
+   ],
+   "B reads C's signal": [
+    "R2"
+   ],
+   "D checks C's state": [
+    "R2"
+   ],
+   "C reads D's signal": [
+    "R2"
+   ],
+   "C checks D's state": [
+    "R2"
+   ]
+  }
+ },
+ "label/actor/all/f3": {
+  "fewest": 19,
+  "ways": 3,
+  "in_every_least_set": [
+   "A checks B's state",
+   "A reads B's signal",
+   "A reports to D",
+   "B checks C's state",
+   "B reads C's signal",
+   "B reports to D",
+   "C checks A's state",
+   "C reads A's signal",
+   "C reports to D",
+   "D checks A's state",
+   "D checks B's state",
+   "D checks C's state",
+   "D reads A's signal",
+   "D reads B's signal",
+   "D reads C's signal"
+  ],
+  "in_some": [
+   "A checks D's state",
+   "A reads D's signal",
+   "B checks D's state",
+   "B reads D's signal",
+   "C checks D's state",
+   "C reads D's signal"
+  ],
+  "in_none": [
+   "A reports to B",
+   "B reports to C",
+   "C reports to A",
+   "D reports to A",
+   "D reports to B",
+   "D reports to C"
+  ],
+  "serves": {
+   "C reports to D": [
+    "R5"
+   ],
+   "A reads B's signal": [
+    "R1+R2",
+    "R2"
+   ],
+   "D reads B's signal": [
+    "R2"
+   ],
+   "B checks C's state": [
+    "R1+R2+R6",
+    "R2"
+   ],
+   "A checks D's state": [
+    "R2"
+   ],
+   "C checks A's state": [
+    "R1+R2+R6",
+    "R2"
+   ],
+   "B checks D's state": [
+    "R2"
+   ],
+   "A reports to D": [
+    "R5"
+   ],
+   "C reads A's signal": [
+    "R1+R2",
+    "R2"
+   ],
+   "A checks B's state": [
+    "R1+R2+R6",
+    "R2"
+   ],
+   "D checks B's state": [
+    "R2"
+   ],
+   "B reports to D": [
+    "R5"
+   ],
+   "D checks A's state": [
+    "R2"
+   ],
+   "A reads D's signal": [
+    "R2"
+   ],
+   "B reads D's signal": [
+    "R2"
+   ],
+   "D reads C's signal": [
+    "R2"
+   ],
+   "D reads A's signal": [
+    "R2"
+   ],
+   "B reads C's signal": [
+    "R1+R2",
+    "R2"
+   ],
+   "D checks C's state": [
+    "R2"
+   ],
+   "C reads D's signal": [
+    "R2"
+   ],
+   "C checks D's state": [
+    "R2"
+   ]
+  }
+ },
+ "label/actor/two/f1": {
+  "fewest": 19,
+  "ways": 2,
+  "in_every_least_set": [
+   "A checks B's state",
+   "A checks D's state",
+   "A reads B's signal",
+   "A reads D's signal",
+   "A reports to D",
+   "B checks C's state",
+   "B reads C's signal",
+   "B reports to D",
+   "C checks A's state",
+   "C reads A's signal",
+   "C reports to D",
+   "D checks A's state",
+   "D checks B's state",
+   "D checks C's state",
+   "D reads A's signal",
+   "D reads B's signal",
+   "D reads C's signal"
+  ],
+  "in_some": [
+   "B checks D's state",
+   "B reads D's signal",
+   "C checks D's state",
+   "C reads D's signal"
+  ],
+  "in_none": [
+   "A reports to B",
+   "B reports to C",
+   "C reports to A",
+   "D reports to A",
+   "D reports to B",
+   "D reports to C"
+  ],
+  "serves": {
+   "C reports to D": [
+    "R5"
+   ],
+   "A reads B's signal": [
+    "R2"
+   ],
+   "D reads B's signal": [
+    "R2"
+   ],
+   "B checks C's state": [
+    "R2"
+   ],
+   "A checks D's state": [
+    "R1+R2+R6"
+   ],
+   "C checks A's state": [
+    "R2"
+   ],
+   "B checks D's state": [
+    "R2"
+   ],
+   "A reports to D": [
+    "R5+R6"
+   ],
+   "C reads A's signal": [
+    "R2"
+   ],
+   "A checks B's state": [
+    "R2"
+   ],
+   "D checks B's state": [
+    "R2"
+   ],
+   "B reports to D": [
+    "R5"
+   ],
+   "D checks A's state": [
+    "R2"
+   ],
+   "A reads D's signal": [
+    "R2"
+   ],
+   "B reads D's signal": [
+    "R2"
+   ],
+   "D reads C's signal": [
+    "R2"
+   ],
+   "D reads A's signal": [
+    "R2"
+   ],
+   "B reads C's signal": [
+    "R2"
+   ],
+   "D checks C's state": [
+    "R2"
+   ],
+   "C reads D's signal": [
+    "R2"
+   ],
+   "C checks D's state": [
+    "R2"
+   ]
+  }
+ }
+}

@@ -1,0 +1,39 @@
+=== table 3.2 by the monotone search (RELIES on Lemma M / its told variant) ===
+W reads all | R1                                                      f=1: 6 edges (24 sets, 5 shapes)  [39 clauses, 3s]
+       reads A<B B<A | checks A<B B<A C<A D<A | reports 
+       reads A<D D<A | checks A<D B<A C<A D<A | reports 
+       reads A<C C<A | checks A<C B<C C<A D<A | reports 
+       reads A<D D<A | checks A<D B<D C<A D<A | reports 
+       reads A<D D<A | checks A<D B<D C<D D<A | reports 
+W reads all | R1                                                      f=2: 7 edges (24 sets, 4 shapes)  [43 clauses, 4s]
+W reads all | R1                                                      f=3: 8 edges (6 sets, 1 shapes)  [37 clauses, 4s]
+W reads all | R6                                                      f=1: 4 edges (3 sets, 1 shapes)  [10 clauses, 0s]
+W reads all | R6                                                      f=2: 5 edges (9 sets, 2 shapes)  [22 clauses, 2s]
+W reads all | R6                                                      f=3: 6 edges (16 sets, 4 shapes)  [28 clauses, 5s]
+W reads all | R1+R6                                                   f=1: 6 edges (3 sets, 1 shapes)  [25 clauses, 1s]
+W reads all | R1+R6                                                   f=2: 8 edges (18 sets, 3 shapes)  [45 clauses, 4s]
+W reads all | R1+R6                                                   f=3: 10 edges (30 sets, 5 shapes)  [48 clauses, 11s]
+W reads all | R3                                                      f=1: 6 edges (16 sets, 4 shapes)  [34 clauses, 0s]
+W reads all | R2+R5                                                   f=1: 19 edges (81 sets, 15 shapes)  [51 clauses, 0s]
+W reads all | all but R2                                              f=1: 11 edges (144 sets, 25 shapes)  [46 clauses, 2s]
+W reads all | whole list                                              f=1: 19 edges (78 sets, 14 shapes)  [54 clauses, 1s]
+W reads all | whole list                                              f=2: 19 edges (78 sets, 14 shapes)  [54 clauses, 4s]
+W reads all | whole list                                              f=3: 19 edges (69 sets, 12 shapes)  [59 clauses, 8s]
+W reads all | R3 as signal reads                                      f=1: 3 edges (16 sets, 4 shapes)  [7 clauses, 0s]
+W reads all | whole list, R3 as signal reads                          f=1: 19 edges (78 sets, 14 shapes)  [52 clauses, 1s]
+W reads all | whole list, an observer is a signal reader (R2, R3)     f=1: 15 edges (6318 sets, 1056 shapes)  [20 clauses, 4s]
+       e.g. reads A<B A<D B<A B<C C<A C<B D<A D<B | checks A<B B<A C<A D<A | reports A>D B>D C>D
+W reads all | whole list, an observer is a signal reader (R2, R3)     f=2: 15 edges (2340 sets, 390 shapes)  [26 clauses, 7s]
+W reads all | whole list, an observer is a signal reader (R2, R3)     f=3: 15 edges (96 sets, 16 shapes)  [39 clauses, 4s]
+W reads all | whole list, R2 as two readers and two checkers, any nodes f=1: 19 edges (5004 sets, 836 shapes)  [47 clauses, 3s]
+W reads two | R1                                                      f=1: 6 edges (4 sets, 3 shapes)  [27 clauses, 2s]
+W reads two | R6                                                      f=1: 6 edges (4 sets, 3 shapes)  [17 clauses, 2s]
+W reads two | R1+R6                                                   f=1: 7 edges (4 sets, 3 shapes)  [33 clauses, 3s]
+W reads two | R3                                                      f=1: 6 edges (16 sets, 9 shapes)  [34 clauses, 0s]
+W reads two | R2+R5                                                   f=1: 19 edges (81 sets, 42 shapes)  [51 clauses, 0s]
+W reads two | all but R2                                              f=1: 11 edges (48 sets, 25 shapes)  [45 clauses, 2s]
+W reads two | whole list                                              f=1: 19 edges (52 sets, 26 shapes)  [56 clauses, 2s]
+W reads two | R3 as signal reads                                      f=1: 3 edges (16 sets, 9 shapes)  [7 clauses, 0s]
+W reads two | whole list, R3 as signal reads                          f=1: 19 edges (52 sets, 26 shapes)  [52 clauses, 2s]
+W reads two | whole list, an observer is a signal reader (R2, R3)     f=1: 15 edges (2106 sets, 1056 shapes)  [22 clauses, 3s]
+W reads two | whole list, R2 as two readers and two checkers, any nodes f=1: 19 edges (3336 sets, 1668 shapes)  [48 clauses, 4s]

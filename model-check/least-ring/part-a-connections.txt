@@ -1,0 +1,1212 @@
+# computed flow/all in 52 s
+# computed flow/two in 165 s
+# computed actor/all in 50 s
+# computed actor/two in 157 s
+
+== The candidate and the mesh, requirement by requirement
+flow/all    candidate R2=yes R3=yes R3s=yes R4=yes R4w=yes R4wl=yes R5=yes R1@1=yes R6@1=yes R1@2=yes R6@2=yes R1@3=yes R6@3=yes  raw(G1,G2,told)@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+flow/all    mesh      R2=yes R3=yes R3s=yes R4=yes R4w=yes R4wl=yes R5=yes R1@1=yes R6@1=yes R1@2=yes R6@2=yes R1@3=yes R6@3=yes  raw(G1,G2,told)@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+flow/two    candidate R2=yes R3=yes R3s=yes R4=yes R4w=yes R4wl=yes R5=yes R1@1=yes R6@1=yes R1@2=NO R6@2=NO R1@3=NO R6@3=NO  raw(G1,G2,told)@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+flow/two    mesh      R2=yes R3=yes R3s=yes R4=yes R4w=yes R4wl=yes R5=yes R1@1=yes R6@1=yes R1@2=NO R6@2=NO R1@3=NO R6@3=NO  raw(G1,G2,told)@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+actor/all   candidate R2=yes R3=yes R3s=yes R4=yes R4w=yes R4wl=yes R5=yes R1@1=yes R6@1=yes R1@2=yes R6@2=yes R1@3=yes R6@3=yes  raw(G1,G2,told)@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+actor/all   mesh      R2=yes R3=yes R3s=yes R4=yes R4w=yes R4wl=yes R5=yes R1@1=yes R6@1=yes R1@2=yes R6@2=yes R1@3=yes R6@3=yes  raw(G1,G2,told)@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+actor/two   candidate R2=yes R3=yes R3s=yes R4=yes R4w=yes R4wl=yes R5=yes R1@1=yes R6@1=yes R1@2=NO R6@2=NO R1@3=NO R6@3=NO  raw(G1,G2,told)@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+actor/two   mesh      R2=yes R3=yes R3s=yes R4=yes R4w=yes R4wl=yes R5=yes R1@1=yes R6@1=yes R1@2=NO R6@2=NO R1@3=NO R6@3=NO  raw(G1,G2,told)@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+
+== Each combination: least number of connections, number of least wirings,
+== classes up to renaming, whether the candidate meets it, whether it is least
+
+-- reading flow, work reads all, f = 1
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | 4     |      81 |      15 |   2401 | yes | NO
+R2                       | 8     |      81 |      15 |    256 | yes | NO
+R3                       | 3     |      16 |       4 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | 4     |      48 |       9 |   2128 | yes | NO
+R1+R2                    | 8     |      81 |      15 |    256 | yes | NO
+R1+R3                    | 4     |      48 |       9 |   2128 | yes | NO
+R1+R4                    | 4     |      81 |      15 |   2401 | yes | NO
+R1+R5                    | 4     |       3 |       1 |    448 | yes | NO
+R1+R6                    | 4     |      48 |       9 |   2128 | yes | NO
+R2+R3                    | 8     |      78 |      14 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      15 |    256 | yes | NO
+R2+R5                    | 8     |      24 |       4 |    108 | yes | NO
+R2+R6                    | 8     |      78 |      14 |    252 | yes | NO
+R3+R4                    | 3     |      16 |       4 |   2432 | yes | NO
+R3+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R3+R6                    | 4     |      48 |       9 |   2128 | yes | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | 4     |      48 |       9 |   2128 | yes | NO
+R5+R6                    | 4     |       3 |       1 |    448 | yes | NO
+R1+R2+R3                 | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R4                 | 8     |      81 |      15 |    256 | yes | NO
+R1+R2+R5                 | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R6                 | 8     |      78 |      14 |    252 | yes | NO
+R1+R3+R4                 | 4     |      48 |       9 |   2128 | yes | NO
+R1+R3+R5                 | 4     |       3 |       1 |    448 | yes | NO
+R1+R3+R6                 | 4     |      48 |       9 |   2128 | yes | NO
+R1+R4+R5                 | 4     |       3 |       1 |    448 | yes | NO
+R1+R4+R6                 | 4     |      48 |       9 |   2128 | yes | NO
+R1+R5+R6                 | 4     |       3 |       1 |    448 | yes | NO
+R2+R3+R4                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5                 | 8     |      24 |       4 |    108 | yes | NO
+R2+R3+R6                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R4+R5                 | 8     |      24 |       4 |    108 | yes | NO
+R2+R4+R6                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R5+R6                 | 8     |      24 |       4 |    108 | yes | NO
+R3+R4+R5                 | 3     |       1 |       1 |    512 | yes | NO
+R3+R4+R6                 | 4     |      48 |       9 |   2128 | yes | NO
+R3+R5+R6                 | 4     |       3 |       1 |    448 | yes | NO
+R4+R5+R6                 | 4     |       3 |       1 |    448 | yes | NO
+R1+R2+R3+R4              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R3+R5              | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R3+R6              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R4+R5              | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R4+R6              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R5+R6              | 8     |      24 |       4 |    108 | yes | NO
+R1+R3+R4+R5              | 4     |       3 |       1 |    448 | yes | NO
+R1+R3+R4+R6              | 4     |      48 |       9 |   2128 | yes | NO
+R1+R3+R5+R6              | 4     |       3 |       1 |    448 | yes | NO
+R1+R4+R5+R6              | 4     |       3 |       1 |    448 | yes | NO
+R2+R3+R4+R5              | 8     |      24 |       4 |    108 | yes | NO
+R2+R3+R4+R6              | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5+R6              | 8     |      24 |       4 |    108 | yes | NO
+R2+R4+R5+R6              | 8     |      24 |       4 |    108 | yes | NO
+R3+R4+R5+R6              | 4     |       3 |       1 |    448 | yes | NO
+R1+R2+R3+R4+R5           | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R3+R4+R6           | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R3+R5+R6           | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R4+R5+R6           | 8     |      24 |       4 |    108 | yes | NO
+R1+R3+R4+R5+R6           | 4     |       3 |       1 |    448 | yes | NO
+R2+R3+R4+R5+R6           | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R3+R4+R5+R6        | 8     |      24 |       4 |    108 | yes | NO
+
+-- reading flow, work reads all, f = 2
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | 4     |      30 |       5 |   2110 | yes | NO
+R2                       | 8     |      81 |      15 |    256 | yes | NO
+R3                       | 3     |      16 |       4 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | 4     |      24 |       4 |   1984 | yes | NO
+R1+R2                    | 8     |      81 |      15 |    256 | yes | NO
+R1+R3                    | 4     |      24 |       4 |   1984 | yes | NO
+R1+R4                    | 4     |      30 |       5 |   2110 | yes | NO
+R1+R5                    | 5     |       9 |       2 |    400 | yes | NO
+R1+R6                    | 4     |      24 |       4 |   1984 | yes | NO
+R2+R3                    | 8     |      78 |      14 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      15 |    256 | yes | NO
+R2+R5                    | 8     |      24 |       4 |    108 | yes | NO
+R2+R6                    | 8     |      78 |      14 |    252 | yes | NO
+R3+R4                    | 3     |      16 |       4 |   2432 | yes | NO
+R3+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R3+R6                    | 4     |      24 |       4 |   1984 | yes | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | 4     |      24 |       4 |   1984 | yes | NO
+R5+R6                    | 5     |       9 |       2 |    400 | yes | NO
+R1+R2+R3                 | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R4                 | 8     |      81 |      15 |    256 | yes | NO
+R1+R2+R5                 | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R6                 | 8     |      78 |      14 |    252 | yes | NO
+R1+R3+R4                 | 4     |      24 |       4 |   1984 | yes | NO
+R1+R3+R5                 | 5     |       9 |       2 |    400 | yes | NO
+R1+R3+R6                 | 4     |      24 |       4 |   1984 | yes | NO
+R1+R4+R5                 | 5     |       9 |       2 |    400 | yes | NO
+R1+R4+R6                 | 4     |      24 |       4 |   1984 | yes | NO
+R1+R5+R6                 | 5     |       9 |       2 |    400 | yes | NO
+R2+R3+R4                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5                 | 8     |      24 |       4 |    108 | yes | NO
+R2+R3+R6                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R4+R5                 | 8     |      24 |       4 |    108 | yes | NO
+R2+R4+R6                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R5+R6                 | 8     |      24 |       4 |    108 | yes | NO
+R3+R4+R5                 | 3     |       1 |       1 |    512 | yes | NO
+R3+R4+R6                 | 4     |      24 |       4 |   1984 | yes | NO
+R3+R5+R6                 | 5     |       9 |       2 |    400 | yes | NO
+R4+R5+R6                 | 5     |       9 |       2 |    400 | yes | NO
+R1+R2+R3+R4              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R3+R5              | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R3+R6              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R4+R5              | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R4+R6              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R5+R6              | 8     |      24 |       4 |    108 | yes | NO
+R1+R3+R4+R5              | 5     |       9 |       2 |    400 | yes | NO
+R1+R3+R4+R6              | 4     |      24 |       4 |   1984 | yes | NO
+R1+R3+R5+R6              | 5     |       9 |       2 |    400 | yes | NO
+R1+R4+R5+R6              | 5     |       9 |       2 |    400 | yes | NO
+R2+R3+R4+R5              | 8     |      24 |       4 |    108 | yes | NO
+R2+R3+R4+R6              | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5+R6              | 8     |      24 |       4 |    108 | yes | NO
+R2+R4+R5+R6              | 8     |      24 |       4 |    108 | yes | NO
+R3+R4+R5+R6              | 5     |       9 |       2 |    400 | yes | NO
+R1+R2+R3+R4+R5           | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R3+R4+R6           | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R3+R5+R6           | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R4+R5+R6           | 8     |      24 |       4 |    108 | yes | NO
+R1+R3+R4+R5+R6           | 5     |       9 |       2 |    400 | yes | NO
+R2+R3+R4+R5+R6           | 8     |      24 |       4 |    108 | yes | NO
+R1+R2+R3+R4+R5+R6        | 8     |      24 |       4 |    108 | yes | NO
+
+-- reading flow, work reads all, f = 3
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | 4     |       6 |       1 |   1606 | yes | NO
+R2                       | 8     |      81 |      15 |    256 | yes | NO
+R3                       | 3     |      16 |       4 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | 4     |       6 |       1 |   1606 | yes | NO
+R1+R2                    | 8     |      69 |      12 |    240 | yes | NO
+R1+R3                    | 4     |       6 |       1 |   1606 | yes | NO
+R1+R4                    | 4     |       6 |       1 |   1606 | yes | NO
+R1+R5                    | 6     |      16 |       4 |    304 | yes | NO
+R1+R6                    | 4     |       6 |       1 |   1606 | yes | NO
+R2+R3                    | 8     |      78 |      14 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      15 |    256 | yes | NO
+R2+R5                    | 8     |      24 |       4 |    108 | yes | NO
+R2+R6                    | 8     |      69 |      12 |    240 | yes | NO
+R3+R4                    | 3     |      16 |       4 |   2432 | yes | NO
+R3+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R3+R6                    | 4     |       6 |       1 |   1606 | yes | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | 4     |       6 |       1 |   1606 | yes | NO
+R5+R6                    | 6     |      16 |       4 |    304 | yes | NO
+R1+R2+R3                 | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R4                 | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R5                 | 8     |      18 |       3 |     99 | yes | NO
+R1+R2+R6                 | 8     |      69 |      12 |    240 | yes | NO
+R1+R3+R4                 | 4     |       6 |       1 |   1606 | yes | NO
+R1+R3+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R1+R3+R6                 | 4     |       6 |       1 |   1606 | yes | NO
+R1+R4+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R1+R4+R6                 | 4     |       6 |       1 |   1606 | yes | NO
+R1+R5+R6                 | 6     |      16 |       4 |    304 | yes | NO
+R2+R3+R4                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5                 | 8     |      24 |       4 |    108 | yes | NO
+R2+R3+R6                 | 8     |      69 |      12 |    240 | yes | NO
+R2+R4+R5                 | 8     |      24 |       4 |    108 | yes | NO
+R2+R4+R6                 | 8     |      69 |      12 |    240 | yes | NO
+R2+R5+R6                 | 8     |      18 |       3 |     99 | yes | NO
+R3+R4+R5                 | 3     |       1 |       1 |    512 | yes | NO
+R3+R4+R6                 | 4     |       6 |       1 |   1606 | yes | NO
+R3+R5+R6                 | 6     |      16 |       4 |    304 | yes | NO
+R4+R5+R6                 | 6     |      16 |       4 |    304 | yes | NO
+R1+R2+R3+R4              | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R3+R5              | 8     |      18 |       3 |     99 | yes | NO
+R1+R2+R3+R6              | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R4+R5              | 8     |      18 |       3 |     99 | yes | NO
+R1+R2+R4+R6              | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R5+R6              | 8     |      18 |       3 |     99 | yes | NO
+R1+R3+R4+R5              | 6     |      16 |       4 |    304 | yes | NO
+R1+R3+R4+R6              | 4     |       6 |       1 |   1606 | yes | NO
+R1+R3+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R1+R4+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R2+R3+R4+R5              | 8     |      24 |       4 |    108 | yes | NO
+R2+R3+R4+R6              | 8     |      69 |      12 |    240 | yes | NO
+R2+R3+R5+R6              | 8     |      18 |       3 |     99 | yes | NO
+R2+R4+R5+R6              | 8     |      18 |       3 |     99 | yes | NO
+R3+R4+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R1+R2+R3+R4+R5           | 8     |      18 |       3 |     99 | yes | NO
+R1+R2+R3+R4+R6           | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R3+R5+R6           | 8     |      18 |       3 |     99 | yes | NO
+R1+R2+R4+R5+R6           | 8     |      18 |       3 |     99 | yes | NO
+R1+R3+R4+R5+R6           | 6     |      16 |       4 |    304 | yes | NO
+R2+R3+R4+R5+R6           | 8     |      18 |       3 |     99 | yes | NO
+R1+R2+R3+R4+R5+R6        | 8     |      18 |       3 |     99 | yes | NO
+
+-- reading flow, work reads two, f = 1
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | 4     |      26 |      14 |   1906 | yes | NO
+R2                       | 8     |      81 |      42 |    256 | yes | NO
+R3                       | 3     |      16 |       9 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | 4     |      26 |      14 |   1906 | yes | NO
+R1+R2                    | 8     |      75 |      38 |    248 | yes | NO
+R1+R3                    | 4     |      26 |      14 |   1906 | yes | NO
+R1+R4                    | 4     |      26 |      14 |   1906 | yes | NO
+R1+R5                    | 4     |       1 |       1 |    384 | yes | NO
+R1+R6                    | 4     |      26 |      14 |   1906 | yes | NO
+R2+R3                    | 8     |      78 |      40 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      42 |    256 | yes | NO
+R2+R5                    | 8     |      24 |      12 |    108 | yes | NO
+R2+R6                    | 8     |      75 |      38 |    248 | yes | NO
+R3+R4                    | 3     |      16 |       9 |   2432 | yes | NO
+R3+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R3+R6                    | 4     |      26 |      14 |   1906 | yes | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | 4     |      26 |      14 |   1906 | yes | NO
+R5+R6                    | 4     |       1 |       1 |    384 | yes | NO
+R1+R2+R3                 | 8     |      75 |      38 |    248 | yes | NO
+R1+R2+R4                 | 8     |      75 |      38 |    248 | yes | NO
+R1+R2+R5                 | 8     |      22 |      11 |    105 | yes | NO
+R1+R2+R6                 | 8     |      75 |      38 |    248 | yes | NO
+R1+R3+R4                 | 4     |      26 |      14 |   1906 | yes | NO
+R1+R3+R5                 | 4     |       1 |       1 |    384 | yes | NO
+R1+R3+R6                 | 4     |      26 |      14 |   1906 | yes | NO
+R1+R4+R5                 | 4     |       1 |       1 |    384 | yes | NO
+R1+R4+R6                 | 4     |      26 |      14 |   1906 | yes | NO
+R1+R5+R6                 | 4     |       1 |       1 |    384 | yes | NO
+R2+R3+R4                 | 8     |      78 |      40 |    252 | yes | NO
+R2+R3+R5                 | 8     |      24 |      12 |    108 | yes | NO
+R2+R3+R6                 | 8     |      75 |      38 |    248 | yes | NO
+R2+R4+R5                 | 8     |      24 |      12 |    108 | yes | NO
+R2+R4+R6                 | 8     |      75 |      38 |    248 | yes | NO
+R2+R5+R6                 | 8     |      22 |      11 |    105 | yes | NO
+R3+R4+R5                 | 3     |       1 |       1 |    512 | yes | NO
+R3+R4+R6                 | 4     |      26 |      14 |   1906 | yes | NO
+R3+R5+R6                 | 4     |       1 |       1 |    384 | yes | NO
+R4+R5+R6                 | 4     |       1 |       1 |    384 | yes | NO
+R1+R2+R3+R4              | 8     |      75 |      38 |    248 | yes | NO
+R1+R2+R3+R5              | 8     |      22 |      11 |    105 | yes | NO
+R1+R2+R3+R6              | 8     |      75 |      38 |    248 | yes | NO
+R1+R2+R4+R5              | 8     |      22 |      11 |    105 | yes | NO
+R1+R2+R4+R6              | 8     |      75 |      38 |    248 | yes | NO
+R1+R2+R5+R6              | 8     |      22 |      11 |    105 | yes | NO
+R1+R3+R4+R5              | 4     |       1 |       1 |    384 | yes | NO
+R1+R3+R4+R6              | 4     |      26 |      14 |   1906 | yes | NO
+R1+R3+R5+R6              | 4     |       1 |       1 |    384 | yes | NO
+R1+R4+R5+R6              | 4     |       1 |       1 |    384 | yes | NO
+R2+R3+R4+R5              | 8     |      24 |      12 |    108 | yes | NO
+R2+R3+R4+R6              | 8     |      75 |      38 |    248 | yes | NO
+R2+R3+R5+R6              | 8     |      22 |      11 |    105 | yes | NO
+R2+R4+R5+R6              | 8     |      22 |      11 |    105 | yes | NO
+R3+R4+R5+R6              | 4     |       1 |       1 |    384 | yes | NO
+R1+R2+R3+R4+R5           | 8     |      22 |      11 |    105 | yes | NO
+R1+R2+R3+R4+R6           | 8     |      75 |      38 |    248 | yes | NO
+R1+R2+R3+R5+R6           | 8     |      22 |      11 |    105 | yes | NO
+R1+R2+R4+R5+R6           | 8     |      22 |      11 |    105 | yes | NO
+R1+R3+R4+R5+R6           | 4     |       1 |       1 |    384 | yes | NO
+R2+R3+R4+R5+R6           | 8     |      22 |      11 |    105 | yes | NO
+R1+R2+R3+R4+R5+R6        | 8     |      22 |      11 |    105 | yes | NO
+
+-- reading flow, work reads two, f = 2
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | None  |       0 |       0 |      0 | NO  | NO
+R2                       | 8     |      81 |      42 |    256 | yes | NO
+R3                       | 3     |      16 |       9 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | None  |       0 |       0 |      0 | NO  | NO
+R1+R2                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R3                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R4                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R5                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R2+R3                    | 8     |      78 |      40 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      42 |    256 | yes | NO
+R2+R5                    | 8     |      24 |      12 |    108 | yes | NO
+R2+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R3+R4                    | 3     |      16 |       9 |   2432 | yes | NO
+R3+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R3+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R5+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4                 | 8     |      78 |      40 |    252 | yes | NO
+R2+R3+R5                 | 8     |      24 |      12 |    108 | yes | NO
+R2+R3+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R4+R5                 | 8     |      24 |      12 |    108 | yes | NO
+R2+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R3+R4+R5                 | 3     |       1 |       1 |    512 | yes | NO
+R3+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R3+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R4+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4+R5              | 8     |      24 |      12 |    108 | yes | NO
+R2+R3+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R3+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R5           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R5+R6        | None  |       0 |       0 |      0 | NO  | NO
+
+-- reading flow, work reads two, f = 3
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | None  |       0 |       0 |      0 | NO  | NO
+R2                       | 8     |      81 |      42 |    256 | yes | NO
+R3                       | 3     |      16 |       9 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | None  |       0 |       0 |      0 | NO  | NO
+R1+R2                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R3                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R4                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R5                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R2+R3                    | 8     |      78 |      40 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      42 |    256 | yes | NO
+R2+R5                    | 8     |      24 |      12 |    108 | yes | NO
+R2+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R3+R4                    | 3     |      16 |       9 |   2432 | yes | NO
+R3+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R3+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R5+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4                 | 8     |      78 |      40 |    252 | yes | NO
+R2+R3+R5                 | 8     |      24 |      12 |    108 | yes | NO
+R2+R3+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R4+R5                 | 8     |      24 |      12 |    108 | yes | NO
+R2+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R3+R4+R5                 | 3     |       1 |       1 |    512 | yes | NO
+R3+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R3+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R4+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4+R5              | 8     |      24 |      12 |    108 | yes | NO
+R2+R3+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R3+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R5           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R5+R6        | None  |       0 |       0 |      0 | NO  | NO
+
+-- reading actor, work reads all, f = 1
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | 4     |      81 |      15 |   2401 | yes | NO
+R2                       | 8     |      81 |      15 |    256 | yes | NO
+R3                       | 3     |      16 |       4 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | 4     |      12 |       3 |   1753 | yes | NO
+R1+R2                    | 8     |      81 |      15 |    256 | yes | NO
+R1+R3                    | 4     |      48 |       9 |   2128 | yes | NO
+R1+R4                    | 4     |      81 |      15 |   2401 | yes | NO
+R1+R5                    | 6     |      27 |       7 |    343 | yes | NO
+R1+R6                    | 4     |      12 |       3 |   1753 | yes | NO
+R2+R3                    | 8     |      78 |      14 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      15 |    256 | yes | NO
+R2+R5                    | 9     |      27 |       7 |     64 | yes | yes
+R2+R6                    | 8     |      81 |      15 |    256 | yes | NO
+R3+R4                    | 3     |      16 |       4 |   2432 | yes | NO
+R3+R5                    | 6     |      16 |       4 |    304 | yes | NO
+R3+R6                    | 4     |      12 |       3 |   1624 | yes | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | 4     |      12 |       3 |   1753 | yes | NO
+R5+R6                    | 6     |      27 |       7 |    343 | yes | NO
+R1+R2+R3                 | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R4                 | 8     |      81 |      15 |    256 | yes | NO
+R1+R2+R5                 | 9     |      27 |       7 |     64 | yes | yes
+R1+R2+R6                 | 8     |      81 |      15 |    256 | yes | NO
+R1+R3+R4                 | 4     |      48 |       9 |   2128 | yes | NO
+R1+R3+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R1+R3+R6                 | 4     |      12 |       3 |   1624 | yes | NO
+R1+R4+R5                 | 6     |      27 |       7 |    343 | yes | NO
+R1+R4+R6                 | 4     |      12 |       3 |   1753 | yes | NO
+R1+R5+R6                 | 6     |      27 |       7 |    343 | yes | NO
+R2+R3+R4                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5                 | 9     |      26 |       6 |     63 | yes | yes
+R2+R3+R6                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R4+R5                 | 9     |      27 |       7 |     64 | yes | yes
+R2+R4+R6                 | 8     |      81 |      15 |    256 | yes | NO
+R2+R5+R6                 | 9     |      27 |       7 |     64 | yes | yes
+R3+R4+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R3+R4+R6                 | 4     |      12 |       3 |   1624 | yes | NO
+R3+R5+R6                 | 6     |      16 |       4 |    304 | yes | NO
+R4+R5+R6                 | 6     |      27 |       7 |    343 | yes | NO
+R1+R2+R3+R4              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R3+R5              | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R6              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R4+R5              | 9     |      27 |       7 |     64 | yes | yes
+R1+R2+R4+R6              | 8     |      81 |      15 |    256 | yes | NO
+R1+R2+R5+R6              | 9     |      27 |       7 |     64 | yes | yes
+R1+R3+R4+R5              | 6     |      16 |       4 |    304 | yes | NO
+R1+R3+R4+R6              | 4     |      12 |       3 |   1624 | yes | NO
+R1+R3+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R1+R4+R5+R6              | 6     |      27 |       7 |    343 | yes | NO
+R2+R3+R4+R5              | 9     |      26 |       6 |     63 | yes | yes
+R2+R3+R4+R6              | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5+R6              | 9     |      26 |       6 |     63 | yes | yes
+R2+R4+R5+R6              | 9     |      27 |       7 |     64 | yes | yes
+R3+R4+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R1+R2+R3+R4+R5           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R4+R6           | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R3+R5+R6           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R4+R5+R6           | 9     |      27 |       7 |     64 | yes | yes
+R1+R3+R4+R5+R6           | 6     |      16 |       4 |    304 | yes | NO
+R2+R3+R4+R5+R6           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R4+R5+R6        | 9     |      26 |       6 |     63 | yes | yes
+
+-- reading actor, work reads all, f = 2
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | 4     |      30 |       5 |   2110 | yes | NO
+R2                       | 8     |      81 |      15 |    256 | yes | NO
+R3                       | 3     |      16 |       4 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | 5     |      63 |      11 |   1462 | yes | NO
+R1+R2                    | 8     |      81 |      15 |    256 | yes | NO
+R1+R3                    | 4     |      24 |       4 |   1984 | yes | NO
+R1+R4                    | 4     |      30 |       5 |   2110 | yes | NO
+R1+R5                    | 6     |      18 |       5 |    322 | yes | NO
+R1+R6                    | 5     |      63 |      11 |   1462 | yes | NO
+R2+R3                    | 8     |      78 |      14 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      15 |    256 | yes | NO
+R2+R5                    | 9     |      27 |       7 |     64 | yes | yes
+R2+R6                    | 8     |      72 |      13 |    244 | yes | NO
+R3+R4                    | 3     |      16 |       4 |   2432 | yes | NO
+R3+R5                    | 6     |      16 |       4 |    304 | yes | NO
+R3+R6                    | 5     |      63 |      11 |   1444 | yes | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | 5     |      63 |      11 |   1462 | yes | NO
+R5+R6                    | 6     |      18 |       5 |    322 | yes | NO
+R1+R2+R3                 | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R4                 | 8     |      81 |      15 |    256 | yes | NO
+R1+R2+R5                 | 9     |      27 |       7 |     64 | yes | yes
+R1+R2+R6                 | 8     |      72 |      13 |    244 | yes | NO
+R1+R3+R4                 | 4     |      24 |       4 |   1984 | yes | NO
+R1+R3+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R1+R3+R6                 | 5     |      63 |      11 |   1444 | yes | NO
+R1+R4+R5                 | 6     |      18 |       5 |    322 | yes | NO
+R1+R4+R6                 | 5     |      63 |      11 |   1462 | yes | NO
+R1+R5+R6                 | 6     |      18 |       5 |    322 | yes | NO
+R2+R3+R4                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5                 | 9     |      26 |       6 |     63 | yes | yes
+R2+R3+R6                 | 8     |      72 |      13 |    243 | yes | NO
+R2+R4+R5                 | 9     |      27 |       7 |     64 | yes | yes
+R2+R4+R6                 | 8     |      72 |      13 |    244 | yes | NO
+R2+R5+R6                 | 9     |      27 |       7 |     64 | yes | yes
+R3+R4+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R3+R4+R6                 | 5     |      63 |      11 |   1444 | yes | NO
+R3+R5+R6                 | 6     |      16 |       4 |    304 | yes | NO
+R4+R5+R6                 | 6     |      18 |       5 |    322 | yes | NO
+R1+R2+R3+R4              | 8     |      78 |      14 |    252 | yes | NO
+R1+R2+R3+R5              | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R6              | 8     |      72 |      13 |    243 | yes | NO
+R1+R2+R4+R5              | 9     |      27 |       7 |     64 | yes | yes
+R1+R2+R4+R6              | 8     |      72 |      13 |    244 | yes | NO
+R1+R2+R5+R6              | 9     |      27 |       7 |     64 | yes | yes
+R1+R3+R4+R5              | 6     |      16 |       4 |    304 | yes | NO
+R1+R3+R4+R6              | 5     |      63 |      11 |   1444 | yes | NO
+R1+R3+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R1+R4+R5+R6              | 6     |      18 |       5 |    322 | yes | NO
+R2+R3+R4+R5              | 9     |      26 |       6 |     63 | yes | yes
+R2+R3+R4+R6              | 8     |      72 |      13 |    243 | yes | NO
+R2+R3+R5+R6              | 9     |      26 |       6 |     63 | yes | yes
+R2+R4+R5+R6              | 9     |      27 |       7 |     64 | yes | yes
+R3+R4+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R1+R2+R3+R4+R5           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R4+R6           | 8     |      72 |      13 |    243 | yes | NO
+R1+R2+R3+R5+R6           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R4+R5+R6           | 9     |      27 |       7 |     64 | yes | yes
+R1+R3+R4+R5+R6           | 6     |      16 |       4 |    304 | yes | NO
+R2+R3+R4+R5+R6           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R4+R5+R6        | 9     |      26 |       6 |     63 | yes | yes
+
+-- reading actor, work reads all, f = 3
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | 4     |       6 |       1 |   1606 | yes | NO
+R2                       | 8     |      81 |      15 |    256 | yes | NO
+R3                       | 3     |      16 |       4 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | 6     |     142 |      26 |   1150 | yes | NO
+R1+R2                    | 8     |      69 |      12 |    240 | yes | NO
+R1+R3                    | 4     |       6 |       1 |   1606 | yes | NO
+R1+R4                    | 4     |       6 |       1 |   1606 | yes | NO
+R1+R5                    | 6     |      16 |       4 |    304 | yes | NO
+R1+R6                    | 6     |     142 |      26 |   1150 | yes | NO
+R2+R3                    | 8     |      78 |      14 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      15 |    256 | yes | NO
+R2+R5                    | 9     |      27 |       7 |     64 | yes | yes
+R2+R6                    | 8     |      63 |      11 |    231 | yes | NO
+R3+R4                    | 3     |      16 |       4 |   2432 | yes | NO
+R3+R5                    | 6     |      16 |       4 |    304 | yes | NO
+R3+R6                    | 6     |     142 |      26 |   1150 | yes | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | 6     |     142 |      26 |   1150 | yes | NO
+R5+R6                    | 6     |      16 |       4 |    304 | yes | NO
+R1+R2+R3                 | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R4                 | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R5                 | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R6                 | 8     |      63 |      11 |    231 | yes | NO
+R1+R3+R4                 | 4     |       6 |       1 |   1606 | yes | NO
+R1+R3+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R1+R3+R6                 | 6     |     142 |      26 |   1150 | yes | NO
+R1+R4+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R1+R4+R6                 | 6     |     142 |      26 |   1150 | yes | NO
+R1+R5+R6                 | 6     |      16 |       4 |    304 | yes | NO
+R2+R3+R4                 | 8     |      78 |      14 |    252 | yes | NO
+R2+R3+R5                 | 9     |      26 |       6 |     63 | yes | yes
+R2+R3+R6                 | 8     |      63 |      11 |    231 | yes | NO
+R2+R4+R5                 | 9     |      27 |       7 |     64 | yes | yes
+R2+R4+R6                 | 8     |      63 |      11 |    231 | yes | NO
+R2+R5+R6                 | 9     |      26 |       6 |     63 | yes | yes
+R3+R4+R5                 | 6     |      16 |       4 |    304 | yes | NO
+R3+R4+R6                 | 6     |     142 |      26 |   1150 | yes | NO
+R3+R5+R6                 | 6     |      16 |       4 |    304 | yes | NO
+R4+R5+R6                 | 6     |      16 |       4 |    304 | yes | NO
+R1+R2+R3+R4              | 8     |      69 |      12 |    240 | yes | NO
+R1+R2+R3+R5              | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R6              | 8     |      63 |      11 |    231 | yes | NO
+R1+R2+R4+R5              | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R4+R6              | 8     |      63 |      11 |    231 | yes | NO
+R1+R2+R5+R6              | 9     |      26 |       6 |     63 | yes | yes
+R1+R3+R4+R5              | 6     |      16 |       4 |    304 | yes | NO
+R1+R3+R4+R6              | 6     |     142 |      26 |   1150 | yes | NO
+R1+R3+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R1+R4+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R2+R3+R4+R5              | 9     |      26 |       6 |     63 | yes | yes
+R2+R3+R4+R6              | 8     |      63 |      11 |    231 | yes | NO
+R2+R3+R5+R6              | 9     |      26 |       6 |     63 | yes | yes
+R2+R4+R5+R6              | 9     |      26 |       6 |     63 | yes | yes
+R3+R4+R5+R6              | 6     |      16 |       4 |    304 | yes | NO
+R1+R2+R3+R4+R5           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R4+R6           | 8     |      63 |      11 |    231 | yes | NO
+R1+R2+R3+R5+R6           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R4+R5+R6           | 9     |      26 |       6 |     63 | yes | yes
+R1+R3+R4+R5+R6           | 6     |      16 |       4 |    304 | yes | NO
+R2+R3+R4+R5+R6           | 9     |      26 |       6 |     63 | yes | yes
+R1+R2+R3+R4+R5+R6        | 9     |      26 |       6 |     63 | yes | yes
+
+-- reading actor, work reads two, f = 1
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | 4     |      18 |      10 |   1860 | yes | NO
+R2                       | 8     |      81 |      42 |    256 | yes | NO
+R3                       | 3     |      16 |       9 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | 4     |       4 |       3 |   1486 | yes | NO
+R1+R2                    | 8     |      81 |      42 |    256 | yes | NO
+R1+R3                    | 4     |      10 |       6 |   1674 | yes | NO
+R1+R4                    | 4     |      18 |      10 |   1860 | yes | NO
+R1+R5                    | 6     |      27 |      15 |    343 | yes | NO
+R1+R6                    | 4     |       4 |       3 |   1486 | yes | NO
+R2+R3                    | 8     |      78 |      40 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      42 |    256 | yes | NO
+R2+R5                    | 9     |      27 |      15 |     64 | yes | yes
+R2+R6                    | 8     |      78 |      40 |    252 | yes | NO
+R3+R4                    | 3     |      16 |       9 |   2432 | yes | NO
+R3+R5                    | 6     |      16 |       9 |    304 | yes | NO
+R3+R6                    | 4     |       4 |       3 |   1366 | yes | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | 4     |       4 |       3 |   1486 | yes | NO
+R5+R6                    | 6     |      27 |      15 |    343 | yes | NO
+R1+R2+R3                 | 8     |      78 |      40 |    252 | yes | NO
+R1+R2+R4                 | 8     |      81 |      42 |    256 | yes | NO
+R1+R2+R5                 | 9     |      27 |      15 |     64 | yes | yes
+R1+R2+R6                 | 8     |      78 |      40 |    252 | yes | NO
+R1+R3+R4                 | 4     |      10 |       6 |   1674 | yes | NO
+R1+R3+R5                 | 6     |      16 |       9 |    304 | yes | NO
+R1+R3+R6                 | 4     |       4 |       3 |   1366 | yes | NO
+R1+R4+R5                 | 6     |      27 |      15 |    343 | yes | NO
+R1+R4+R6                 | 4     |       4 |       3 |   1486 | yes | NO
+R1+R5+R6                 | 6     |      27 |      15 |    343 | yes | NO
+R2+R3+R4                 | 8     |      78 |      40 |    252 | yes | NO
+R2+R3+R5                 | 9     |      26 |      14 |     63 | yes | yes
+R2+R3+R6                 | 8     |      75 |      38 |    248 | yes | NO
+R2+R4+R5                 | 9     |      27 |      15 |     64 | yes | yes
+R2+R4+R6                 | 8     |      78 |      40 |    252 | yes | NO
+R2+R5+R6                 | 9     |      27 |      15 |     64 | yes | yes
+R3+R4+R5                 | 6     |      16 |       9 |    304 | yes | NO
+R3+R4+R6                 | 4     |       4 |       3 |   1366 | yes | NO
+R3+R5+R6                 | 6     |      16 |       9 |    304 | yes | NO
+R4+R5+R6                 | 6     |      27 |      15 |    343 | yes | NO
+R1+R2+R3+R4              | 8     |      78 |      40 |    252 | yes | NO
+R1+R2+R3+R5              | 9     |      26 |      14 |     63 | yes | yes
+R1+R2+R3+R6              | 8     |      75 |      38 |    248 | yes | NO
+R1+R2+R4+R5              | 9     |      27 |      15 |     64 | yes | yes
+R1+R2+R4+R6              | 8     |      78 |      40 |    252 | yes | NO
+R1+R2+R5+R6              | 9     |      27 |      15 |     64 | yes | yes
+R1+R3+R4+R5              | 6     |      16 |       9 |    304 | yes | NO
+R1+R3+R4+R6              | 4     |       4 |       3 |   1366 | yes | NO
+R1+R3+R5+R6              | 6     |      16 |       9 |    304 | yes | NO
+R1+R4+R5+R6              | 6     |      27 |      15 |    343 | yes | NO
+R2+R3+R4+R5              | 9     |      26 |      14 |     63 | yes | yes
+R2+R3+R4+R6              | 8     |      75 |      38 |    248 | yes | NO
+R2+R3+R5+R6              | 9     |      26 |      14 |     63 | yes | yes
+R2+R4+R5+R6              | 9     |      27 |      15 |     64 | yes | yes
+R3+R4+R5+R6              | 6     |      16 |       9 |    304 | yes | NO
+R1+R2+R3+R4+R5           | 9     |      26 |      14 |     63 | yes | yes
+R1+R2+R3+R4+R6           | 8     |      75 |      38 |    248 | yes | NO
+R1+R2+R3+R5+R6           | 9     |      26 |      14 |     63 | yes | yes
+R1+R2+R4+R5+R6           | 9     |      27 |      15 |     64 | yes | yes
+R1+R3+R4+R5+R6           | 6     |      16 |       9 |    304 | yes | NO
+R2+R3+R4+R5+R6           | 9     |      26 |      14 |     63 | yes | yes
+R1+R2+R3+R4+R5+R6        | 9     |      26 |      14 |     63 | yes | yes
+
+-- reading actor, work reads two, f = 2
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | None  |       0 |       0 |      0 | NO  | NO
+R2                       | 8     |      81 |      42 |    256 | yes | NO
+R3                       | 3     |      16 |       9 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | None  |       0 |       0 |      0 | NO  | NO
+R1+R2                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R3                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R4                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R5                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R2+R3                    | 8     |      78 |      40 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      42 |    256 | yes | NO
+R2+R5                    | 9     |      27 |      15 |     64 | yes | yes
+R2+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R3+R4                    | 3     |      16 |       9 |   2432 | yes | NO
+R3+R5                    | 6     |      16 |       9 |    304 | yes | NO
+R3+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R5+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4                 | 8     |      78 |      40 |    252 | yes | NO
+R2+R3+R5                 | 9     |      26 |      14 |     63 | yes | yes
+R2+R3+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R4+R5                 | 9     |      27 |      15 |     64 | yes | yes
+R2+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R3+R4+R5                 | 6     |      16 |       9 |    304 | yes | NO
+R3+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R3+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R4+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4+R5              | 9     |      26 |      14 |     63 | yes | yes
+R2+R3+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R3+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R5           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R5+R6        | None  |       0 |       0 |      0 | NO  | NO
+
+-- reading actor, work reads two, f = 3
+combination              | least | wirings | classes | meets all (of 4096) | candidate meets | candidate least
+R1                       | None  |       0 |       0 |      0 | NO  | NO
+R2                       | 8     |      81 |      42 |    256 | yes | NO
+R3                       | 3     |      16 |       9 |   2432 | yes | NO
+R4                       | 0     |       1 |       1 |   4096 | yes | NO
+R5                       | 3     |       1 |       1 |    512 | yes | NO
+R6                       | None  |       0 |       0 |      0 | NO  | NO
+R1+R2                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R3                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R4                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R5                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R2+R3                    | 8     |      78 |      40 |    252 | yes | NO
+R2+R4                    | 8     |      81 |      42 |    256 | yes | NO
+R2+R5                    | 9     |      27 |      15 |     64 | yes | yes
+R2+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R3+R4                    | 3     |      16 |       9 |   2432 | yes | NO
+R3+R5                    | 6     |      16 |       9 |    304 | yes | NO
+R3+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R4+R5                    | 3     |       1 |       1 |    512 | yes | NO
+R4+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R5+R6                    | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R5                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4                 | 8     |      78 |      40 |    252 | yes | NO
+R2+R3+R5                 | 9     |      26 |      14 |     63 | yes | yes
+R2+R3+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R4+R5                 | 9     |      27 |      15 |     64 | yes | yes
+R2+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R2+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R3+R4+R5                 | 6     |      16 |       9 |    304 | yes | NO
+R3+R4+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R3+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R4+R5+R6                 | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R5              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4+R5              | 9     |      26 |      14 |     63 | yes | yes
+R2+R3+R4+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R2+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R3+R4+R5+R6              | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R5           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R3+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R2+R3+R4+R5+R6           | None  |       0 |       0 |      0 | NO  | NO
+R1+R2+R3+R4+R5+R6        | None  |       0 |       0 |      0 | NO  | NO
+
+== The whole list: every least wiring up to renaming
+
+-- reading flow, work reads all, f = 1, naming as R4: least 8, 24 wirings, 4 classes, candidate meets: True, candidate least: False
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B
+
+-- reading flow, work reads all, f = 1, naming as R4w: least 8, 24 wirings, 4 classes, candidate meets: True, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading flow, work reads all, f = 1, naming as R4wl: least 9, 11 wirings, 3 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading flow, work reads all, f = 2, naming as R4: least 8, 24 wirings, 4 classes, candidate meets: True, candidate least: False
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B
+
+-- reading flow, work reads all, f = 2, naming as R4w: least 8, 24 wirings, 4 classes, candidate meets: True, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading flow, work reads all, f = 2, naming as R4wl: least 9, 11 wirings, 3 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading flow, work reads all, f = 3, naming as R4: least 8, 18 wirings, 3 classes, candidate meets: True, candidate least: False
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B
+
+-- reading flow, work reads all, f = 3, naming as R4w: least 8, 18 wirings, 3 classes, candidate meets: True, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading flow, work reads all, f = 3, naming as R4wl: least 9, 11 wirings, 3 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading flow, work reads two, f = 1, naming as R4: least 8, 22 wirings, 11 classes, candidate meets: True, candidate least: False
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->A, B->D, C->B, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->B, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->B, C->D, D->A, D->B
+    A->B, A->D, B->C, B->D, C->B, C->D, D->A, D->C
+
+-- reading flow, work reads two, f = 1, naming as R4w: least 8, 22 wirings, 11 classes, candidate meets: True, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading flow, work reads two, f = 1, naming as R4wl: least 9, 11 wirings, 6 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->A, B->C, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->A, B->C, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading flow, work reads two, f = 2, naming as R4: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+
+-- reading flow, work reads two, f = 2, naming as R4w: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading flow, work reads two, f = 2, naming as R4wl: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading flow, work reads two, f = 3, naming as R4: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+
+-- reading flow, work reads two, f = 3, naming as R4w: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading flow, work reads two, f = 3, naming as R4wl: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading actor, work reads all, f = 1, naming as R4: least 9, 26 wirings, 6 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading actor, work reads all, f = 1, naming as R4w: least 9, 26 wirings, 6 classes, candidate meets: True, candidate least: True
+    (the same wirings as with naming as a count)
+
+-- reading actor, work reads all, f = 1, naming as R4wl: least 9, 11 wirings, 3 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading actor, work reads all, f = 2, naming as R4: least 9, 26 wirings, 6 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading actor, work reads all, f = 2, naming as R4w: least 9, 26 wirings, 6 classes, candidate meets: True, candidate least: True
+    (the same wirings as with naming as a count)
+
+-- reading actor, work reads all, f = 2, naming as R4wl: least 9, 11 wirings, 3 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading actor, work reads all, f = 3, naming as R4: least 9, 26 wirings, 6 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading actor, work reads all, f = 3, naming as R4w: least 9, 26 wirings, 6 classes, candidate meets: True, candidate least: True
+    (the same wirings as with naming as a count)
+
+-- reading actor, work reads all, f = 3, naming as R4wl: least 9, 11 wirings, 3 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading actor, work reads two, f = 1, naming as R4: least 9, 26 wirings, 14 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->B, C->D, D->A
+    A->B, A->C, A->D, B->A, B->C, B->D, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->A, B->C, B->D, C->A, C->B, C->D, D->C
+    A->B, A->D, B->A, B->C, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->A, B->C, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->A, B->C, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+    A->D, B->A, B->C, B->D, C->A, C->B, C->D, D->B, D->C
+    A->D, B->A, B->C, B->D, C->B, C->D, D->A, D->B, D->C
+
+-- reading actor, work reads two, f = 1, naming as R4w: least 9, 26 wirings, 14 classes, candidate meets: True, candidate least: True
+    (the same wirings as with naming as a count)
+
+-- reading actor, work reads two, f = 1, naming as R4wl: least 9, 11 wirings, 6 classes, candidate meets: True, candidate least: True
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->A, B->C, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->A, B->C, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+
+-- reading actor, work reads two, f = 2, naming as R4: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+
+-- reading actor, work reads two, f = 2, naming as R4w: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading actor, work reads two, f = 2, naming as R4wl: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading actor, work reads two, f = 3, naming as R4: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+
+-- reading actor, work reads two, f = 3, naming as R4w: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+    (the same wirings as with naming as a count)
+
+-- reading actor, work reads two, f = 3, naming as R4wl: least None, 0 wirings, 0 classes, candidate meets: False, candidate least: False
+    (the same wirings as with naming as a count)
+
+== The whole list without R2, and R2 alone with R5: what the count rests on
+flow/all f=1 R2+R5: least 8, 24 wirings, 4 classes; candidate least: False
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B
+flow/all f=1 R2+R3+R5: least 8, 24 wirings, 4 classes; candidate least: False
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B
+flow/all f=1 R1+R3+R4+R5+R6: least 4, 3 wirings, 1 classes; candidate least: False
+    A->D, B->D, C->D, D->A
+flow/all f=1 R1+R2+R3+R4+R6: least 8, 78 wirings, 14 classes; candidate least: False
+    A->B, A->C, B->A, B->C, C->A, C->D, D->A, D->B
+    A->B, A->C, B->A, B->C, C->A, C->D, D->A, D->C
+    A->B, A->C, B->A, B->C, C->A, C->D, D->B, D->C
+    A->B, A->C, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->C, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, B->A, B->D, C->B, C->D, D->A, D->B
+    A->B, A->C, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, B->A, B->D, C->B, C->D, D->B, D->C
+    A->B, A->C, B->C, B->D, C->B, C->D, D->A, D->B
+    A->B, A->C, B->C, B->D, C->B, C->D, D->B, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+flow/two f=1 R2+R5: least 8, 24 wirings, 12 classes; candidate least: False
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->A, B->D, C->B, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->B, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->B, C->D, D->A, D->B
+    A->B, A->D, B->C, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->B, C->D, D->B, D->C
+flow/two f=1 R2+R3+R5: least 8, 24 wirings, 12 classes; candidate least: False
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->A, B->D, C->B, C->D, D->A, D->B
+    A->B, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->A, B->D, C->B, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->C, B->D, C->B, C->D, D->A, D->B
+    A->B, A->D, B->C, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->B, C->D, D->B, D->C
+flow/two f=1 R1+R3+R4+R5+R6: least 4, 1 wirings, 1 classes; candidate least: False
+    A->D, B->D, C->D, D->A
+flow/two f=1 R1+R2+R3+R4+R6: least 8, 75 wirings, 38 classes; candidate least: False
+    A->B, A->C, B->A, B->C, C->A, C->D, D->A, D->B
+    A->B, A->C, B->A, B->C, C->A, C->D, D->A, D->C
+    A->B, A->C, B->A, B->C, C->A, C->D, D->B, D->C
+    A->B, A->C, B->A, B->C, C->B, C->D, D->A, D->B
+    A->B, A->C, B->A, B->C, C->B, C->D, D->A, D->C
+    A->B, A->C, B->A, B->C, C->B, C->D, D->B, D->C
+    A->B, A->C, B->A, B->D, C->A, C->D, D->A, D->B
+    A->B, A->C, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, B->A, B->D, C->B, C->D, D->A, D->B
+    A->B, A->C, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, B->A, B->D, C->B, C->D, D->B, D->C
+    A->B, A->C, B->C, B->D, C->B, C->D, D->A, D->B
+actor/all f=1 R2+R5: least 9, 27 wirings, 7 classes; candidate least: True
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->B, C->D
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+actor/all f=1 R2+R3+R5: least 9, 26 wirings, 6 classes; candidate least: True
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+actor/all f=1 R1+R3+R4+R5+R6: least 6, 16 wirings, 4 classes; candidate least: False
+    A->B, A->C, A->D, B->D, C->D, D->A
+    A->B, A->D, B->C, B->D, C->D, D->A
+    A->B, A->D, B->D, C->D, D->A, D->C
+    A->D, B->D, C->D, D->A, D->B, D->C
+actor/all f=1 R1+R2+R3+R4+R6: least 8, 78 wirings, 14 classes; candidate least: False
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->C, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, C->B, C->D, D->A
+    A->B, A->C, A->D, B->A, B->C, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, D->A, D->B, D->C
+    A->B, A->C, A->D, B->A, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, C->D, D->A, D->B, D->C
+    A->B, A->C, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, B->A, B->D, C->B, C->D, D->A, D->C
+actor/two f=1 R2+R5: least 9, 27 wirings, 15 classes; candidate least: True
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->B, C->D
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->B, C->D, D->A
+    A->B, A->C, A->D, B->A, B->C, B->D, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->A, B->C, B->D, C->A, C->B, C->D, D->C
+    A->B, A->D, B->A, B->C, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->A, B->C, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->A, B->C, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->B, C->D, D->A, D->C
+actor/two f=1 R2+R3+R5: least 9, 26 wirings, 14 classes; candidate least: True
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->B, C->D, D->A
+    A->B, A->C, A->D, B->A, B->C, B->D, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, C->D, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->A, B->C, B->D, C->A, C->B, C->D, D->C
+    A->B, A->D, B->A, B->C, B->D, C->A, C->D, D->B, D->C
+    A->B, A->D, B->A, B->C, B->D, C->B, C->D, D->A, D->C
+    A->B, A->D, B->A, B->C, B->D, C->D, D->A, D->B, D->C
+    A->B, A->D, B->C, B->D, C->A, C->B, C->D, D->A, D->C
+    A->B, A->D, B->C, B->D, C->A, C->D, D->A, D->B, D->C
+actor/two f=1 R1+R3+R4+R5+R6: least 6, 16 wirings, 9 classes; candidate least: False
+    A->B, A->C, A->D, B->D, C->D, D->A
+    A->B, A->D, B->C, B->D, C->D, D->A
+    A->B, A->D, B->D, C->A, C->D, D->C
+    A->B, A->D, B->D, C->D, D->A, D->C
+    A->D, B->A, B->C, B->D, C->D, D->B
+    A->D, B->A, B->D, C->B, C->D, D->C
+    A->D, B->A, B->D, C->D, D->B, D->C
+    A->D, B->C, B->D, C->D, D->A, D->B
+    A->D, B->D, C->D, D->A, D->B, D->C
+actor/two f=1 R1+R2+R3+R4+R6: least 8, 75 wirings, 38 classes; candidate least: False
+    A->B, A->C, A->D, B->A, B->C, B->D, C->A, D->B
+    A->B, A->C, A->D, B->A, B->C, B->D, C->B, D->A
+    A->B, A->C, A->D, B->A, B->C, B->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->C, C->A, C->D, D->B
+    A->B, A->C, A->D, B->A, B->C, C->B, C->D, D->A
+    A->B, A->C, A->D, B->A, B->C, C->D, D->A, D->B
+    A->B, A->C, A->D, B->A, B->D, C->A, D->B, D->C
+    A->B, A->C, A->D, B->A, B->D, C->B, D->A, D->C
+    A->B, A->C, A->D, B->A, B->D, D->A, D->B, D->C
+    A->B, A->C, A->D, B->A, C->B, C->D, D->A, D->C
+    A->B, A->C, A->D, B->A, C->D, D->A, D->B, D->C
+    A->B, A->C, B->A, B->C, B->D, C->A, C->D, D->B
+
+== Which requirement forces each of the candidate's nine connections
+== (the requirements that hold for the candidate and fail when the connection is removed)
+
+-- flow/all
+   without A->B: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without B->C: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without C->A: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without D->A: fails R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without D->B: fails R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without D->C: fails R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without A->D: fails R2, R4wl, R5   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without B->D: fails R2, R4wl, R5   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without C->D: fails R2, R4wl, R5   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+
+-- flow/two
+   without A->B: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without B->C: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without C->A: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without D->A: fails R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without D->B: fails R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without D->C: fails R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without A->D: fails R2, R4wl, R5   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without B->D: fails R2, R4wl, R5   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without C->D: fails R2, R4wl, R5   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+
+-- actor/all
+   without A->B: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without B->C: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without C->A: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without D->A: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without D->B: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without D->C: fails R2, R4wl   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without A->D: fails R4wl, R5   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without B->D: fails R4wl, R5   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+   without C->D: fails R4wl, R5   raw@1,2,3=[(None, None, None), (None, None, None), (None, None, None)]
+
+-- actor/two
+   without A->B: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without B->C: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without C->A: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without D->A: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without D->B: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without D->C: fails R2, R4wl   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without A->D: fails R4wl, R5   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without B->D: fails R4wl, R5   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+   without C->D: fails R4wl, R5   raw@1,2,3=[(None, None, None), (2, 1, None), (2, 1, None)]
+
+== Mesh against candidate: requirements on which they differ
+flow/all: differ on nothing; raw results differ at f in none
+flow/two: differ on nothing; raw results differ at f in none
+actor/all: differ on nothing; raw results differ at f in none
+actor/two: differ on nothing; raw results differ at f in none
+
+== Work checked by every node that checks a state, against work checked by all four
+flow: 0 of 12288 (wiring, rate) pairs differ
+   f=1: whole list, least 8, 24 wirings; same as with all four: True
+   f=2: whole list, least 8, 24 wirings; same as with all four: True
+   f=3: whole list, least 8, 18 wirings; same as with all four: True
+actor: 0 of 12288 (wiring, rate) pairs differ
+   f=1: whole list, least 9, 26 wirings; same as with all four: True
+   f=2: whole list, least 9, 26 wirings; same as with all four: True
+   f=3: whole list, least 9, 26 wirings; same as with all four: True
+
+== restart_game (check_model.py) against 'the coordinator reaches every node'
+flow: 4096 wirings, 0 disagreements
+actor: 4096 wirings, 0 disagreements
+
+== Naming at the wiring: the search over cases against the rule
+flow: 4096 wirings, 0 disagreements
+actor: 4096 wirings, 0 disagreements
+
+== An undirected link (all six edges between two nodes): 64 wirings
+work all, f=1: whole list, least 5 links, AB-AC-AD-BD-CD; AB-AD-BC-BD-CD; AC-AD-BC-BD-CD
+work all, f=2: whole list, least 5 links, AB-AC-AD-BD-CD; AB-AD-BC-BD-CD; AC-AD-BC-BD-CD
+work all, f=3: whole list, least 5 links, AB-AC-AD-BD-CD; AB-AD-BC-BD-CD; AC-AD-BC-BD-CD
+work two, f=1: whole list, least 5 links, AB-AC-AD-BD-CD; AB-AD-BC-BD-CD; AC-AD-BC-BD-CD
+work two, f=2: whole list, least None links, 
+work two, f=3: whole list, least None links, 

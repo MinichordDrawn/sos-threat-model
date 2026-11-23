@@ -1,0 +1,5 @@
+=== 4.1 one connection removed, with scopes, f=1, freeze ===
+flow (G1, G2, told, spill): {'base ring': {(None, None, None, None)}, 'upper cycle': {(None, None, None, None)}, 'T->D': {(3, 2, 3, None)}, 'D->T': {(None, None, 2, None)}}
+flow all three upper-cycle arrows removed: G2 all None | G1 base None | G1 mid None | G1 top None | G2 base None | G2 mid None | G2 top None | told None | spill None | states 5854 complete True rounds 3  [0s]
+actor (G1, G2, told, spill): {'base ring': {(None, None, None, None)}, 'upper cycle': {(None, None, None, None)}, 'T->D': {(None, None, 2, None)}, 'D->T': {(3, 2, 2, None)}}
+actor all three upper-cycle arrows removed: G2 all None | G1 base None | G1 mid None | G1 top None | G2 base None | G2 mid None | G2 top None | told None | spill None | states 5854 complete True rounds 3  [0s]

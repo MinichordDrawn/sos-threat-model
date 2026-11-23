@@ -1,0 +1,13170 @@
+[
+ {
+  "id": "R/f1",
+  "system": {
+   "name": "R",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R/f2",
+  "system": {
+   "name": "R",
+   "f": 2,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R/f3",
+  "system": {
+   "name": "R",
+   "f": 3,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P1/f1",
+  "system": {
+   "name": "R without P1",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {},
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": false,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P2/f1",
+  "system": {
+   "name": "R without P2",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s4",
+    "M2": "s5"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P3/f1",
+  "system": {
+   "name": "R without P3",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {},
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P4/f1",
+  "system": {
+   "name": "R without P4",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {},
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P5/f1",
+  "system": {
+   "name": "R without P5",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P6/f1",
+  "system": {
+   "name": "R without P6",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 1,
+    "M3": 1
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P7/f1",
+  "system": {
+   "name": "R without P7",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P8/f1",
+  "system": {
+   "name": "R without P8",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 1,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-P8b/f1",
+  "system": {
+   "name": "R without P8b",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R-gate/f1",
+  "system": {
+   "name": "R without gate",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": false,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "R+unread/f1",
+  "system": {
+   "name": "R plus unread M4",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+   ],
+   "works": [
+    "W1",
+    "W2"
+   ],
+   "joiner": "J",
+   "boundary": {
+    "M1": 1,
+    "M2": 2,
+    "M3": 3,
+    "M4": 4
+   },
+   "substrate": {
+    "W1": "s1",
+    "W2": "s2",
+    "M3": "s3",
+    "M1": "s1",
+    "M2": "s2"
+   },
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "W1": [
+     "M1",
+     "M4"
+    ],
+    "W2": [
+     "M2"
+    ],
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "J": [
+     "M3"
+    ],
+    "M4": [
+     "M1",
+     "M2"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W1": [
+     "M1",
+     "M3"
+    ],
+    "W2": [
+     "M2",
+     "M3"
+    ],
+    "J": [
+     "M3",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh3-unread-M3/f1",
+  "system": {
+   "name": "mesh of 3, nobody reads M3's signal",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": []
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh3-unread-M3/f2",
+  "system": {
+   "name": "mesh of 3, nobody reads M3's signal",
+   "f": 2,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": []
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh1/f1",
+  "system": {
+   "name": "mesh of 1",
+   "f": 1,
+   "monitors": [
+    "M1"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": []
+   },
+   "checkers": {
+    "M1": [],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": []
+   },
+   "halt_inputs": {
+    "W": [
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh1/f2",
+  "system": {
+   "name": "mesh of 1",
+   "f": 2,
+   "monitors": [
+    "M1"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": []
+   },
+   "checkers": {
+    "M1": [],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": []
+   },
+   "halt_inputs": {
+    "W": [
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh1/f3",
+  "system": {
+   "name": "mesh of 1",
+   "f": 3,
+   "monitors": [
+    "M1"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": []
+   },
+   "checkers": {
+    "M1": [],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": []
+   },
+   "halt_inputs": {
+    "W": [
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh2/f1",
+  "system": {
+   "name": "mesh of 2",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ],
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh2/f2",
+  "system": {
+   "name": "mesh of 2",
+   "f": 2,
+   "monitors": [
+    "M1",
+    "M2"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ],
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh2/f3",
+  "system": {
+   "name": "mesh of 2",
+   "f": 3,
+   "monitors": [
+    "M1",
+    "M2"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ],
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh3/f1",
+  "system": {
+   "name": "mesh of 3",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh3/f2",
+  "system": {
+   "name": "mesh of 3",
+   "f": 2,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh3/f3",
+  "system": {
+   "name": "mesh of 3",
+   "f": 3,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh4/f1",
+  "system": {
+   "name": "mesh of 4",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2,
+    "M4": 3
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh4/f2",
+  "system": {
+   "name": "mesh of 4",
+   "f": 2,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2,
+    "M4": 3
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh4/f3",
+  "system": {
+   "name": "mesh of 4",
+   "f": 3,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2,
+    "M4": 3
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "ring2-other-gate2/f1",
+  "system": {
+   "name": "ring of 2, reports to other, work reads 2",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M2": [
+     "M1"
+    ],
+    "M1": [
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M2": [
+     "M1"
+    ],
+    "M1": [
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M1"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "ring3-other-gate2/f1",
+  "system": {
+   "name": "ring of 3, reports to other, work reads 2",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M3"
+    ],
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "ring3-same-gate2/f1",
+  "system": {
+   "name": "ring of 3, reports to same, work reads 2",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M3"
+    ],
+    "M3": [
+     "M1"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "ring3-same-gate3/f1",
+  "system": {
+   "name": "ring of 3, reports to same, work reads 3",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2"
+    ],
+    "M2": [
+     "M3"
+    ],
+    "M3": [
+     "M1"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "ring3-other-gate1/f1",
+  "system": {
+   "name": "ring of 3, reports to other, work reads 1",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M3"
+    ],
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "ring3-other-gate2/f2",
+  "system": {
+   "name": "ring of 3, reports to other, work reads 2",
+   "f": 2,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M3"
+    ],
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "ring3-other-gate3/f2",
+  "system": {
+   "name": "ring of 3, reports to other, work reads 3",
+   "f": 2,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M3"
+    ],
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "ring3-other-gate3/f3",
+  "system": {
+   "name": "ring of 3, reports to other, work reads 3",
+   "f": 3,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ],
+    "M1": [
+     "M3"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M3"
+    ],
+    "M2": [
+     "M1"
+    ],
+    "M3": [
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "3+K-gateK/f1",
+  "system": {
+   "name": "3+K, work reads K",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "K"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2,
+    "K": 3
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3",
+     "K"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "K"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "K"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3",
+     "K"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "K"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "K"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "K"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "3+K-gateK+M1/f1",
+  "system": {
+   "name": "3+K, work reads K+M1",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "K"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2,
+    "K": 3
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3",
+     "K"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "K"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "K"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3",
+     "K"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "K"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "K"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "K",
+     "M1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "3+K-gateK+M1+M2+M3/f1",
+  "system": {
+   "name": "3+K, work reads K+M1+M2+M3",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "K"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2,
+    "K": 3
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3",
+     "K"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "K"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "K"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3",
+     "K"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "K"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "K"
+    ],
+    "K": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "K",
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested1-upper2/f1",
+  "system": {
+   "name": "nested, base rings 1+K, upper ring of 2",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "KA",
+    "B1",
+    "KB"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "KA": 1,
+    "B1": 2,
+    "KB": 3
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A1": [
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "KB"
+    ],
+    "B1": [
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ]
+   },
+   "checkers": {
+    "A1": [
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "KB"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B1": [
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "KB"
+    ],
+    "B1": [
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested1-upper2/f2",
+  "system": {
+   "name": "nested, base rings 1+K, upper ring of 2",
+   "f": 2,
+   "monitors": [
+    "A1",
+    "KA",
+    "B1",
+    "KB"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "KA": 1,
+    "B1": 2,
+    "KB": 3
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A1": [
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "KB"
+    ],
+    "B1": [
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ]
+   },
+   "checkers": {
+    "A1": [
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "KB"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B1": [
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "KB"
+    ],
+    "B1": [
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A1 reads A2's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A1 reads A2's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA reads A2's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA reads A2's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA reads A1's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA reads A1's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A3 reads A1's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A3 reads A1's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A2 reads A3's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A2 reads A3's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA reads A3's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA reads A3's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A1 reads KA's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A1 reads KA's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: U3 reads KA's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: U3 reads KA's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B1 reads B2's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B1 reads B2's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB reads B2's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB reads B2's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB reads B1's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB reads B1's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B3 reads B1's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B3 reads B1's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B2 reads B3's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B2 reads B3's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB reads B3's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB reads B3's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B1 reads KB's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B1 reads KB's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA reads KB's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA reads KB's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB reads U3's signal",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB reads U3's signal",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": []
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A1 checks A2's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A1 checks A2's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A2 checks A3's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A2 checks A3's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A3 checks A1's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A3 checks A1's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A1 checks KA's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A1 checks KA's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: U3 checks KA's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: U3 checks KA's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A1 checks WA's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A1 checks WA's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B1 checks B2's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B1 checks B2's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B2 checks B3's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B2 checks B3's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B3 checks B1's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B3 checks B1's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B1 checks KB's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B1 checks KB's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA checks KB's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA checks KB's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B1 checks WB's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B1 checks WB's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB checks U3's state",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB checks U3's state",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": []
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A1 reports to A3",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A1 reports to A3",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A1 reports to KA",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A1 reports to KA",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA reports to A1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA reports to A1",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA reports to A2",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA reports to A2",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA reports to A3",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA reports to A3",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KA reports to U3",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KA reports to U3",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A2 reports to A1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A2 reports to A1",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A2 reports to KA",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A2 reports to KA",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A3 reports to A2",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A3 reports to A2",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: A3 reports to KA",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: A3 reports to KA",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B1 reports to B3",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B1 reports to B3",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B1 reports to KB",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B1 reports to KB",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB reports to B1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB reports to B1",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB reports to B2",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB reports to B2",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB reports to B3",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB reports to B3",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: KB reports to KA",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: KB reports to KA",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B2 reports to B1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B2 reports to B1",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B2 reports to KB",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B2 reports to KB",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B3 reports to B2",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B3 reports to B2",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: B3 reports to KB",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: B3 reports to KB",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: U3 reports to KB",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: U3 reports to KB",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": []
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: WA takes its halt from A1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: WA takes its halt from A1",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: WA takes its halt from KA",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: WA takes its halt from KA",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: WB takes its halt from B1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: WB takes its halt from B1",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3/f1/minus: WB takes its halt from KB",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, minus: WB takes its halt from KB",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "KA": 3,
+    "B1": 4,
+    "B2": 5,
+    "B3": 6,
+    "KB": 7,
+    "U3": 8
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "mesh4-one-boundary/f1",
+  "system": {
+   "name": "mesh of 4, all in one boundary",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 0,
+    "M3": 0,
+    "M4": 0
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ],
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3",
+     "M4"
+    ],
+    "M2": [
+     "M1",
+     "M3",
+     "M4"
+    ],
+    "M3": [
+     "M1",
+     "M2",
+     "M4"
+    ],
+    "M4": [
+     "M1",
+     "M2",
+     "M3"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2",
+     "M3",
+     "M4"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "nested3-upper3-ring-boundaries/f1",
+  "system": {
+   "name": "nested, base rings 3+K, upper ring of 3, each base ring in one boundary",
+   "f": 1,
+   "monitors": [
+    "A1",
+    "A2",
+    "A3",
+    "KA",
+    "B1",
+    "B2",
+    "B3",
+    "KB",
+    "U3"
+   ],
+   "works": [
+    "WA",
+    "WB"
+   ],
+   "joiner": null,
+   "boundary": {
+    "A1": "A",
+    "A2": "A",
+    "A3": "A",
+    "KA": "A",
+    "B1": "B",
+    "B2": "B",
+    "B3": "B",
+    "KB": "B",
+    "U3": "U3"
+   },
+   "substrate": {},
+   "hb_readers": {
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A1": [
+     "KA",
+     "A3"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B1": [
+     "KB",
+     "B3"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "checkers": {
+    "A2": [
+     "A1"
+    ],
+    "A3": [
+     "A2"
+    ],
+    "A1": [
+     "A3"
+    ],
+    "KA": [
+     "A1",
+     "U3"
+    ],
+    "WA": [
+     "A1"
+    ],
+    "B2": [
+     "B1"
+    ],
+    "B3": [
+     "B2"
+    ],
+    "B1": [
+     "B3"
+    ],
+    "KB": [
+     "B1",
+     "KA"
+    ],
+    "WB": [
+     "B1"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "fwd": {
+    "A1": [
+     "A3",
+     "KA"
+    ],
+    "KA": [
+     "A1",
+     "A2",
+     "A3",
+     "U3"
+    ],
+    "A2": [
+     "A1",
+     "KA"
+    ],
+    "A3": [
+     "A2",
+     "KA"
+    ],
+    "B1": [
+     "B3",
+     "KB"
+    ],
+    "KB": [
+     "B1",
+     "B2",
+     "B3",
+     "KA"
+    ],
+    "B2": [
+     "B1",
+     "KB"
+    ],
+    "B3": [
+     "B2",
+     "KB"
+    ],
+    "U3": [
+     "KB"
+    ]
+   },
+   "halt_inputs": {
+    "WA": [
+     "A1",
+     "KA"
+    ],
+    "WB": [
+     "B1",
+     "KB"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "reflex-direct-instant/f1",
+  "system": {
+   "name": "work halted by its own checker, reports arrive at once",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "reflex-direct-slow/f1",
+  "system": {
+   "name": "work halted by its own checker, reports take a round",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M1",
+     "M2"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": true
+  }
+ },
+ {
+  "id": "reflex-relayed-instant/f1",
+  "system": {
+   "name": "work halted by other monitors only, reports arrive at once",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": false
+  }
+ },
+ {
+  "id": "reflex-relayed-slow/f1",
+  "system": {
+   "name": "work halted by other monitors only, reports take a round",
+   "f": 1,
+   "monitors": [
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "works": [
+    "W"
+   ],
+   "joiner": null,
+   "boundary": {
+    "M1": 0,
+    "M2": 1,
+    "M3": 2
+   },
+   "substrate": {},
+   "hb_readers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "checkers": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ],
+    "W": [
+     "M1"
+    ]
+   },
+   "fwd": {
+    "M1": [
+     "M2",
+     "M3"
+    ],
+    "M2": [
+     "M1",
+     "M3"
+    ],
+    "M3": [
+     "M1",
+     "M2"
+    ]
+   },
+   "halt_inputs": {
+    "W": [
+     "M2",
+     "M3"
+    ]
+   },
+   "switches": [],
+   "coupling": true,
+   "window": 0,
+   "gate": true,
+   "slow_reports": true
+  }
+ }
+]

@@ -1,0 +1,17 @@
+Theorem L: systems meeting the stated hypotheses 8107, with a gap 0
+Theorem L [switch]: systems meeting the stated hypotheses 6063, with a gap 275
+   counterexample system: {'f': 1, 'monitors': ['M1', 'M2', 'M3', 'M4', 'N1', 'N2'], 'works': ['W'], 'joiner': None, 'boundary': {'M1': 'b_M1', 'M2': 'b_M2', 'M3': 'b_M3', 'M4': 'b_M4', 'N1': 'b_N1', 'N2': 'b_N2'}, 'substrate': {}, 'hb_readers': {'M2': ['M1', 'M4'], 'M3': ['M1', 'M2', 'M4'], 'M4': ['M1', 'M2', 'M3'], 'M1': ['M2', 'M3', 'M4'], 'N1': ['M3'], 'N2': ['N1']}, 'checkers': {'M4': ['M1', 'M3'], 'M1': ['M2', 'M3', 'M4'], 'M3': ['M2'], 'M2': ['M3', 'M4'], 'W': ['M1', 'M2', 'M3', 'M4'], 'N1': ['M4'], 'N2': ['N1']}, 'fwd': {'M1': ['M2', 'M3', 'M4'], 'M2': ['M1', 'M4'], 'M3': ['M1'], 'M4': ['M2', 'M3'], 'N1': ['M1'], 'N2': ['N1']}, 'halt_inputs': {'W': ['M1', 'M4']}, 'switches': ['N1'], 'coupling': True, 'window': 0, 'late': [{'name': 'g0', 'members': ['N1'], 'after': []}, {'name': 'g1', 'members': ['N2'], 'after': ['N1']}], 'arrive_bad': False}
+   result G1 4 G2 4; G1 trace [('join g0',), ('disable N1',), ('join g1',), ('mutate N2',)]; G2 trace [('join g0',), ('disable N1',), ('join g1',), ('mutate N2',)]
+Theorem L [slow]: systems meeting the stated hypotheses 8736, with a gap 1375
+   counterexample system: {'f': 2, 'monitors': ['M1', 'M2', 'M3', 'N1'], 'works': ['W', 'V'], 'joiner': None, 'boundary': {'M1': 'b_M1', 'M2': 'b_M2', 'M3': 'b_M3', 'N1': 'b_N1'}, 'substrate': {}, 'hb_readers': {'M2': ['M1', 'M3', 'N1'], 'M3': ['M1', 'M2'], 'M1': ['M2', 'M3'], 'N1': ['M3', 'M2']}, 'checkers': {'M2': ['M1', 'M3'], 'M3': ['M1', 'M2', 'N1'], 'M1': ['M2', 'M3', 'N1'], 'W': ['M1', 'M2', 'M3'], 'V': ['M1', 'M2', 'M3'], 'N1': ['M1']}, 'fwd': {'M1': ['M2', 'M3', 'N1'], 'M2': ['M1', 'M3'], 'M3': ['M1', 'M2', 'N1'], 'N1': ['M2']}, 'halt_inputs': {'W': ['M1', 'M2', 'M3'], 'V': ['M1', 'M2', 'M3']}, 'switches': [], 'coupling': True, 'window': 0, 'late': [{'name': 'g0', 'members': ['N1'], 'after': []}], 'arrive_bad': True, 'slow_edges': [['checkers', 'N1', 'M1']]}
+   result G1 1 G2 1; G1 trace [('join-bad g0 N1',)]; G2 trace [('join-bad g0 N1',)]
+Theorem L [slow_other]: systems meeting the stated hypotheses 7874, with a gap 0
+Theorem L [boundary]: systems meeting the stated hypotheses 9004, with a gap 0
+Theorem L [substrate]: systems meeting the stated hypotheses 9312, with a gap 0
+Theorem J: generated 27951, meeting the hypotheses 15961, conclusion fails in 0
+Theorem F: generated 141533, meeting the hypotheses 42746, conclusion fails in 0
+Theorem S in every present set (f = 1): generated 62658, meeting the hypotheses 37697, conclusion fails in 0
+A monitor nobody checks (f = 1): systems meeting the hypothesis 408, with no gap 0
+Lemma M: pairs tried 56, second worse than first in 0
+Lemma N: pairs tried 25, system with late processes better in 0
+Section 9 slow reports (f = 1): plain systems that fail the stated necessary condition 265487, with no gap 0

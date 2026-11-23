@@ -1,0 +1,36 @@
+== The reader's counterexample to Lemma M-scope as first stated
+ids in the file: ['first', 'second']
+-- first: f=1, freeze=True, boundary={'x': 'bx', 'm1': 'b', 'm2': 'b', 'm3': 'b', 'm4': 'b', 'z': 'bz', 'zp': 'bzp', 'z2': 'bz2', 'y': 'by'}, edges not in first: {}
+   every execution of at most 3 rounds: G1 of r None; all: o: 1/None; p: 1/None; q: 1/None; r: None/None; ws: 1/1 (1404 states)
+   every execution of at most 4 rounds: G1 of r 4; all: o: 1/None; p: 1/None; q: 1/None; r: 4/None; ws: 1/1 (6784 states)
+   round 1: env: stop m2 | bad: - | stopped: m2 | flagged: - | halted: - | worked: w | closed: -
+   round 2: env: stop m3 | bad: - | stopped: m2 m3 | flagged: - | halted: - | worked: w | closed: -
+   round 3: env: stop m4 | bad: - | stopped: m2 m3 m4 | flagged: - | halted: - | worked: w | closed: -
+   round 4: env: mutate y | bad: y | stopped: m2 m3 m4 | flagged: - | halted: - | worked: w | closed: -   <-- breaks G1 of r
+   with freeze false, at most 4 rounds: G1 of r 4
+-- second: f=1, freeze=True, boundary={'x': 'bx', 'm1': 'b', 'm2': 'b', 'm3': 'b', 'm4': 'b', 'z': 'bz', 'zp': 'bzp', 'z2': 'bz2', 'y': 'by'}, edges not in first: {'hb_readers': {'x': ['z2']}}
+   every execution of at most 3 rounds: G1 of r 3; all: o: 1/None; p: 1/None; q: 1/None; r: 3/None; ws: 1/1 (1424 states)
+   every execution of at most 4 rounds: G1 of r 3; all: o: 1/None; p: 1/None; q: 1/None; r: 3/None; ws: 1/1 (6975 states)
+   round 1: env: stop x | bad: - | stopped: x | flagged: for p: z2 | halted: - | worked: w | closed: p
+   round 2: env: stop-boundary b | bad: - | stopped: x m2 m3 m4 | flagged: for p: z2 | halted: - | worked: w | closed: p
+   round 3: env: mutate y | bad: y | stopped: x m2 m3 m4 | flagged: for p: z2 | halted: - | worked: w | closed: p   <-- breaks G1 of r
+   with freeze false, at most 4 rounds: G1 of r 4
+-- the same three steps in second:
+   round 1: env: stop x | bad: - | stopped: x | flagged: for p: z2 | halted: - | worked: w | closed: p
+   round 2: env: stop-boundary b | bad: - | stopped: x m2 m3 m4 | flagged: for p: z2 | halted: - | worked: w | closed: p
+   round 3: env: mutate y | bad: y | stopped: x m2 m3 m4 | flagged: for p: z2 | halted: - | worked: w | closed: p   <-- breaks G1 of r
+-- the same three steps in first:
+   round 1: env: stop x | bad: - | stopped: x | flagged: - | halted: - | worked: w | closed: -
+   round 2: env: stop-boundary b | bad: - | stopped: x m1 m2 m3 m4 | flagged: for p: z zp | halted: w | worked: - | closed: p   <-- breaks spill w
+   (the model had ended)
+== Are the systems of sections 4.1 and 5.3 in the lemma's narrower class?
+section 4.1, flow: 13 monitors, 13 different boundaries, substrates {}; adding edges changes neither
+section 4.1, actor: 13 monitors, 13 different boundaries, substrates {}; adding edges changes neither
+section 5.3: 5 monitors, 5 different boundaries, substrates {}, freeze False
+== A set of fifteen edges that meets the whole list (the reader's)
+edges: B checks A's state; C checks B's state; D checks C's state; A checks D's state; A reports to D; B reports to D; C reports to D; B reads A's signal; C reads A's signal; A reads B's signal; C reads B's signal; A reads C's signal; D reads C's signal; A reads D's signal; B reads D's signal
+two signal readers each: True | R3, observes = reads the signal: True | R3, observes = watches: True | R5: True
+   f=1 (G1, G2, told): (None, None, None)
+   f=2 (G1, G2, told): (None, None, None)
+   f=3 (G1, G2, told): (None, None, None)
+   without the state check of D, f=1: (1, 1, None)

@@ -1,0 +1,5 @@
+k=5, flow: the cycle with a coordinator (15 connections) meets the whole list: work all f=1: True, work all f=2: True, work all f=3: True, work two f=1: True
+k=5, actor: the cycle with a coordinator (15 connections) meets the whole list: work all f=1: True, work all f=2: True, work all f=3: True, work two f=1: True
+k=5, actor, work reads all, f=1: of 2000 wirings drawn at random from the 100,000 of 15 connections that meet R2 and R5, 1789 meet the whole list
+k=5, kind by kind, flow: 29 edges (5k + 4 = 29) on the cycle's arrows meet the whole list: {('all', 1): True, ('all', 2): True, ('all', 3): True, ('two', 1): True, ('two', 2): False, ('two', 3): False}
+k=5, kind by kind, actor: 29 edges (5k + 4 = 29) on the cycle's arrows meet the whole list: {('all', 1): True, ('all', 2): True, ('all', 3): True, ('two', 1): True, ('two', 2): False, ('two', 3): False}

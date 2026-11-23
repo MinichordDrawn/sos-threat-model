@@ -1,0 +1,4 @@
+465 cases
+   c/forty/flow/all/scoped/f1: 26 s
+   c/forty/actor/all/scoped/f1: 26 s
+wrote 465 cases and answers in 154 s

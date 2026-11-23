@@ -1,0 +1,529 @@
+== Kind by kind, 36 possible edges: fewest edges for each combination
+
+-- work reads all, f = 1
+combination              | fewest | sets | classes | the candidate's edges (flow, actor) meet it | hold a least set (flow, actor)
+R1                       |      6 |   24 |       5 | yes, yes | yes, yes   [54 clauses, 1827 tests, 2 s]
+R2                       |     16 |   81 |      15 | yes, yes | yes, yes   [48 clauses, 82 tests, 0 s]
+R3                       |      6 |   16 |       4 | yes, yes | yes, yes   [31 clauses, 1025 tests, 0 s]
+R4                       | 0      | 1    | 1       | yes, yes | yes, yes
+R5                       |      3 |    1 |       1 | yes, yes | yes, yes   [3 clauses, 2 tests, 0 s]
+R6                       |      4 |    3 |       1 | yes, yes | yes, yes   [25 clauses, 848 tests, 1 s]
+R1+R2                    |     16 |   81 |      15 | yes, yes | yes, yes   [48 clauses, 82 tests, 0 s]
+R1+R3                    |      8 |  144 |      25 | yes, yes | yes, yes   [48 clauses, 1658 tests, 0 s]
+R1+R4                    |      6 |   24 |       5 | yes, yes | yes, yes   [54 clauses, 1827 tests, 2 s]
+R1+R5                    |      9 |   24 |       5 | yes, yes | yes, yes   [57 clauses, 1665 tests, 2 s]
+R1+R6                    |      6 |    3 |       1 | yes, yes | yes, yes   [52 clauses, 1722 tests, 1 s]
+R2+R3                    |     16 |   78 |      14 | yes, yes | yes, yes   [49 clauses, 100 tests, 0 s]
+R2+R4                    |     16 |   81 |      15 | yes, yes | yes, yes   [48 clauses, 82 tests, 0 s]
+R2+R5                    |     19 |   81 |      15 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R2+R6                    |     16 |   24 |       4 | yes, yes | yes, yes   [51 clauses, 88 tests, 0 s]
+R3+R4                    |      6 |   16 |       4 | yes, yes | yes, yes   [31 clauses, 1025 tests, 0 s]
+R3+R5                    |      9 |   16 |       4 | yes, yes | yes, yes   [34 clauses, 932 tests, 0 s]
+R3+R6                    |      7 |    3 |       1 | yes, yes | yes, yes   [20 clauses, 651 tests, 0 s]
+R4+R5                    |      3 |    1 |       1 | yes, yes | yes, yes   [3 clauses, 2 tests, 0 s]
+R4+R6                    |      4 |    3 |       1 | yes, yes | yes, yes   [25 clauses, 848 tests, 1 s]
+R5+R6                    |      7 |    3 |       1 | yes, yes | yes, yes   [20 clauses, 535 tests, 1 s]
+R1+R2+R3                 |     16 |   78 |      14 | yes, yes | yes, yes   [49 clauses, 100 tests, 0 s]
+R1+R2+R4                 |     16 |   81 |      15 | yes, yes | yes, yes   [48 clauses, 82 tests, 0 s]
+R1+R2+R5                 |     19 |   81 |      15 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R1+R2+R6                 |     16 |   24 |       4 | yes, yes | yes, yes   [51 clauses, 88 tests, 0 s]
+R1+R3+R4                 |      8 |  144 |      25 | yes, yes | yes, yes   [48 clauses, 1658 tests, 0 s]
+R1+R3+R5                 |     11 |  144 |      25 | yes, yes | yes, yes   [51 clauses, 1514 tests, 0 s]
+R1+R3+R6                 |      8 |    9 |       2 | yes, yes | yes, yes   [35 clauses, 1118 tests, 0 s]
+R1+R4+R5                 |      9 |   24 |       5 | yes, yes | yes, yes   [57 clauses, 1665 tests, 2 s]
+R1+R4+R6                 |      6 |    3 |       1 | yes, yes | yes, yes   [52 clauses, 1722 tests, 1 s]
+R1+R5+R6                 |      9 |   24 |       5 | yes, yes | yes, yes   [57 clauses, 1665 tests, 0 s]
+R2+R3+R4                 |     16 |   78 |      14 | yes, yes | yes, yes   [49 clauses, 100 tests, 0 s]
+R2+R3+R5                 |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R2+R3+R6                 |     16 |   24 |       4 | yes, yes | yes, yes   [52 clauses, 109 tests, 0 s]
+R2+R4+R5                 |     19 |   81 |      15 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R2+R4+R6                 |     16 |   24 |       4 | yes, yes | yes, yes   [51 clauses, 88 tests, 0 s]
+R2+R5+R6                 |     19 |   81 |      15 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R3+R4+R5                 |      9 |   16 |       4 | yes, yes | yes, yes   [34 clauses, 932 tests, 0 s]
+R3+R4+R6                 |      7 |    3 |       1 | yes, yes | yes, yes   [20 clauses, 651 tests, 0 s]
+R3+R5+R6                 |     10 |   48 |       9 | yes, yes | yes, yes   [35 clauses, 969 tests, 0 s]
+R4+R5+R6                 |      7 |    3 |       1 | yes, yes | yes, yes   [20 clauses, 535 tests, 1 s]
+R1+R2+R3+R4              |     16 |   78 |      14 | yes, yes | yes, yes   [49 clauses, 100 tests, 0 s]
+R1+R2+R3+R5              |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R1+R2+R3+R6              |     16 |   24 |       4 | yes, yes | yes, yes   [52 clauses, 109 tests, 0 s]
+R1+R2+R4+R5              |     19 |   81 |      15 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R1+R2+R4+R6              |     16 |   24 |       4 | yes, yes | yes, yes   [51 clauses, 88 tests, 0 s]
+R1+R2+R5+R6              |     19 |   81 |      15 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R1+R3+R4+R5              |     11 |  144 |      25 | yes, yes | yes, yes   [51 clauses, 1514 tests, 0 s]
+R1+R3+R4+R6              |      8 |    9 |       2 | yes, yes | yes, yes   [35 clauses, 1118 tests, 0 s]
+R1+R3+R5+R6              |     11 |  144 |      25 | yes, yes | yes, yes   [51 clauses, 1514 tests, 0 s]
+R1+R4+R5+R6              |      9 |   24 |       5 | yes, yes | yes, yes   [57 clauses, 1665 tests, 0 s]
+R2+R3+R4+R5              |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R2+R3+R4+R6              |     16 |   24 |       4 | yes, yes | yes, yes   [52 clauses, 109 tests, 0 s]
+R2+R3+R5+R6              |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R2+R4+R5+R6              |     19 |   81 |      15 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R3+R4+R5+R6              |     10 |   48 |       9 | yes, yes | yes, yes   [35 clauses, 969 tests, 0 s]
+R1+R2+R3+R4+R5           |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R1+R2+R3+R4+R6           |     16 |   24 |       4 | yes, yes | yes, yes   [52 clauses, 109 tests, 0 s]
+R1+R2+R3+R5+R6           |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R1+R2+R4+R5+R6           |     19 |   81 |      15 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R1+R3+R4+R5+R6           |     11 |  144 |      25 | yes, yes | yes, yes   [51 clauses, 1514 tests, 0 s]
+R2+R3+R4+R5+R6           |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R1+R2+R3+R4+R5+R6        |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+   the whole list: 19 edges, 78 sets, 14 classes; the first classes:
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by B,C; reports to -
+
+-- work reads all, f = 2
+combination              | fewest | sets | classes | the candidate's edges (flow, actor) meet it | hold a least set (flow, actor)
+R1                       |      7 |   24 |       4 | yes, yes | yes, yes   [40 clauses, 1317 tests, 4 s]
+R6                       |      5 |    9 |       2 | yes, yes | yes, yes   [21 clauses, 707 tests, 4 s]
+R1+R6                    |      8 |   18 |       3 | yes, yes | yes, yes   [54 clauses, 1715 tests, 2 s]
+R1+R2+R3+R4+R5+R6        |     19 |   78 |      14 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+   the whole list: 19 edges, 78 sets, 14 classes; the first classes:
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by B,C; reports to -
+
+-- work reads all, f = 3
+combination              | fewest | sets | classes | the candidate's edges (flow, actor) meet it | hold a least set (flow, actor)
+R1                       |      8 |    6 |       1 | yes, yes | yes, yes   [39 clauses, 1227 tests, 7 s]
+R6                       |      6 |   16 |       4 | yes, yes | yes, yes   [22 clauses, 728 tests, 10 s]
+R1+R6                    |     10 |   30 |       5 | yes, yes | yes, yes   [50 clauses, 1524 tests, 2 s]
+R1+R2+R3+R4+R5+R6        |     19 |   69 |      12 | yes, yes | yes, yes   [55 clauses, 142 tests, 0 s]
+   the whole list: 19 edges, 69 sets, 12 classes; the first classes:
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by B,C; reports to -
+
+-- work reads two, f = 1
+combination              | fewest | sets | classes | the candidate's edges (flow, actor) meet it | hold a least set (flow, actor)
+R1                       |      6 |    4 |       3 | yes, yes | yes, yes   [30 clauses, 992 tests, 3 s]
+R2                       |     16 |   81 |      42 | yes, yes | yes, yes   [48 clauses, 82 tests, 0 s]
+R3                       |      6 |   16 |       9 | yes, yes | yes, yes   [31 clauses, 1025 tests, 0 s]
+R4                       | 0      | 1    | 1       | yes, yes | yes, yes
+R5                       |      3 |    1 |       1 | yes, yes | yes, yes   [3 clauses, 2 tests, 0 s]
+R6                       |      6 |    4 |       3 | yes, yes | yes, yes   [29 clauses, 966 tests, 1 s]
+R1+R2                    |     16 |   36 |      18 | yes, yes | yes, yes   [50 clauses, 79 tests, 0 s]
+R1+R3                    |      8 |   12 |       7 | yes, yes | yes, yes   [41 clauses, 1301 tests, 0 s]
+R1+R4                    |      6 |    4 |       3 | yes, yes | yes, yes   [30 clauses, 992 tests, 3 s]
+R1+R5                    |      9 |    8 |       5 | yes, yes | yes, yes   [32 clauses, 880 tests, 1 s]
+R1+R6                    |      7 |    4 |       3 | yes, yes | yes, yes   [35 clauses, 1140 tests, 1 s]
+R2+R3                    |     16 |   78 |      40 | yes, yes | yes, yes   [49 clauses, 100 tests, 0 s]
+R2+R4                    |     16 |   81 |      42 | yes, yes | yes, yes   [48 clauses, 82 tests, 0 s]
+R2+R5                    |     19 |   81 |      42 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R2+R6                    |     17 |   36 |      18 | yes, yes | yes, yes   [53 clauses, 138 tests, 0 s]
+R3+R4                    |      6 |   16 |       9 | yes, yes | yes, yes   [31 clauses, 1025 tests, 0 s]
+R3+R5                    |      9 |   16 |       9 | yes, yes | yes, yes   [34 clauses, 932 tests, 0 s]
+R3+R6                    |      8 |    4 |       3 | yes, yes | yes, yes   [32 clauses, 998 tests, 0 s]
+R4+R5                    |      3 |    1 |       1 | yes, yes | yes, yes   [3 clauses, 2 tests, 0 s]
+R4+R6                    |      6 |    4 |       3 | yes, yes | yes, yes   [29 clauses, 966 tests, 1 s]
+R5+R6                    |      8 |    4 |       3 | yes, yes | yes, yes   [18 clauses, 474 tests, 0 s]
+R1+R2+R3                 |     16 |   36 |      18 | yes, yes | yes, yes   [51 clauses, 100 tests, 0 s]
+R1+R2+R4                 |     16 |   36 |      18 | yes, yes | yes, yes   [50 clauses, 79 tests, 0 s]
+R1+R2+R5                 |     19 |   54 |      27 | yes, yes | yes, yes   [52 clauses, 73 tests, 0 s]
+R1+R2+R6                 |     17 |   36 |      18 | yes, yes | yes, yes   [53 clauses, 138 tests, 0 s]
+R1+R3+R4                 |      8 |   12 |       7 | yes, yes | yes, yes   [41 clauses, 1301 tests, 0 s]
+R1+R3+R5                 |     11 |   48 |      25 | yes, yes | yes, yes   [47 clauses, 1295 tests, 0 s]
+R1+R3+R6                 |      9 |   12 |       7 | yes, yes | yes, yes   [44 clauses, 1362 tests, 0 s]
+R1+R4+R5                 |      9 |    8 |       5 | yes, yes | yes, yes   [32 clauses, 880 tests, 1 s]
+R1+R4+R6                 |      7 |    4 |       3 | yes, yes | yes, yes   [35 clauses, 1140 tests, 1 s]
+R1+R5+R6                 |      9 |    8 |       5 | yes, yes | yes, yes   [32 clauses, 880 tests, 0 s]
+R2+R3+R4                 |     16 |   78 |      40 | yes, yes | yes, yes   [49 clauses, 100 tests, 0 s]
+R2+R3+R5                 |     19 |   78 |      40 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R2+R3+R6                 |     17 |   36 |      18 | yes, yes | yes, yes   [54 clauses, 159 tests, 0 s]
+R2+R4+R5                 |     19 |   81 |      42 | yes, yes | yes, yes   [51 clauses, 82 tests, 0 s]
+R2+R4+R6                 |     17 |   36 |      18 | yes, yes | yes, yes   [53 clauses, 138 tests, 0 s]
+R2+R5+R6                 |     19 |   54 |      27 | yes, yes | yes, yes   [52 clauses, 73 tests, 0 s]
+R3+R4+R5                 |      9 |   16 |       9 | yes, yes | yes, yes   [34 clauses, 932 tests, 0 s]
+R3+R4+R6                 |      8 |    4 |       3 | yes, yes | yes, yes   [32 clauses, 998 tests, 0 s]
+R3+R5+R6                 |     10 |   16 |       9 | yes, yes | yes, yes   [37 clauses, 991 tests, 0 s]
+R4+R5+R6                 |      8 |    4 |       3 | yes, yes | yes, yes   [18 clauses, 474 tests, 0 s]
+R1+R2+R3+R4              |     16 |   36 |      18 | yes, yes | yes, yes   [51 clauses, 100 tests, 0 s]
+R1+R2+R3+R5              |     19 |   52 |      26 | yes, yes | yes, yes   [53 clauses, 89 tests, 0 s]
+R1+R2+R3+R6              |     17 |   36 |      18 | yes, yes | yes, yes   [54 clauses, 159 tests, 0 s]
+R1+R2+R4+R5              |     19 |   54 |      27 | yes, yes | yes, yes   [52 clauses, 73 tests, 0 s]
+R1+R2+R4+R6              |     17 |   36 |      18 | yes, yes | yes, yes   [53 clauses, 138 tests, 0 s]
+R1+R2+R5+R6              |     19 |   54 |      27 | yes, yes | yes, yes   [52 clauses, 73 tests, 0 s]
+R1+R3+R4+R5              |     11 |   48 |      25 | yes, yes | yes, yes   [47 clauses, 1295 tests, 0 s]
+R1+R3+R4+R6              |      9 |   12 |       7 | yes, yes | yes, yes   [44 clauses, 1362 tests, 0 s]
+R1+R3+R5+R6              |     11 |   48 |      25 | yes, yes | yes, yes   [47 clauses, 1295 tests, 0 s]
+R1+R4+R5+R6              |      9 |    8 |       5 | yes, yes | yes, yes   [32 clauses, 880 tests, 0 s]
+R2+R3+R4+R5              |     19 |   78 |      40 | yes, yes | yes, yes   [52 clauses, 97 tests, 0 s]
+R2+R3+R4+R6              |     17 |   36 |      18 | yes, yes | yes, yes   [54 clauses, 159 tests, 0 s]
+R2+R3+R5+R6              |     19 |   52 |      26 | yes, yes | yes, yes   [53 clauses, 89 tests, 0 s]
+R2+R4+R5+R6              |     19 |   54 |      27 | yes, yes | yes, yes   [52 clauses, 73 tests, 0 s]
+R3+R4+R5+R6              |     10 |   16 |       9 | yes, yes | yes, yes   [37 clauses, 991 tests, 0 s]
+R1+R2+R3+R4+R5           |     19 |   52 |      26 | yes, yes | yes, yes   [53 clauses, 89 tests, 0 s]
+R1+R2+R3+R4+R6           |     17 |   36 |      18 | yes, yes | yes, yes   [54 clauses, 159 tests, 0 s]
+R1+R2+R3+R5+R6           |     19 |   52 |      26 | yes, yes | yes, yes   [53 clauses, 89 tests, 0 s]
+R1+R2+R4+R5+R6           |     19 |   54 |      27 | yes, yes | yes, yes   [52 clauses, 73 tests, 0 s]
+R1+R3+R4+R5+R6           |     11 |   48 |      25 | yes, yes | yes, yes   [47 clauses, 1295 tests, 0 s]
+R2+R3+R4+R5+R6           |     19 |   52 |      26 | yes, yes | yes, yes   [53 clauses, 89 tests, 0 s]
+R1+R2+R3+R4+R5+R6        |     19 |   52 |      26 | yes, yes | yes, yes   [53 clauses, 89 tests, 0 s]
+   the whole list: 19 edges, 52 sets, 26 classes; the first classes:
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by C,D; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -
+
+-- work reads two, f = 2
+combination              | fewest | sets | classes | the candidate's edges (flow, actor) meet it | hold a least set (flow, actor)
+R1                       | none: all 36 edges together do not meet it
+R6                       | none: all 36 edges together do not meet it
+R1+R6                    | none: all 36 edges together do not meet it
+R1+R2+R3+R4+R5+R6        | none: all 36 edges together do not meet it
+
+-- work reads two, f = 3
+combination              | fewest | sets | classes | the candidate's edges (flow, actor) meet it | hold a least set (flow, actor)
+R1                       | none: all 36 edges together do not meet it
+R6                       | none: all 36 edges together do not meet it
+R1+R6                    | none: all 36 edges together do not meet it
+R1+R2+R3+R4+R5+R6        | none: all 36 edges together do not meet it
+
+== The whole list with the other choices
+work all, f=1, R3 with 'observes' = reads the signal: 19 edges, 78 sets, 14 classes
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+work all, f=1, naming read at the wiring (R4w): 19 edges, 78 sets, 14 classes
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+work all, f=1, naming after a loss read at the wiring (R4wl): 19 edges, 9 sets, 2 classes
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by A,D; reports to D | D: watched by B,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -
+work all, f=1, R3 alone, observes = watches: 6 edges, 16 sets, 4 classes
+      A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; reports to -
+      A: watched by B; reports to - | B: watched by D; reports to - | C: watched by B; reports to - | D: watched by -; reports to -
+      A: watched by B; reports to - | B: watched by D; reports to - | C: watched by D; reports to - | D: watched by -; reports to -
+work all, f=1, R3 alone, observes = reads the signal: 3 edges, 16 sets, 4 classes
+      A: watched by -; signal read by B; reports to - | B: watched by -; signal read by C; reports to - | C: watched by -; signal read by D; reports to - | D: watched by -; reports to -
+      A: watched by -; signal read by B; reports to - | B: watched by -; signal read by D; reports to - | C: watched by -; signal read by B; reports to - | D: watched by -; reports to -
+      A: watched by -; signal read by B; reports to - | B: watched by -; signal read by D; reports to - | C: watched by -; signal read by D; reports to - | D: watched by -; reports to -
+work all, f=1, R4w alone: 8 edges, 30 sets, 5 classes
+      A: watched by B; reports to - | B: watched by C; reports to - | C: watched by A; reports to - | D: watched by A; reports to -
+      A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by A; reports to -
+      A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by B; reports to -
+work all, f=1, R4wl alone: 16 edges, 9 sets, 2 classes
+      A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -
+      A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -
+work two, f=1, R3 with 'observes' = reads the signal: 19 edges, 52 sets, 26 classes
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -
+work two, f=1, naming read at the wiring (R4w): 19 edges, 52 sets, 26 classes
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,B; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by A,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,C; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,B; reports to -
+work two, f=1, naming after a loss read at the wiring (R4wl): 19 edges, 6 sets, 3 classes
+      A: watched by B,C; reports to D | B: watched by A,D; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,D; reports to D | B: watched by A,C; reports to D | C: watched by B,D; reports to D | D: watched by A,C; reports to -
+      A: watched by B,D; reports to D | B: watched by C,D; reports to D | C: watched by A,B; reports to D | D: watched by A,C; reports to -
+work two, f=1, R3 alone, observes = watches: 6 edges, 16 sets, 9 classes
+      A: watched by B; reports to - | B: watched by C; reports to - | C: watched by D; reports to - | D: watched by -; reports to -
+      A: watched by B; reports to - | B: watched by D; reports to - | C: watched by A; reports to - | D: watched by -; reports to -
+      A: watched by B; reports to - | B: watched by D; reports to - | C: watched by B; reports to - | D: watched by -; reports to -
+work two, f=1, R3 alone, observes = reads the signal: 3 edges, 16 sets, 9 classes
+      A: watched by -; signal read by B; reports to - | B: watched by -; signal read by C; reports to - | C: watched by -; signal read by D; reports to - | D: watched by -; reports to -
+      A: watched by -; signal read by B; reports to - | B: watched by -; signal read by D; reports to - | C: watched by -; signal read by A; reports to - | D: watched by -; reports to -
+      A: watched by -; signal read by B; reports to - | B: watched by -; signal read by D; reports to - | C: watched by -; signal read by B; reports to - | D: watched by -; reports to -
+work two, f=1, R4w alone: 8 edges, 30 sets, 15 classes
+      A: watched by B; reports to - | B: watched by C; reports to - | C: watched by A; reports to - | D: watched by A; reports to -
+      A: watched by B; reports to - | B: watched by C; reports to - | C: watched by A; reports to - | D: watched by B; reports to -
+      A: watched by B; reports to - | B: watched by C; reports to - | C: watched by A; reports to - | D: watched by C; reports to -
+work two, f=1, R4wl alone: 16 edges, 9 sets, 5 classes
+      A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -
+      A: watched by B,C; reports to - | B: watched by A,D; reports to - | C: watched by B,D; reports to - | D: watched by A,C; reports to -
+      A: watched by B,D; reports to - | B: watched by A,C; reports to - | C: watched by A,D; reports to - | D: watched by B,C; reports to -
+
+== The candidate's nine arrows, labelled
+
+-- arrows read as flow, work reads all, f = 1: of the 27 edges the arrows can carry, 19 are enough for the whole list (3 ways)
+   A->B: B reads A's signal [in every least set; alone its removal fails R2]; B checks A's state [in every least set; alone its removal fails R2]; A reports to B [in no least set]
+   B->C: C reads B's signal [in every least set; alone its removal fails R2]; C checks B's state [in every least set; alone its removal fails R2]; B reports to C [in no least set]
+   C->A: A reads C's signal [in every least set; alone its removal fails R2]; A checks C's state [in every least set; alone its removal fails R2]; C reports to A [in no least set]
+   D->A: A reads D's signal [in some least sets]; A checks D's state [in some least sets]; D reports to A [in no least set]
+   D->B: B reads D's signal [in some least sets]; B checks D's state [in some least sets]; D reports to B [in no least set]
+   D->C: C reads D's signal [in some least sets]; C checks D's state [in some least sets]; D reports to C [in no least set]
+   A->D: D reads A's signal [in every least set; alone its removal fails R2]; D checks A's state [in every least set; alone its removal fails R2]; A reports to D [in every least set; alone its removal fails R5]
+   B->D: D reads B's signal [in every least set; alone its removal fails R2]; D checks B's state [in every least set; alone its removal fails R2]; B reports to D [in every least set; alone its removal fails R5]
+   C->D: D reads C's signal [in every least set; alone its removal fails R2]; D checks C's state [in every least set; alone its removal fails R2]; C reports to D [in every least set; alone its removal fails R5]
+   in a least set, removing the edge fails:
+      B checks A's state: R2
+      D checks A's state: R2
+      C checks B's state: R2
+      D checks B's state: R2
+      A checks C's state: R2
+      D checks C's state: R2
+      A checks D's state: R2
+      B checks D's state: R2
+      C checks D's state: R2
+      A reports to D: R5
+      B reports to D: R5
+      C reports to D: R5
+      B reads A's signal: R2
+      D reads A's signal: R2
+      C reads B's signal: R2
+      D reads B's signal: R2
+      A reads C's signal: R2
+      D reads C's signal: R2
+      A reads D's signal: R2
+      B reads D's signal: R2
+      C reads D's signal: R2
+
+-- arrows read as flow, work reads all, f = 2: of the 27 edges the arrows can carry, 19 are enough for the whole list (3 ways)
+   A->B: B reads A's signal [in every least set; alone its removal fails R2]; B checks A's state [in every least set; alone its removal fails R2]; A reports to B [in no least set]
+   B->C: C reads B's signal [in every least set; alone its removal fails R2]; C checks B's state [in every least set; alone its removal fails R2]; B reports to C [in no least set]
+   C->A: A reads C's signal [in every least set; alone its removal fails R2]; A checks C's state [in every least set; alone its removal fails R2]; C reports to A [in no least set]
+   D->A: A reads D's signal [in some least sets]; A checks D's state [in some least sets]; D reports to A [in no least set]
+   D->B: B reads D's signal [in some least sets]; B checks D's state [in some least sets]; D reports to B [in no least set]
+   D->C: C reads D's signal [in some least sets]; C checks D's state [in some least sets]; D reports to C [in no least set]
+   A->D: D reads A's signal [in every least set; alone its removal fails R2]; D checks A's state [in every least set; alone its removal fails R2]; A reports to D [in every least set; alone its removal fails R5]
+   B->D: D reads B's signal [in every least set; alone its removal fails R2]; D checks B's state [in every least set; alone its removal fails R2]; B reports to D [in every least set; alone its removal fails R5]
+   C->D: D reads C's signal [in every least set; alone its removal fails R2]; D checks C's state [in every least set; alone its removal fails R2]; C reports to D [in every least set; alone its removal fails R5]
+   in a least set, removing the edge fails:
+      B checks A's state: R2
+      D checks A's state: R2
+      C checks B's state: R2
+      D checks B's state: R2
+      A checks C's state: R2
+      D checks C's state: R2
+      A checks D's state: R2
+      B checks D's state: R2
+      C checks D's state: R2
+      A reports to D: R5
+      B reports to D: R5
+      C reports to D: R5
+      B reads A's signal: R2
+      D reads A's signal: R2
+      C reads B's signal: R2
+      D reads B's signal: R2
+      A reads C's signal: R2
+      D reads C's signal: R2
+      A reads D's signal: R2
+      B reads D's signal: R2
+      C reads D's signal: R2
+
+-- arrows read as flow, work reads all, f = 3: of the 27 edges the arrows can carry, 19 are enough for the whole list (3 ways)
+   A->B: B reads A's signal [in every least set; alone its removal fails R2]; B checks A's state [in every least set; alone its removal fails R2]; A reports to B [in no least set]
+   B->C: C reads B's signal [in every least set; alone its removal fails R2]; C checks B's state [in every least set; alone its removal fails R2]; B reports to C [in no least set]
+   C->A: A reads C's signal [in every least set; alone its removal fails R2]; A checks C's state [in every least set; alone its removal fails R2]; C reports to A [in no least set]
+   D->A: A reads D's signal [in some least sets]; A checks D's state [in some least sets]; D reports to A [in no least set]
+   D->B: B reads D's signal [in some least sets]; B checks D's state [in some least sets]; D reports to B [in no least set]
+   D->C: C reads D's signal [in some least sets]; C checks D's state [in some least sets]; D reports to C [in no least set]
+   A->D: D reads A's signal [in every least set; alone its removal fails R2]; D checks A's state [in every least set; alone its removal fails R2]; A reports to D [in every least set; alone its removal fails R5]
+   B->D: D reads B's signal [in every least set; alone its removal fails R2]; D checks B's state [in every least set; alone its removal fails R2]; B reports to D [in every least set; alone its removal fails R5]
+   C->D: D reads C's signal [in every least set; alone its removal fails R2]; D checks C's state [in every least set; alone its removal fails R2]; C reports to D [in every least set; alone its removal fails R5]
+   in a least set, removing the edge fails:
+      B checks A's state: R1+R2+R6 or R2
+      D checks A's state: R2
+      C checks B's state: R1+R2+R6 or R2
+      D checks B's state: R2
+      A checks C's state: R1+R2+R6 or R2
+      D checks C's state: R2
+      A checks D's state: R2
+      B checks D's state: R2
+      C checks D's state: R2
+      A reports to D: R5
+      B reports to D: R5
+      C reports to D: R5
+      B reads A's signal: R1+R2 or R2
+      D reads A's signal: R2
+      C reads B's signal: R1+R2 or R2
+      D reads B's signal: R2
+      A reads C's signal: R1+R2 or R2
+      D reads C's signal: R2
+      A reads D's signal: R2
+      B reads D's signal: R2
+      C reads D's signal: R2
+
+-- arrows read as flow, work reads two, f = 1: of the 27 edges the arrows can carry, 19 are enough for the whole list (2 ways)
+   A->B: B reads A's signal [in every least set; alone its removal fails R2]; B checks A's state [in every least set; alone its removal fails R2]; A reports to B [in no least set]
+   B->C: C reads B's signal [in every least set; alone its removal fails R2]; C checks B's state [in every least set; alone its removal fails R2]; B reports to C [in no least set]
+   C->A: A reads C's signal [in every least set; alone its removal fails R2]; A checks C's state [in every least set; alone its removal fails R2]; C reports to A [in no least set]
+   D->A: A reads D's signal [in every least set]; A checks D's state [in every least set]; D reports to A [in no least set]
+   D->B: B reads D's signal [in some least sets]; B checks D's state [in some least sets]; D reports to B [in no least set]
+   D->C: C reads D's signal [in some least sets]; C checks D's state [in some least sets]; D reports to C [in no least set]
+   A->D: D reads A's signal [in every least set; alone its removal fails R2]; D checks A's state [in every least set; alone its removal fails R2]; A reports to D [in every least set; alone its removal fails R5]
+   B->D: D reads B's signal [in every least set; alone its removal fails R2]; D checks B's state [in every least set; alone its removal fails R2]; B reports to D [in every least set; alone its removal fails R5]
+   C->D: D reads C's signal [in every least set; alone its removal fails R2]; D checks C's state [in every least set; alone its removal fails R2]; C reports to D [in every least set; alone its removal fails R5]
+   in a least set, removing the edge fails:
+      B checks A's state: R2
+      D checks A's state: R2
+      C checks B's state: R2
+      D checks B's state: R2
+      A checks C's state: R2
+      D checks C's state: R2
+      A checks D's state: R1+R2+R6
+      B checks D's state: R2
+      C checks D's state: R2
+      A reports to D: R5+R6
+      B reports to D: R5
+      C reports to D: R5
+      B reads A's signal: R2
+      D reads A's signal: R2
+      C reads B's signal: R2
+      D reads B's signal: R2
+      A reads C's signal: R2
+      D reads C's signal: R2
+      A reads D's signal: R2
+      B reads D's signal: R2
+      C reads D's signal: R2
+
+-- arrows read as flow, work reads two, f = 2: the 27 edges do not meet the whole list
+
+-- arrows read as flow, work reads two, f = 3: the 27 edges do not meet the whole list
+
+-- arrows read as actor, work reads all, f = 1: of the 27 edges the arrows can carry, 19 are enough for the whole list (3 ways)
+   A->B: A reads B's signal [in every least set; alone its removal fails R2]; A checks B's state [in every least set; alone its removal fails R2]; A reports to B [in no least set]
+   B->C: B reads C's signal [in every least set; alone its removal fails R2]; B checks C's state [in every least set; alone its removal fails R2]; B reports to C [in no least set]
+   C->A: C reads A's signal [in every least set; alone its removal fails R2]; C checks A's state [in every least set; alone its removal fails R2]; C reports to A [in no least set]
+   D->A: D reads A's signal [in every least set; alone its removal fails R2]; D checks A's state [in every least set; alone its removal fails R2]; D reports to A [in no least set]
+   D->B: D reads B's signal [in every least set; alone its removal fails R2]; D checks B's state [in every least set; alone its removal fails R2]; D reports to B [in no least set]
+   D->C: D reads C's signal [in every least set; alone its removal fails R2]; D checks C's state [in every least set; alone its removal fails R2]; D reports to C [in no least set]
+   A->D: A reads D's signal [in some least sets]; A checks D's state [in some least sets]; A reports to D [in every least set; alone its removal fails R5]
+   B->D: B reads D's signal [in some least sets]; B checks D's state [in some least sets]; B reports to D [in every least set; alone its removal fails R5]
+   C->D: C reads D's signal [in some least sets]; C checks D's state [in some least sets]; C reports to D [in every least set; alone its removal fails R5]
+   in a least set, removing the edge fails:
+      C checks A's state: R2
+      D checks A's state: R2
+      A checks B's state: R2
+      D checks B's state: R2
+      B checks C's state: R2
+      D checks C's state: R2
+      A checks D's state: R2
+      B checks D's state: R2
+      C checks D's state: R2
+      A reports to D: R5
+      B reports to D: R5
+      C reports to D: R5
+      C reads A's signal: R2
+      D reads A's signal: R2
+      A reads B's signal: R2
+      D reads B's signal: R2
+      B reads C's signal: R2
+      D reads C's signal: R2
+      A reads D's signal: R2
+      B reads D's signal: R2
+      C reads D's signal: R2
+
+-- arrows read as actor, work reads all, f = 2: of the 27 edges the arrows can carry, 19 are enough for the whole list (3 ways)
+   A->B: A reads B's signal [in every least set; alone its removal fails R2]; A checks B's state [in every least set; alone its removal fails R2]; A reports to B [in no least set]
+   B->C: B reads C's signal [in every least set; alone its removal fails R2]; B checks C's state [in every least set; alone its removal fails R2]; B reports to C [in no least set]
+   C->A: C reads A's signal [in every least set; alone its removal fails R2]; C checks A's state [in every least set; alone its removal fails R2]; C reports to A [in no least set]
+   D->A: D reads A's signal [in every least set; alone its removal fails R2]; D checks A's state [in every least set; alone its removal fails R2]; D reports to A [in no least set]
+   D->B: D reads B's signal [in every least set; alone its removal fails R2]; D checks B's state [in every least set; alone its removal fails R2]; D reports to B [in no least set]
+   D->C: D reads C's signal [in every least set; alone its removal fails R2]; D checks C's state [in every least set; alone its removal fails R2]; D reports to C [in no least set]
+   A->D: A reads D's signal [in some least sets]; A checks D's state [in some least sets]; A reports to D [in every least set; alone its removal fails R5]
+   B->D: B reads D's signal [in some least sets]; B checks D's state [in some least sets]; B reports to D [in every least set; alone its removal fails R5]
+   C->D: C reads D's signal [in some least sets]; C checks D's state [in some least sets]; C reports to D [in every least set; alone its removal fails R5]
+   in a least set, removing the edge fails:
+      C checks A's state: R2
+      D checks A's state: R2
+      A checks B's state: R2
+      D checks B's state: R2
+      B checks C's state: R2
+      D checks C's state: R2
+      A checks D's state: R2
+      B checks D's state: R2
+      C checks D's state: R2
+      A reports to D: R5
+      B reports to D: R5
+      C reports to D: R5
+      C reads A's signal: R2
+      D reads A's signal: R2
+      A reads B's signal: R2
+      D reads B's signal: R2
+      B reads C's signal: R2
+      D reads C's signal: R2
+      A reads D's signal: R2
+      B reads D's signal: R2
+      C reads D's signal: R2
+
+-- arrows read as actor, work reads all, f = 3: of the 27 edges the arrows can carry, 19 are enough for the whole list (3 ways)
+   A->B: A reads B's signal [in every least set; alone its removal fails R2]; A checks B's state [in every least set; alone its removal fails R2]; A reports to B [in no least set]
+   B->C: B reads C's signal [in every least set; alone its removal fails R2]; B checks C's state [in every least set; alone its removal fails R2]; B reports to C [in no least set]
+   C->A: C reads A's signal [in every least set; alone its removal fails R2]; C checks A's state [in every least set; alone its removal fails R2]; C reports to A [in no least set]
+   D->A: D reads A's signal [in every least set; alone its removal fails R2]; D checks A's state [in every least set; alone its removal fails R2]; D reports to A [in no least set]
+   D->B: D reads B's signal [in every least set; alone its removal fails R2]; D checks B's state [in every least set; alone its removal fails R2]; D reports to B [in no least set]
+   D->C: D reads C's signal [in every least set; alone its removal fails R2]; D checks C's state [in every least set; alone its removal fails R2]; D reports to C [in no least set]
+   A->D: A reads D's signal [in some least sets]; A checks D's state [in some least sets]; A reports to D [in every least set; alone its removal fails R5]
+   B->D: B reads D's signal [in some least sets]; B checks D's state [in some least sets]; B reports to D [in every least set; alone its removal fails R5]
+   C->D: C reads D's signal [in some least sets]; C checks D's state [in some least sets]; C reports to D [in every least set; alone its removal fails R5]
+   in a least set, removing the edge fails:
+      C checks A's state: R1+R2+R6 or R2
+      D checks A's state: R2
+      A checks B's state: R1+R2+R6 or R2
+      D checks B's state: R2
+      B checks C's state: R1+R2+R6 or R2
+      D checks C's state: R2
+      A checks D's state: R2
+      B checks D's state: R2
+      C checks D's state: R2
+      A reports to D: R5
+      B reports to D: R5
+      C reports to D: R5
+      C reads A's signal: R1+R2 or R2
+      D reads A's signal: R2
+      A reads B's signal: R1+R2 or R2
+      D reads B's signal: R2
+      B reads C's signal: R1+R2 or R2
+      D reads C's signal: R2
+      A reads D's signal: R2
+      B reads D's signal: R2
+      C reads D's signal: R2
+
+-- arrows read as actor, work reads two, f = 1: of the 27 edges the arrows can carry, 19 are enough for the whole list (2 ways)
+   A->B: A reads B's signal [in every least set; alone its removal fails R2]; A checks B's state [in every least set; alone its removal fails R2]; A reports to B [in no least set]
+   B->C: B reads C's signal [in every least set; alone its removal fails R2]; B checks C's state [in every least set; alone its removal fails R2]; B reports to C [in no least set]
+   C->A: C reads A's signal [in every least set; alone its removal fails R2]; C checks A's state [in every least set; alone its removal fails R2]; C reports to A [in no least set]
+   D->A: D reads A's signal [in every least set; alone its removal fails R2]; D checks A's state [in every least set; alone its removal fails R2]; D reports to A [in no least set]
+   D->B: D reads B's signal [in every least set; alone its removal fails R2]; D checks B's state [in every least set; alone its removal fails R2]; D reports to B [in no least set]
+   D->C: D reads C's signal [in every least set; alone its removal fails R2]; D checks C's state [in every least set; alone its removal fails R2]; D reports to C [in no least set]
+   A->D: A reads D's signal [in every least set]; A checks D's state [in every least set]; A reports to D [in every least set; alone its removal fails R5]
+   B->D: B reads D's signal [in some least sets]; B checks D's state [in some least sets]; B reports to D [in every least set; alone its removal fails R5]
+   C->D: C reads D's signal [in some least sets]; C checks D's state [in some least sets]; C reports to D [in every least set; alone its removal fails R5]
+   in a least set, removing the edge fails:
+      C checks A's state: R2
+      D checks A's state: R2
+      A checks B's state: R2
+      D checks B's state: R2
+      B checks C's state: R2
+      D checks C's state: R2
+      A checks D's state: R1+R2+R6
+      B checks D's state: R2
+      C checks D's state: R2
+      A reports to D: R5+R6
+      B reports to D: R5
+      C reports to D: R5
+      C reads A's signal: R2
+      D reads A's signal: R2
+      A reads B's signal: R2
+      D reads B's signal: R2
+      B reads C's signal: R2
+      D reads C's signal: R2
+      A reads D's signal: R2
+      B reads D's signal: R2
+      C reads D's signal: R2
+
+-- arrows read as actor, work reads two, f = 2: the 27 edges do not meet the whole list
+
+-- arrows read as actor, work reads two, f = 3: the 27 edges do not meet the whole list
+
+16251 systems explored

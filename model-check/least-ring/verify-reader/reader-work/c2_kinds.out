@@ -1,0 +1,37 @@
+=== flow: 76 edges, as one system ===
+  nothing added, f=1: G1 None G2 1
+  f=1: fewest to add: 3 edges, 4 sets  [0s]
+        D1 reports to D2; D2 reports to D3; D3 reports to D1
+        D1 reports to D2; D2 reports to D3; T reports to D1
+        D2 reports to D3; D3 reports to D1; T reports to D2
+        D2 reports to D3; T reports to D1; T reports to D2
+  f=2: fewest to add: 3 edges, 4 sets  [0s]
+        D1 reports to D2; D2 reports to D3; D3 reports to D1
+        D1 reports to D2; D2 reports to D3; T reports to D1
+        D2 reports to D3; D3 reports to D1; T reports to D2
+        D2 reports to D3; T reports to D1; T reports to D2
+  f=3: of the 4 least sets for f=2, 4 have no gap at f=3 (so the fewest at f=3 is 3)
+        D1 reports to D2; D2 reports to D3; D3 reports to D1
+        D1 reports to D2; D2 reports to D3; T reports to D1
+        D2 reports to D3; D3 reports to D1; T reports to D2
+        D2 reports to D3; T reports to D1; T reports to D2
+=== flow: 76 edges, with scopes, f=1, freeze ===
+  nothing added: G1 3 G2 1 told 2 spill None
+  G1, G2, told, spill: fewest to add: 2 edges, 1 sets  [5s]
+        T's signal read by D3; T's state checked by D3
+  G1, G2, spill (told not asked): fewest to add: 1 edges, 1 sets  [0s]
+        T's state checked by D3
+=== actor: 76 edges, as one system ===
+  nothing added, f=1: G1 None G2 1
+  f=1: fewest to add: 4 edges, 1 sets  [0s]
+        D2 reports to D3; T reports to D1; T reports to D2; T reports to D3
+  f=2: fewest to add: 5 edges, 1 sets  [0s]
+        T reports to D1; T reports to D2; T reports to D3; T's signal read by D3; T's state checked by D3
+  f=3: of the 1 least sets for f=2, 1 have no gap at f=3 (so the fewest at f=3 is 5)
+        T reports to D1; T reports to D2; T reports to D3; T's signal read by D3; T's state checked by D3
+=== actor: 76 edges, with scopes, f=1, freeze ===
+  nothing added: G1 3 G2 1 told 2 spill None
+  G1, G2, told, spill: fewest to add: 2 edges, 1 sets  [5s]
+        T's signal read by D3; T's state checked by D3
+  G1, G2, spill (told not asked): fewest to add: 1 edges, 1 sets  [0s]
+        T's state checked by D3

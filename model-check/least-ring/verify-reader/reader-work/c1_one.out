@@ -1,0 +1,18 @@
+=== 4.1 as one system ===
+flow reads all f=1: G1 None G2 None (30 states) | ring boundaries: G1 None G2 None (33 states) | reads two: G1 None G2 None (30 states)
+flow reads all f=2: G1 None G2 None (436 states) | ring boundaries: G1 None G2 None (517 states) | reads two: G1 None G2 1 (60047 states, search cut off in round 3: a missing number is not a null)
+flow reads all f=3: G1 None G2 None (4090 states) | ring boundaries: G1 None G2 None (5135 states) | reads two: G1 None G2 1 (62132 states, search cut off in round 2: a missing number is not a null)
+flow reads all f=4: G1 None G2 1 (73666 states, search cut off in round 3: a missing number is not a null) | ring boundaries: G1 1 G2 1 (36430 states) | reads two: G1 None G2 1 (61011 states, search cut off in round 2: a missing number is not a null)
+actor reads all f=1: G1 None G2 None (30 states) | ring boundaries: G1 None G2 None (33 states) | reads two: G1 None G2 None (30 states)
+actor reads all f=2: G1 None G2 None (436 states) | ring boundaries: G1 None G2 None (517 states) | reads two: G1 None G2 1 (60047 states, search cut off in round 3: a missing number is not a null)
+actor reads all f=3: G1 None G2 None (4090 states) | ring boundaries: G1 None G2 None (5135 states) | reads two: G1 None G2 1 (62132 states, search cut off in round 2: a missing number is not a null)
+actor reads all f=4: G1 None G2 1 (73666 states, search cut off in round 3: a missing number is not a null) | ring boundaries: G1 1 G2 1 (36430 states) | reads two: G1 None G2 1 (61011 states, search cut off in round 2: a missing number is not a null)
+=== 4.1 one connection removed, as one system ===
+flow {('D->T', 1): {(None, None)}, ('D->T', 2): {(None, None)}, ('D->T', 3): {(None, None)}, ('T->D', 1): {(None, None)}, ('T->D', 2): {(None, None)}, ('T->D', 3): {(None, None)}, ('base ring', 1): {(None, None)}, ('base ring', 2): {(None, None)}, ('base ring', 3): {(None, None)}, ('upper cycle', 1): {(None, None)}, ('upper cycle', 2): {(None, None)}, ('upper cycle', 3): {(None, None)}}
+flow all three upper-cycle arrows removed (33), f=1: G1 None G2 None (30 states)
+flow all three upper-cycle arrows removed (33), f=2: G1 None G2 None (436 states)
+flow all three upper-cycle arrows removed (33), f=3: G1 None G2 None (4090 states)
+actor {('D->T', 1): {(None, None)}, ('D->T', 2): {('None?', 1)}, ('D->T', 3): {('None?', 1)}, ('T->D', 1): {('None?', 1)}, ('T->D', 2): {('None?', 1)}, ('T->D', 3): {('None?', 1)}, ('base ring', 1): {(None, None)}, ('base ring', 2): {(None, None)}, ('base ring', 3): {(None, None)}, ('upper cycle', 1): {(None, None)}, ('upper cycle', 2): {(None, None)}, ('upper cycle', 3): {(None, None)}}
+actor all three upper-cycle arrows removed (33), f=1: G1 None G2 None (30 states)
+actor all three upper-cycle arrows removed (33), f=2: G1 None G2 None (436 states)
+actor all three upper-cycle arrows removed (33), f=3: G1 None G2 None (4090 states)

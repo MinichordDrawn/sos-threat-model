@@ -1,0 +1,12 @@
+=== A15: 'in every round with a fault some live correct monitor detects a fault of that round'
+  watchers of M1 : ['M2', 'M3']
+  watchers of M2 : ['M3', 'M4']
+  watchers of M3 : ['M4', 'M5']
+  watchers of M4 : ['M1', 'M5']
+  watchers of M5 : ['M1', 'M2']
+  result: 3/1
+  | stop M2, stop M3 | nothing bad; stopped=M2,M3; flagged=M4,M5; working=W | G1: False G2: False | detections: ['M4 sees silence of M2', 'M4 sees silence of M3', 'M5 sees silence of M3']
+  | mutate M1 | bad=M1; stopped=M2,M3; flagged=M4,M5; working=W | G1: False G2: True | detections: ['M4 sees silence of M2', 'M4 sees silence of M3', 'M5 sees silence of M3']
+=== A4 / A15 first round: random plain systems, every monitor two watchers, work with a checker
+  halting directly on every monitor, no reports, f=2: 1500 systems, 0 with a gap
+  first round with a fault, f=2: 37077 outcomes over 600 random systems, 0 with no detection of a fault of the round

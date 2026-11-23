@@ -1,0 +1,176 @@
+naming at the wiring: rule vs search over cases, flow: 0 disagreements
+naming at the wiring: rule vs search over cases, actor: 0 disagreements
+
+=== section 2.1, W reads all: least connections (number of least wirings, shapes) ===
+R1          | flow f1: 4 (81, 15) | flow f2: 4 (30, 5) | flow f3: 4 (6, 1) | actor f1: 4 (81, 15) | actor f2: 4 (30, 5) | actor f3: 4 (6, 1)
+R2          | flow f1: 8 (81, 15) | flow f2: 8 (81, 15) | flow f3: 8 (81, 15) | actor f1: 8 (81, 15) | actor f2: 8 (81, 15) | actor f3: 8 (81, 15)
+R3          | flow f1: 3 (16, 4) | flow f2: 3 (16, 4) | flow f3: 3 (16, 4) | actor f1: 3 (16, 4) | actor f2: 3 (16, 4) | actor f3: 3 (16, 4)
+R4          | flow f1: 0 (1, 1) | flow f2: 0 (1, 1) | flow f3: 0 (1, 1) | actor f1: 0 (1, 1) | actor f2: 0 (1, 1) | actor f3: 0 (1, 1)
+R5          | flow f1: 3 (1, 1) | flow f2: 3 (1, 1) | flow f3: 3 (1, 1) | actor f1: 3 (1, 1) | actor f2: 3 (1, 1) | actor f3: 3 (1, 1)
+R6          | flow f1: 4 (48, 9) | flow f2: 4 (24, 4) | flow f3: 4 (6, 1) | actor f1: 4 (12, 3) | actor f2: 5 (63, 11) | actor f3: 6 (142, 26)
+R2+R5       | flow f1: 8 (24, 4) | flow f2: 8 (24, 4) | flow f3: 8 (24, 4) | actor f1: 9 (27, 7) cand-least | actor f2: 9 (27, 7) cand-least | actor f3: 9 (27, 7) cand-least
+all but R2  | flow f1: 4 (3, 1) | flow f2: 5 (9, 2) | flow f3: 6 (16, 4) | actor f1: 6 (16, 4) | actor f2: 6 (16, 4) | actor f3: 6 (16, 4)
+whole list  | flow f1: 8 (24, 4) | flow f2: 8 (24, 4) | flow f3: 8 (18, 3) | actor f1: 9 (26, 6) cand-least | actor f2: 9 (26, 6) cand-least | actor f3: 9 (26, 6) cand-least
+
+=== section 2.1, W reads two: least connections (number of least wirings, shapes) ===
+R1          | flow f1: 4 (26, 14) | flow f2: none | flow f3: none | actor f1: 4 (18, 10) | actor f2: none | actor f3: none
+R2          | flow f1: 8 (81, 42) | flow f2: 8 (81, 42) | flow f3: 8 (81, 42) | actor f1: 8 (81, 42) | actor f2: 8 (81, 42) | actor f3: 8 (81, 42)
+R3          | flow f1: 3 (16, 9) | flow f2: 3 (16, 9) | flow f3: 3 (16, 9) | actor f1: 3 (16, 9) | actor f2: 3 (16, 9) | actor f3: 3 (16, 9)
+R4          | flow f1: 0 (1, 1) | flow f2: 0 (1, 1) | flow f3: 0 (1, 1) | actor f1: 0 (1, 1) | actor f2: 0 (1, 1) | actor f3: 0 (1, 1)
+R5          | flow f1: 3 (1, 1) | flow f2: 3 (1, 1) | flow f3: 3 (1, 1) | actor f1: 3 (1, 1) | actor f2: 3 (1, 1) | actor f3: 3 (1, 1)
+R6          | flow f1: 4 (26, 14) | flow f2: none | flow f3: none | actor f1: 4 (4, 3) | actor f2: none | actor f3: none
+R2+R5       | flow f1: 8 (24, 12) | flow f2: 8 (24, 12) | flow f3: 8 (24, 12) | actor f1: 9 (27, 15) cand-least | actor f2: 9 (27, 15) cand-least | actor f3: 9 (27, 15) cand-least
+all but R2  | flow f1: 4 (1, 1) | flow f2: none | flow f3: none | actor f1: 6 (16, 9) | actor f2: none | actor f3: none
+whole list  | flow f1: 8 (22, 11) | flow f2: none | flow f3: none | actor f1: 9 (26, 14) cand-least | actor f2: none | actor f3: none
+
+=== candidate meets every requirement? ===
+flow all 1 {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': True, 'R4w': True, 'R4wl': True} [None, None, None]
+flow all 2 {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': True, 'R4w': True, 'R4wl': True} [None, None, None]
+flow all 3 {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': True, 'R4w': True, 'R4wl': True} [None, None, None]
+flow two 1 {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': True, 'R4w': True, 'R4wl': True} [None, None, None]
+flow two 2 {'R1': False, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': False, 'R4w': True, 'R4wl': True} [2, 1, None]
+flow two 3 {'R1': False, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': False, 'R4w': True, 'R4wl': True} [2, 1, None]
+actor all 1 {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': True, 'R4w': True, 'R4wl': True} [None, None, None]
+actor all 2 {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': True, 'R4w': True, 'R4wl': True} [None, None, None]
+actor all 3 {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': True, 'R4w': True, 'R4wl': True} [None, None, None]
+actor two 1 {'R1': True, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': True, 'R4w': True, 'R4wl': True} [None, None, None]
+actor two 2 {'R1': False, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': False, 'R4w': True, 'R4wl': True} [2, 1, None]
+actor two 3 {'R1': False, 'R2': True, 'R3': True, 'R4': True, 'R5': True, 'R6': False, 'R4w': True, 'R4wl': True} [2, 1, None]
+
+=== candidate among the least: over all 63 combinations ===
+flow all f=1: candidate least in 0 combos (of them with R2 and R5: 0); not least in 63 (with R2 and R5: 16); cannot be met at all: 0
+flow all f=2: candidate least in 0 combos (of them with R2 and R5: 0); not least in 63 (with R2 and R5: 16); cannot be met at all: 0
+flow all f=3: candidate least in 0 combos (of them with R2 and R5: 0); not least in 63 (with R2 and R5: 16); cannot be met at all: 0
+flow two f=1: candidate least in 0 combos (of them with R2 and R5: 0); not least in 63 (with R2 and R5: 16); cannot be met at all: 0
+flow two f=2: candidate least in 0 combos (of them with R2 and R5: 0); not least in 15 (with R2 and R5: 4); cannot be met at all: 48
+flow two f=3: candidate least in 0 combos (of them with R2 and R5: 0); not least in 15 (with R2 and R5: 4); cannot be met at all: 48
+actor all f=1: candidate least in 16 combos (of them with R2 and R5: 16); not least in 47 (with R2 and R5: 0); cannot be met at all: 0
+actor all f=2: candidate least in 16 combos (of them with R2 and R5: 16); not least in 47 (with R2 and R5: 0); cannot be met at all: 0
+actor all f=3: candidate least in 16 combos (of them with R2 and R5: 16); not least in 47 (with R2 and R5: 0); cannot be met at all: 0
+actor two f=1: candidate least in 16 combos (of them with R2 and R5: 16); not least in 47 (with R2 and R5: 0); cannot be met at all: 0
+actor two f=2: candidate least in 4 combos (of them with R2 and R5: 4); not least in 11 (with R2 and R5: 0); cannot be met at all: 48
+actor two f=3: candidate least in 4 combos (of them with R2 and R5: 4); not least in 11 (with R2 and R5: 0); cannot be met at all: 48
+
+=== 2.2: R2+R5 least wirings against the whole list ===
+flow 1 R2+R5: 8 24 whole: 8 24 removed: {} shapes of removed: {}
+flow 2 R2+R5: 8 24 whole: 8 24 removed: {} shapes of removed: {}
+flow 3 R2+R5: 8 24 whole: 8 18 removed: {('R1', 'R6'): 6} shapes of removed: {('R1', 'R6'): 1}
+actor 1 R2+R5: 9 27 whole: 9 26 removed: {('R3',): 1} shapes of removed: {('R3',): 1}
+   removed under actor: A->B A->C A->D B->A B->C B->D C->A C->B C->D
+actor 2 R2+R5: 9 27 whole: 9 26 removed: {('R3',): 1} shapes of removed: {('R3',): 1}
+actor 3 R2+R5: 9 27 whole: 9 26 removed: {('R1', 'R3', 'R6'): 1} shapes of removed: {('R1', 'R3', 'R6'): 1}
+
+=== 2.3: the least wirings, one per shape ===
+flow f=1 8 connections, 24 wirings, 4 shapes
+     A->B A->D B->A B->D C->A C->D D->A D->B  
+     A->C A->D B->A B->D C->A C->D D->A D->B  
+     A->B A->D B->C B->D C->A C->D D->A D->B    <- candidate minus one D-arrow
+     A->C A->D B->C B->D C->A C->D D->A D->B  
+flow f=3 8 connections, 18 wirings, 3 shapes
+     A->C A->D B->A B->D C->A C->D D->A D->B  
+     A->B A->D B->C B->D C->A C->D D->A D->B    <- candidate minus one D-arrow
+     A->C A->D B->C B->D C->A C->D D->A D->B  
+actor f=1 9 connections, 26 wirings, 6 shapes
+     A->B A->C A->D B->A B->C B->D C->B C->D D->A  
+     A->B A->C A->D B->A B->C B->D C->D D->A D->B  
+     A->B A->C A->D B->C B->D C->A C->D D->A D->B  
+     A->C A->D B->C B->D C->A C->B C->D D->A D->B  
+     A->B A->C A->D B->A B->D C->D D->A D->B D->C  
+     A->B A->D B->C B->D C->A C->D D->A D->B D->C   <- candidate 
+actor f=3 9 connections, 26 wirings, 6 shapes
+     A->B A->C A->D B->A B->C B->D C->B C->D D->A  
+     A->B A->C A->D B->A B->C B->D C->D D->A D->B  
+     A->B A->C A->D B->C B->D C->A C->D D->A D->B  
+     A->C A->D B->C B->D C->A C->B C->D D->A D->B  
+     A->B A->C A->D B->A B->D C->D D->A D->B D->C  
+     A->B A->D B->C B->D C->A C->D D->A D->B D->C   <- candidate 
+
+=== 2.4: remove one connection from the candidate ===
+flow A->B fails: ('R2',) | R4w True R4wl False
+flow B->C fails: ('R2',) | R4w True R4wl False
+flow C->A fails: ('R2',) | R4w True R4wl False
+flow D->A fails: () | R4w True R4wl False
+flow D->B fails: () | R4w True R4wl False
+flow D->C fails: () | R4w True R4wl False
+flow A->D fails: ('R2', 'R5') | R4w True R4wl False
+flow B->D fails: ('R2', 'R5') | R4w True R4wl False
+flow C->D fails: ('R2', 'R5') | R4w True R4wl False
+flow minus D->A, D->B fails: ['R2']
+flow minus D->A, D->C fails: ['R2']
+flow minus D->B, D->C fails: ['R2']
+actor A->B fails: ('R2',) | R4w True R4wl False
+actor B->C fails: ('R2',) | R4w True R4wl False
+actor C->A fails: ('R2',) | R4w True R4wl False
+actor D->A fails: ('R2',) | R4w True R4wl False
+actor D->B fails: ('R2',) | R4w True R4wl False
+actor D->C fails: ('R2',) | R4w True R4wl False
+actor A->D fails: ('R5',) | R4w True R4wl False
+actor B->D fails: ('R5',) | R4w True R4wl False
+actor C->D fails: ('R5',) | R4w True R4wl False
+actor minus D->A, D->B fails: ['R2']
+actor minus D->A, D->C fails: ['R2']
+actor minus D->B, D->C fails: ['R2']
+
+=== R4wl added to the whole list ===
+flow all 1 9 11 wirings 3 shapes; candidate least: True
+     A->B A->C A->D B->C B->D C->A C->D D->A D->B
+     A->C A->D B->C B->D C->A C->B C->D D->A D->B
+     A->B A->D B->C B->D C->A C->D D->A D->B D->C
+flow all 2 9 11 wirings 3 shapes; candidate least: True
+flow all 3 9 11 wirings 3 shapes; candidate least: True
+flow two 1 9 11 wirings 6 shapes; candidate least: True
+flow two 2 none
+flow two 3 none
+   flow candidate minus A->B: R4wl False fails: ['R2', 'R4wl']
+   flow candidate minus B->C: R4wl False fails: ['R2', 'R4wl']
+   flow candidate minus C->A: R4wl False fails: ['R2', 'R4wl']
+   flow candidate minus D->A: R4wl False fails: ['R4wl']
+   flow candidate minus D->B: R4wl False fails: ['R4wl']
+   flow candidate minus D->C: R4wl False fails: ['R4wl']
+   flow candidate minus A->D: R4wl False fails: ['R2', 'R5', 'R4wl']
+   flow candidate minus B->D: R4wl False fails: ['R2', 'R5', 'R4wl']
+   flow candidate minus C->D: R4wl False fails: ['R2', 'R5', 'R4wl']
+  with R4w only: flow 8 24 False
+actor all 1 9 11 wirings 3 shapes; candidate least: True
+     A->B A->C A->D B->C B->D C->A C->D D->A D->B
+     A->C A->D B->C B->D C->A C->B C->D D->A D->B
+     A->B A->D B->C B->D C->A C->D D->A D->B D->C
+actor all 2 9 11 wirings 3 shapes; candidate least: True
+actor all 3 9 11 wirings 3 shapes; candidate least: True
+actor two 1 9 11 wirings 6 shapes; candidate least: True
+actor two 2 none
+actor two 3 none
+   actor candidate minus A->B: R4wl False fails: ['R2', 'R4wl']
+   actor candidate minus B->C: R4wl False fails: ['R2', 'R4wl']
+   actor candidate minus C->A: R4wl False fails: ['R2', 'R4wl']
+   actor candidate minus D->A: R4wl False fails: ['R2', 'R4wl']
+   actor candidate minus D->B: R4wl False fails: ['R2', 'R4wl']
+   actor candidate minus D->C: R4wl False fails: ['R2', 'R4wl']
+   actor candidate minus A->D: R4wl False fails: ['R5', 'R4wl']
+   actor candidate minus B->D: R4wl False fails: ['R5', 'R4wl']
+   actor candidate minus C->D: R4wl False fails: ['R5', 'R4wl']
+  with R4w only: actor 9 26 True
+
+=== 2.5: links with no direction ===
+flow all 1 least links: 5 wirings: 3 [[('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'D'), ('C', 'D')], [('A', 'B'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')], [('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')]]
+flow all 2 least links: 5 wirings: 3 
+flow all 3 least links: 5 wirings: 3 
+flow two 1 least links: 5 wirings: 3 
+actor all 1 least links: 5 wirings: 3 
+actor all 2 least links: 5 wirings: 3 
+actor all 3 least links: 5 wirings: 3 
+actor two 1 least links: 5 wirings: 3 
+
+=== section 5: the mesh against the candidate ===
+flow all 1 candidate [G1,G2,told]: [None, None, None] mesh: [None, None, None] same
+flow all 2 candidate [G1,G2,told]: [None, None, None] mesh: [None, None, None] same
+flow all 3 candidate [G1,G2,told]: [None, None, None] mesh: [None, None, None] same
+flow two 1 candidate [G1,G2,told]: [None, None, None] mesh: [None, None, None] same
+flow two 2 candidate [G1,G2,told]: [2, 1, None] mesh: [2, 1, None] same
+flow two 3 candidate [G1,G2,told]: [2, 1, None] mesh: [2, 1, None] same
+actor all 1 candidate [G1,G2,told]: [None, None, None] mesh: [None, None, None] same
+actor all 2 candidate [G1,G2,told]: [None, None, None] mesh: [None, None, None] same
+actor all 3 candidate [G1,G2,told]: [None, None, None] mesh: [None, None, None] same
+actor two 1 candidate [G1,G2,told]: [None, None, None] mesh: [None, None, None] same
+actor two 2 candidate [G1,G2,told]: [2, 1, None] mesh: [2, 1, None] same
+actor two 3 candidate [G1,G2,told]: [2, 1, None] mesh: [2, 1, None] same

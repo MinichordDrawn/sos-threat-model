@@ -1,0 +1,266 @@
+
+== Part D: which statements of results-join.md cover each step
+
+author, flow: 20 sets of present processes; Theorem J's condition holds in 2, Theorem S's in 11; a monitor nobody checks in 1; fewest present halt inputs of a present work process: 4
+     [ring 1; ring 2: D2] mutual pairs connect: False; Theorem S: False; unchecked: D2
+     [ring 1; ring 2: A2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     ... and 12 more
+
+author, actor: 20 sets of present processes; Theorem J's condition holds in 2, Theorem S's in 2; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+     [ring 1; ring 2: D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     ... and 12 more
+
+author-loose, flow: 101 sets of present processes; Theorem J's condition holds in 2, Theorem S's in 83; a monitor nobody checks in 1; fewest present halt inputs of a present work process: 4
+     [ring 1; ring 2: D2] mutual pairs connect: False; Theorem S: False; unchecked: D2
+     [ring 1; ring 3: D3] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: D2; ring 3: D3] mutual pairs connect: False; Theorem S: True; unchecked: -
+     ... and 93 more
+
+author-loose, actor: 101 sets of present processes; Theorem J's condition holds in 2, Theorem S's in 2; a monitor nobody checks in 1; fewest present halt inputs of a present work process: 4
+     [ring 1; ring 2: D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 3: D3] mutual pairs connect: False; Theorem S: False; unchecked: D3
+     [ring 1; ring 2: A2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: D2; ring 3: D3] mutual pairs connect: False; Theorem S: False; unchecked: -
+     ... and 93 more
+
+top-first, flow: 20 sets of present processes; Theorem J's condition holds in 20, Theorem S's in 20; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+
+top-first, actor: 20 sets of present processes; Theorem J's condition holds in 20, Theorem S's in 20; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+
+top-first-loose, flow: 101 sets of present processes; Theorem J's condition holds in 101, Theorem S's in 101; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+
+top-first-loose, actor: 101 sets of present processes; Theorem J's condition holds in 101, Theorem S's in 101; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+
+top-after-ring-2, flow: 20 sets of present processes; Theorem J's condition holds in 11, Theorem S's in 11; a monitor nobody checks in 1; fewest present halt inputs of a present work process: 4
+     [ring 1; ring 2: D2] mutual pairs connect: False; Theorem S: False; unchecked: D2
+     [ring 1; ring 2: A2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     ... and 3 more
+
+top-after-ring-2, actor: 20 sets of present processes; Theorem J's condition holds in 11, Theorem S's in 11; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+     [ring 1; ring 2: D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 B2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2: A2 C2 D2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     ... and 3 more
+
+whole, flow: 4 sets of present processes; Theorem J's condition holds in 2, Theorem S's in 3; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+     [ring 1; ring 2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2; ring 3] mutual pairs connect: False; Theorem S: True; unchecked: -
+
+whole, actor: 4 sets of present processes; Theorem J's condition holds in 2, Theorem S's in 2; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+     [ring 1; ring 2] mutual pairs connect: False; Theorem S: False; unchecked: -
+     [ring 1; ring 2; ring 3] mutual pairs connect: False; Theorem S: False; unchecked: -
+
+whole-top-first, flow: 4 sets of present processes; Theorem J's condition holds in 4, Theorem S's in 4; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+
+whole-top-first, actor: 4 sets of present processes; Theorem J's condition holds in 4, Theorem S's in 4; a monitor nobody checks in 0; fewest present halt inputs of a present work process: 4
+
+== Part D: the least attachment of a fifth node N to the candidate ring
+
+-- flow, work reads all, f=1: 256 attachments as connections
+   R1: least 1 (4 attachments, 2 shapes): N->A; N->D
+   R2: least 2 (6 attachments, 2 shapes): N->A, N->B; N->A, N->D
+   R3: least 1 (4 attachments, 2 shapes): N->A; N->D
+   R5: least 1 (1 attachments, 1 shapes): N->D
+   R6: least 1 (4 attachments, 2 shapes): N->A; N->D
+   R1+R6: least 1 (4 attachments, 2 shapes): N->A; N->D
+   R2+R5: least 2 (3 attachments, 1 shapes): N->A, N->D
+   R1+R2+R3+R4+R5+R6: least 2 (3 attachments, 1 shapes): N->A, N->D
+
+-- flow, work reads all, f=2: 256 attachments as connections
+   R1: least 1 (4 attachments, 2 shapes): N->A; N->D
+   R6: least 1 (4 attachments, 2 shapes): N->A; N->D
+   R1+R2+R3+R4+R5+R6: least 2 (3 attachments, 1 shapes): N->A, N->D
+
+-- flow, work reads all, f=3: 256 attachments as connections
+   R1: least 1 (4 attachments, 2 shapes): N->A; N->D
+   R6: least 1 (4 attachments, 2 shapes): N->A; N->D
+   R1+R2+R3+R4+R5+R6: least 2 (3 attachments, 1 shapes): N->A, N->D
+
+-- flow, work reads two, f=1: 256 attachments as connections
+   R1: least 1 (4 attachments, 3 shapes): N->A; N->B; N->D
+   R2: least 2 (6 attachments, 4 shapes): N->A, N->B; N->A, N->D; N->B, N->C; N->B, N->D
+   R3: least 1 (4 attachments, 3 shapes): N->A; N->B; N->D
+   R5: least 1 (1 attachments, 1 shapes): N->D
+   R6: least 1 (4 attachments, 3 shapes): N->A; N->B; N->D
+   R1+R6: least 1 (4 attachments, 3 shapes): N->A; N->B; N->D
+   R2+R5: least 2 (3 attachments, 2 shapes): N->A, N->D; N->B, N->D
+   R1+R2+R3+R4+R5+R6: least 2 (3 attachments, 2 shapes): N->A, N->D; N->B, N->D
+
+-- actor, work reads all, f=1: 256 attachments as connections
+   R1: least 1 (4 attachments, 2 shapes): A->N; D->N
+   R2: least 2 (6 attachments, 2 shapes): A->N, B->N; A->N, D->N
+   R3: least 1 (4 attachments, 2 shapes): A->N; D->N
+   R5: least 1 (1 attachments, 1 shapes): N->D
+   R6: least 1 (4 attachments, 2 shapes): A->N; D->N
+   R1+R6: least 1 (4 attachments, 2 shapes): A->N; D->N
+   R2+R5: least 3 (6 attachments, 2 shapes): A->N, B->N, N->D; A->N, D->N, N->D
+   R1+R2+R3+R4+R5+R6: least 3 (6 attachments, 2 shapes): A->N, B->N, N->D; A->N, D->N, N->D
+
+-- actor, work reads all, f=2: 256 attachments as connections
+   R1: least 1 (4 attachments, 2 shapes): A->N; D->N
+   R6: least 1 (4 attachments, 2 shapes): A->N; D->N
+   R1+R2+R3+R4+R5+R6: least 3 (6 attachments, 2 shapes): A->N, B->N, N->D; A->N, D->N, N->D
+
+-- actor, work reads all, f=3: 256 attachments as connections
+   R1: least 1 (4 attachments, 2 shapes): A->N; D->N
+   R6: least 1 (4 attachments, 2 shapes): A->N; D->N
+   R1+R2+R3+R4+R5+R6: least 3 (6 attachments, 2 shapes): A->N, B->N, N->D; A->N, D->N, N->D
+
+-- actor, work reads two, f=1: 256 attachments as connections
+   R1: least 1 (4 attachments, 3 shapes): A->N; B->N; D->N
+   R2: least 2 (6 attachments, 4 shapes): A->N, B->N; A->N, D->N; B->N, C->N; B->N, D->N
+   R3: least 1 (4 attachments, 3 shapes): A->N; B->N; D->N
+   R5: least 1 (1 attachments, 1 shapes): N->D
+   R6: least 1 (4 attachments, 3 shapes): A->N; B->N; D->N
+   R1+R6: least 1 (4 attachments, 3 shapes): A->N; B->N; D->N
+   R2+R5: least 3 (6 attachments, 4 shapes): A->N, B->N, N->D; A->N, D->N, N->D; B->N, C->N, N->D; B->N, D->N, N->D
+   R1+R2+R3+R4+R5+R6: least 3 (6 attachments, 4 shapes): A->N, B->N, N->D; A->N, D->N, N->D; B->N, C->N, N->D; B->N, D->N, N->D
+
+-- flow, work reads all, f=1: kind by kind, 24 edges
+   R1: fewest 1 (4 sets, 2 shapes, 30 systems explored)
+        A checks N's state
+        D checks N's state
+   R2: fewest 4 (6 sets, 2 shapes, 616 systems explored)
+        A checks N's state; B checks N's state; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; A reads N's signal; D reads N's signal
+   R3: fewest 2 (4 sets, 2 shapes, 264 systems explored)
+        A checks N's state; A reads N's signal
+        D checks N's state; D reads N's signal
+   R5: fewest 1 (1 sets, 1 shapes, 27 systems explored)
+        N reports to D
+   R6: fewest 1 (4 sets, 2 shapes, 30 systems explored)
+        A checks N's state
+        D checks N's state
+   R1+R2+R3+R4+R5+R6: fewest 5 (6 sets, 2 shapes, 614 systems explored)
+        A checks N's state; B checks N's state; N reports to D; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; N reports to D; A reads N's signal; D reads N's signal
+
+-- flow, work reads all, f=2: kind by kind, 24 edges
+   R1: fewest 1 (4 sets, 2 shapes, 30 systems explored)
+        A checks N's state
+        D checks N's state
+   R1+R2+R3+R4+R5+R6: fewest 5 (6 sets, 2 shapes, 614 systems explored)
+        A checks N's state; B checks N's state; N reports to D; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; N reports to D; A reads N's signal; D reads N's signal
+
+-- flow, work reads all, f=3: kind by kind, 24 edges
+   R1: fewest 1 (4 sets, 2 shapes, 30 systems explored)
+        A checks N's state
+        D checks N's state
+   R1+R2+R3+R4+R5+R6: fewest 5 (6 sets, 2 shapes, 614 systems explored)
+        A checks N's state; B checks N's state; N reports to D; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; N reports to D; A reads N's signal; D reads N's signal
+
+-- flow, work reads two, f=1: kind by kind, 24 edges
+   R1: fewest 1 (4 sets, 3 shapes, 30 systems explored)
+        A checks N's state
+        B checks N's state
+        D checks N's state
+   R2: fewest 4 (6 sets, 4 shapes, 616 systems explored)
+        A checks N's state; B checks N's state; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; A reads N's signal; D reads N's signal
+        B checks N's state; C checks N's state; B reads N's signal; C reads N's signal
+        B checks N's state; D checks N's state; B reads N's signal; D reads N's signal
+   R3: fewest 2 (4 sets, 3 shapes, 264 systems explored)
+        A checks N's state; A reads N's signal
+        B checks N's state; B reads N's signal
+        D checks N's state; D reads N's signal
+   R5: fewest 1 (1 sets, 1 shapes, 27 systems explored)
+        N reports to D
+   R6: fewest 1 (4 sets, 3 shapes, 30 systems explored)
+        A checks N's state
+        B checks N's state
+        D checks N's state
+   R1+R2+R3+R4+R5+R6: fewest 5 (6 sets, 4 shapes, 614 systems explored)
+        A checks N's state; B checks N's state; N reports to D; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; N reports to D; A reads N's signal; D reads N's signal
+        B checks N's state; C checks N's state; N reports to D; B reads N's signal; C reads N's signal
+        B checks N's state; D checks N's state; N reports to D; B reads N's signal; D reads N's signal
+
+-- actor, work reads all, f=1: kind by kind, 24 edges
+   R1: fewest 1 (4 sets, 2 shapes, 30 systems explored)
+        A checks N's state
+        D checks N's state
+   R2: fewest 4 (6 sets, 2 shapes, 616 systems explored)
+        A checks N's state; B checks N's state; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; A reads N's signal; D reads N's signal
+   R3: fewest 2 (4 sets, 2 shapes, 264 systems explored)
+        A checks N's state; A reads N's signal
+        D checks N's state; D reads N's signal
+   R5: fewest 1 (1 sets, 1 shapes, 27 systems explored)
+        N reports to D
+   R6: fewest 1 (4 sets, 2 shapes, 30 systems explored)
+        A checks N's state
+        D checks N's state
+   R1+R2+R3+R4+R5+R6: fewest 5 (6 sets, 2 shapes, 614 systems explored)
+        A checks N's state; B checks N's state; N reports to D; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; N reports to D; A reads N's signal; D reads N's signal
+
+-- actor, work reads all, f=2: kind by kind, 24 edges
+   R1: fewest 1 (4 sets, 2 shapes, 30 systems explored)
+        A checks N's state
+        D checks N's state
+   R1+R2+R3+R4+R5+R6: fewest 5 (6 sets, 2 shapes, 614 systems explored)
+        A checks N's state; B checks N's state; N reports to D; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; N reports to D; A reads N's signal; D reads N's signal
+
+-- actor, work reads all, f=3: kind by kind, 24 edges
+   R1: fewest 1 (4 sets, 2 shapes, 30 systems explored)
+        A checks N's state
+        D checks N's state
+   R1+R2+R3+R4+R5+R6: fewest 5 (6 sets, 2 shapes, 614 systems explored)
+        A checks N's state; B checks N's state; N reports to D; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; N reports to D; A reads N's signal; D reads N's signal
+
+-- actor, work reads two, f=1: kind by kind, 24 edges
+   R1: fewest 1 (4 sets, 3 shapes, 30 systems explored)
+        A checks N's state
+        B checks N's state
+        D checks N's state
+   R2: fewest 4 (6 sets, 4 shapes, 616 systems explored)
+        A checks N's state; B checks N's state; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; A reads N's signal; D reads N's signal
+        B checks N's state; C checks N's state; B reads N's signal; C reads N's signal
+        B checks N's state; D checks N's state; B reads N's signal; D reads N's signal
+   R3: fewest 2 (4 sets, 3 shapes, 264 systems explored)
+        A checks N's state; A reads N's signal
+        B checks N's state; B reads N's signal
+        D checks N's state; D reads N's signal
+   R5: fewest 1 (1 sets, 1 shapes, 27 systems explored)
+        N reports to D
+   R6: fewest 1 (4 sets, 3 shapes, 30 systems explored)
+        A checks N's state
+        B checks N's state
+        D checks N's state
+   R1+R2+R3+R4+R5+R6: fewest 5 (6 sets, 4 shapes, 614 systems explored)
+        A checks N's state; B checks N's state; N reports to D; A reads N's signal; B reads N's signal
+        A checks N's state; D checks N's state; N reports to D; A reads N's signal; D reads N's signal
+        B checks N's state; C checks N's state; N reports to D; B reads N's signal; C reads N's signal
+        B checks N's state; D checks N's state; N reports to D; B reads N's signal; D reads N's signal
+
+-- executions
+flow: N with no connection at all, f=1: G1 1, G2 1, told 1
+   round 1: env: join-bad N N | bad: N | stopped: - | flagged: - | halted: - | worked: W | closed: -   <-- breaks G1 of ring; G2 of ring; told of ring
+actor: N with no connection at all, f=1: G1 1, G2 1, told 1
+   round 1: env: join-bad N N | bad: N | stopped: - | flagged: - | halted: - | worked: W | closed: -   <-- breaks G1 of ring; G2 of ring; told of ring

@@ -1,0 +1,7 @@
+== R2's other choices, kind by kind, 36 edges, the whole list, W reads all
+(a) R2 as two signal readers, R3 with observes = signal: of the 6,561 sets of 15 edges (8 reads, 3 reports, one check of each monitor), the whole list is met by 6318 at f=1, 2340 at f=2, 96 at f=3
+     one of them: B checks A's state; A checks B's state; A checks C's state; A checks D's state; A reports to D; B reports to D; C reports to D; B reads A's signal; C reads A's signal; A reads B's signal; C reads B's signal; A reads C's signal; D reads C's signal; A reads D's signal; B reads D's signal
+(a) R2 as two signal readers, R3 with observes = watch: of the 6,561 sets of 15 edges (8 reads, 3 reports, one check of each monitor), the whole list is met by 1152 at f=1, 576 at f=2, 96 at f=3
+     one of them: B checks A's state; C checks B's state; D checks C's state; A checks D's state; A reports to D; B reports to D; C reports to D; B reads A's signal; C reads A's signal; A reads B's signal; C reads B's signal; A reads C's signal; D reads C's signal; A reads D's signal; B reads D's signal
+     with D checked by nobody (14 edges), f=1 (G1, G2, told): (1, 1, None)
+(b) R2 as two readers and two checkers by any nodes, R3 as stated: of the 6,561 sets of 19 edges, the whole list is met by 5004 at f=1, 5004 at f=2, 2469 at f=3; W reads two, f=1: 3336

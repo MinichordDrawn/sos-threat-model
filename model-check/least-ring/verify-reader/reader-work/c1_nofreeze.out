@@ -1,0 +1,7 @@
+flow f=1 no freeze, 4 rounds: G2 all None | G1 base None | G1 mid None | G1 top None | G2 base None | G2 mid None | G2 top None | told None | spill None | states 16810 complete True rounds 4  [2s]
+flow f=1 no freeze, 6 rounds: G2 all None | G1 base None | G1 mid None | G1 top None | G2 base None | G2 mid None | G2 top None | told None | spill None | states 1616806 complete True rounds 6  [97s]
+flow f=2 no freeze, 2 rounds: G2 all None | G1 base None | G1 mid None | G1 top 2 | G2 base None | G2 mid None | G2 top None | told 2 | spill None | states 436 complete True rounds 2  [1s]
+flow f=3 no freeze, 1 round: G2 all None | G1 base None | G1 mid None | G1 top None | G2 base None | G2 mid None | G2 top None | told 1 | spill None | states 1 complete True rounds 1  [0s]
+actor f=1 no freeze, 6 rounds: G2 all None | G1 base None | G1 mid None | G1 top None | G2 base None | G2 mid None | G2 top None | told None | spill None | states 1616806 complete True rounds 6  [96s]
+actor f=2 no freeze, 2 rounds: G2 all None | G1 base None | G1 mid None | G1 top 2 | G2 base None | G2 mid None | G2 top None | told 2 | spill None | states 436 complete True rounds 2  [1s]
+actor f=3 no freeze, 1 round: G2 all None | G1 base None | G1 mid None | G1 top None | G2 base None | G2 mid None | G2 top None | told 1 | spill None | states 1 complete True rounds 1  [0s]

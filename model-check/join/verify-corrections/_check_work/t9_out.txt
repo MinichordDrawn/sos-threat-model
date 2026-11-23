@@ -1,0 +1,9 @@
+f=1: greatest sets from the list 12; family of the four cases 12; equal: True
+f=2: greatest sets from the list 36; family of the four cases 36; equal: True
+f=3: greatest sets from the list 68; family of the four cases 68; equal: True
+  both rings cycles (checking coordinator), one two-way link KB-M1, one step, may arrive bad, f=1..4: ['null/null', 'null/null', 'null/null', '1/1']
+  both rings cycles (checking coordinator), one two-way link KB-K, one step, may arrive bad, f=1..4: ['null/null', 'null/null', 'null/null', '1/1']
+  both rings cycles (reading coordinator), one two-way link KB-M1, one step, may arrive bad, f=1..4: ['null/null', 'null/null', '1/1', '1/1']
+  both rings cycles (reading coordinator), one two-way link KB-K, one step, may arrive bad, f=1..4: ['null/null', 'null/null', '1/1', '1/1']
+  both rings cycles (nested coordinator), one two-way link KB-M1, one step, may arrive bad, f=1..4: ['null/null', 'null/null', '1/1', '1/1']
+  both rings cycles (nested coordinator), one two-way link KB-K, one step, may arrive bad, f=1..4: ['null/null', 'null/null', '1/1', '1/1']

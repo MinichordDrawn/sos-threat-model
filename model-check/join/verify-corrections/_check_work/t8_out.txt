@@ -1,0 +1,7 @@
+chain, N5 does not read N6's signal, f=1, may arrive bad: as specified 4/4 | if 'after' needed the named monitor alive: 5/5
+same, arrive good: as specified 5/5 | alt: 5/5
+base mesh W reads two: f=1,2: ['null/null', '2/1'] | one-round outcomes with a fault that are not a complete response at f=1: 0
+base checking W reads two: f=1,2: ['null/null', '2/1'] | one-round outcomes with a fault that are not a complete response at f=1: 0
+base reading W reads two: f=1,2: ['null/null', '2/1'] | one-round outcomes with a fault that are not a complete response at f=1: 0
+base nested W reads two: f=1,2: ['null/null', '2/1'] | one-round outcomes with a fault that are not a complete response at f=1: 0
+Theorem L class on bases with W reading two (rate 1), f=1: 3000 systems, 0 with a gap

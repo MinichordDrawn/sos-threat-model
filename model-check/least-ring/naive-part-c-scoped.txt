@@ -1,0 +1,17 @@
+too large, skipped: c/scoped/flow/all/freeze/f2
+too large, skipped: c/scoped/flow/all/no-freeze/f1
+too large, skipped: c/scoped/flow/all/no-freeze/f2
+too large, skipped: c/scoped/flow/two/freeze/f2
+too large, skipped: c/scoped/flow/two/no-freeze/f1
+too large, skipped: c/scoped/flow/two/no-freeze/f2
+too large, skipped: c/scoped/flow/all/freeze/f4
+too large, skipped: c/scoped-ring-boundaries/flow/f1
+too large, skipped: c/scoped/actor/all/freeze/f2
+too large, skipped: c/scoped/actor/all/no-freeze/f1
+too large, skipped: c/scoped/actor/all/no-freeze/f2
+too large, skipped: c/scoped/actor/two/freeze/f2
+too large, skipped: c/scoped/actor/two/no-freeze/f1
+too large, skipped: c/scoped/actor/two/no-freeze/f2
+too large, skipped: c/scoped/actor/all/freeze/f4
+too large, skipped: c/scoped-ring-boundaries/actor/f1
+10 the same, 0 different, 16 skipped as too large

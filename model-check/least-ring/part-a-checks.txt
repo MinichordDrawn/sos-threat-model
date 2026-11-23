@@ -1,0 +1,77 @@
+
+== Mesh against candidate where a report takes a round (outside the list)
+flow, work reads all, candidate: f=1: G1 None, G2 None, told None; f=2: G1 None, G2 None, told None; f=3: G1 None, G2 None, told None
+flow, work reads all, mesh: f=1: G1 None, G2 None, told None; f=2: G1 None, G2 None, told None; f=3: G1 None, G2 None, told None
+flow, work reads two, candidate: f=1: G1 None, G2 None, told 1; f=2: G1 2, G2 1, told 1; f=3: G1 2, G2 1, told 1
+flow, work reads two, mesh: f=1: G1 None, G2 None, told 1; f=2: G1 2, G2 1, told 1; f=3: G1 2, G2 1, told 1
+actor, work reads all, candidate: f=1: G1 None, G2 None, told None; f=2: G1 None, G2 None, told None; f=3: G1 None, G2 None, told None
+actor, work reads all, mesh: f=1: G1 None, G2 None, told None; f=2: G1 None, G2 None, told None; f=3: G1 None, G2 None, told None
+actor, work reads two, candidate: f=1: G1 None, G2 None, told 1; f=2: G1 2, G2 1, told 1; f=3: G1 2, G2 1, told 1
+actor, work reads two, mesh: f=1: G1 None, G2 None, told 1; f=2: G1 2, G2 1, told 1; f=3: G1 2, G2 1, told 1
+
+== Load: what each node does (edges at it, by kind)
+flow candidate A: reads 2 signals, checks 2 states, reports to 2, hears from 2; watched by 2
+flow candidate B: reads 2 signals, checks 2 states, reports to 2, hears from 2; watched by 2
+flow candidate C: reads 2 signals, checks 2 states, reports to 2, hears from 2; watched by 2
+flow candidate D: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+flow candidate: 9 connections, 27 edges
+flow mesh A: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+flow mesh B: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+flow mesh C: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+flow mesh D: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+flow mesh: 12 connections, 36 edges
+actor candidate A: reads 2 signals, checks 2 states, reports to 2, hears from 2; watched by 2
+actor candidate B: reads 2 signals, checks 2 states, reports to 2, hears from 2; watched by 2
+actor candidate C: reads 2 signals, checks 2 states, reports to 2, hears from 2; watched by 2
+actor candidate D: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+actor candidate: 9 connections, 27 edges
+actor mesh A: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+actor mesh B: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+actor mesh C: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+actor mesh D: reads 3 signals, checks 3 states, reports to 3, hears from 3; watched by 3
+actor mesh: 12 connections, 36 edges
+
+== The candidate's arrows when naming after a loss is read at the wiring (R4wl)
+arrows read as flow, work reads all, f=1: 21 of the 27 edges (1 ways); in every least set: 21
+     not needed: A reports to B; B reports to C; C reports to A; D reports to A; D reports to B; D reports to C
+arrows read as flow, work reads two, f=1: 21 of the 27 edges (1 ways); in every least set: 21
+     not needed: A reports to B; B reports to C; C reports to A; D reports to A; D reports to B; D reports to C
+arrows read as actor, work reads all, f=1: 21 of the 27 edges (1 ways); in every least set: 21
+     not needed: A reports to B; B reports to C; C reports to A; D reports to A; D reports to B; D reports to C
+arrows read as actor, work reads two, f=1: 21 of the 27 edges (1 ways); in every least set: 21
+     not needed: A reports to B; B reports to C; C reports to A; D reports to A; D reports to B; D reports to C
+all 36 edges, work reads all, f=1, whole list with R4wl: 19 edges, 9 sets
+all 36 edges, work reads two, f=1, whole list with R4wl: 19 edges, 6 sets
+
+== Executions quoted in part-a.md
+
+-- candidate, flow, work reads two, f=2: G2
+   round 1: env: mutate A, mutate D | bad: A D | stopped: - | flagged: B C | halted: - | worked: W  <-- breaks G2
+
+-- candidate, flow, work reads two, f=2: G1
+   round 1: env: mutate A, mutate D | bad: A D | stopped: - | flagged: B C | halted: - | worked: W  <-- breaks G2
+   round 2: env: stop B, stop C | bad: A D | stopped: B C | flagged: - | halted: - | worked: W  <-- breaks G1, G2
+
+-- candidate, actor, work reads two, f=2: G2
+   round 1: env: mutate A, mutate D | bad: A D | stopped: - | flagged: B C | halted: - | worked: W  <-- breaks G2
+
+-- candidate, actor, work reads two, f=2: G1
+   round 1: env: mutate A, mutate D | bad: A D | stopped: - | flagged: B C | halted: - | worked: W  <-- breaks G2
+   round 2: env: stop B, stop C | bad: A D | stopped: B C | flagged: - | halted: - | worked: W  <-- breaks G1, G2
+four connections A->B, B->A, C->A, D->A (actor), work all, f = 1 (1, 1, 1)
+four connections A->B, B->A, C->A, D->A (actor), work all, f = 2 (1, 1, 1)
+four connections A->B, B->A, C->A, D->A (actor), work all, f = 3 (1, 1, 1)
+
+-- flow, A->B A->D B->A B->D C->A C->D D->A D->B, work all, f=3: G1
+   round 1: env: stop A, stop B, mutate D | bad: D | stopped: A B | flagged: - | halted: W | worked: -  <-- breaks G1
+
+-- the same: G2
+   round 1: env: mutate A, mutate B, mutate D | bad: A B D | stopped: - | flagged: - | halted: - | worked: W  <-- breaks G1, G2
+
+-- actor, A->B B->A C->A D->A, work all, f=1: the coordinator is not told
+   round 1: env: mutate B | bad: B | stopped: - | flagged: A | halted: W | worked: -  <-- breaks told
+== G1 and G2 by fast_join.py and by verify-impl model.py, against mr_model.py
+flow/all: 12288 systems; fast_join.py differs on 0; verify-impl model.py differs on 0   [5 s]
+flow/two: 12288 systems; fast_join.py differs on 0; verify-impl model.py differs on 0   [8 s]
+actor/all: 12288 systems; fast_join.py differs on 0; verify-impl model.py differs on 0   [5 s]
+actor/two: 12288 systems; fast_join.py differs on 0; verify-impl model.py differs on 0   [8 s]

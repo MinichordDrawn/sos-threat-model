@@ -1,0 +1,23 @@
+
+== C.2 Thirteen monitors with a scope per ring
+flow, work reads all, faults in a closed scope left out (freeze), f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (406 states); every reachable state   [0 s]
+flow, work reads all, faults in a closed scope left out (freeze), f=2: G1 2, G2 -, told 2, spill - [ring 1: -/-/2; ring 2: -/-/2; ring 3: -/-/2; top: 2/-/-] (25077 states); every reachable state   [6 s]
+flow, work reads all, faults in a closed scope left out (freeze), f=3: G1 2, G2 -, told 1, spill - [ring 1: -/-/1; ring 2: -/-/1; ring 3: -/-/1; top: 2/-/-] (35633 states, bounded at 2 rounds); every execution of at most 2 rounds   [12 s]
+flow, work reads all, faults in a closed scope allowed, f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (284252 states, bounded at 6 rounds); every execution of at most 6 rounds   [71 s]
+flow, work reads all, faults in a closed scope allowed, f=2: G1 2, G2 -, told 2, spill - [ring 1: -/-/2; ring 2: -/-/2; ring 3: -/-/2; top: 2/-/-] (7399 states, bounded at 2 rounds); every execution of at most 2 rounds   [2 s]
+flow, work reads all, faults in a closed scope allowed, f=3: G1 -, G2 -, told 1, spill - [ring 1: -/-/1; ring 2: -/-/1; ring 3: -/-/1; top: -/-/-] (356 states, bounded at 1 rounds); every execution of at most 1 rounds   [0 s]
+flow, work reads two, faults in a closed scope left out (freeze), f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (1954 states); every reachable state   [0 s]
+flow, work reads two, faults in a closed scope left out (freeze), f=2: G1 2, G2 1, told 2, spill - [ring 1: -/1/2; ring 2: -/1/2; ring 3: -/1/2; top: 2/2/-] (15077 states, bounded at 2 rounds); every execution of at most 2 rounds   [0 s]
+flow, work reads two, faults in a closed scope allowed, f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (70518 states, bounded at 4 rounds); every execution of at most 4 rounds   [2 s]
+flow, work reads two, faults in a closed scope allowed, f=2: G1 2, G2 1, told 2, spill - [ring 1: -/1/2; ring 2: -/1/2; ring 3: -/1/2; top: 2/2/-] (44639 states, bounded at 2 rounds); every execution of at most 2 rounds   [1 s]
+actor, work reads all, faults in a closed scope left out (freeze), f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (406 states); every reachable state   [0 s]
+actor, work reads all, faults in a closed scope left out (freeze), f=2: G1 2, G2 -, told 2, spill - [ring 1: -/-/2; ring 2: -/-/2; ring 3: -/-/2; top: 2/-/-] (25077 states); every reachable state   [6 s]
+actor, work reads all, faults in a closed scope left out (freeze), f=3: G1 2, G2 -, told 1, spill - [ring 1: -/-/1; ring 2: -/-/1; ring 3: -/-/1; top: 2/-/-] (35633 states, bounded at 2 rounds); every execution of at most 2 rounds   [12 s]
+actor, work reads all, faults in a closed scope allowed, f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (284252 states, bounded at 6 rounds); every execution of at most 6 rounds   [66 s]
+actor, work reads all, faults in a closed scope allowed, f=2: G1 2, G2 -, told 2, spill - [ring 1: -/-/2; ring 2: -/-/2; ring 3: -/-/2; top: 2/-/-] (7399 states, bounded at 2 rounds); every execution of at most 2 rounds   [2 s]
+actor, work reads all, faults in a closed scope allowed, f=3: G1 -, G2 -, told 1, spill - [ring 1: -/-/1; ring 2: -/-/1; ring 3: -/-/1; top: -/-/-] (356 states, bounded at 1 rounds); every execution of at most 1 rounds   [0 s]
+actor, work reads two, faults in a closed scope left out (freeze), f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (1954 states); every reachable state   [0 s]
+actor, work reads two, faults in a closed scope left out (freeze), f=2: G1 2, G2 1, told 2, spill - [ring 1: -/1/2; ring 2: -/1/2; ring 3: -/1/2; top: 2/2/-] (15077 states, bounded at 2 rounds); every execution of at most 2 rounds   [0 s]
+actor, work reads two, faults in a closed scope allowed, f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (70518 states, bounded at 4 rounds); every execution of at most 4 rounds   [2 s]
+actor, work reads two, faults in a closed scope allowed, f=2: G1 2, G2 1, told 2, spill - [ring 1: -/1/2; ring 2: -/1/2; ring 3: -/1/2; top: 2/2/-] (44639 states, bounded at 2 rounds); every execution of at most 2 rounds   [1 s]
+

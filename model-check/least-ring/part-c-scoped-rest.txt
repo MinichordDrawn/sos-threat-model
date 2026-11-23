@@ -1,0 +1,42 @@
+
+-- the shortest executions (work reads all, freeze)
+
+-- flow, f=2: G1 of top
+   round 1: env: stop D1, stop D2 | bad: - | stopped: D1 D2 | flagged: for ring 1: A1 B1 C1 A3 B3 C3 D3 T; for ring 2: A2 B2 C2 A3 B3 C3 D3 T | halted: W1 W2 | worked: W3 | closed: ring 1, ring 2
+   round 2: env: stop D3, mutate T | bad: T | stopped: D1 D2 D3 | flagged: for ring 1: A1 B1 C1 A3 B3 C3; for ring 2: A2 B2 C2 A3 B3 C3; for ring 3: A3 B3 C3 | halted: W1 W2 W3 | worked: - | closed: ring 1, ring 2, ring 3   <-- breaks G1 of top
+
+-- flow, f=2: told of ring 1
+   round 1: env: stop D2 | bad: - | stopped: D2 | flagged: for ring 2: A1 B1 C1 D1 A2 B2 C2 A3 B3 C3 D3 T | halted: W2 | worked: W1 W3 | closed: ring 2
+   round 2: env: stop T, mutate A1 | bad: A1 | stopped: D2 T | flagged: for ring 1: B1 C1 D1; for ring 2: B1 C1 D1 A2 B2 C2 A3 B3 C3 D3; for top: B1 C1 D1 A3 B3 C3 D3 | halted: W1 W2 W3 | worked: - | closed: ring 1, ring 2, top   <-- breaks told of ring 1
+
+-- flow, f=3: told of ring 1
+   round 1: env: stop D2, stop T, mutate A1 | bad: A1 | stopped: D2 T | flagged: for ring 1: B1 C1 D1; for ring 2: B1 C1 D1 A2 B2 C2 A3 B3 C3 D3; for top: B1 C1 D1 A3 B3 C3 D3 | halted: W1 W2 W3 | worked: - | closed: ring 1, ring 2, top   <-- breaks told of ring 1
+
+-- actor, f=2: G1 of top
+   round 1: env: stop D1, stop D2 | bad: - | stopped: D1 D2 | flagged: for ring 1: A1 B1 C1 A3 B3 C3 D3 T; for ring 2: A2 B2 C2 A3 B3 C3 D3 T | halted: W1 W2 | worked: W3 | closed: ring 1, ring 2
+   round 2: env: stop D3, mutate T | bad: T | stopped: D1 D2 D3 | flagged: for ring 1: A1 B1 C1 A3 B3 C3; for ring 2: A2 B2 C2 A3 B3 C3; for ring 3: A3 B3 C3 | halted: W1 W2 W3 | worked: - | closed: ring 1, ring 2, ring 3   <-- breaks G1 of top
+
+-- actor, f=2: told of ring 1
+   round 1: env: stop D2 | bad: - | stopped: D2 | flagged: for ring 2: A1 B1 C1 D1 A2 B2 C2 A3 B3 C3 D3 T | halted: W2 | worked: W1 W3 | closed: ring 2
+   round 2: env: stop T, mutate A1 | bad: A1 | stopped: D2 T | flagged: for ring 1: B1 C1 D1; for ring 2: B1 C1 D1 A2 B2 C2 A3 B3 C3 D3; for top: B1 C1 D1 A3 B3 C3 D3 | halted: W1 W2 W3 | worked: - | closed: ring 1, ring 2, top   <-- breaks told of ring 1
+
+-- actor, f=3: told of ring 1
+   round 1: env: stop D2, stop T, mutate A1 | bad: A1 | stopped: D2 T | flagged: for ring 1: B1 C1 D1; for ring 2: B1 C1 D1 A2 B2 C2; for top: B1 C1 D1 A3 B3 C3 D3 | halted: W1 W2 W3 | worked: - | closed: ring 1, ring 2, top   <-- breaks told of ring 1
+
+-- work reads two, f=2: G2 of ring 1
+   round 1: env: mutate A1, mutate D1 | bad: A1 D1 | stopped: - | flagged: for ring 1: B1 C1 A2 B2 C2 D2 A3 B3 C3 D3 T | halted: - | worked: W1 W2 W3 | closed: -   <-- breaks G2 of ring 1
+
+-- work reads all, f=4: G2 of ring 1
+   round 1: env: mutate A1, mutate B1, mutate C1, mutate D1 | bad: A1 B1 C1 D1 | stopped: - | flagged: for ring 1: A2 B2 C2 D2 A3 B3 C3 D3 T | halted: - | worked: W1 W2 W3 | closed: -   <-- breaks G2 of ring 1
+
+== C.2 The other choice: a ring coordinator's own fault lands in the scope above
+flow, work reads all, freeze, f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (234 states)
+flow, work reads all, freeze, f=2: G1 -, G2 -, told 1, spill - [ring 1: -/-/1; ring 2: -/-/1; ring 3: -/-/1; top: -/-/-] (15333 states)
+actor, work reads all, freeze, f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (234 states)
+actor, work reads all, freeze, f=2: G1 -, G2 -, told 1, spill - [ring 1: -/-/1; ring 2: -/-/1; ring 3: -/-/1; top: -/-/-] (15333 states)
+
+== C.2 With each base ring whole in one boundary (scoped, freeze)
+flow, work reads all, f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (655 states)
+flow, work reads all, f=2: G1 2, G2 -, told 2, spill - [ring 1: -/-/2; ring 2: -/-/2; ring 3: 3/-/2; top: 2/-/-] (43429 states, bounded at 3 rounds)
+actor, work reads all, f=1: G1 -, G2 -, told -, spill - [ring 1: -/-/-; ring 2: -/-/-; ring 3: -/-/-; top: -/-/-] (655 states)
+actor, work reads all, f=2: G1 2, G2 -, told 2, spill - [ring 1: -/-/2; ring 2: -/-/2; ring 3: 3/-/2; top: 2/-/-] (43429 states, bounded at 3 rounds)

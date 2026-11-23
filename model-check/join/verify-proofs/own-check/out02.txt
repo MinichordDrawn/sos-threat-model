@@ -1,0 +1,205 @@
+== Section 2: base rings ==
+mesh          W reads all rate 3  complete response at each f<=rate: [True, True, True]  fewest c,r,w = 3,3,3   f=1..4: no gap, no gap, no gap, 1/1
+mesh          W reads two rate 1  complete response at each f<=rate: [True]  fewest c,r,w = 3,3,3   f=1..4: no gap, 2/1, 2/1, 1/1
+cycle_check   W reads all rate 3  complete response at each f<=rate: [True, True, True]  fewest c,r,w = 2,2,2   f=1..4: no gap, no gap, no gap, 1/1
+cycle_check   W reads two rate 1  complete response at each f<=rate: [True]  fewest c,r,w = 2,2,2   f=1..4: no gap, 2/1, 2/1, 1/1
+cycle_signal  W reads all rate 2  complete response at each f<=rate: [True, True]  fewest c,r,w = 1,2,1   f=1..4: no gap, no gap, 1/1, 1/1
+cycle_signal  W reads two rate 1  complete response at each f<=rate: [True]  fewest c,r,w = 1,2,1   f=1..4: no gap, 2/1, 1/1, 1/1
+cycle_nested  W reads all rate 2  complete response at each f<=rate: [True, True]  fewest c,r,w = 1,1,1   f=1..4: no gap, no gap, 1/1, 1/1
+cycle_nested  W reads two rate 1  complete response at each f<=rate: [True]  fewest c,r,w = 1,1,1   f=1..4: no gap, 2/1, 1/1, 1/1
+replay sec 2 table: [{'round': 1, 'steps': ['mutate M1', 'mutate M2', 'mutate M3'], 'G1_violated': True, 'G2_violated': True, 'bad': ['M1', 'M2', 'M3'], 'stopped': [], 'flagged': [], 'out': [], 'halted': [], 'worked': ['W'], 'responded': False}]
+
+== Section 4.1: one late monitor N, nothing depends on it (mesh, W reads all) ==
+only edge XcN: good: no gap, no gap, no gap | may arrive bad: no gap, no gap, no gap   (same for all four X: True)
+only edge XrN: good: 2/2, 1/1, 1/1 | may arrive bad: 1/1, 1/1, 1/1   (same for all four X: True)
+only edge XpN: good: 2/2, 1/1, 1/1 | may arrive bad: 1/1, 1/1, 1/1   (same for all four X: True)
+only edge NcX: good: 2/2, 1/1, 1/1 | may arrive bad: 1/1, 1/1, 1/1   (same for all four X: True)
+only edge NrX: good: 2/2, 1/1, 1/1 | may arrive bad: 1/1, 1/1, 1/1   (same for all four X: True)
+only edge NpX: good: 2/2, 1/1, 1/1 | may arrive bad: 1/1, 1/1, 1/1   (same for all four X: True)
+no edge: good: 2/2, 1/1, 1/1 | bad: 1/1, 1/1, 1/1
+all but the four checks of N: good: 2/2, 1/1, 1/1 | bad: 1/1, 1/1, 1/1
+all 24: good: no gap, no gap, no gap | bad: no gap, no gap, no gap
+
+-- 4.1 second table: all base rings; single check of N by each X; and the 20-edge attachment --
+mesh all check of N alone good: ['no gap, no gap, no gap'] | 20 edges, no check of N: 2/2, 1/1, 1/1 | check of N alone bad: ['no gap, no gap, no gap'] | 20 edges, no check of N: 1/1, 1/1, 1/1
+mesh two check of N alone good: ['no gap, 2/1, 2/1'] | 20 edges, no check of N: 2/2, 1/1, 1/1 | check of N alone bad: ['no gap, 2/1, 2/1'] | 20 edges, no check of N: 1/1, 1/1, 1/1
+cycle_check all check of N alone good: ['no gap, no gap, no gap'] | 20 edges, no check of N: 2/2, 1/1, 1/1 | check of N alone bad: ['no gap, no gap, no gap'] | 20 edges, no check of N: 1/1, 1/1, 1/1
+cycle_check two check of N alone good: ['no gap, 2/1, 2/1'] | 20 edges, no check of N: 2/2, 1/1, 1/1 | check of N alone bad: ['no gap, 2/1, 2/1'] | 20 edges, no check of N: 1/1, 1/1, 1/1
+cycle_signal all check of N alone good: ['no gap, no gap, 1/1'] | 20 edges, no check of N: 2/2, 1/1, 1/1 | check of N alone bad: ['no gap, no gap, 1/1'] | 20 edges, no check of N: 1/1, 1/1, 1/1
+cycle_signal two check of N alone good: ['no gap, 2/1, 1/1'] | 20 edges, no check of N: 2/2, 1/1, 1/1 | check of N alone bad: ['no gap, 2/1, 1/1'] | 20 edges, no check of N: 1/1, 1/1, 1/1
+cycle_nested all check of N alone good: ['no gap, no gap, 1/1'] | 20 edges, no check of N: 2/2, 1/1, 1/1 | check of N alone bad: ['no gap, no gap, 1/1'] | 20 edges, no check of N: 1/1, 1/1, 1/1
+cycle_nested two check of N alone good: ['no gap, 2/1, 1/1'] | 20 edges, no check of N: 2/2, 1/1, 1/1 | check of N alone bad: ['no gap, 2/1, 1/1'] | 20 edges, no check of N: 1/1, 1/1, 1/1
+
+-- 4.1 random attachments against the rule 'no gap iff it holds a check of N and base has no gap' --
+tried 1200 disagreements 0
+
+-- 4.1 claimed attachment edge by edge: N in mesh with M1,M2,M3 (18 edges) --
+full: ('no gap, no gap, no gap', 'no gap, no gap, no gap')
+single removals that change a result: 0
+  minus every XcN : 2/2, 1/1, 1/1 | 1/1, 1/1, 1/1
+  minus every XrN : no gap, no gap, no gap | no gap, no gap, no gap
+  minus every XpN : no gap, no gap, no gap | no gap, no gap, no gap
+  minus every NcX : no gap, no gap, no gap | no gap, no gap, no gap
+  minus every NrX : no gap, no gap, no gap | no gap, no gap, no gap
+  minus every NpX : no gap, no gap, no gap | no gap, no gap, no gap
+
+== Section 4.2: J joins with N ==
+base mesh N on ('M1', 'M2', 'M3')
+  arrive_bad False
+    mesh with its three: no gap, no gap, no gap
+    minus any one edge: ['no gap, no gap, no gap']
+    minus every XcN: 2/2, 1/1, 1/1
+    minus every XrN: 3/3, 2/2, 1/1
+    minus every XpN: no gap, no gap, no gap
+    minus every NcX: no gap, no gap, 3/2
+    minus every NrX: no gap, no gap, no gap
+    minus every NpX: -/2, -/1, -/1
+    cyc_checked, six orders: ['no gap, no gap, no gap']
+    cyc_read, six orders: ['no gap, no gap, no gap']
+    signal-reading coordinator: no gap, no gap, 3/2
+    one watcher (first of ring): no gap, no gap, 3/2
+  arrive_bad True
+    mesh with its three: no gap, no gap, no gap
+    minus any one edge: ['no gap, no gap, no gap']
+    minus every XcN: 1/1, 1/1, 1/1
+    minus every XrN: 3/3, 2/2, 1/1
+    minus every XpN: no gap, no gap, no gap
+    minus every NcX: no gap, no gap, 3/2
+    minus every NrX: no gap, no gap, no gap
+    minus every NpX: -/2, -/1, -/1
+    cyc_checked, six orders: ['no gap, no gap, no gap']
+    cyc_read, six orders: ['no gap, no gap, no gap']
+    signal-reading coordinator: no gap, no gap, 3/2
+    one watcher (first of ring): no gap, no gap, 3/2
+base cycle_check N on ('M1', 'M2', 'K')
+  arrive_bad False
+    mesh with its three: no gap, no gap, no gap
+    minus any one edge: ['no gap, no gap, no gap']
+    minus every XcN: 2/2, 1/1, 1/1
+    minus every XrN: 3/3, 2/2, 1/1
+    minus every XpN: no gap, no gap, no gap
+    minus every NcX: no gap, no gap, 3/2
+    minus every NrX: no gap, no gap, no gap
+    minus every NpX: -/2, -/1, -/1
+    cyc_checked, six orders: ['no gap, no gap, no gap']
+    cyc_read, six orders: ['no gap, no gap, no gap']
+    signal-reading coordinator: no gap, no gap, 3/2
+    one watcher (first of ring): no gap, no gap, 3/2
+  arrive_bad True
+    mesh with its three: no gap, no gap, no gap
+    minus any one edge: ['no gap, no gap, no gap']
+    minus every XcN: 1/1, 1/1, 1/1
+    minus every XrN: 3/3, 2/2, 1/1
+    minus every XpN: no gap, no gap, no gap
+    minus every NcX: no gap, no gap, 3/2
+    minus every NrX: no gap, no gap, no gap
+    minus every NpX: -/2, -/1, -/1
+    cyc_checked, six orders: ['no gap, no gap, no gap']
+    cyc_read, six orders: ['no gap, no gap, no gap']
+    signal-reading coordinator: no gap, no gap, 3/2
+    one watcher (first of ring): no gap, no gap, 3/2
+base cycle_signal N on ('M1', 'M2', 'K')
+  arrive_bad False
+    mesh with its three: no gap, no gap, 1/1
+    minus any one edge: ['no gap, no gap, 1/1']
+    minus every XcN: 2/2, 1/1, 1/1
+    minus every XrN: 3/3, 2/2, 1/1
+    minus every XpN: no gap, no gap, 1/1
+    minus every NcX: no gap, no gap, 1/1
+    minus every NrX: no gap, no gap, 1/1
+    minus every NpX: -/2, -/1, 1/1
+    cyc_checked, six orders: ['no gap, no gap, 1/1']
+    cyc_read, six orders: ['no gap, no gap, 1/1']
+    signal-reading coordinator: no gap, no gap, 1/1
+    one watcher (first of ring): no gap, no gap, 1/1
+  arrive_bad True
+    mesh with its three: no gap, no gap, 1/1
+    minus any one edge: ['no gap, no gap, 1/1']
+    minus every XcN: 1/1, 1/1, 1/1
+    minus every XrN: 3/3, 2/2, 1/1
+    minus every XpN: no gap, no gap, 1/1
+    minus every NcX: no gap, no gap, 1/1
+    minus every NrX: no gap, no gap, 1/1
+    minus every NpX: -/2, -/1, 1/1
+    cyc_checked, six orders: ['no gap, no gap, 1/1']
+    cyc_read, six orders: ['no gap, no gap, 1/1']
+    signal-reading coordinator: no gap, no gap, 1/1
+    one watcher (first of ring): no gap, no gap, 1/1
+
+-- 4.2 replays (mesh, N on M1,M2,M3) --
+  minus XrN: {'round': 1, 'steps': ['join g'], 'G1_violated': False, 'G2_violated': False, 'bad': [], 'stopped': [], 'flagged': [], 'out': [], 'halted': [], 'worked': ['W', 'J'], 'responded': False}
+  minus XrN: {'round': 2, 'steps': ['stop N'], 'G1_violated': False, 'G2_violated': False, 'bad': [], 'stopped': ['N'], 'flagged': [], 'out': [], 'halted': ['J'], 'worked': ['W'], 'responded': False}
+  minus XrN: {'round': 3, 'steps': ['mutate J'], 'G1_violated': True, 'G2_violated': True, 'bad': ['J'], 'stopped': ['N'], 'flagged': [], 'out': [], 'halted': ['J'], 'worked': ['W'], 'responded': False}
+  minus NpX: {'round': 1, 'steps': ['join g'], 'G1_violated': False, 'G2_violated': False, 'bad': [], 'stopped': [], 'flagged': [], 'out': [], 'halted': [], 'worked': ['W', 'J'], 'responded': False}
+  minus NpX: {'round': 2, 'steps': ['mutate J'], 'G1_violated': False, 'G2_violated': True, 'bad': ['J'], 'stopped': [], 'flagged': ['N'], 'out': ['N'], 'halted': ['J'], 'worked': ['W'], 'responded': False}
+  N checks no state, f=3: {'round': 1, 'steps': ['join g'], 'G1_violated': False, 'G2_violated': False, 'bad': [], 'stopped': [], 'flagged': [], 'out': [], 'halted': [], 'worked': ['W', 'J'], 'responded': False}
+  N checks no state, f=3: {'round': 2, 'steps': ['mutate M1', 'mutate M2', 'mutate M3'], 'G1_violated': False, 'G2_violated': True, 'bad': ['M1', 'M2', 'M3'], 'stopped': [], 'flagged': ['K'], 'out': ['K'], 'halted': ['W'], 'worked': ['J'], 'responded': False}
+
+-- 4.2 least attachments over all 24 edges (mesh, N's ring M1,M2,M3) --
+arrive_bad=False f=1: three-edge sets with no gap 64, with gap 0; 20-edge sets missing one kind: {'XcN': '2/2', 'XrN': '3/3', 'NpX': '-/2'}
+arrive_bad=False f=2: three-edge sets with no gap 64, with gap 0; 20-edge sets missing one kind: {'XcN': '1/1', 'XrN': '2/2', 'NpX': '-/1'}
+arrive_bad=False f=3: three-edge sets with no gap 0, with gap 64; 20-edge sets missing one kind: {'XcN': '1/1', 'XrN': '1/1', 'NpX': '-/1'}
+   f=3 four-edge sets: no gap 256, gap 0; the 20-edge set missing N's checks of M1,M2,M3 and K's report to N: 3/2
+arrive_bad=True f=1: three-edge sets with no gap 64, with gap 0; 20-edge sets missing one kind: {'XcN': '1/1', 'XrN': '3/3', 'NpX': '-/2'}
+arrive_bad=True f=2: three-edge sets with no gap 64, with gap 0; 20-edge sets missing one kind: {'XcN': '1/1', 'XrN': '2/2', 'NpX': '-/1'}
+arrive_bad=True f=3: three-edge sets with no gap 0, with gap 64; 20-edge sets missing one kind: {'XcN': '1/1', 'XrN': '1/1', 'NpX': '-/1'}
+   f=3 four-edge sets: no gap 256, gap 0; the 20-edge set missing N's checks of M1,M2,M3 and K's report to N: 3/2
+
+== Section 4.3: N in a mesh with k monitors, J halts on N and those k ==
+k=1 arrive_bad=False rate 1   f=1..4: no gap, 4/2, 2/1, 1/1
+k=1 arrive_bad=True rate 1   f=1..4: no gap, 3/1, 2/1, 1/1
+k=2 arrive_bad=False rate 2   f=1..4: no gap, no gap, 3/2, 1/1
+k=2 arrive_bad=True rate 2   f=1..4: no gap, no gap, 2/1, 1/1
+k=3 arrive_bad=False rate 3   f=1..4: no gap, no gap, no gap, 1/1
+k=3 arrive_bad=True rate 3   f=1..4: no gap, no gap, no gap, 1/1
+k=4 arrive_bad=False rate 3   f=1..4: no gap, no gap, no gap, 1/1
+k=4 arrive_bad=True rate 3   f=1..4: no gap, no gap, no gap, 1/1
+  k=1 f=2: {'round': 1, 'steps': ['join g'], 'G1_violated': False, 'G2_violated': False, 'bad': [], 'stopped': [], 'flagged': [], 'out': [], 'halted': [], 'worked': ['W', 'J'], 'responded': False}
+  k=1 f=2: {'round': 2, 'steps': ['mutate M1', 'mutate N'], 'G1_violated': False, 'G2_violated': True, 'bad': ['M1', 'N'], 'stopped': [], 'flagged': ['M2', 'M3', 'K'], 'out': ['M2', 'M3', 'K'], 'halted': ['W'], 'worked': ['J'], 'responded': False}
+
+== Section 5: late edges; N in a mesh with M1,M2,M3; nothing depends on N ==
+base mesh ring ('M1', 'M2', 'M3')
+  all at once                                good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  all a round late                           good: no gap, 1/1, 1/1         | may arrive bad: 1/1, 1/1, 1/1
+  the three checks of N late                 good: no gap, 1/1, 1/1         | may arrive bad: 1/1, 1/1, 1/1
+  one check of N at once, every other late   good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  checks of N never                          good: 2/2, 1/1, 1/1            | may arrive bad: 1/1, 1/1, 1/1
+  kind XrN late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind XpN late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NcX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NrX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NpX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+base cycle_check ring ('M1', 'M2', 'M3')
+  all at once                                good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  all a round late                           good: no gap, 1/1, 1/1         | may arrive bad: 1/1, 1/1, 1/1
+  the three checks of N late                 good: no gap, 1/1, 1/1         | may arrive bad: 1/1, 1/1, 1/1
+  one check of N at once, every other late   good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  checks of N never                          good: 2/2, 1/1, 1/1            | may arrive bad: 1/1, 1/1, 1/1
+  kind XrN late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind XpN late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NcX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NrX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NpX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+base cycle_check ring ('M1', 'M2', 'K')
+  all at once                                good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  all a round late                           good: no gap, 1/1, 1/1         | may arrive bad: 1/1, 1/1, 1/1
+  the three checks of N late                 good: no gap, 1/1, 1/1         | may arrive bad: 1/1, 1/1, 1/1
+  one check of N at once, every other late   good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  checks of N never                          good: 2/2, 1/1, 1/1            | may arrive bad: 1/1, 1/1, 1/1
+  kind XrN late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind XpN late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NcX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NrX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+  kind NpX late alone                        good: no gap, no gap, no gap   | may arrive bad: no gap, no gap, no gap
+replay join-bad, all late, f=1: [{'round': 1, 'steps': ['join-bad N N'], 'G1_violated': True, 'G2_violated': True, 'bad': ['N'], 'stopped': [], 'flagged': [], 'out': [], 'halted': [], 'worked': ['W'], 'responded': False}]
+replay join+mutate, all late, f=2: [{'round': 1, 'steps': ['join N', 'mutate N'], 'G1_violated': True, 'G2_violated': True, 'bad': ['N'], 'stopped': [], 'flagged': [], 'out': [], 'halted': [], 'worked': ['W'], 'responded': False}]
+
+-- Section 5, J joins with N (mesh base, N on M1,M2,M3) --
+  the checks of N            good: no gap, 1/1, 1/1           | may arrive bad: 1/1, 1/1, 1/1
+  the reads of N's signal    good: no gap, no gap, 1/1        | may arrive bad: no gap, no gap, 1/1
+  N's reports                good: no gap, -/1, -/1           | may arrive bad: no gap, -/1, -/1
+  N's check of J             good: no gap, 1/1, 1/1           | may arrive bad: no gap, 1/1, 1/1
+  J's halt inputs            good: no gap, -/1, 2/1           | may arrive bad: -/1, 3/1, 2/1
+  N's checks of others       good: no gap, no gap, no gap     | may arrive bad: no gap, no gap, no gap
+  N's reads                  good: no gap, no gap, no gap     | may arrive bad: no gap, no gap, no gap
+  reports to N               good: no gap, no gap, no gap     | may arrive bad: no gap, no gap, no gap

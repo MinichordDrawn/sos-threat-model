@@ -1,0 +1,56 @@
+== Rates and loads
+cycle of 3 + coordinator, flow: 9 connections, 27 edges; a member watches 2 and is watched by 2; the coordinator watches 3 and is watched by 3; work reads all: rate 3, R6 to 3, first gap (f, G1, G2) (4, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 2, 1); whole list met (work all) at f in [1, 2, 3]
+cycle of 3 + coordinator, actor: 9 connections, 27 edges; a member watches 2 and is watched by 2; the coordinator watches 3 and is watched by 3; work reads all: rate 3, R6 to 3, first gap (f, G1, G2) (4, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 2, 1); whole list met (work all) at f in [1, 2, 3]
+cycle of 4 + coordinator, flow: 12 connections, 36 edges; a member watches 2 and is watched by 2; the coordinator watches 4 and is watched by 4; work reads all: rate 4, R6 to 4, first gap (f, G1, G2) (5, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 3, 1); whole list met (work all) at f in [1, 2, 3]
+cycle of 4 + coordinator, actor: 12 connections, 36 edges; a member watches 2 and is watched by 2; the coordinator watches 4 and is watched by 4; work reads all: rate 4, R6 to 4, first gap (f, G1, G2) (5, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 3, 1); whole list met (work all) at f in [1, 2, 3]
+cycle of 5 + coordinator, flow: 15 connections, 45 edges; a member watches 2 and is watched by 2; the coordinator watches 5 and is watched by 5; work reads all: rate 5, R6 to 5, first gap (f, G1, G2) (6, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 3, 1); whole list met (work all) at f in [1, 2, 3]
+cycle of 5 + coordinator, actor: 15 connections, 45 edges; a member watches 2 and is watched by 2; the coordinator watches 5 and is watched by 5; work reads all: rate 5, R6 to 5, first gap (f, G1, G2) (6, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 3, 1); whole list met (work all) at f in [1, 2, 3]
+mesh of 4, flow: 12 connections, 36 edges; a member watches 3 and is watched by 3; the coordinator watches 3 and is watched by 3; work reads all: rate 3, R6 to 3, first gap (f, G1, G2) (4, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 2, 1); whole list met (work all) at f in [1, 2, 3]
+mesh of 4, actor: 12 connections, 36 edges; a member watches 3 and is watched by 3; the coordinator watches 3 and is watched by 3; work reads all: rate 3, R6 to 3, first gap (f, G1, G2) (4, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 2, 1); whole list met (work all) at f in [1, 2, 3]
+mesh of 5, flow: 20 connections, 60 edges; a member watches 4 and is watched by 4; the coordinator watches 4 and is watched by 4; work reads all: rate 4, R6 to 4, first gap (f, G1, G2) (5, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 3, 1); whole list met (work all) at f in [1, 2, 3]
+mesh of 5, actor: 20 connections, 60 edges; a member watches 4 and is watched by 4; the coordinator watches 4 and is watched by 4; work reads all: rate 4, R6 to 4, first gap (f, G1, G2) (5, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 3, 1); whole list met (work all) at f in [1, 2, 3]
+mesh of 6, flow: 30 connections, 90 edges; a member watches 5 and is watched by 5; the coordinator watches 5 and is watched by 5; work reads all: rate 5, R6 to 5, first gap (f, G1, G2) (6, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 3, 1); whole list met (work all) at f in [1, 2, 3]
+mesh of 6, actor: 30 connections, 90 edges; a member watches 5 and is watched by 5; the coordinator watches 5 and is watched by 5; work reads all: rate 5, R6 to 5, first gap (f, G1, G2) (6, 1, 1); work reads two: rate 1, R6 to 1, first gap (f, G1, G2) (2, 3, 1); whole list met (work all) at f in [1, 2, 3]
+
+== k = 3: the least wirings for the whole list
+flow, work reads all, f=1: 24 wirings of 8 connections meet R2 and R5; 24 meet the whole list (4 shapes); the cycle with a coordinator has 9
+flow, work reads all, f=2: 24 wirings of 8 connections meet R2 and R5; 24 meet the whole list (4 shapes); the cycle with a coordinator has 9
+flow, work reads all, f=3: 24 wirings of 8 connections meet R2 and R5; 18 meet the whole list (3 shapes); the cycle with a coordinator has 9
+flow, work reads two, f=1: 24 wirings of 8 connections meet R2 and R5; 22 meet the whole list (11 shapes); the cycle with a coordinator has 9
+flow, work reads two, f=2: 24 wirings of 8 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator has 9
+flow, work reads two, f=3: 24 wirings of 8 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator has 9
+actor, work reads all, f=1: 27 wirings of 9 connections meet R2 and R5; 26 meet the whole list (6 shapes); the cycle with a coordinator is one of them: True
+actor, work reads all, f=2: 27 wirings of 9 connections meet R2 and R5; 26 meet the whole list (6 shapes); the cycle with a coordinator is one of them: True
+actor, work reads all, f=3: 27 wirings of 9 connections meet R2 and R5; 26 meet the whole list (6 shapes); the cycle with a coordinator is one of them: True
+actor, work reads two, f=1: 27 wirings of 9 connections meet R2 and R5; 26 meet the whole list (14 shapes); the cycle with a coordinator is one of them: True
+actor, work reads two, f=2: 27 wirings of 9 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator is one of them: False
+actor, work reads two, f=3: 27 wirings of 9 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator is one of them: False
+kind by kind, flow: 19 edges (5k + 4 = 19) on the cycle's arrows meet the whole list: {('all', 1): True, ('all', 2): True, ('all', 3): True, ('two', 1): True, ('two', 2): False, ('two', 3): False}
+kind by kind, actor: 19 edges (5k + 4 = 19) on the cycle's arrows meet the whole list: {('all', 1): True, ('all', 2): True, ('all', 3): True, ('two', 1): True, ('two', 2): False, ('two', 3): False}
+   [0 s]
+
+== k = 4: the least wirings for the whole list
+flow, work reads all, f=1: 486 wirings of 10 connections meet R2 and R5; 486 meet the whole list (24 shapes); the cycle with a coordinator has 12
+flow, work reads all, f=2: 486 wirings of 10 connections meet R2 and R5; 486 meet the whole list (24 shapes); the cycle with a coordinator has 12
+flow, work reads all, f=3: 486 wirings of 10 connections meet R2 and R5; 432 meet the whole list (20 shapes); the cycle with a coordinator has 12
+flow, work reads two, f=1: 486 wirings of 10 connections meet R2 and R5; 405 meet the whole list (70 shapes); the cycle with a coordinator has 12
+flow, work reads two, f=2: 486 wirings of 10 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator has 12
+flow, work reads two, f=3: 486 wirings of 10 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator has 12
+actor, work reads all, f=1: 1296 wirings of 12 connections meet R2 and R5; 1203 meet the whole list (59 shapes); the cycle with a coordinator is one of them: True
+actor, work reads all, f=2: 1296 wirings of 12 connections meet R2 and R5; 1203 meet the whole list (59 shapes); the cycle with a coordinator is one of them: True
+actor, work reads all, f=3: 1296 wirings of 12 connections meet R2 and R5; 1203 meet the whole list (59 shapes); the cycle with a coordinator is one of them: True
+actor, work reads two, f=1: 1296 wirings of 12 connections meet R2 and R5; 1203 meet the whole list (210 shapes); the cycle with a coordinator is one of them: True
+actor, work reads two, f=2: 1296 wirings of 12 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator is one of them: False
+actor, work reads two, f=3: 1296 wirings of 12 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator is one of them: False
+kind by kind, flow: 24 edges (5k + 4 = 24) on the cycle's arrows meet the whole list: {('all', 1): True, ('all', 2): True, ('all', 3): True, ('two', 1): True, ('two', 2): False, ('two', 3): False}
+kind by kind, actor: 24 edges (5k + 4 = 24) on the cycle's arrows meet the whole list: {('all', 1): True, ('all', 2): True, ('all', 3): True, ('two', 1): True, ('two', 2): False, ('two', 3): False}
+   [8 s]
+
+== k = 5: the least wirings for the whole list
+flow, work reads all, f=1: 10240 wirings of 12 connections meet R2 and R5; 10240 meet the whole list (97 shapes); the cycle with a coordinator has 15
+flow, work reads all, f=2: 10240 wirings of 12 connections meet R2 and R5; 10240 meet the whole list (97 shapes); the cycle with a coordinator has 15
+flow, work reads all, f=3: 10240 wirings of 12 connections meet R2 and R5; 9600 meet the whole list (88 shapes); the cycle with a coordinator has 15
+flow, work reads two, f=1: 10240 wirings of 12 connections meet R2 and R5; 7840 meet the whole list (355 shapes); the cycle with a coordinator has 15
+flow, work reads two, f=2: 10240 wirings of 12 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator has 15
+flow, work reads two, f=3: 10240 wirings of 12 connections meet R2 and R5; 0 meet the whole list (0 shapes); the cycle with a coordinator has 15
+actor, k=5: the 100000 wirings of 15 connections are not listed here; see part_b2.py

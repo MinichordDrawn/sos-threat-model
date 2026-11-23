@@ -1,0 +1,7 @@
+forty, flow, reads all, f=3, freeze True, at most 2 rounds, faults in the chain only: G1 base None | G2 base None | G2 upper None | spill None | (not claimed: G1 upper 2, told 1) | states 1160 complete True [4s]
+forty, flow, reads all, f=3, freeze False, at most 2 rounds, faults in the chain only: G1 base None | G2 base None | G2 upper None | spill None | (not claimed: G1 upper 2, told 1) | states 1160 complete True [22s]
+forty, flow, reads all, f=2, freeze True, at most 3 rounds, faults in the chain only: G1 base None | G2 base None | G2 upper None | spill None | (not claimed: G1 upper 3, told 2) | states 9958 complete True [7s]
+forty, flow, reads all, f=2, freeze False, at most 3 rounds, faults in the chain only: G1 base None | G2 base None | G2 upper None | spill None | (not claimed: G1 upper 3, told 2) | states 21378 complete True [75s]
+forty, flow, reads all, f=1, freeze True, at most 5 rounds, faults in the chain only: G1 base None | G2 base None | G2 upper None | spill None | (not claimed: G1 upper None, told 3) | states 11258 complete True [2s]
+forty, flow, reads all, f=1, freeze False, at most 5 rounds, faults in the chain only: G1 base None | G2 base None | G2 upper None | spill None | (not claimed: G1 upper None, told 3) | states 41022 complete True [18s]
+forty, flow, reads two, f=1, freeze True, at most 5 rounds, faults in the chain only: G1 base None | G2 base None | G2 upper None | spill None | (not claimed: G1 upper None, told 3) | states 11258 complete True [2s]

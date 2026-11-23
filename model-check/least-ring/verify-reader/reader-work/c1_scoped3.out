@@ -1,0 +1,2 @@
+flow f=3 freeze, 2 rounds: G2 all None | G1 base None | G1 mid None | G1 top 2 | G2 base None | G2 mid None | G2 top None | told 1 | spill None | states 4090 complete True rounds 2  [9s]
+actor f=3 freeze, 2 rounds: G2 all None | G1 base None | G1 mid None | G1 top 2 | G2 base None | G2 mid None | G2 top None | told 1 | spill None | states 4090 complete True rounds 2  [9s]

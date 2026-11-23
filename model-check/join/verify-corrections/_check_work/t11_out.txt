@@ -1,0 +1,5 @@
+as specified (mine): 3/3 | independent_model.py: (3, 3)
+   | 1 | stop m | nothing bad; stopped=m; nothing flagged; working=W |
+   | 2 | stop c | nothing bad; stopped=m,c; nothing flagged; working=W |
+   | 3 | mutate m | bad=m; stopped=m,c; nothing flagged; working=W |
+if mutate needed a monitor still in alive: null/null

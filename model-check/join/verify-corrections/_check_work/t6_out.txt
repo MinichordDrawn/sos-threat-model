@@ -1,0 +1,13 @@
+monitors 5: 4 attachment sequences, 1 systems up to renaming (base four among themselves, new among themselves)
+monitors 6: 28 attachment sequences, 3 systems up to renaming (base four among themselves, new among themselves)
+monitors 7: 280 attachment sequences, 10 systems up to renaming (base four among themselves, new among themselves)
+monitors 8: 3640 attachment sequences, 48 systems up to renaming (base four among themselves, new among themselves)
+total 62
+ordered joins, may arrive bad: systems by rate: {3: 62} (14 s)
+any order, may arrive bad: systems by rate (up to 3): {3: 61, 0: 1} (19 s)
+   gap system: attachments [[0, 1, 2], [0, 1, 4], [0, 4, 5], [4, 5, 6]] rate 0 f=1 result 1/1
+   a gap exactly in the systems where some monitor's three are all late: True (asserted for all 62)
+slow reports f=1: (result may arrive bad, result arrive good, some monitor has no base monitor among its three): count
+    ('null/4', 'null/5', True) 1
+    ('null/null', 'null/null', False) 61
+(19 s)

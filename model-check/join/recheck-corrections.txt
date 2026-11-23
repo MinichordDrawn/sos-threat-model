@@ -1,0 +1,73 @@
+1. The least attachments of a joining ring over all 24 edges (two meshes, one step)
+   f=1, a member may arrive bad: True: listed sets 640 (edges: count {5: 384, 6: 256}), with a gap 0; greatest sets holding no listed set 12, without a gap 0, single additions that leave a gap 0
+   f=1, a member may arrive bad: False: listed sets 640 (edges: count {5: 384, 6: 256}), with a gap 0; greatest sets holding no listed set 12, without a gap 0, single additions that leave a gap 0
+   f=1: 216 random sets holding no listed set; not inside a greatest set: 0
+   f=1: of the greatest sets, those with fewer than 1 monitors reporting to KB: 1
+   f=2, a member may arrive bad: True: listed sets 512 (edges: count {6: 512}), with a gap 0; greatest sets holding no listed set 36, without a gap 0, single additions that leave a gap 0
+   f=2, a member may arrive bad: False: listed sets 512 (edges: count {6: 512}), with a gap 0; greatest sets holding no listed set 36, without a gap 0, single additions that leave a gap 0
+   f=2: 458 random sets holding no listed set; not inside a greatest set: 0
+   f=2: of the greatest sets, those with fewer than 2 monitors reporting to KB: 9
+   f=3, a member may arrive bad: True: listed sets 320 (edges: count {6: 256, 7: 64}), with a gap 0; greatest sets holding no listed set 68, without a gap 0, single additions that leave a gap 0
+   f=3, a member may arrive bad: False: listed sets 320 (edges: count {6: 256, 7: 64}), with a gap 0; greatest sets holding no listed set 68, without a gap 0, single additions that leave a gap 0
+   f=3: 640 random sets holding no listed set; not inside a greatest set: 0
+   f=3: of the greatest sets, those with fewer than 3 monitors reporting to KB: 33
+
+2. Five edges at f = 1: M1 checks KB, M1 reads KB's signal, KB reports to M1, M1 and M2 report to KB
+   a member may arrive bad: False: f=1 no gap; f=2 G1 in 3, G2 in 2
+   a member may arrive bad: True: f=1 no gap; f=2 G1 in 3, G2 in 2
+
+3. Theorem L without its hypothesis: N5 on M1, N6 on N5 after N5, N5 has an off switch, f = 1
+   without the switch: no gap
+   with it: G1 in 4, G2 in 4
+      round 1: env: join N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: disable N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 3: env: join N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 4: env: mutate N6
+               bad: N6 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+      round 1: env: join N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: join N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 3: env: disable N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 4: env: mutate N6
+               bad: N6 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+
+4. N in a mesh with all four, J halting on N and the four, f = 4
+   G1 in 1, G2 in 1
+      round 1: env: mutate M1, mutate M2, mutate M3, mutate K
+               bad: M1 M2 M3 K | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+
+5. Mesh of three, no reports, W checked by M1 only and halting on all three, f = 2
+   no gap
+      round 1: env: mutate W, mutate M1
+               bad: M1 W | flagged: M2 M3 | halted: W | worked: -
+
+6. Shortest executions where a monitor may arrive bad
+   chain, nobody reads N6's signal, a monitor may arrive bad: G1 in 4, G2 in 4
+      round 1: env: join N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: join N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 3: env: stop N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 4: env: join-bad N7 N7
+               bad: N7 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+   grown to eight, slow reports, a monitor may arrive bad: G1 holds, G2 in 4
+      round 1: env: join N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: join N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 3: env: join N7
+               bad: - | flagged: - | halted: - | worked: W
+      round 4: env: join-bad N8 N8
+               bad: N8 | flagged: N5 N6 N7 | halted: - | worked: W   <-- breaks G2
+
+7. The chain as built, f = 3 (a monitor that only a later monitor leans on has three edges)
+   no gap
+
+8. The 62 systems of way one in any join order: gap at f = 1 against 'some monitor's three are all late'
+   62 of 62 agree

@@ -1,0 +1,52 @@
+== C.1 Thirteen monitors as one system (any detection halts everything)
+flow, work reads all, own boundaries: f=1: G1 None, G2 None (3 agree); f=2: G1 None, G2 None (3 agree); f=3: G1 None, G2 None (3 agree); f=4: first violation in round 1 (G1 None, G2 1 in that round)
+flow, work reads two, own boundaries: f=1: G1 None, G2 None (3 agree); f=2: first violation in round 1 (G1 None, G2 1 in that round); f=3: first violation in round 1 (G1 None, G2 1 in that round); f=4: first violation in round 1 (G1 None, G2 1 in that round)
+actor, work reads all, own boundaries: f=1: G1 None, G2 None (3 agree); f=2: G1 None, G2 None (3 agree); f=3: G1 None, G2 None (3 agree); f=4: first violation in round 1 (G1 None, G2 1 in that round)
+actor, work reads two, own boundaries: f=1: G1 None, G2 None (3 agree); f=2: first violation in round 1 (G1 None, G2 1 in that round); f=3: first violation in round 1 (G1 None, G2 1 in that round); f=4: first violation in round 1 (G1 None, G2 1 in that round)
+flow, work reads all, each base ring in one boundary: f=1: G1 None, G2 None (3 agree); f=2: G1 None, G2 None (3 agree); f=3: G1 None, G2 None (3 agree); f=4: first violation in round 1 (G1 1, G2 None in that round)
+flow, work reads two, each base ring in one boundary: f=1: G1 None, G2 None (3 agree); f=2: first violation in round 1 (G1 None, G2 1 in that round); f=3: first violation in round 1 (G1 None, G2 1 in that round); f=4: first violation in round 1 (G1 None, G2 1 in that round)
+actor, work reads all, each base ring in one boundary: f=1: G1 None, G2 None (3 agree); f=2: G1 None, G2 None (3 agree); f=3: G1 None, G2 None (3 agree); f=4: first violation in round 1 (G1 1, G2 None in that round)
+actor, work reads two, each base ring in one boundary: f=1: G1 None, G2 None (3 agree); f=2: first violation in round 1 (G1 None, G2 1 in that round); f=3: first violation in round 1 (G1 None, G2 1 in that round); f=4: first violation in round 1 (G1 None, G2 1 in that round)
+
+-- flow, work reads all, f=4: G2
+   round 1: env: mutate A1, mutate B1, mutate C1, mutate D1 | bad: A1 B1 C1 D1 | stopped: - | flagged: A2 B2 C2 D2 A3 B3 C3 D3 T | halted: W2 W3 | worked: W1   <-- breaks G2
+
+-- flow, work reads all, each base ring in one boundary, f=4: G1
+   round 1: env: stop-boundary ring 1, stop-boundary ring 2, stop-boundary ring 3, mutate T | bad: T | stopped: A1 B1 C1 D1 A2 B2 C2 D2 A3 B3 C3 D3 | flagged: - | halted: W1 W2 W3 | worked: -   <-- breaks G1
+
+-- flow, work reads two, f=2: G2
+   round 1: env: mutate A1, mutate D1 | bad: A1 D1 | stopped: - | flagged: B1 C1 A2 B2 C2 D2 A3 B3 C3 D3 T | halted: W2 W3 | worked: W1   <-- breaks G2
+
+-- actor, work reads all, f=4: G2
+   round 1: env: mutate A1, mutate B1, mutate C1, mutate D1 | bad: A1 B1 C1 D1 | stopped: - | flagged: A2 B2 C2 D2 A3 B3 C3 D3 T | halted: W2 W3 | worked: W1   <-- breaks G2
+
+-- actor, work reads all, each base ring in one boundary, f=4: G1
+   round 1: env: stop-boundary ring 1, stop-boundary ring 2, stop-boundary ring 3, mutate T | bad: T | stopped: A1 B1 C1 D1 A2 B2 C2 D2 A3 B3 C3 D3 | flagged: - | halted: W1 W2 W3 | worked: -   <-- breaks G1
+
+-- actor, work reads two, f=2: G2
+   round 1: env: mutate A1, mutate D1 | bad: A1 D1 | stopped: - | flagged: B1 C1 A2 B2 C2 D2 A3 B3 C3 D3 T | halted: W2 W3 | worked: W1   <-- breaks G2
+
+-- flow, each base ring in one boundary, f=1: the loss of ring 1, then a fault
+   round 1: env: stop-boundary ring 1 | bad: - | stopped: A1 B1 C1 D1 | flagged: A2 B2 C2 D2 A3 B3 C3 D3 T | halted: W1 W2 W3 | worked: -
+
+== C.1 `nested` of check_model.py (two base rings, an upper ring of three)
+nested, own boundaries: f=1: G1 None, G2 None; f=2: G1 5, G2 1   (check_model.py's own search agrees)
+nested, each base ring in one boundary: f=1: G1 None, G2 None; f=2: G1 3, G2 1   (check_model.py's own search agrees)
+
+== C.4 The conditions of Theorem S and of Theorem J on towers of 1 to 4 levels
+levels 1 (4 monitors), flow, work reads all: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 4
+levels 1 (4 monitors), flow, work reads two: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 2
+levels 1 (4 monitors), actor, work reads all: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 4
+levels 1 (4 monitors), actor, work reads two: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 2
+levels 2 (13 monitors), flow, work reads all: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 4
+levels 2 (13 monitors), flow, work reads two: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 2
+levels 2 (13 monitors), actor, work reads all: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 4
+levels 2 (13 monitors), actor, work reads two: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 2
+levels 3 (40 monitors), flow, work reads all: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 4
+levels 3 (40 monitors), flow, work reads two: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 2
+levels 3 (40 monitors), actor, work reads all: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 4
+levels 3 (40 monitors), actor, work reads two: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 2
+levels 4 (121 monitors), flow, work reads all: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 4
+levels 4 (121 monitors), flow, work reads two: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 2
+levels 4 (121 monitors), actor, work reads all: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 4
+levels 4 (121 monitors), actor, work reads two: Theorem S (a)-(d): True; connected by mutual pairs: True; fewest halt inputs 2

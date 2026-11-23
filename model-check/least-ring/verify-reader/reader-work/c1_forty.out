@@ -1,0 +1,11 @@
+=== 4.6 forty monitors ===
+flow one system reads all f=1: G1 None G2 None (90 states)
+flow one system reads all f=2: G1 None G2 None (4006 states)
+flow one system reads all f=3: G1 None G2 None (117570 states)
+flow reads two f=1: G1 None G2 None (90 states) f=2: G1 None G2 1 (60289 states, search cut off in round 3: a missing number is not a null)
+flow ring boundaries f=1: G1 None G2 None (99 states)
+actor one system reads all f=1: G1 None G2 None (90 states)
+actor one system reads all f=2: G1 None G2 None (4006 states)
+actor one system reads all f=3: G1 None G2 None (117570 states)
+actor reads two f=1: G1 None G2 None (90 states) f=2: G1 None G2 1 (60289 states, search cut off in round 3: a missing number is not a null)
+actor ring boundaries f=1: G1 None G2 None (99 states)

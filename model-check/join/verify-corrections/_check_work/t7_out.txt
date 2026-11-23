@@ -1,0 +1,24 @@
+=== A8: N with J (J checked by N, halting on N, M1, M2, M3); attachments of N among the 24 edges
+  f=1: three-edge attachments (check of N, read of N, report from N): 64; no gap: 64 (may arrive bad), 64 (arrive good)
+  f=2: three-edge attachments (check of N, read of N, report from N): 64; no gap: 64 (may arrive bad), 64 (arrive good)
+  f=3: three-edge attachments (check of N, read of N, report from N): 64; no gap: 0 (may arrive bad), 0 (arrive good)
+  f=3: the 256 four-edge attachments of section 4.2: 256 built, 256 with no gap (may arrive bad)
+  f=1: two-edge attachments with no gap (arrive good): 0 of 276
+=== base rings: every one-round outcome with a fault is a complete response, at each f up to the rate
+  mesh            f=1: 9 outcomes with a fault, 0 not a complete response
+  mesh            f=2: 45 outcomes with a fault, 0 not a complete response
+  mesh            f=3: 129 outcomes with a fault, 0 not a complete response
+  cycle checking  f=1: 9 outcomes with a fault, 0 not a complete response
+  cycle checking  f=2: 45 outcomes with a fault, 0 not a complete response
+  cycle checking  f=3: 129 outcomes with a fault, 0 not a complete response
+  cycle reading   f=1: 9 outcomes with a fault, 0 not a complete response
+  cycle reading   f=2: 45 outcomes with a fault, 0 not a complete response
+  cycle nested    f=1: 9 outcomes with a fault, 0 not a complete response
+  cycle nested    f=2: 45 outcomes with a fault, 0 not a complete response
+=== part B: alternative readings on random small systems (all features of both specification files)
+  6000 random systems; my implementation and independent_model.py agree on all 6000
+  reading 'mutate applies only to a monitor still in alive': result differs on 0
+  reading 'an after entry is satisfied only while the named monitor is alive': result differs on 0
+  (3 s)
+=== B5: if the joiner's entry in halt_inputs were not read
+  N in a mesh with M1,M2,M3, J joining with N, f=1: read: null/null  not read: 6/2

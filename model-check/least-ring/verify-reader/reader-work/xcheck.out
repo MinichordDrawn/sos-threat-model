@@ -1,0 +1,14 @@
+flow|all|1 done
+flow|all|2 done
+flow|all|3 done
+flow|two|1 done
+flow|two|2 done
+flow|two|3 done
+actor|all|1 done
+actor|all|2 done
+actor|all|3 done
+actor|two|1 done
+actor|two|2 done
+actor|two|3 done
+independent implementation: 49152 systems, 0 differences
+X11 (one scope, told [D], freeze on and off): 14064 runs, 0 differences

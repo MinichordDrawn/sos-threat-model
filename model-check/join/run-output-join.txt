@@ -1,0 +1,1248 @@
+A0. The base rings (nothing joins)
+    '-' no gap; 'a/b' G1 broken in a rounds and G2 in b ('.' holds); '*' every round with a
+    fault ends in a complete response.   f = 1, 2, 3, 4
+  mesh: mesh of four (M1, M2, M3, K: every one watches and reports to every other)
+    work reads all:    -*     -*     -*    1/1   Theorem S (a)-(d): hold; fewest state checkers of a monitor 3, signal readers 3, watchers 3
+    work reads two:    -*    2/1    2/1    1/1   Theorem S (a)-(d): hold; fewest state checkers of a monitor 3, signal readers 3, watchers 3
+  cyc-check: cycle of three with a coordinator that checks state (K watches every member, every member watches K)
+    work reads all:    -*     -*     -*    1/1   Theorem S (a)-(d): hold; fewest state checkers of a monitor 2, signal readers 2, watchers 2
+    work reads two:    -*    2/1    2/1    1/1   Theorem S (a)-(d): hold; fewest state checkers of a monitor 2, signal readers 2, watchers 2
+  cyc-signal: cycle of three with a coordinator that reads signals and flags only (K checks no state; every member watches K)
+    work reads all:    -*     -*    1/1    1/1   Theorem S (a)-(d): hold; fewest state checkers of a monitor 1, signal readers 2, watchers 1
+    work reads two:    -*    2/1    1/1    1/1   Theorem S (a)-(d): hold; fewest state checkers of a monitor 1, signal readers 2, watchers 1
+  cyc-first: cycle of three with a coordinator as the checker's nested rings build it (K reads signals and flags only; only M1 watches K)
+    work reads all:    -*     -*    1/1    1/1   Theorem S (a)-(d): hold; fewest state checkers of a monitor 1, signal readers 1, watchers 1
+    work reads two:    -*    2/1    1/1    1/1   Theorem S (a)-(d): hold; fewest state checkers of a monitor 1, signal readers 1, watchers 1
+
+A1. One joining monitor N that nothing depends on
+    Six kinds of edge between N and an existing monitor X:
+      in_chk   X checks N's state
+      in_hb    X reads N's signal
+      out_fwd  N reports to X
+      out_chk  N checks X's state
+      out_hb   N reads X's signal
+      in_fwd   X reports to N
+
+  base mesh, work reads all   (columns: f = 1, 2, 3; N arrives good | N may arrive bad)
+    no edge at all                        2/2    1/1    1/1 |   1/1    1/1    1/1
+    one edge only:
+      M1 checks N's state                    -      -      - |     -      -      -
+      M2 checks N's state                    -      -      - |     -      -      -
+      M3 checks N's state                    -      -      - |     -      -      -
+      K checks N's state                     -      -      - |     -      -      -
+      M1 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      M2 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      M3 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      K reads N's signal                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M1                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M2                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M3                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to K                       2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M1's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M2's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M3's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks K's state                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M1's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M2's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M3's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads K's signal                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      M1 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      M2 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      M3 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      K reports to N                       2/2    1/1    1/1 |   1/1    1/1    1/1
+    every edge but the checks of N (20)    2/2    1/1    1/1 |   1/1    1/1    1/1
+    every edge (24)                         -      -      - |     -      -      -
+    shape mesh          on M1,M2,M3           -      -      - |     -      -      -
+    shape coord-signal  on M1,M2,M3           -      -      - |     -      -      -
+    shape member-check  on M1,M2,M3           -      -      - |     -      -      -
+    shape member-signal on M1,M2,M3           -      -      - |     -      -      -
+    shape one           on M1                 -      -      - |     -      -      -
+    mesh on M1,M2,M3, one edge removed (N may arrive bad): 18 of 18 removals change nothing, 0 change a result
+      minus every 'X checks N's state':   2/2    1/1    1/1 |   1/1    1/1    1/1
+      minus every 'X reads N's signal':     -      -      - |     -      -      -
+      minus every 'N reports to X':     -      -      - |     -      -      -
+      minus every 'N checks X's state':     -      -      - |     -      -      -
+      minus every 'N reads X's signal':     -      -      - |     -      -      -
+      minus every 'X reports to N':     -      -      - |     -      -      -
+    least attachments with no gap, f=1, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=2, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=3, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=1, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=2, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=3, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+
+  base mesh, work reads two   (columns: f = 1; N arrives good | N may arrive bad)
+    no edge at all                        2/2 |   1/1
+    one edge only:
+      M1 checks N's state                    - |     -
+      M2 checks N's state                    - |     -
+      M3 checks N's state                    - |     -
+      K checks N's state                     - |     -
+      M1 reads N's signal                  2/2 |   1/1
+      M2 reads N's signal                  2/2 |   1/1
+      M3 reads N's signal                  2/2 |   1/1
+      K reads N's signal                   2/2 |   1/1
+      N reports to M1                      2/2 |   1/1
+      N reports to M2                      2/2 |   1/1
+      N reports to M3                      2/2 |   1/1
+      N reports to K                       2/2 |   1/1
+      N checks M1's state                  2/2 |   1/1
+      N checks M2's state                  2/2 |   1/1
+      N checks M3's state                  2/2 |   1/1
+      N checks K's state                   2/2 |   1/1
+      N reads M1's signal                  2/2 |   1/1
+      N reads M2's signal                  2/2 |   1/1
+      N reads M3's signal                  2/2 |   1/1
+      N reads K's signal                   2/2 |   1/1
+      M1 reports to N                      2/2 |   1/1
+      M2 reports to N                      2/2 |   1/1
+      M3 reports to N                      2/2 |   1/1
+      K reports to N                       2/2 |   1/1
+    every edge but the checks of N (20)    2/2 |   1/1
+    every edge (24)                         - |     -
+    shape mesh          on M1,M2,M3           - |     -
+    shape coord-signal  on M1,M2,M3           - |     -
+    shape member-check  on M1,M2,M3           - |     -
+    shape member-signal on M1,M2,M3           - |     -
+    shape one           on M1                 - |     -
+    least attachments with no gap, f=1, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=1, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+
+  base cyc-check, work reads all   (columns: f = 1, 2, 3; N arrives good | N may arrive bad)
+    no edge at all                        2/2    1/1    1/1 |   1/1    1/1    1/1
+    one edge only:
+      M1 checks N's state                    -      -      - |     -      -      -
+      M2 checks N's state                    -      -      - |     -      -      -
+      M3 checks N's state                    -      -      - |     -      -      -
+      K checks N's state                     -      -      - |     -      -      -
+      M1 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      M2 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      M3 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      K reads N's signal                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M1                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M2                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M3                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to K                       2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M1's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M2's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M3's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks K's state                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M1's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M2's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M3's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads K's signal                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      M1 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      M2 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      M3 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      K reports to N                       2/2    1/1    1/1 |   1/1    1/1    1/1
+    every edge but the checks of N (20)    2/2    1/1    1/1 |   1/1    1/1    1/1
+    every edge (24)                         -      -      - |     -      -      -
+    shape mesh          on M1,M2,K            -      -      - |     -      -      -
+    shape coord-signal  on M1,M2,K            -      -      - |     -      -      -
+    shape member-check  on M1,M2,K            -      -      - |     -      -      -
+    shape member-signal on M1,M2,K            -      -      - |     -      -      -
+    shape one           on M1                 -      -      - |     -      -      -
+    mesh on M1,M2,K, one edge removed (N may arrive bad): 18 of 18 removals change nothing, 0 change a result
+      minus every 'X checks N's state':   2/2    1/1    1/1 |   1/1    1/1    1/1
+      minus every 'X reads N's signal':     -      -      - |     -      -      -
+      minus every 'N reports to X':     -      -      - |     -      -      -
+      minus every 'N checks X's state':     -      -      - |     -      -      -
+      minus every 'N reads X's signal':     -      -      - |     -      -      -
+      minus every 'X reports to N':     -      -      - |     -      -      -
+    least attachments with no gap, f=1, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=2, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=3, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=1, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=2, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=3, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+
+  base cyc-check, work reads two   (columns: f = 1; N arrives good | N may arrive bad)
+    no edge at all                        2/2 |   1/1
+    one edge only:
+      M1 checks N's state                    - |     -
+      M2 checks N's state                    - |     -
+      M3 checks N's state                    - |     -
+      K checks N's state                     - |     -
+      M1 reads N's signal                  2/2 |   1/1
+      M2 reads N's signal                  2/2 |   1/1
+      M3 reads N's signal                  2/2 |   1/1
+      K reads N's signal                   2/2 |   1/1
+      N reports to M1                      2/2 |   1/1
+      N reports to M2                      2/2 |   1/1
+      N reports to M3                      2/2 |   1/1
+      N reports to K                       2/2 |   1/1
+      N checks M1's state                  2/2 |   1/1
+      N checks M2's state                  2/2 |   1/1
+      N checks M3's state                  2/2 |   1/1
+      N checks K's state                   2/2 |   1/1
+      N reads M1's signal                  2/2 |   1/1
+      N reads M2's signal                  2/2 |   1/1
+      N reads M3's signal                  2/2 |   1/1
+      N reads K's signal                   2/2 |   1/1
+      M1 reports to N                      2/2 |   1/1
+      M2 reports to N                      2/2 |   1/1
+      M3 reports to N                      2/2 |   1/1
+      K reports to N                       2/2 |   1/1
+    every edge but the checks of N (20)    2/2 |   1/1
+    every edge (24)                         - |     -
+    shape mesh          on M1,M2,K            - |     -
+    shape coord-signal  on M1,M2,K            - |     -
+    shape member-check  on M1,M2,K            - |     -
+    shape member-signal on M1,M2,K            - |     -
+    shape one           on M1                 - |     -
+    least attachments with no gap, f=1, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=1, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+
+  base cyc-signal, work reads all   (columns: f = 1, 2, 3; N arrives good | N may arrive bad)
+    no edge at all                        2/2    1/1    1/1 |   1/1    1/1    1/1
+    one edge only:
+      M1 checks N's state                    -      -    1/1 |     -      -    1/1
+      M2 checks N's state                    -      -    1/1 |     -      -    1/1
+      M3 checks N's state                    -      -    1/1 |     -      -    1/1
+      K checks N's state                     -      -    1/1 |     -      -    1/1
+      M1 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      M2 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      M3 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      K reads N's signal                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M1                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M2                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M3                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to K                       2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M1's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M2's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M3's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks K's state                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M1's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M2's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M3's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads K's signal                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      M1 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      M2 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      M3 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      K reports to N                       2/2    1/1    1/1 |   1/1    1/1    1/1
+    every edge but the checks of N (20)    2/2    1/1    1/1 |   1/1    1/1    1/1
+    every edge (24)                         -      -    1/1 |     -      -    1/1
+    shape mesh          on M1,M2,K            -      -    1/1 |     -      -    1/1
+    shape coord-signal  on M1,M2,K            -      -    1/1 |     -      -    1/1
+    shape member-check  on M1,M2,K            -      -    1/1 |     -      -    1/1
+    shape member-signal on M1,M2,K            -      -    1/1 |     -      -    1/1
+    shape one           on M1                 -      -    1/1 |     -      -    1/1
+    mesh on M1,M2,K, one edge removed (N may arrive bad): 18 of 18 removals change nothing, 0 change a result
+      minus every 'X checks N's state':   2/2    1/1    1/1 |   1/1    1/1    1/1
+      minus every 'X reads N's signal':     -      -    1/1 |     -      -    1/1
+      minus every 'N reports to X':     -      -    1/1 |     -      -    1/1
+      minus every 'N checks X's state':     -      -    1/1 |     -      -    1/1
+      minus every 'N reads X's signal':     -      -    1/1 |     -      -    1/1
+      minus every 'X reports to N':     -      -    1/1 |     -      -    1/1
+    least attachments with no gap, f=1, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=2, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=3, N arrives good (1 systems checked; 0 least, 1 greatest with a gap)
+        greatest with a gap #1: all 24 but none
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=1, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=2, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=3, N arrives bad (1 systems checked; 0 least, 1 greatest with a gap)
+        greatest with a gap #1: all 24 but none
+        1000 random attachments against that list: 0 disagree
+
+  base cyc-signal, work reads two   (columns: f = 1; N arrives good | N may arrive bad)
+    no edge at all                        2/2 |   1/1
+    one edge only:
+      M1 checks N's state                    - |     -
+      M2 checks N's state                    - |     -
+      M3 checks N's state                    - |     -
+      K checks N's state                     - |     -
+      M1 reads N's signal                  2/2 |   1/1
+      M2 reads N's signal                  2/2 |   1/1
+      M3 reads N's signal                  2/2 |   1/1
+      K reads N's signal                   2/2 |   1/1
+      N reports to M1                      2/2 |   1/1
+      N reports to M2                      2/2 |   1/1
+      N reports to M3                      2/2 |   1/1
+      N reports to K                       2/2 |   1/1
+      N checks M1's state                  2/2 |   1/1
+      N checks M2's state                  2/2 |   1/1
+      N checks M3's state                  2/2 |   1/1
+      N checks K's state                   2/2 |   1/1
+      N reads M1's signal                  2/2 |   1/1
+      N reads M2's signal                  2/2 |   1/1
+      N reads M3's signal                  2/2 |   1/1
+      N reads K's signal                   2/2 |   1/1
+      M1 reports to N                      2/2 |   1/1
+      M2 reports to N                      2/2 |   1/1
+      M3 reports to N                      2/2 |   1/1
+      K reports to N                       2/2 |   1/1
+    every edge but the checks of N (20)    2/2 |   1/1
+    every edge (24)                         - |     -
+    shape mesh          on M1,M2,K            - |     -
+    shape coord-signal  on M1,M2,K            - |     -
+    shape member-check  on M1,M2,K            - |     -
+    shape member-signal on M1,M2,K            - |     -
+    shape one           on M1                 - |     -
+    least attachments with no gap, f=1, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=1, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+
+  base cyc-first, work reads all   (columns: f = 1, 2, 3; N arrives good | N may arrive bad)
+    no edge at all                        2/2    1/1    1/1 |   1/1    1/1    1/1
+    one edge only:
+      M1 checks N's state                    -      -    1/1 |     -      -    1/1
+      M2 checks N's state                    -      -    1/1 |     -      -    1/1
+      M3 checks N's state                    -      -    1/1 |     -      -    1/1
+      K checks N's state                     -      -    1/1 |     -      -    1/1
+      M1 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      M2 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      M3 reads N's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      K reads N's signal                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M1                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M2                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to M3                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reports to K                       2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M1's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M2's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks M3's state                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N checks K's state                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M1's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M2's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads M3's signal                  2/2    1/1    1/1 |   1/1    1/1    1/1
+      N reads K's signal                   2/2    1/1    1/1 |   1/1    1/1    1/1
+      M1 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      M2 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      M3 reports to N                      2/2    1/1    1/1 |   1/1    1/1    1/1
+      K reports to N                       2/2    1/1    1/1 |   1/1    1/1    1/1
+    every edge but the checks of N (20)    2/2    1/1    1/1 |   1/1    1/1    1/1
+    every edge (24)                         -      -    1/1 |     -      -    1/1
+    shape mesh          on M1,M2,K            -      -    1/1 |     -      -    1/1
+    shape coord-signal  on M1,M2,K            -      -    1/1 |     -      -    1/1
+    shape member-check  on M1,M2,K            -      -    1/1 |     -      -    1/1
+    shape member-signal on M1,M2,K            -      -    1/1 |     -      -    1/1
+    shape one           on M1                 -      -    1/1 |     -      -    1/1
+    mesh on M1,M2,K, one edge removed (N may arrive bad): 18 of 18 removals change nothing, 0 change a result
+      minus every 'X checks N's state':   2/2    1/1    1/1 |   1/1    1/1    1/1
+      minus every 'X reads N's signal':     -      -    1/1 |     -      -    1/1
+      minus every 'N reports to X':     -      -    1/1 |     -      -    1/1
+      minus every 'N checks X's state':     -      -    1/1 |     -      -    1/1
+      minus every 'N reads X's signal':     -      -    1/1 |     -      -    1/1
+      minus every 'X reports to N':     -      -    1/1 |     -      -    1/1
+    least attachments with no gap, f=1, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=2, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=3, N arrives good (1 systems checked; 0 least, 1 greatest with a gap)
+        greatest with a gap #1: all 24 but none
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=1, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=2, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=3, N arrives bad (1 systems checked; 0 least, 1 greatest with a gap)
+        greatest with a gap #1: all 24 but none
+        1000 random attachments against that list: 0 disagree
+
+  base cyc-first, work reads two   (columns: f = 1; N arrives good | N may arrive bad)
+    no edge at all                        2/2 |   1/1
+    one edge only:
+      M1 checks N's state                    - |     -
+      M2 checks N's state                    - |     -
+      M3 checks N's state                    - |     -
+      K checks N's state                     - |     -
+      M1 reads N's signal                  2/2 |   1/1
+      M2 reads N's signal                  2/2 |   1/1
+      M3 reads N's signal                  2/2 |   1/1
+      K reads N's signal                   2/2 |   1/1
+      N reports to M1                      2/2 |   1/1
+      N reports to M2                      2/2 |   1/1
+      N reports to M3                      2/2 |   1/1
+      N reports to K                       2/2 |   1/1
+      N checks M1's state                  2/2 |   1/1
+      N checks M2's state                  2/2 |   1/1
+      N checks M3's state                  2/2 |   1/1
+      N checks K's state                   2/2 |   1/1
+      N reads M1's signal                  2/2 |   1/1
+      N reads M2's signal                  2/2 |   1/1
+      N reads M3's signal                  2/2 |   1/1
+      N reads K's signal                   2/2 |   1/1
+      M1 reports to N                      2/2 |   1/1
+      M2 reports to N                      2/2 |   1/1
+      M3 reports to N                      2/2 |   1/1
+      K reports to N                       2/2 |   1/1
+    every edge but the checks of N (20)    2/2 |   1/1
+    every edge (24)                         - |     -
+    shape mesh          on M1,M2,K            - |     -
+    shape coord-signal  on M1,M2,K            - |     -
+    shape member-check  on M1,M2,K            - |     -
+    shape member-signal on M1,M2,K            - |     -
+    shape one           on M1                 - |     -
+    least attachments with no gap, f=1, N arrives good (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+    least attachments with no gap, f=1, N arrives bad (48 systems checked; 4 least, 1 greatest with a gap)
+           4 of 1 edge: in_chk   (in_chk at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+        1000 random attachments against that list: 0 disagree
+
+A2. A joining monitor N that work depends on
+    A work process J joins in the same step as N. Only N checks J's state. J takes its halt
+    from N and from the three existing monitors of N's ring. W is as before.
+
+  base mesh, N's ring is N with M1, M2, M3   (columns: f = 1, 2, 3; N arrives good | N may arrive bad)
+    N in a mesh with its three (18 edges)       -      -      - |     -      -      -
+    N as coord-signal   of its three            -      -    3/2 |     -      -    3/2
+    N as member-check   of its three            -      -      - |     -      -      -
+    N as member-signal  of its three            -      -      - |     -      -      -
+    N watched by M1 and reporting to it        -      -    3/2 |     -      -    3/2
+    N as a member of a cycle N -> a -> b -> N with coordinator c, for each choice of a, b, c:
+      member-check   a=M1 b=M2 c=M3            -      -      - |     -      -      -
+      member-check   a=M1 b=M3 c=M2            -      -      - |     -      -      -
+      member-check   a=M2 b=M1 c=M3            -      -      - |     -      -      -
+      member-check   a=M2 b=M3 c=M1            -      -      - |     -      -      -
+      member-check   a=M3 b=M1 c=M2            -      -      - |     -      -      -
+      member-check   a=M3 b=M2 c=M1            -      -      - |     -      -      -
+      member-signal  a=M1 b=M2 c=M3            -      -      - |     -      -      -
+      member-signal  a=M1 b=M3 c=M2            -      -      - |     -      -      -
+      member-signal  a=M2 b=M1 c=M3            -      -      - |     -      -      -
+      member-signal  a=M2 b=M3 c=M1            -      -      - |     -      -      -
+      member-signal  a=M3 b=M1 c=M2            -      -      - |     -      -      -
+      member-signal  a=M3 b=M2 c=M1            -      -      - |     -      -      -
+    the mesh, one edge removed:
+      minus M1 checks N's state              -      -      - |     -      -      -
+      minus M1 reads N's signal              -      -      - |     -      -      -
+      minus N reports to M1                  -      -      - |     -      -      -
+      minus N checks M1's state              -      -      - |     -      -      -
+      minus N reads M1's signal              -      -      - |     -      -      -
+      minus M1 reports to N                  -      -      - |     -      -      -
+      minus M2 checks N's state              -      -      - |     -      -      -
+      minus M2 reads N's signal              -      -      - |     -      -      -
+      minus N reports to M2                  -      -      - |     -      -      -
+      minus N checks M2's state              -      -      - |     -      -      -
+      minus N reads M2's signal              -      -      - |     -      -      -
+      minus M2 reports to N                  -      -      - |     -      -      -
+      minus M3 checks N's state              -      -      - |     -      -      -
+      minus M3 reads N's signal              -      -      - |     -      -      -
+      minus N reports to M3                  -      -      - |     -      -      -
+      minus N checks M3's state              -      -      - |     -      -      -
+      minus N reads M3's signal              -      -      - |     -      -      -
+      minus M3 reports to N                  -      -      - |     -      -      -
+    the mesh, one kind of edge removed from all three:
+      minus every X checks N's state       2/2    1/1    1/1 |   1/1    1/1    1/1
+      minus every X reads N's signal       3/3    2/2    1/1 |   3/3    2/2    1/1
+      minus every N reports to X           ./2    ./1    ./1 |   ./2    ./1    ./1
+      minus every N checks X's state         -      -    3/2 |     -      -    3/2
+      minus every N reads X's signal         -      -      - |     -      -      -
+      minus every X reports to N             -      -      - |     -      -      -
+    the mesh, J's own edges:
+      J takes its halt from N only          6/2    3/1    2/1 |   5/1    3/1    2/1
+      J takes its halt from N and M1          -    4/2    2/1 |     -    3/1    2/1
+      J takes its halt from N, M1, M2        -      -    3/2 |     -      -    2/1
+      J takes its halt from the three only     -      -    3/2 |     -      -    3/2
+    least attachments of N with no gap, f=1, N arrives good (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=2, N arrives good (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=3, N arrives good (623 systems checked; 256 least, 4 greatest with a gap)
+         192 of 4 edges: in_chk + in_hb + out_fwd + out_chk   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; out_chk at M1/M2/M3)
+          64 of 4 edges: in_chk + in_hb + out_fwd + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; in_fwd at K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but out_chk:M1+out_chk:M2+out_chk:M3+in_fwd:K
+        greatest with a gap #4: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=1, N arrives bad (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=2, N arrives bad (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=3, N arrives bad (623 systems checked; 256 least, 4 greatest with a gap)
+         192 of 4 edges: in_chk + in_hb + out_fwd + out_chk   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; out_chk at M1/M2/M3)
+          64 of 4 edges: in_chk + in_hb + out_fwd + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; in_fwd at K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but out_chk:M1+out_chk:M2+out_chk:M3+in_fwd:K
+        greatest with a gap #4: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+
+  base cyc-check, N's ring is N with M1, M2, K   (columns: f = 1, 2, 3; N arrives good | N may arrive bad)
+    N in a mesh with its three (18 edges)       -      -      - |     -      -      -
+    N as coord-signal   of its three            -      -    3/2 |     -      -    3/2
+    N as member-check   of its three            -      -      - |     -      -      -
+    N as member-signal  of its three            -      -      - |     -      -      -
+    N watched by M1 and reporting to it        -      -    3/2 |     -      -    3/2
+    N as a member of a cycle N -> a -> b -> N with coordinator c, for each choice of a, b, c:
+      member-check   a=M1 b=M2 c=K             -      -      - |     -      -      -
+      member-check   a=M1 b=K  c=M2            -      -      - |     -      -      -
+      member-check   a=M2 b=M1 c=K             -      -      - |     -      -      -
+      member-check   a=M2 b=K  c=M1            -      -      - |     -      -      -
+      member-check   a=K  b=M1 c=M2            -      -      - |     -      -      -
+      member-check   a=K  b=M2 c=M1            -      -      - |     -      -      -
+      member-signal  a=M1 b=M2 c=K             -      -      - |     -      -      -
+      member-signal  a=M1 b=K  c=M2            -      -      - |     -      -      -
+      member-signal  a=M2 b=M1 c=K             -      -      - |     -      -      -
+      member-signal  a=M2 b=K  c=M1            -      -      - |     -      -      -
+      member-signal  a=K  b=M1 c=M2            -      -      - |     -      -      -
+      member-signal  a=K  b=M2 c=M1            -      -      - |     -      -      -
+    the mesh, one edge removed:
+      minus M1 checks N's state              -      -      - |     -      -      -
+      minus M1 reads N's signal              -      -      - |     -      -      -
+      minus N reports to M1                  -      -      - |     -      -      -
+      minus N checks M1's state              -      -      - |     -      -      -
+      minus N reads M1's signal              -      -      - |     -      -      -
+      minus M1 reports to N                  -      -      - |     -      -      -
+      minus M2 checks N's state              -      -      - |     -      -      -
+      minus M2 reads N's signal              -      -      - |     -      -      -
+      minus N reports to M2                  -      -      - |     -      -      -
+      minus N checks M2's state              -      -      - |     -      -      -
+      minus N reads M2's signal              -      -      - |     -      -      -
+      minus M2 reports to N                  -      -      - |     -      -      -
+      minus K checks N's state               -      -      - |     -      -      -
+      minus K reads N's signal               -      -      - |     -      -      -
+      minus N reports to K                   -      -      - |     -      -      -
+      minus N checks K's state               -      -      - |     -      -      -
+      minus N reads K's signal               -      -      - |     -      -      -
+      minus K reports to N                   -      -      - |     -      -      -
+    the mesh, one kind of edge removed from all three:
+      minus every X checks N's state       2/2    1/1    1/1 |   1/1    1/1    1/1
+      minus every X reads N's signal       3/3    2/2    1/1 |   3/3    2/2    1/1
+      minus every N reports to X           ./2    ./1    ./1 |   ./2    ./1    ./1
+      minus every N checks X's state         -      -    3/2 |     -      -    3/2
+      minus every N reads X's signal         -      -      - |     -      -      -
+      minus every X reports to N             -      -      - |     -      -      -
+    the mesh, J's own edges:
+      J takes its halt from N only          6/2    3/1    2/1 |   5/1    3/1    2/1
+      J takes its halt from N and M1          -    4/2    2/1 |     -    3/1    2/1
+      J takes its halt from N, M1, M2        -      -    3/2 |     -      -    2/1
+      J takes its halt from the three only     -      -    3/2 |     -      -    3/2
+    least attachments of N with no gap, f=1, N arrives good (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=2, N arrives good (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=3, N arrives good (622 systems checked; 256 least, 4 greatest with a gap)
+         192 of 4 edges: in_chk + in_hb + out_fwd + out_chk   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; out_chk at M1/M2/K)
+          64 of 4 edges: in_chk + in_hb + out_fwd + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; in_fwd at M3)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but out_chk:M1+out_chk:M2+out_chk:K+in_fwd:M3
+        greatest with a gap #4: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=1, N arrives bad (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=2, N arrives bad (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=3, N arrives bad (622 systems checked; 256 least, 4 greatest with a gap)
+         192 of 4 edges: in_chk + in_hb + out_fwd + out_chk   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; out_chk at M1/M2/K)
+          64 of 4 edges: in_chk + in_hb + out_fwd + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; in_fwd at M3)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but out_chk:M1+out_chk:M2+out_chk:K+in_fwd:M3
+        greatest with a gap #4: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+
+  base cyc-signal, N's ring is N with M1, M2, K   (columns: f = 1, 2, 3; N arrives good | N may arrive bad)
+    N in a mesh with its three (18 edges)       -      -    1/1 |     -      -    1/1
+    N as coord-signal   of its three            -      -    1/1 |     -      -    1/1
+    N as member-check   of its three            -      -    1/1 |     -      -    1/1
+    N as member-signal  of its three            -      -    1/1 |     -      -    1/1
+    N watched by M1 and reporting to it        -      -    1/1 |     -      -    1/1
+    N as a member of a cycle N -> a -> b -> N with coordinator c, for each choice of a, b, c:
+      member-check   a=M1 b=M2 c=K             -      -    1/1 |     -      -    1/1
+      member-check   a=M1 b=K  c=M2            -      -    1/1 |     -      -    1/1
+      member-check   a=M2 b=M1 c=K             -      -    1/1 |     -      -    1/1
+      member-check   a=M2 b=K  c=M1            -      -    1/1 |     -      -    1/1
+      member-check   a=K  b=M1 c=M2            -      -    1/1 |     -      -    1/1
+      member-check   a=K  b=M2 c=M1            -      -    1/1 |     -      -    1/1
+      member-signal  a=M1 b=M2 c=K             -      -    1/1 |     -      -    1/1
+      member-signal  a=M1 b=K  c=M2            -      -    1/1 |     -      -    1/1
+      member-signal  a=M2 b=M1 c=K             -      -    1/1 |     -      -    1/1
+      member-signal  a=M2 b=K  c=M1            -      -    1/1 |     -      -    1/1
+      member-signal  a=K  b=M1 c=M2            -      -    1/1 |     -      -    1/1
+      member-signal  a=K  b=M2 c=M1            -      -    1/1 |     -      -    1/1
+    the mesh, one edge removed:
+      minus M1 checks N's state              -      -    1/1 |     -      -    1/1
+      minus M1 reads N's signal              -      -    1/1 |     -      -    1/1
+      minus N reports to M1                  -      -    1/1 |     -      -    1/1
+      minus N checks M1's state              -      -    1/1 |     -      -    1/1
+      minus N reads M1's signal              -      -    1/1 |     -      -    1/1
+      minus M1 reports to N                  -      -    1/1 |     -      -    1/1
+      minus M2 checks N's state              -      -    1/1 |     -      -    1/1
+      minus M2 reads N's signal              -      -    1/1 |     -      -    1/1
+      minus N reports to M2                  -      -    1/1 |     -      -    1/1
+      minus N checks M2's state              -      -    1/1 |     -      -    1/1
+      minus N reads M2's signal              -      -    1/1 |     -      -    1/1
+      minus M2 reports to N                  -      -    1/1 |     -      -    1/1
+      minus K checks N's state               -      -    1/1 |     -      -    1/1
+      minus K reads N's signal               -      -    1/1 |     -      -    1/1
+      minus N reports to K                   -      -    1/1 |     -      -    1/1
+      minus N checks K's state               -      -    1/1 |     -      -    1/1
+      minus N reads K's signal               -      -    1/1 |     -      -    1/1
+      minus K reports to N                   -      -    1/1 |     -      -    1/1
+    the mesh, one kind of edge removed from all three:
+      minus every X checks N's state       2/2    1/1    1/1 |   1/1    1/1    1/1
+      minus every X reads N's signal       3/3    2/2    1/1 |   3/3    2/2    1/1
+      minus every N reports to X           ./2    ./1    1/1 |   ./2    ./1    1/1
+      minus every N checks X's state         -      -    1/1 |     -      -    1/1
+      minus every N reads X's signal         -      -    1/1 |     -      -    1/1
+      minus every X reports to N             -      -    1/1 |     -      -    1/1
+    the mesh, J's own edges:
+      J takes its halt from N only          6/2    3/1    1/1 |   5/1    3/1    1/1
+      J takes its halt from N and M1          -    4/2    1/1 |     -    3/1    1/1
+      J takes its halt from N, M1, M2        -      -    1/1 |     -      -    1/1
+      J takes its halt from the three only     -      -    1/1 |     -      -    1/1
+    least attachments of N with no gap, f=1, N arrives good (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=2, N arrives good (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=3, N arrives good (1 systems checked; 0 least, 1 greatest with a gap)
+        greatest with a gap #1: all 24 but none
+    least attachments of N with no gap, f=1, N arrives bad (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=2, N arrives bad (201 systems checked; 64 least, 3 greatest with a gap)
+          64 of 3 edges: in_chk + in_hb + out_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K)
+        greatest with a gap #1: all 24 but out_fwd:M1+out_fwd:M2+out_fwd:M3+out_fwd:K
+        greatest with a gap #2: all 24 but in_hb:M1+in_hb:M2+in_hb:M3+in_hb:K
+        greatest with a gap #3: all 24 but in_chk:M1+in_chk:M2+in_chk:M3+in_chk:K
+    least attachments of N with no gap, f=3, N arrives bad (1 systems checked; 0 least, 1 greatest with a gap)
+        greatest with a gap #1: all 24 but none
+
+B. From the step that adds it: attachments that arrive a round late, or never
+   N joins in a mesh with three existing monitors. 'late' edges are missing in the round N joins.
+
+  base mesh, N with M1, M2, M3; nothing depends on N   (f = 1, 2, 3; N arrives good | N may arrive bad)
+    every edge from the join step                   -      -      - |     -      -      -
+    every edge a round late                         -    1/1    1/1 |   1/1    1/1    1/1
+    the three checks of N late, the rest at once     -    1/1    1/1 |   1/1    1/1    1/1
+    one check of N at once, every other edge late     -      -      - |     -      -      -
+    the checks of N at once, the rest late           -      -      - |     -      -      -
+    the checks of N never, the rest at once        2/2    1/1    1/1 |   1/1    1/1    1/1
+    no edge ever                                  2/2    1/1    1/1 |   1/1    1/1    1/1
+    only 'X reads N's signal' late:                 -      -      - |     -      -      -
+    only 'N reports to X' late:                 -      -      - |     -      -      -
+    only 'N checks X's state' late:                 -      -      - |     -      -      -
+    only 'N reads X's signal' late:                 -      -      - |     -      -      -
+    only 'X reports to N' late:                 -      -      - |     -      -      -
+  base mesh, N with M1, M2, M3; J joins with N, checked by N, halting on N and the three
+    every edge from the join step                   -      -      - |     -      -      -
+    every edge of N and of J a round late           -    1/1    1/1 |   1/1    1/1    1/1
+    only 'X checks N's state' late:                 -    1/1    1/1 |   1/1    1/1    1/1
+    only 'X reads N's signal' late:                 -      -    1/1 |     -      -    1/1
+    only 'N reports to X' late:                 -    ./1    ./1 |     -    ./1    ./1
+    only 'N checks X's state' late:                 -      -      - |     -      -      -
+    only 'N reads X's signal' late:                 -      -      - |     -      -      -
+    only 'X reports to N' late:                 -      -      - |     -      -      -
+    only N's check of J late                        -    1/1    1/1 |     -    1/1    1/1
+    only J's halt inputs late                       -    ./1    2/1 |   ./1    3/1    2/1
+    least sets of edges that must be in force in the join round, f=1, N arrives bad (84 systems checked): 9
+           9 of 2: J's halt input + in_chk
+    least sets of edges that must be in force in the join round, f=2, N arrives good (678 systems checked): 108
+          27 of 5: J's check + J's halt input + J's halt input + in_chk + out_fwd
+          54 of 6: J's check + J's halt input + J's halt input + in_chk + in_fwd + out_fwd
+          27 of 6: J's check + J's halt input + J's halt input + in_chk + out_chk + out_fwd
+    least sets of edges that must be in force in the join round, f=2, N arrives bad (237 systems checked): 27
+          27 of 5: J's check + J's halt input + J's halt input + in_chk + out_fwd
+    least sets of edges that must be in force in the join round, f=3, N arrives bad (315 systems checked): 27
+          27 of 7: J's check + J's halt input + J's halt input + J's halt input + in_chk + in_hb + out_fwd
+
+  base cyc-check, N with M1, M2, K; nothing depends on N   (f = 1, 2, 3; N arrives good | N may arrive bad)
+    every edge from the join step                   -      -      - |     -      -      -
+    every edge a round late                         -    1/1    1/1 |   1/1    1/1    1/1
+    the three checks of N late, the rest at once     -    1/1    1/1 |   1/1    1/1    1/1
+    one check of N at once, every other edge late     -      -      - |     -      -      -
+    the checks of N at once, the rest late           -      -      - |     -      -      -
+    the checks of N never, the rest at once        2/2    1/1    1/1 |   1/1    1/1    1/1
+    no edge ever                                  2/2    1/1    1/1 |   1/1    1/1    1/1
+    only 'X reads N's signal' late:                 -      -      - |     -      -      -
+    only 'N reports to X' late:                 -      -      - |     -      -      -
+    only 'N checks X's state' late:                 -      -      - |     -      -      -
+    only 'N reads X's signal' late:                 -      -      - |     -      -      -
+    only 'X reports to N' late:                 -      -      - |     -      -      -
+  base cyc-check, N with M1, M2, K; J joins with N, checked by N, halting on N and the three
+    every edge from the join step                   -      -      - |     -      -      -
+    every edge of N and of J a round late           -    1/1    1/1 |   1/1    1/1    1/1
+    only 'X checks N's state' late:                 -    1/1    1/1 |   1/1    1/1    1/1
+    only 'X reads N's signal' late:                 -      -    1/1 |     -      -    1/1
+    only 'N reports to X' late:                 -    ./1    ./1 |     -    ./1    ./1
+    only 'N checks X's state' late:                 -      -      - |     -      -      -
+    only 'N reads X's signal' late:                 -      -      - |     -      -      -
+    only 'X reports to N' late:                 -      -      - |     -      -      -
+    only N's check of J late                        -    1/1    1/1 |     -    1/1    1/1
+    only J's halt inputs late                       -    ./1    2/1 |   ./1    3/1    2/1
+    least sets of edges that must be in force in the join round, f=1, N arrives bad (84 systems checked): 9
+           9 of 2: J's halt input + in_chk
+    least sets of edges that must be in force in the join round, f=2, N arrives good (678 systems checked): 108
+          27 of 5: J's check + J's halt input + J's halt input + in_chk + out_fwd
+          54 of 6: J's check + J's halt input + J's halt input + in_chk + in_fwd + out_fwd
+          27 of 6: J's check + J's halt input + J's halt input + in_chk + out_chk + out_fwd
+    least sets of edges that must be in force in the join round, f=2, N arrives bad (237 systems checked): 27
+          27 of 5: J's check + J's halt input + J's halt input + in_chk + out_fwd
+    least sets of edges that must be in force in the join round, f=3, N arrives bad (315 systems checked): 27
+          27 of 7: J's check + J's halt input + J's halt input + J's halt input + in_chk + in_hb + out_fwd
+
+  base cyc-signal, N with M1, M2, K; nothing depends on N   (f = 1, 2, 3; N arrives good | N may arrive bad)
+    every edge from the join step                   -      -    1/1 |     -      -    1/1
+    every edge a round late                         -    1/1    1/1 |   1/1    1/1    1/1
+    the three checks of N late, the rest at once     -    1/1    1/1 |   1/1    1/1    1/1
+    one check of N at once, every other edge late     -      -    1/1 |     -      -    1/1
+    the checks of N at once, the rest late           -      -    1/1 |     -      -    1/1
+    the checks of N never, the rest at once        2/2    1/1    1/1 |   1/1    1/1    1/1
+    no edge ever                                  2/2    1/1    1/1 |   1/1    1/1    1/1
+    only 'X reads N's signal' late:                 -      -    1/1 |     -      -    1/1
+    only 'N reports to X' late:                 -      -    1/1 |     -      -    1/1
+    only 'N checks X's state' late:                 -      -    1/1 |     -      -    1/1
+    only 'N reads X's signal' late:                 -      -    1/1 |     -      -    1/1
+    only 'X reports to N' late:                 -      -    1/1 |     -      -    1/1
+  base cyc-signal, N with M1, M2, K; J joins with N, checked by N, halting on N and the three
+    every edge from the join step                   -      -    1/1 |     -      -    1/1
+    every edge of N and of J a round late           -    1/1    1/1 |   1/1    1/1    1/1
+    only 'X checks N's state' late:                 -    1/1    1/1 |   1/1    1/1    1/1
+    only 'X reads N's signal' late:                 -      -    1/1 |     -      -    1/1
+    only 'N reports to X' late:                 -    ./1    1/1 |     -    ./1    1/1
+    only 'N checks X's state' late:                 -      -    1/1 |     -      -    1/1
+    only 'N reads X's signal' late:                 -      -    1/1 |     -      -    1/1
+    only 'X reports to N' late:                 -      -    1/1 |     -      -    1/1
+    only N's check of J late                        -    1/1    1/1 |     -    1/1    1/1
+    only J's halt inputs late                       -    ./1    1/1 |   ./1    3/1    1/1
+    least sets of edges that must be in force in the join round, f=1, N arrives bad (84 systems checked): 9
+           9 of 2: J's halt input + in_chk
+    least sets of edges that must be in force in the join round, f=2, N arrives good (678 systems checked): 108
+          27 of 5: J's check + J's halt input + J's halt input + in_chk + out_fwd
+          54 of 6: J's check + J's halt input + J's halt input + in_chk + in_fwd + out_fwd
+          27 of 6: J's check + J's halt input + J's halt input + in_chk + out_chk + out_fwd
+    least sets of edges that must be in force in the join round, f=2, N arrives bad (237 systems checked): 27
+          27 of 5: J's check + J's halt input + J's halt input + in_chk + out_fwd
+    least sets of edges that must be in force in the join round, f=3, N arrives bad (1 systems checked): 0
+
+C. Growing without end
+   Every system below starts as a base ring with one work process W that the base monitors check
+   and that takes its halt from the four base monitors. Joins and faults in every order; a new
+   monitor may arrive bad. 'rate' is the greatest f with no gap (4 was the highest tried).
+
+  C1. Way one: each new monitor in a mesh with three that watch each other (base: mesh of four)
+    5 monitors: 1 systems up to renaming. Joining after its three: rate {3: 1}. Joining in any order: rate {3: 1} (gap at f=1 exactly where a monitor's three are all late: yes)
+    6 monitors: 3 systems up to renaming. Joining after its three: rate {3: 3}. Joining in any order: rate {3: 3} (gap at f=1 exactly where a monitor's three are all late: yes)
+    7 monitors: 10 systems up to renaming. Joining after its three: rate {3: 10}. Joining in any order: rate {3: 10} (gap at f=1 exactly where a monitor's three are all late: yes)
+    8 monitors: 48 systems up to renaming. Joining after its three: rate {3: 48}. Joining in any order: rate {0: 1, 3: 47} (gap at f=1 exactly where a monitor's three are all late: yes)
+
+  C2. Way two: each new monitor attached to any three (they need not watch each other)
+      shapes: mesh = it watches and is watched by all three (it is a coordinator that checks state);
+      coord-signal = a coordinator that reads signals and flags only; member-check / member-signal =
+      a member of a cycle with two of them, the third as coordinator; one = one existing watcher.
+    base mesh (its own rate: 3)
+      mesh            344 systems of 5 to 8 monitors: rate {3: 344}  all at the base's rate
+      coord-signal    344 systems of 5 to 8 monitors: rate {3: 344}  all at the base's rate
+      member-check    724 systems of 5 to 8 monitors: rate {3: 724}  all at the base's rate
+      member-signal   724 systems of 5 to 8 monitors: rate {3: 724}  all at the base's rate
+      one             324 systems of 5 to 8 monitors: rate {3: 324}  all at the base's rate
+      mixed           600 systems of 5 to 8 monitors: rate {3: 600}  all at the base's rate
+    base cyc-check (its own rate: 3)
+      mesh            344 systems of 5 to 8 monitors: rate {3: 344}  all at the base's rate
+      coord-signal    344 systems of 5 to 8 monitors: rate {3: 344}  all at the base's rate
+      member-check    724 systems of 5 to 8 monitors: rate {3: 724}  all at the base's rate
+      member-signal   724 systems of 5 to 8 monitors: rate {3: 724}  all at the base's rate
+      one             324 systems of 5 to 8 monitors: rate {3: 324}  all at the base's rate
+      mixed           600 systems of 5 to 8 monitors: rate {3: 600}  all at the base's rate
+    base cyc-signal (its own rate: 2)
+      mesh            344 systems of 5 to 8 monitors: rate {2: 344}  all at the base's rate
+      coord-signal    344 systems of 5 to 8 monitors: rate {2: 344}  all at the base's rate
+      member-check    724 systems of 5 to 8 monitors: rate {2: 724}  all at the base's rate
+      member-signal   724 systems of 5 to 8 monitors: rate {2: 724}  all at the base's rate
+      one             324 systems of 5 to 8 monitors: rate {2: 324}  all at the base's rate
+      mixed           600 systems of 5 to 8 monitors: rate {2: 600}  all at the base's rate
+    base cyc-first (its own rate: 2)
+      mesh            344 systems of 5 to 8 monitors: rate {2: 344}  all at the base's rate
+      coord-signal    344 systems of 5 to 8 monitors: rate {2: 344}  all at the base's rate
+      member-check    724 systems of 5 to 8 monitors: rate {2: 724}  all at the base's rate
+      member-signal   724 systems of 5 to 8 monitors: rate {2: 724}  all at the base's rate
+      one             324 systems of 5 to 8 monitors: rate {2: 324}  all at the base's rate
+      mixed           600 systems of 5 to 8 monitors: rate {2: 600}  all at the base's rate
+    12240 systems in C2, each at f = 1, 2, 3 and 4
+
+  C3. Families, as far as stays cheap (base: mesh of four; joining after its three; rate, and G1/G2 at f=4)
+    hub: every new monitor on M1, M2, M3, shape mesh: n=9: rate 3, f=4 1/1; n=10: rate 3, f=4 1/1; n=11: rate 3, f=4 1/1
+    hub: every new monitor on M1, M2, M3, shape member-signal: n=9: rate 3, f=4 1/1; n=10: rate 3, f=4 1/1; n=11: rate 3, f=4 1/1
+    chain: every new monitor on the newest three, shape mesh: n=9: rate 3, f=4 1/1; n=12: rate 3, f=4 1/1; n=16: rate 3, f=4 1/1; n=20: rate 3, f=4 1/1
+    chain: every new monitor on the newest three, shape member-signal: n=9: rate 3, f=4 1/1; n=12: rate 3, f=4 1/1; n=16: rate 3, f=4 1/1; n=20: rate 3, f=4 1/1
+    fan: every new monitor on K and the newest two, shape mesh: n=9: rate 3, f=4 1/1; n=12: rate 3, f=4 1/1; n=16: rate 3, f=4 1/1; n=20: rate 3, f=4 1/1
+    fan: every new monitor on K and the newest two, shape member-signal: n=9: rate 3, f=4 1/1; n=12: rate 3, f=4 1/1; n=16: rate 3, f=4 1/1; n=20: rate 3, f=4 1/1
+
+  C4. The same grown systems with every monitor present from the start (way one, 5 to 7 monitors)
+      rate by what W takes its halt from; f tried up to the number of monitors
+    5 monitors: W reads the base four: rate {3: 1}; W reads every monitor: rate {4: 1}
+    6 monitors: W reads the base four: rate {3: 3}; W reads every monitor: rate {5: 3}
+    7 monitors: W reads the base four: rate {3: 10}; W reads every monitor: rate {6: 10}
+
+  C6. A chain of monitors with one watcher each: N5 on M1, N6 on N5, N7 on N6 (f = 1, 2, 3)
+    as built                                  -  -  -
+    minus: N5 checks N6's state               2/2  1/1  1/1
+    minus: N5 reads N6's signal               4/4  2/2  2/2
+    minus: N6 reports to N5                   ./3  ./2  ./1
+    minus: N6 checks N7's state               3/3  2/2  1/1
+    minus: N6 reads N7's signal               -  -  -
+    minus: N7 reports to N6                   -  -  -
+
+  C5. Is 'every monitor has two observers' the condition? (all with nothing joining)
+    two-watchers-no-reports: cycle of three with a checking coordinator, every report removed, W checked by M1 and halting on M1 and M2
+        fewest state checkers 2, signal readers 2, watchers 2; Theorem S (a)-(d) fail; f=1,2,3: 4/1  2/1  2/1
+    two-watchers-no-reports-W-reads-all: the same, W halting on all four: no report is needed when the work reads every monitor
+        fewest state checkers 2, signal readers 2, watchers 2; Theorem S (a)-(d) fail; f=1,2,3: -  -  -
+    one-watcher-each-ring-of-three: three monitors in a cycle, each watched by one, reporting to the one it does not check, W halting on all three
+        fewest state checkers 1, signal readers 1, watchers 1; Theorem S (a)-(d) hold; f=1,2,3: -  -  1/1
+    two-observers-one-reads-signals-only: M1 and M2 check each other, K reads both signals and checks no state, both watch K, W halts on all three
+        fewest state checkers 1, signal readers 2, watchers 1; Theorem S (a)-(d) hold; f=1,2,3: -  1/1  1/1
+    two-rings-two-reports: two meshes of three; the rings report to each other through A1-B1 and through A2-B2; W checked by and halting on ring A
+        fewest state checkers 2, signal readers 2, watchers 2; Theorem S (a)-(d) hold; f=1,2,3: -  2/1  1/1
+    two-rings-three-reports: the same with a third pair of reports, A3-B3
+        fewest state checkers 2, signal readers 2, watchers 2; Theorem S (a)-(d) hold; f=1,2,3: -  -  1/1
+    two-rings-two-reports-W-reads-all: the same two pairs of reports, W halting on all six monitors
+        fewest state checkers 2, signal readers 2, watchers 2; Theorem S (a)-(d) hold; f=1,2,3: -  -  1/1
+
+D. The work processes (base: mesh of four; N in a mesh with M1, M2, M3; f = 1, 2, 3, 4;
+   N arrives good | N may arrive bad)
+  the existing work process W
+    W as before (N is nothing to it)                 -      -      -    1/1 |     -      -      -    1/1
+    N becomes a fifth halt input of W                -      -      -    1/1 |     -      -      -    1/1
+    N becomes a fifth checker of W                   -      -      -    1/1 |     -      -      -    1/1
+    both                                             -      -      -    1/1 |     -      -      -    1/1
+    W halts on M1, M2 and N (N is one of three)      -    2/1    2/1    1/1 |     -    2/1    2/1    1/1
+    W halts on M1 and N (N is one of two)          4/1    2/1    2/1    1/1 |   4/1    2/1    2/1    1/1
+    W's only checker is N                          1/1    1/1    1/1    1/1 |   1/1    1/1    1/1    1/1
+  a joining work process J, checked by N only, halting on N, M1, M2, M3
+    J joins in N's step                              -      -      -    1/1 |     -      -      -    1/1
+    J joins once N is present                        -      -      -    1/1 |     -      -      -    1/1
+    J may join at any time                         2/2    1/1    1/1    1/1 |   2/2    1/1    1/1    1/1
+  a joining work process J that may join at any time, wired to existing monitors only
+    checked by M1, halting on M1, M2, M3, K          -      -      -    1/1 |     -      -      -    1/1
+    checked by M1 and N, halting on all five         -      -      -    1/1 |     -      -      -    1/1
+  J on the i-th new ring of a system grown to eight (J joins with that ring's new monitor, is checked
+  by it, and halts on it and its three); columns f = 1, 2, 3, 4, a new monitor may arrive bad
+    chain mesh          ring 1: - - - 1/1 | ring 2: - - - 1/1 | ring 3: - - - 1/1 | ring 4: - - - 1/1
+    chain member-check  ring 1: - - - 1/1 | ring 2: - - - 1/1 | ring 3: - - - 1/1 | ring 4: - - - 1/1
+    chain member-signal ring 1: - - - 1/1 | ring 2: - - - 1/1 | ring 3: - - - 1/1 | ring 4: - - - 1/1
+    chain coord-signal  ring 1: - - 3/2 1/1 | ring 2: - - 3/2 1/1 | ring 3: - - 3/2 1/1 | ring 4: - - 4/3 1/1
+    hub   mesh          ring 1: - - - 1/1 | ring 2: - - - 1/1 | ring 3: - - - 1/1 | ring 4: - - - 1/1
+    hub   member-check  ring 1: - - - 1/1 | ring 2: - - - 1/1 | ring 3: - - - 1/1 | ring 4: - - - 1/1
+    hub   member-signal ring 1: - - - 1/1 | ring 2: - - - 1/1 | ring 3: - - - 1/1 | ring 4: - - - 1/1
+    hub   coord-signal  ring 1: - - 3/2 1/1 | ring 2: - - 3/2 1/1 | ring 3: - - 3/2 1/1 | ring 4: - - 3/2 1/1
+  how many monitors N is attached to, when J reads only N's ring (J joins with N, checked by N)
+    N in a mesh with 1: J halts on N and those 1          -    4/2    2/1    1/1 |     -    3/1    2/1    1/1
+    N in a mesh with 2: J halts on N and those 2          -      -    3/2    1/1 |     -      -    2/1    1/1
+    N in a mesh with 3: J halts on N and those 3          -      -      -    1/1 |     -      -      -    1/1
+    N in a mesh with 4: J halts on N and those 4          -      -      -    1/1 |     -      -      -    1/1
+
+E. A joiner that is itself a ring
+   Ring A: M1, M2, M3, K and work W. Ring B: B1, B2, B3, KB and work WB, which only ring B checks
+   and halts. KB is put in a mesh with three monitors of A.   f = 1, 2, 3, 4;
+   members arrive good | one member may arrive bad
+  ring A mesh, ring B mesh, KB with M1, M2, K
+    all of ring B and WB in one step                   -      -      -    1/1 |     -      -      -    1/1
+    the four monitors in one step, then WB             -      -      -    1/1 |     -      -      -    1/1
+    the four monitors in one step; WB at any time    2/2    1/1    1/1    1/1 |   2/2    1/1    1/1    1/1
+    KB, then each member, then WB (five steps)         -      -      -    1/1 |     -      -      -    1/1
+    KB, then members and WB in any order             7/3    4/2    3/1    1/1 |   7/3    3/1    2/1    1/1
+    all five in any order                            2/2    1/1    1/1    1/1 |   1/1    1/1    1/1    1/1
+  ring A mesh, ring B mesh, KB with M1, M2, M3
+    all of ring B and WB in one step                   -      -      -    1/1 |     -      -      -    1/1
+    the four monitors in one step, then WB             -      -      -    1/1 |     -      -      -    1/1
+    the four monitors in one step; WB at any time    2/2    1/1    1/1    1/1 |   2/2    1/1    1/1    1/1
+    KB, then each member, then WB (five steps)         -      -      -    1/1 |     -      -      -    1/1
+    KB, then members and WB in any order             7/3    4/2    3/1    1/1 |   7/3    3/1    2/1    1/1
+    all five in any order                            2/2    1/1    1/1    1/1 |   1/1    1/1    1/1    1/1
+  ring A cyc-check, ring B cyc-check, KB with M1, M2, K
+    all of ring B and WB in one step                   -      -      -    1/1 |     -      -      -    1/1
+    the four monitors in one step, then WB             -      -      -    1/1 |     -      -      -    1/1
+    the four monitors in one step; WB at any time    2/2    1/1    1/1    1/1 |   2/2    1/1    1/1    1/1
+    KB, then each member, then WB (five steps)         -      -      -    1/1 |     -      -      -    1/1
+    KB, then members and WB in any order             7/3    4/2    3/1    1/1 |   7/3    3/1    2/1    1/1
+    all five in any order                            2/2    1/1    1/1    1/1 |   1/1    1/1    1/1    1/1
+  each ring whole in one boundary (one step stops a whole ring); ring A mesh, ring B mesh, KB with M1, M2, K
+    all of ring B and WB in one step                 2/.    1/. |   2/.    1/.   (f = 1, 2)
+    KB, then each member, then WB (five steps)       2/.    1/6 |   2/6    1/3   (f = 1, 2)
+  the same two rings, each whole in one boundary, both present from the start
+    ring A mesh, ring B mesh: f = 1, 2: -  2/.
+    ring A cyc-check, ring B cyc-check: f = 1, 2: -  2/.
+  KB attached by fewer edges (one step, ring A mesh, ring B mesh)
+    KB in a mesh with M1 only (six edges)              -      -      -    1/1 |     -      -      -    1/1
+    KB watched by M1 and reporting to M1 only        5/2    3/1    2/1    1/1 |   5/2    3/1    2/1    1/1
+    ring B not attached to ring A at all             5/2    3/1    2/1    1/1 |   4/1    2/1    2/1    1/1
+  the least attachments of KB with no gap (one step; WB is ring B's own work)
+  'all 24': every edge between KB and the four monitors of A may be used. 'on M1': A's check of KB,
+  A's read of KB's signal and KB's report to A are taken on M1 only (15 edges), which keeps the search small.
+    ring A mesh, ring B mesh, f=1, members arrive good, all 24 (2399 systems checked; 640 least, 12 greatest with a gap)
+         384 of 5 edges: in_chk + in_hb + out_fwd + in_fwd + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+         256 of 6 edges: in_chk + in_hb + out_fwd + out_chk + out_hb + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; out_chk at M1/M2/M3/K; out_hb at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+    ring A mesh, ring B mesh, f=1, members arrive bad, all 24 (2399 systems checked; 640 least, 12 greatest with a gap)
+         384 of 5 edges: in_chk + in_hb + out_fwd + in_fwd + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+         256 of 6 edges: in_chk + in_hb + out_fwd + out_chk + out_hb + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; out_chk at M1/M2/M3/K; out_hb at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+    ring A mesh, ring B mesh, f=2, members arrive bad, all 24 (2719 systems checked; 512 least, 36 greatest with a gap)
+         256 of 6 edges: in_chk + in_hb + out_fwd + out_chk + out_hb + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; out_chk at M1/M2/M3/K; out_hb at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+         256 of 6 edges: in_chk + in_hb + out_fwd + in_fwd + in_fwd + in_fwd   (in_chk at M1/M2/M3/K; in_hb at M1/M2/M3/K; out_fwd at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+    ring A mesh, ring B mesh, f=2, members arrive bad, on M1 (367 systems checked; 8 least, 36 greatest with a gap)
+           4 of 6 edges: in_chk + in_hb + out_fwd + out_chk + out_hb + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; out_chk at M1/M2/M3/K; out_hb at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+           4 of 6 edges: in_chk + in_hb + out_fwd + in_fwd + in_fwd + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; in_fwd at M1/M2/M3/K)
+    ring A mesh, ring B mesh, f=3, members arrive bad, on M1 (602 systems checked; 5 least, 68 greatest with a gap)
+           4 of 6 edges: in_chk + in_hb + out_fwd + out_chk + out_hb + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; out_chk at M1/M2/M3/K; out_hb at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+           1 of 7 edges: in_chk + in_hb + out_fwd + in_fwd + in_fwd + in_fwd + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; in_fwd at M1/M2/M3/K)
+    ring A cyc-check, ring B cyc-check, f=1, members arrive bad, on M1 (182 systems checked; 10 least, 12 greatest with a gap)
+           6 of 5 edges: in_chk + in_hb + out_fwd + in_fwd + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; in_fwd at M1/M2/M3/K)
+           4 of 6 edges: in_chk + in_hb + out_fwd + out_chk + out_hb + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; out_chk at M1/M2/M3/K; out_hb at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+    ring A cyc-check, ring B cyc-check, f=2, members arrive bad, on M1 (367 systems checked; 8 least, 36 greatest with a gap)
+           4 of 6 edges: in_chk + in_hb + out_fwd + out_chk + out_hb + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; out_chk at M1/M2/M3/K; out_hb at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+           4 of 6 edges: in_chk + in_hb + out_fwd + in_fwd + in_fwd + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; in_fwd at M1/M2/M3/K)
+    ring A cyc-check, ring B cyc-check, f=3, members arrive bad, on M1 (602 systems checked; 5 least, 68 greatest with a gap)
+           4 of 6 edges: in_chk + in_hb + out_fwd + out_chk + out_hb + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; out_chk at M1/M2/M3/K; out_hb at M1/M2/M3/K; in_fwd at M1/M2/M3/K)
+           1 of 7 edges: in_chk + in_hb + out_fwd + in_fwd + in_fwd + in_fwd + in_fwd   (in_chk at M1; in_hb at M1; out_fwd at M1; in_fwd at M1/M2/M3/K)
+
+F. Cost: what stays bounded as a system grows, and what grows
+   edges = signal reads + state checks + reports, each counted once; 'edges at a monitor' counts
+   every edge it is an end of; 'hops' = the most report hops from a checker of any monitor to a halt
+   input of W (0: W reads a checker of every monitor directly). W always reads the base four.
+  shape mesh
+    hub (always M1, M2, M3)     n=8: edges 108, most at one monitor 42, mean 27.0, hops 0 | n=16: edges 252, most at one monitor 90, mean 31.5, hops 0 | n=32: edges 540, most at one monitor 186, mean 33.8, hops 0 | n=64: edges 1116, most at one monitor 378, mean 34.9, hops 0
+    chain (the newest three)    n=8: edges 108, most at one monitor 36, mean 27.0, hops 1 | n=16: edges 252, most at one monitor 36, mean 31.5, hops 3 | n=32: edges 540, most at one monitor 36, mean 33.8, hops 9 | n=64: edges 1116, most at one monitor 36, mean 34.9, hops 19
+    fan (K and the newest two)  n=8: edges 108, most at one monitor 42, mean 27.0, hops 0 | n=16: edges 252, most at one monitor 90, mean 31.5, hops 0 | n=32: edges 540, most at one monitor 186, mean 33.8, hops 0 | n=64: edges 1116, most at one monitor 378, mean 34.9, hops 0
+  shape coord-signal
+    hub (always M1, M2, M3)     n=8: edges 96, most at one monitor 38, mean 24.0, hops 0 | n=16: edges 216, most at one monitor 78, mean 27.0, hops 0 | n=32: edges 456, most at one monitor 158, mean 28.5, hops 0 | n=64: edges 936, most at one monitor 318, mean 29.2, hops 0
+    chain (the newest three)    n=8: edges 96, most at one monitor 33, mean 24.0, hops 1 | n=16: edges 216, most at one monitor 33, mean 27.0, hops 3 | n=32: edges 456, most at one monitor 33, mean 28.5, hops 9 | n=64: edges 936, most at one monitor 33, mean 29.2, hops 19
+    fan (K and the newest two)  n=8: edges 96, most at one monitor 38, mean 24.0, hops 0 | n=16: edges 216, most at one monitor 78, mean 27.0, hops 0 | n=32: edges 456, most at one monitor 158, mean 28.5, hops 0 | n=64: edges 936, most at one monitor 318, mean 29.2, hops 0
+  shape member-check
+    hub (always M1, M2, M3)     n=8: edges 76, most at one monitor 34, mean 19.0, hops 0 | n=16: edges 156, most at one monitor 66, mean 19.5, hops 0 | n=32: edges 316, most at one monitor 130, mean 19.8, hops 0 | n=64: edges 636, most at one monitor 258, mean 19.9, hops 0
+    chain (the newest three)    n=8: edges 76, most at one monitor 28, mean 19.0, hops 1 | n=16: edges 156, most at one monitor 28, mean 19.5, hops 5 | n=32: edges 316, most at one monitor 28, mean 19.8, hops 13 | n=64: edges 636, most at one monitor 28, mean 19.9, hops 29
+    fan (K and the newest two)  n=8: edges 76, most at one monitor 30, mean 19.0, hops 1 | n=16: edges 156, most at one monitor 54, mean 19.5, hops 5 | n=32: edges 316, most at one monitor 102, mean 19.8, hops 13 | n=64: edges 636, most at one monitor 198, mean 19.9, hops 29
+  shape member-signal
+    hub (always M1, M2, M3)     n=8: edges 72, most at one monitor 30, mean 18.0, hops 0 | n=16: edges 144, most at one monitor 54, mean 18.0, hops 0 | n=32: edges 288, most at one monitor 102, mean 18.0, hops 0 | n=64: edges 576, most at one monitor 198, mean 18.0, hops 0
+    chain (the newest three)    n=8: edges 72, most at one monitor 27, mean 18.0, hops 1 | n=16: edges 144, most at one monitor 27, mean 18.0, hops 5 | n=32: edges 288, most at one monitor 27, mean 18.0, hops 13 | n=64: edges 576, most at one monitor 27, mean 18.0, hops 29
+    fan (K and the newest two)  n=8: edges 72, most at one monitor 30, mean 18.0, hops 1 | n=16: edges 144, most at one monitor 54, mean 18.0, hops 5 | n=32: edges 288, most at one monitor 102, mean 18.0, hops 13 | n=64: edges 576, most at one monitor 198, mean 18.0, hops 29
+  shape one
+    hub (always M1, M2, M3)     n=8: edges 48, most at one monitor 30, mean 12.0, hops 0 | n=16: edges 72, most at one monitor 54, mean 9.0, hops 0 | n=32: edges 120, most at one monitor 102, mean 7.5, hops 0 | n=64: edges 216, most at one monitor 198, mean 6.8, hops 0
+    chain (the newest three)    n=8: edges 48, most at one monitor 21, mean 12.0, hops 3 | n=16: edges 72, most at one monitor 21, mean 9.0, hops 11 | n=32: edges 120, most at one monitor 21, mean 7.5, hops 27 | n=64: edges 216, most at one monitor 21, mean 6.8, hops 59
+    fan (K and the newest two)  n=8: edges 48, most at one monitor 21, mean 12.0, hops 3 | n=16: edges 72, most at one monitor 21, mean 9.0, hops 11 | n=32: edges 120, most at one monitor 21, mean 7.5, hops 27 | n=64: edges 216, most at one monitor 21, mean 6.8, hops 59
+
+  When a report takes a round (slow reports), f = 1, way one, every system of 5 to 8 monitors:
+    5 monitors: 0 of 1 have a gap; a gap exactly where some monitor has no base monitor among its three: 1 of 1 agree
+    6 monitors: 0 of 3 have a gap; a gap exactly where some monitor has no base monitor among its three: 3 of 3 agree
+    7 monitors: 0 of 10 have a gap; a gap exactly where some monitor has no base monitor among its three: 10 of 10 agree
+    8 monitors: 1 of 48 have a gap; a gap exactly where some monitor has no base monitor among its three: 48 of 48 agree
+    the chain of 8 with W taking its halt from all eight: no gap
+
+  Restarting (the game of results.md section 10.3; K can start first; a monitor is observed
+  by whoever checks its state or reads its signal)
+    mesh of four                           (57 states): can always restart
+    way one, 8 monitors, chain             (4473 states): can always restart
+    member-signal, 7 monitors, chain       (999 states): can always restart
+    one watcher each, 7 monitors, chain    (589 states): can always restart
+    N5 with no edge at all                 (115 states): cannot restart after: stop M1, release M1
+
+T. The theorems against the search
+   59086 different systems were checked in the sections above.
+   Theorem J (a connected mutual graph)
+     conditions hold, no gap:   3502
+     conditions hold, a gap:    0   (must be 0)
+     conditions fail, no gap:   30023
+     conditions fail, a gap:    25561
+   Theorem L (layered growth)
+     conditions hold, no gap:   29506
+     conditions hold, a gap:    0   (must be 0)
+     conditions fail, no gap:   4019
+     conditions fail, a gap:    25561
+   Theorem F (f watchers and f + 1 report paths; nothing joining)
+     conditions hold, no gap:   90
+     conditions hold, a gap:    0   (must be 0)
+     conditions fail, no gap:   33435
+     conditions fail, a gap:    25561
+   Theorem S's conditions (a)-(d) in every set of present processes the joins can reach, f = 1
+     conditions hold, no gap:   10718
+     conditions hold, a gap:    0   (must be 0)
+     conditions fail, no gap:   2910
+     conditions fail, a gap:    3982
+   Lemma M: 2005 systems with one random edge added: a result got worse in 0   (must be 0)
+   Lemma N: 58880 systems with late processes against the same system with the late processes deleted: the larger one did better in 0   (must be 0)
+
+X. The executions of the write-up
+  X1. A monitor joins and nothing checks its state (the analogue of P7), f = 1
+    system: mesh/all + N, f=1; result: G1 in 2, G2 in 2
+      round 1: env: join N
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: mutate N
+               bad: N | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+       the same schedule with the checks in place
+    system: mesh/all + N, f=1; result: no gap
+      round 1: env: join N
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: mutate N
+               bad: N | flagged: M1 M2 M3 K | halted: W | worked: -
+  X2. It arrives already bad and nothing checks its state, f = 1
+    system: mesh/all + N, f=1; result: G1 in 1, G2 in 1
+      round 1: env: join-bad N N
+               bad: N | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+       the same schedule with the checks in place
+    system: mesh/all + N, f=1; result: no gap
+      round 1: env: join-bad N N
+               bad: N | flagged: M1 M2 M3 K | halted: W | worked: -
+  X3. Its attachments arrive a round late; it arrives good, f = 2
+    system: mesh/all + N, f=2; result: G1 in 1, G2 in 1
+      round 1: env: join N, mutate N
+               bad: N | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+       the same schedule with the attachments in force at once
+    system: mesh/all + N, f=2; result: no gap
+      round 1: env: join N, mutate N
+               bad: N | flagged: M1 M2 M3 K | halted: W | worked: -
+  X4. Its attachments arrive a round late; it arrives bad, f = 1
+    system: mesh/all + N, f=1; result: G1 in 1, G2 in 1
+      round 1: env: join-bad N N
+               bad: N | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  X5. Grown to eight; the eighth may join before the three it is attached to, f = 1
+    system: mesh grown by mesh(M1,M2,M3); mesh(N5,M1,M2); mesh(N5,N6,M1); mesh(N5,N6,N7), any join order, f=1; result: G1 in 2, G2 in 2
+      round 1: env: join N8
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: mutate N8
+               bad: N8 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  X6. Grown to eight, joining in order: the boundary, f = 4
+    system: mesh grown by mesh(M1,M2,M3); mesh(N5,M1,M2); mesh(N5,N6,M1); mesh(N5,N6,N7), f=4; result: G1 in 1, G2 in 1
+      round 1: env: mutate M1, mutate M2, mutate M3, mutate K
+               bad: M1 M2 M3 K | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+       f = 3, the same four faults spread over two rounds
+    system: mesh grown by mesh(M1,M2,M3); mesh(N5,M1,M2); mesh(N5,N6,M1); mesh(N5,N6,N7), f=3; result: no gap
+      round 1: env: mutate M1, mutate M2, mutate M3
+               bad: M1 M2 M3 | flagged: K | halted: W | worked: -
+      (the model ended in a complete response)
+  X7. A joining work process that may join before the monitor that checks it, f = 1
+    system: mesh/all + N + J (free), f=1; result: G1 in 2, G2 in 2
+      round 1: env: join J
+               bad: - | flagged: - | halted: - | worked: W J
+      round 2: env: mutate J
+               bad: J | flagged: - | halted: - | worked: W J   <-- breaks G1 and G2
+  X8. J reads only N's ring and N is attached to one monitor: f = 2 (G2)
+    system: mesh/all + N + J (with), f=2; result: G1 in 4, G2 in 2
+      round 1: env: join N
+               bad: - | flagged: - | halted: - | worked: W J
+      round 2: env: mutate M1, mutate N
+               bad: M1 N | flagged: M2 M3 K | halted: W | worked: J   <-- breaks G2
+       N attached to two: f = 3 (G2)
+    system: mesh/all + N + J (with), f=3; result: G1 in 3, G2 in 2
+      round 1: env: join N
+               bad: - | flagged: - | halted: - | worked: W J
+      round 2: env: mutate M1, mutate M2, mutate N
+               bad: M1 M2 N | flagged: M3 K | halted: W | worked: J   <-- breaks G2
+  X9. N is J's only checker and reports to nobody, f = 1 (G2)
+    system: mesh/all + N + J (with), f=1; result: G1 holds, G2 in 2
+      round 1: env: join N
+               bad: - | flagged: - | halted: - | worked: W J
+      round 2: env: mutate J
+               bad: J | flagged: N | halted: J | worked: W   <-- breaks G2
+  X10. N is J's only checker and nobody reads N's signal, f = 1
+    system: mesh/all + N + J (with), f=1; result: G1 in 3, G2 in 3
+      round 1: env: join N
+               bad: - | flagged: - | halted: - | worked: W J
+      round 2: env: stop N
+               bad: - | flagged: - | halted: J | worked: W
+      round 3: env: mutate J
+               bad: J | flagged: - | halted: J | worked: W   <-- breaks G1 and G2
+  X11. J halts on N, M1, M2, M3; N is a coordinator that checks no state, f = 3 (G2)
+    system: mesh/all + N + J (with), f=3; result: G1 in 3, G2 in 2
+      round 1: env: join N
+               bad: - | flagged: - | halted: - | worked: W J
+      round 2: env: mutate M1, mutate M2, mutate M3
+               bad: M1 M2 M3 | flagged: K | halted: W | worked: J   <-- breaks G2
+  X11b. W takes its halt from M1 and from N, which has not joined yet, f = 1 (G2)
+    system: mesh/all + N, W halts on M1 and N, f=1; result: G1 in 4, G2 in 1
+      round 1: env: mutate M1
+               bad: M1 | flagged: M2 M3 K | halted: - | worked: W   <-- breaks G2
+  X11c. A chain N5 on M1, N6 on N5, N7 on N6, one watcher each; nobody reads N6's signal, f = 1 (G1)
+    system: mesh grown by one(M1); one(N5); one(N6), minus: N5 reads N6's signal, f=1; result: G1 in 5, G2 in 5
+      round 1: env: join N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: join N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 3: env: stop N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 4: env: join N7
+               bad: - | flagged: - | halted: - | worked: W
+      round 5: env: mutate N7
+               bad: N7 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  X11c. A chain N5 on M1, N6 on N5, N7 on N6, one watcher each; N6 reports to nobody, f = 1 (G2)
+    system: mesh grown by one(M1); one(N5); one(N6), minus: N6 reports to N5, f=1; result: G1 holds, G2 in 4
+      round 1: env: join N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: join N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 3: env: join N7
+               bad: - | flagged: - | halted: - | worked: W
+      round 4: env: mutate N7
+               bad: N7 | flagged: N6 | halted: - | worked: W   <-- breaks G2
+  X12. A ring joins member by member, in any order, f = 1
+    system: ring A (mesh) and joining ring B (mesh), KB on M1,M2,K, members-first, f=1; result: G1 in 2, G2 in 2
+      round 1: env: join B1
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: mutate B1
+               bad: B1 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  X13. A ring joins coordinator first, and its work joins before its members, f = 1 (G2)
+    system: ring A (mesh) and joining ring B (mesh), KB on M1,M2,K, work-early, f=1; result: G1 in 7, G2 in 3
+      round 1: env: join KB
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: join WB
+               bad: - | flagged: - | halted: - | worked: W WB
+      round 3: env: mutate KB
+               bad: KB | flagged: M1 M2 M3 K | halted: W | worked: WB   <-- breaks G2
+       and G1
+    system: ring A (mesh) and joining ring B (mesh), KB on M1,M2,K, work-early, f=1; result: G1 in 7, G2 in 3
+      round 1: env: join KB
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: join WB
+               bad: - | flagged: - | halted: - | worked: W WB
+      round 3: env: mutate KB
+               bad: KB | flagged: M1 M2 M3 K | halted: W | worked: WB   <-- breaks G2
+      round 4: env: stop M1
+               bad: KB | flagged: M2 M3 K | halted: W | worked: WB   <-- breaks G2
+      round 5: env: stop M2
+               bad: KB | flagged: M3 K | halted: W | worked: WB   <-- breaks G2
+      round 6: env: stop M3
+               bad: KB | flagged: K | halted: W | worked: WB   <-- breaks G2
+      round 7: env: stop K
+               bad: KB | flagged: - | halted: W | worked: WB   <-- breaks G1 and G2
+  X14. Two rings, each whole in one boundary, both present from the start, f = 2
+    system: ring A (mesh) and joining ring B (mesh), KB on M1,M2,K, one-step, each ring in one boundary, all present from the start, f=2; result: G1 in 2, G2 holds
+      round 1: env: stop-boundary A, stop-boundary B
+               bad: - | flagged: - | halted: W WB | worked: -
+      round 2: env: mutate M1
+               bad: M1 | flagged: - | halted: W WB | worked: -   <-- breaks G1
+       the same at f = 1: one ring lost in one step
+    system: ring A (mesh) and joining ring B (mesh), KB on M1,M2,K, one-step, each ring in one boundary, all present from the start, f=1; result: no gap
+      round 1: env: stop-boundary B
+               bad: - | flagged: M1 M2 M3 K | halted: W WB | worked: -
+  X14b. A ring with its own work joins; ring A watches KB and KB reports, and nothing comes back, f = 1 (G2)
+    system: ring A (mesh) and joining ring B (mesh), one step, KB watched by M1 and reporting to M1 only, f=1; result: G1 in 5, G2 in 2
+      round 1: env: join B
+               bad: - | flagged: - | halted: - | worked: W WB
+      round 2: env: mutate M1
+               bad: M1 | flagged: M2 M3 K | halted: W | worked: WB   <-- breaks G2
+  X15. Every monitor has two watchers, no reports, W reads two members, f = 1 (G2)
+    system: cyc-check, no reports, W reads M1 and M2, f=1; result: G1 in 4, G2 in 1
+      round 1: env: mutate M1
+               bad: M1 | flagged: M3 K | halted: - | worked: W   <-- breaks G2
+  X16. Two rings of three joined by two reports, f = 2 (G2)
+    system: two meshes of three; A1 and B1 report to each other, A2 and B2 too; W reads ring A, f=2; result: G1 in 2, G2 in 1
+      round 1: env: stop B1, mutate B2
+               bad: B2 | flagged: B3 | halted: - | worked: W   <-- breaks G2
+  X17. Two observers, one of which reads signals only, f = 2
+    system: two members that check each other and a coordinator that reads signals only, f=2; result: G1 in 1, G2 in 1
+      round 1: env: mutate M1, mutate M2
+               bad: M1 M2 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+  X18. Reports take a round; grown to eight, f = 1 (G2)
+    system: mesh grown by mesh(M1,M2,M3); mesh(N5,M1,M2); mesh(N5,N6,M1); mesh(N5,N6,N7), slow reports, f=1; result: G1 holds, G2 in 5
+      round 1: env: join N5
+               bad: - | flagged: - | halted: - | worked: W
+      round 2: env: join N6
+               bad: - | flagged: - | halted: - | worked: W
+      round 3: env: join N7
+               bad: - | flagged: - | halted: - | worked: W
+      round 4: env: join N8
+               bad: - | flagged: - | halted: - | worked: W
+      round 5: env: mutate N8
+               bad: N8 | flagged: N5 N6 N7 | halted: - | worked: W   <-- breaks G2
+  X19. Cycle of three with a coordinator that reads signals only, f = 3
+    system: cyc-signal, work reads all, f=3; result: G1 in 1, G2 in 1
+      round 1: env: mutate M1, mutate M2, mutate M3
+               bad: M1 M2 M3 | flagged: - | halted: - | worked: W   <-- breaks G1 and G2
+
+5658 cases in the catalogue; 156271 different systems checked; 701 s
+check_model_join.py on all 5658 catalogue cases: 0 disagree with fast_join.py   (318 s)
+wrote systems-join.json and results-join.json (5658 cases)

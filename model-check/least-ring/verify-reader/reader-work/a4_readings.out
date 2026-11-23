@@ -1,0 +1,29 @@
+=== other readings of an arrow: each kind along the arrow (f), against it (b), or both (fb) ===
+    read f: Y reads X's signal; check f: Y checks X's state; report f: X reports to Y   (for X -> Y)
+read f  check f  report f : least  8 connections ( 24 wirings); candidate meets the list: True ; candidate least: False  <- flow
+read f  check f  report b : least  9 connections ( 26 wirings); candidate meets the list: True ; candidate least: True  <- mirror of actor
+read f  check f  report fb: least  8 connections ( 54 wirings); candidate meets the list: True ; candidate least: False
+read f  check b  report f : least  9 connections (  3 wirings); candidate meets the list: False; candidate least: False
+read f  check b  report b : least  9 connections (  3 wirings); candidate meets the list: False; candidate least: False
+read f  check b  report fb: least  9 connections (  6 wirings); candidate meets the list: False; candidate least: False
+read f  check fb report f : least  8 connections ( 24 wirings); candidate meets the list: True ; candidate least: False
+read f  check fb report b : least  9 connections ( 26 wirings); candidate meets the list: True ; candidate least: True
+read f  check fb report fb: least  8 connections ( 54 wirings); candidate meets the list: True ; candidate least: False
+read b  check f  report f : least  9 connections (  3 wirings); candidate meets the list: False; candidate least: False
+read b  check f  report b : least  9 connections (  3 wirings); candidate meets the list: False; candidate least: False
+read b  check f  report fb: least  9 connections (  6 wirings); candidate meets the list: False; candidate least: False
+read b  check b  report f : least  9 connections ( 26 wirings); candidate meets the list: True ; candidate least: True  <- actor
+read b  check b  report b : least  8 connections ( 24 wirings); candidate meets the list: True ; candidate least: False  <- mirror of flow
+read b  check b  report fb: least  8 connections ( 54 wirings); candidate meets the list: True ; candidate least: False
+read b  check fb report f : least  9 connections ( 26 wirings); candidate meets the list: True ; candidate least: True
+read b  check fb report b : least  8 connections ( 24 wirings); candidate meets the list: True ; candidate least: False
+read b  check fb report fb: least  8 connections ( 54 wirings); candidate meets the list: True ; candidate least: False
+read fb check f  report f : least  8 connections ( 24 wirings); candidate meets the list: True ; candidate least: False
+read fb check f  report b : least  9 connections ( 26 wirings); candidate meets the list: True ; candidate least: True
+read fb check f  report fb: least  8 connections ( 54 wirings); candidate meets the list: True ; candidate least: False
+read fb check b  report f : least  9 connections ( 26 wirings); candidate meets the list: True ; candidate least: True
+read fb check b  report b : least  8 connections ( 24 wirings); candidate meets the list: True ; candidate least: False
+read fb check b  report fb: least  8 connections ( 54 wirings); candidate meets the list: True ; candidate least: False
+read fb check fb report f : least  5 connections ( 12 wirings); candidate meets the list: True ; candidate least: False
+read fb check fb report b : least  5 connections ( 12 wirings); candidate meets the list: True ; candidate least: False
+read fb check fb report fb: least  5 connections ( 96 wirings); candidate meets the list: True ; candidate least: False

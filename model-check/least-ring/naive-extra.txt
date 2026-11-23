@@ -1,0 +1,17 @@
+The plain implementation run again, with a higher cap on states, on cases it had skipped:
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+2 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+2 the same, 0 different, 0 skipped as too large
+1 the same, 0 different, 0 skipped as too large
+10 the same, 0 different, 0 skipped as too large

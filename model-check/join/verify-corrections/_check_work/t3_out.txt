@@ -1,0 +1,44 @@
+=== listed least attachments, greatest sets, and checks (two meshes, one step)
+f=1: listed 640 (by size {5: 384, 6: 256}), antichain True; greatest sets holding none: 12 (by size {20: 12}, verified maximal True); 3 + sum_{t<=f} C(4,t)2^t = 12
+   listed attachments with a gap at f=1 (may arrive bad): 0 of 640
+   greatest sets with NO gap at f=1 (arrive good): 0 of 12
+   listed attachments from which some single edge can be removed with no gap (may arrive bad): 0
+   random subsets against the rule: 150 tried, 0 disagree
+   (1 s)
+f=2: listed 512 (by size {6: 512}), antichain True; greatest sets holding none: 36 (by size {20: 36}, verified maximal True); 3 + sum_{t<=f} C(4,t)2^t = 36
+   listed attachments with a gap at f=2 (may arrive bad): 0 of 512
+   greatest sets with NO gap at f=2 (arrive good): 0 of 36
+   listed attachments from which some single edge can be removed with no gap (may arrive bad): 0
+   random subsets against the rule: 150 tried, 0 disagree
+   (4 s)
+f=3: listed 320 (by size {6: 256, 7: 64}), antichain True; greatest sets holding none: 68 (by size {20: 68}, verified maximal True); 3 + sum_{t<=f} C(4,t)2^t = 68
+   listed attachments with a gap at f=3 (may arrive bad): 0 of 320
+   greatest sets with NO gap at f=3 (arrive good): 0 of 68
+   listed attachments from which some single edge can be removed with no gap (may arrive bad): 0
+   random subsets against the rule: 150 tried, 0 disagree
+   (15 s)
+=== the 20-edge set: every edge except the four reports from ring A to KB
+  f=1 arrive good null/2, may arrive bad null/2
+   | 1 | join B | nothing bad; nothing flagged; working=W,WB |
+   | 2 | mutate W | bad=W; flagged=M1,M2,M3,K; halted=W; working=WB |
+  f=2 arrive good null/1, may arrive bad null/1
+  f=3 arrive good null/1, may arrive bad null/1
+  plus the report from M1 to KB: f=1,2,3 may arrive bad: ['null/null', 'null/null', 'null/null']
+  plus the report from M2 to KB: f=1,2,3 may arrive bad: ['null/null', 'null/null', 'null/null']
+  plus the report from M3 to KB: f=1,2,3 may arrive bad: ['null/null', 'null/null', 'null/null']
+  plus the report from K to KB: f=1,2,3 may arrive bad: ['null/null', 'null/null', 'null/null']
+  is the 20-edge set inside a set of the smaller family (3 + C(4,f)2^f with exactly f reporters)?
+   f=1: smaller family has 11 sets; 20-edge set inside one of them: False
+   f=2: smaller family has 27 sets; 20-edge set inside one of them: False
+   f=3: smaller family has 35 sets; 20-edge set inside one of them: False
+=== A2 / A12: named attachments
+  one two-way link with M1 (six edges), meshes, f=1..4 may arrive bad: ['null/null', 'null/null', 'null/null', '1/1']
+  five edges (M1 watches KB, KB reports to M1, M2 and M3 report to KB), f=1,2,3 may arrive bad: ['null/null', '3/2', '2/1']
+  five edges spread over monitors, f=1,2,3: ['null/null', '3/2', '2/1']
+  M1 watches KB and KB reports to M1 only: f=1 5/2
+   | 1 | join B | nothing bad; nothing flagged; working=W,WB |
+   | 2 | mutate M1 | bad=M1; flagged=M2,M3,K; halted=W; working=WB |
+  cycles with checking coordinators, one two-way link between KB and M1, f=1..4 may arrive bad: ['null/null', 'null/null', 'null/null', '1/1']
+  cycles with checking coordinators, one two-way link between KB and K, f=1..4 may arrive bad: ['null/null', 'null/null', 'null/null', '1/1']
+  four-edge sets {M1 checks KB, M1 reads KB, KB reports to M1, one more}: 21 tried, 0 with no gap at f=1
+  total 16 s; distinct systems solved: 6359

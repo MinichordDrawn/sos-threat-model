@@ -1,0 +1,5 @@
+== A second top-last order: D2 and D3 in one step; the six members one at a time
+== in any order; each work process once its three members are present; then T
+flow, one system, f=1: G1 None, G2 None, 1732 states, every reachable state
+flow, one system, f=2: G1 None, G2 None, 17733 states, every reachable state
+flow, one system, f=3: G1 None, G2 None, 118732 states, every reachable state

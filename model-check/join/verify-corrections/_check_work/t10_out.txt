@@ -1,0 +1,3 @@
+30000 systems; commonest results: [('1/1', 25950), ('2/1', 3133), ('2/2', 299), ('3/1', 262), ('2/null', 91), ('null/null', 88), ('3/2', 53), ('3/null', 27), ('4/1', 25), ('1/null', 21), ('1/2', 19), ('4/2', 11)]; distinct results: 21
+reading 'mutate needs a monitor still alive': differs on 0
+(12 s)

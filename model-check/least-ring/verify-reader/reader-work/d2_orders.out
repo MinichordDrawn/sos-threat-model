@@ -1,0 +1,20 @@
+both rings whole in ONE step, then T                                   flow  one system: f=1 G1 None G2 None | f=2 G1 None G2 None | f=3 G1 None G2 None | scopes f=1: G1 None G2 None told 2 spill None
+both rings whole in ONE step, then T                                   actor one system: f=1 G1 None G2 1 (cut off) | f=2 G1 None G2 1 (cut off) | f=3 G1 None G2 1 (cut off) | scopes f=1: G1 None G2 None told 2 spill None
+ring 2 whole; ring 3 whole and T together in one step                  flow  one system: f=1 G1 4 G2 1 | f=2 G1 2 G2 1 | f=3 G1 2 G2 1 | scopes f=1: G1 None G2 None told 1 spill None
+ring 2 whole; ring 3 whole and T together in one step                  actor one system: f=1 G1 5 G2 1 | f=2 G1 3 G2 1 | f=3 G1 2 G2 1 | scopes f=1: G1 None G2 None told 1 spill None
+T and D2 together in one step; then ring 2's members, W2; then ring 3  flow  one system: f=1 G1 None G2 None | f=2 G1 None G2 None | f=3 G1 None G2 None | scopes f=1: G1 None G2 None told None spill None
+T and D2 together in one step; then ring 2's members, W2; then ring 3  actor one system: f=1 G1 None G2 None | f=2 G1 None G2 None | f=3 G1 None G2 None | scopes f=1: G1 None G2 None told None spill None
+ring 2 whole and T together in one step; then ring 3 whole             flow  one system: f=1 G1 None G2 None | f=2 G1 None G2 None | f=3 G1 None G2 None | scopes f=1: G1 None G2 None told None spill None
+ring 2 whole and T together in one step; then ring 3 whole             actor one system: f=1 G1 None G2 None | f=2 G1 None G2 None | f=3 G1 None G2 None | scopes f=1: G1 None G2 None told None spill None
+everything in one step                                                 flow  one system: f=1 G1 None G2 None | f=2 G1 None G2 None | f=3 G1 None G2 None | scopes f=1: G1 None G2 None told None spill None
+everything in one step                                                 actor one system: f=1 G1 None G2 None | f=2 G1 None G2 None | f=3 G1 None G2 None | scopes f=1: G1 None G2 None told None spill None
+the author's order when no monitor may arrive bad:
+   flow f=1 G1 2 G2 2
+   actor f=1 G1 9 G2 3
+three rings without T, everything present from the start, as one system:
+   flow f=1 G1 None G2 None
+   flow f=2 G1 None G2 None
+   flow f=3 G1 None G2 None
+   actor f=1 G1 None G2 1 (cut off)
+   actor f=2 G1 None G2 1 (cut off)
+   actor f=3 G1 None G2 1 (cut off)

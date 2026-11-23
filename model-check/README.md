@@ -28,6 +28,10 @@ were tested here and none was. The fourth, independent reproduction, was not tes
 `results.md` gives the full account, in the vocabulary of fault-tolerant distributed
 computing. This page summarises it.
 
+Two later pieces of work extend the model, each in a folder of its own. `join/` lets
+monitors join a running system. `least-ring/` asks which ring of four is the least, and
+how it repeats one level up. "Two extensions", further down, summarises both.
+
 ## Overview
 
 ### The eight properties
@@ -153,13 +157,17 @@ Where this work stands:
   review.
 - **Nothing in this folder is at the fourth standard. Part of the work now is, in
   `../lean-proof/`.** That folder restates the model in Lean 4, a proof assistant, and
-  proves three groups of results there. Two are at one fault per round: Theorem S, and
-  that the reference system has no gap while each of the ten removals opens one. The third
-  is most of the general results of sections 2.7, 6, 8.1 and 10.2 of `results.md` on what
-  any system needs, for any number of faults per round, and the result that naming one
-  faulty monitor takes three. Everything else stands where this list puts it, and the
-  model has not been ported to an established model checker. A machine-checked proof
-  guards against a slip in a proof. It does not change what is claimed.
+  proves ninety-six statements there. From `results.md`: Theorem S; that the reference
+  system has no gap while each of the ten removals opens one; most of the general results
+  on what any system needs; the mesh at any number of faults per round; restarting; how
+  fast a halt must travel; and naming a faulty monitor. Written for the Lean work: a form
+  of Theorem S for systems that are not plain. From the two extensions: Theorem J and
+  Theorem F, the ring of `k` members, the least ring for two of its requirements, the ring
+  one level up at every number of levels, and growth by joins. Its `statements.md` lists
+  them one by one.
+  Everything else stands where this list puts it, and the model has not been ported to an
+  established model checker. A machine-checked proof guards against a slip in a proof. It
+  does not change what is claimed.
 
 One question lies outside all four standards: whether the definitions in the model say
 what the framework's words mean. The framework is stated in prose and the model in
@@ -184,7 +192,27 @@ Heartbeat.tla, .cfg      one property, the liveness signal, as a TLA+ module
 verification/            one folder for each independent pass: what it was given, what it
                          wrote, and the code it wrote for itself. The final round, with
                          its reports, is in g-final-round/
+join/                    the first extension, monitors that join: results-join.md,
+                         model-spec-join.md, the checker extended, a catalogue of 5,658
+                         cases, and the records
+least-ring/              the second extension, the least ring and the ring one level up:
+                         part-a.md, results-minimal.md, model-spec-scope.md, the
+                         programs, a catalogue of 465 cases, and the records
 ```
+
+The two extension folders are the folders the work was done in. Each holds what was
+asked for (`brief.md`), what the author handed back (`handback.md` and the corrections
+after it), and a folder for each independent check (`verify-impl`, `verify-proofs` or
+`verify-reader`, `verify-corrections`) with what it was given and what it wrote. In those
+records `«WORK»` stands for the folder that held the work, and `«SCRATCH»` for a temporary
+folder that is not here. Where a record quoted the author's own messages, this copy gives
+them in paraphrase. `join/` was `sos-join-model\join\` there, with `brief.md`, the
+hand-backs, its three `verify-` folders and a copy of this model check beside it and not
+inside it, and `least-ring/` was `sos-minimal-ring\`. So the write-ups name some files
+without their folder: `results.md` and `check_model.py` are at the top of this folder, and
+what `least-ring/` names of the first extension is in `join/`. To run from where they now
+are, six programs of `least-ring/` had the lines that build folder paths changed, and two
+sentences of `results-minimal.md` name the folders as they are here.
 
 ## The method
 
@@ -357,6 +385,74 @@ silence of every monitor the system depends on. A bad state is flagged and stops
 in the round it appears, which is what no gap means in these systems. A flag raised for a
 silence alone need not stop the work: in one system with four monitors it does not.
 
+## Two extensions
+
+Both were made after the work above and by the same method: an author, an implementation
+written by another agent from the specification alone, and independent readers, with every
+correction recorded. Each has its own specification, programs, catalogue and results, and
+uses the kinds of evidence that `results.md` defines.
+
+**Monitors that join (`join/`).** In the model above every monitor is present from the
+start. `model-spec-join.md` lets a monitor be absent at the start and join by a step of
+the environment, alone or in a group. `results-join.md` has the results.
+
+- A system can be grown by joins without end. The number of faults per round at which it
+  has no gap stays exactly the starting ring's, at every size and whichever monitors each
+  new one is attached to. This is proved for the class (Theorem L and Lemma N) and checked
+  on 12,324 grown systems of five to twenty monitors.
+- It holds under four conditions. A state check of a new monitor is in force in the step
+  that adds it. No monitor joins before a monitor that checks it. Every work process,
+  whenever it is present, has a present state checker and more than `f` present halt
+  inputs. Reports arrive within the round.
+- A joining monitor that nothing depends on needs one edge: an existing monitor that
+  checks its state. One that later monitors or a work process lean on needs three: its
+  state checked, its signal read, and a report from it (and a fourth at three faults per
+  round when work takes its halt from it).
+- Theorem J is a sufficient condition for no gap at any number of faults per round, in a
+  plain system: the monitors connected by pairs that watch each other and report to each
+  other, every work process with a state checker and more than `f` halt inputs, and more
+  than `f` monitors.
+
+**The least ring (`least-ring/`).** `part-a.md` takes the ring of three members in a cycle
+and a coordinator connected to each both ways, nine connections, and asks whether fewer
+would do. It checks all 4,096 wirings of four monitors against a list of six
+requirements. `results-minimal.md` goes on to wider rings, to three rings under a top
+coordinator, and to getting from one ring to three by joins. `model-spec-scope.md` extends
+the model so that a flag carries the scope it was raised for and a halt can stay within one
+ring.
+
+- Whether nine is the least depends on what a connection is taken to carry. Of the 27
+  readings in which it carries all three kinds of edge, the ring is least under six, one
+  connection over under twelve, short of "two observers each" as stated under six, and
+  four over under three.
+- A ring of `k` members and a coordinator, the work reading every monitor, has no gap
+  exactly when `f` is at most `k`.
+- Three such rings under a top coordinator, the three ring coordinators in a cycle, have
+  no gap at one, two and three faults per round as one system, when each ring's work reads
+  its four monitors. So has the same structure at every number of levels, when every
+  monitor is in a boundary of its own.
+- Judged scope by scope, a fault in one ring halts that ring's work, the other two go on
+  working, and the upper ring holds a flag for the ring at fault. This is checked at
+  thirteen monitors and one fault per round, when nothing more lands in a ring that has
+  halted.
+- Grown by joins with the top coordinator first, the three rings have no gap at one, two
+  or three faults per round as one system. With the top coordinator last, the order first
+  tried has a gap at one fault per round. Under one of the two readings worked through in
+  full it cannot be last in any order, and under the other, two orders with it last have
+  no gap.
+- Nine connections per ring is the least among structures built as rings of rings in
+  which each ring meets the list by itself, under one reading of a connection and of the
+  requirement on reports. Judged as one flat system of thirteen monitors, fewer are enough
+  for five of the six requirements.
+
+The order in which monitors and rings are attached is the builder's choice, so long as the
+conditions hold at each step. Theorem J with joins asks only that its conditions hold in
+every set of present processes the joins can reach. Removing or moving a connection is not
+in the model.
+
+Many of the general results of both extensions are also proved in Lean, as statements 63
+to 96 of `../lean-proof/statements.md`. The results with scopes are not.
+
 ## What is not established
 
 - **Uniqueness.** No finite check can show that the ring is the only structure that
@@ -365,7 +461,8 @@ silence alone need not stop the work: in one system with four monitors it does n
 - **The second half of the argument.** That the kinds of fault in the model are the right
   ones, and that none is missing. The implementations test that.
 - **More than one fault per round, on an arbitrary wiring.** The necessary conditions are
-  proved and the full mesh is settled. No general sufficient condition is given.
+  proved and the full mesh is settled. `results.md` gives no general sufficient condition.
+  Theorem J of the first extension is one. It is not also a necessary condition.
 - **Recovery beyond restarting.** Lifting a halt while a fault may still be present, and a
   second fault in a halted system, are not modelled. How a bad state is repaired belongs
   to the implementation.
@@ -488,6 +585,7 @@ other member (section 10.3 of `results.md`).
 
 ## Licence
 
-The documents and result files in this folder are under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), and the checker, the verifiers'
-code and the TLA+ module under the MIT licence. See [LICENSE](../LICENSE).
+The documents and result files in this folder are under [CC BY
+4.0](https://creativecommons.org/licenses/by/4.0/), and the checker, the programs of the
+two extensions, the verifiers' code and the TLA+ module under the MIT licence. See
+[LICENSE](../LICENSE).
